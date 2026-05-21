@@ -1,0 +1,5 @@
+Found SDKs:
+C:\Users\thaer\AppData\Local\Android\Sdk
+Using SDK: C
+Paths: emulator C\emulator\emulator.exe, adb C\platform-tools\adb.exe, aapt 
+emulator.exe not found

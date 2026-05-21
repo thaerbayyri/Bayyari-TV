@@ -1,0 +1,16 @@
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           5/21/2026  8:07 PM           5993 aapt_badging.txt
+-a---           5/21/2026  8:07 PM             38 adb_install.txt
+-a---           5/21/2026  8:07 PM             17 apkid.txt
+-a---           5/21/2026  8:07 PM             19 apktool.txt
+-a---           5/21/2026  8:07 PM             60 boot_status.txt
+-a---           5/21/2026  8:07 PM             31 exported_true.txt
+-a---           5/21/2026  8:07 PM              0 generated_files.txt
+-a---           5/21/2026  8:06 PM             81 sdk_launch.txt
+-a---           5/21/2026  8:06 PM            171 sdk_search.txt
+-a---           5/21/2026  8:07 PM             19 strings_search.txt
+

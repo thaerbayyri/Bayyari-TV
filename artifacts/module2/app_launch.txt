@@ -1,0 +1,4 @@
+Starting: Intent { cmp=com.bayyari.tv.debug/com.bayyari.tv.ui.MainActivity }
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+4824
+App started and logcat streaming

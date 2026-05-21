@@ -1,0 +1,45 @@
+
+State         : Completed
+HasMoreData   : False
+StatusMessage : 
+Location      : localhost
+Command       : & "C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts\mitmdump.exe" --version > "E:\nashamaiptv page\apps\BAYYARI player\artifacts\module2\mitmdump_version_check.txt" 2>&1
+JobStateInfo  : Completed
+Finished      : System.Threading.ManualResetEvent
+InstanceId    : 290f1277-54ee-4f9a-b401-a8b14047f1c1
+Id            : 1
+Name          : Job1
+ChildJobs     : {Job2}
+PSBeginTime   : 5/21/2026 9:46:30 PM
+PSEndTime     : 5/21/2026 9:46:31 PM
+PSJobTypeName : BackgroundJob
+Output        : {}
+Error         : {}
+Progress      : {}
+Verbose       : {}
+Debug         : {}
+Warning       : {}
+Information   : {}
+
+State         : Completed
+HasMoreData   : True
+StatusMessage : 
+Location      : localhost
+Command       :  & 'C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts\mitmdump.exe' --confdir 'E:\nashamaiptv page\apps\BAYYARI player\artifacts\module2' -p 8080 -w 'E:\nashamaiptv page\apps\BAYYARI player\artifacts\module2\flows.mitm' 
+JobStateInfo  : Completed
+Finished      : System.Threading.ManualResetEvent
+InstanceId    : 1b970e03-ca2c-4aed-bcc5-e1fe47fbd4e5
+Id            : 3
+Name          : Job3
+ChildJobs     : {Job4}
+PSBeginTime   : 5/21/2026 9:46:52 PM
+PSEndTime     : 5/21/2026 9:46:54 PM
+PSJobTypeName : BackgroundJob
+Output        : {}
+Error         : {}
+Progress      : {}
+Verbose       : {}
+Debug         : {}
+Warning       : {}
+Information   : {}
+

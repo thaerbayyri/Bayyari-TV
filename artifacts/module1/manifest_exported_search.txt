@@ -1,0 +1,28 @@
+
+artifacts\module1\manifest_xmltree.txt:43:      A: android:name(0x01010003)="com.bayyari.tv.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" (Raw: "com.bayyari.tv.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION")
+artifacts\module1\manifest_xmltree.txt:46:      A: android:name(0x01010003)="com.bayyari.tv.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" (Raw: "com.bayyari.tv.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION")
+artifacts\module1\manifest_xmltree.txt:67:        A: android:exported(0x01010010)=(type 0x12)0xffffffff
+artifacts\module1\manifest_xmltree.txt:78:        A: android:exported(0x01010010)=(type 0x12)0xffffffff
+artifacts\module1\manifest_xmltree.txt:89:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:93:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:101:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:109:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:116:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:123:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:130:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:136:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:143:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:157:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:163:        A: android:exported(0x01010010)=(type 0x12)0xffffffff
+artifacts\module1\manifest_xmltree.txt:168:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:173:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:178:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:188:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:198:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:208:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:216:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:228:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:237:        A: android:exported(0x01010010)=(type 0x12)0xffffffff
+artifacts\module1\manifest_xmltree.txt:250:        A: android:exported(0x01010010)=(type 0x12)0x0
+artifacts\module1\manifest_xmltree.txt:256:        A: android:exported(0x01010010)=(type 0x12)0xffffffff
+

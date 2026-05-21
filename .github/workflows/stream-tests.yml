@@ -1,0 +1,94 @@
+name: Stream & Server Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  JAVA_VERSION: '17'
+  API_LEVEL: 30
+
+jobs:
+  unit-tests:
+    name: Unit Tests (Server + Stream + Player)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Create test server config
+        run: |
+          mkdir -p app/src/test/resources
+          cat > app/src/test/resources/test_server.properties << EOF
+          server.url=${{ secrets.TEST_SERVER_URL }}
+          server.username=${{ secrets.TEST_SERVER_USER }}
+          server.password=${{ secrets.TEST_SERVER_PASS }}
+          test.stream.live_id=${{ secrets.TEST_LIVE_STREAM_ID }}
+          test.stream.movie_id=${{ secrets.TEST_MOVIE_ID }}
+          test.stream.series_episode_id=${{ secrets.TEST_EPISODE_ID }}
+          EOF
+
+      - name: Run unit tests
+        run: ./gradlew test --continue
+
+      - name: Generate test report
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Unit Test Results
+          path: '**/build/test-results/**/*.xml'
+          reporter: java-junit
+          fail-on-error: true
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unit-test-results
+          path: |
+            app/build/reports/tests/
+            app/build/test-results/
+          retention-days: 14
+
+  instrumented-tests:
+    name: Instrumented Tests (Android Emulator)
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Run instrumented tests on emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ env.API_LEVEL }}
+          target: google_apis
+          arch: x86_64
+          profile: Nexus 6
+          script: ./gradlew connectedDebugAndroidTest --tests "com.myiptv.app.StreamPlaybackTest"
+
+      - name: Upload instrumented test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: instrumented-test-results
+          path: app/build/reports/androidTests/
+          retention-days: 14

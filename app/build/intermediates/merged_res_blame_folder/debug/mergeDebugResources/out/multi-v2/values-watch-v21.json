@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.bayyari.tv.app-mergeDebugResources-63:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\thaer\\.gradle\\caches\\9.4.1\\transforms\\297f2fa4124b6859026f5eb281b5d63f\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}

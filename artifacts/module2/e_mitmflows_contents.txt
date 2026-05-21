@@ -1,0 +1,7 @@
+
+    Directory: E:\mitmflows
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           5/21/2026  9:57 PM              0 flows.mitm
+

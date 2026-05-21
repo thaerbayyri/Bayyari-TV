@@ -1,0 +1,2 @@
+Starting: Intent { act=android.intent.action.VIEW dat=file:///... typ=application/x-pkcs12 }
+Warning: Activity not started, intent has been delivered to currently running top-most instance.

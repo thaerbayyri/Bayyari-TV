@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bayyari-TV – IPTV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07070F;
+  --bg2:#0F0F1C;
+  --bg3:#171728;
+  --card:#1C1C30;
+  --accent:#00D4AA;
+  --accent2:#7C5FFF;
+  --text:#EEEEFF;
+  --text2:#8888AA;
+  --red:#FF4060;
+  --gold:#FFB020;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+button{font-family:'Outfit',sans-serif;cursor:pointer}
+select,input{font-family:'Outfit',sans-serif}
+
+/* ── Navbar ── */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:64px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;
+  background:linear-gradient(to bottom,rgba(7,7,15,.96) 70%,transparent);
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.logo{font-size:21px;font-weight:900;letter-spacing:-.5px;display:flex;align-items:center;gap:8px;text-decoration:none}
+.logo-s{color:var(--accent)}
+.logo-t{color:var(--text)}
+.nav-links{display:flex;gap:4px}
+.nav-link{
+  padding:8px 16px;border-radius:8px;font-size:14px;font-weight:500;
+  border:none;background:none;color:var(--text2);transition:all .18s
+}
+.nav-link:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.nav-link.active{color:var(--accent);background:rgba(0,212,170,.1)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.icon-btn{
+  width:36px;height:36px;border-radius:50%;border:none;
+  background:rgba(255,255,255,.07);color:var(--text);
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+  transition:background .18s;
+}
+.icon-btn:hover{background:rgba(255,255,255,.13)}
+.avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.5px
+}
+
+/* ── Screens ── */
+.screen{display:none}
+.screen.active{display:block}
+.main{padding-top:64px}
+
+/* ── Login ── */
+.login-wrap{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(ellipse at 15% 50%,rgba(124,95,255,.12) 0%,transparent 60%),
+    radial-gradient(ellipse at 85% 20%,rgba(0,212,170,.09) 0%,transparent 55%),
+    var(--bg);
+}
+.login-box{
+  background:var(--bg2);border:1px solid rgba(255,255,255,.07);
+  border-radius:20px;padding:48px 42px;width:440px;
+  box-shadow:0 40px 100px rgba(0,0,0,.6);
+}
+.login-logo{text-align:center;font-size:28px;font-weight:900;margin-bottom:32px}
+.login-title{font-size:24px;font-weight:700;margin-bottom:5px}
+.login-sub{font-size:14px;color:var(--text2);margin-bottom:30px}
+.field-label{font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.5px;text-transform:uppercase;margin-bottom:7px;display:block}
+.field-input{
+  width:100%;padding:12px 16px;
+  background:var(--bg3);border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;color:var(--text);font-size:15px;outline:none;
+  transition:border-color .2s;margin-bottom:14px;
+}
+.field-input:focus{border-color:var(--accent)}
+.field-input::placeholder{color:var(--text2)}
+.login-btn{
+  width:100%;padding:14px;background:var(--accent);color:#050510;
+  border:none;border-radius:10px;font-size:15px;font-weight:700;margin-top:4px;
+  transition:all .2s;letter-spacing:.2px;
+}
+.login-btn:hover{background:#00F0C4;transform:translateY(-1px)}
+.login-footer{text-align:center;margin-top:20px;font-size:12px;color:var(--text2)}
+.login-footer span{color:var(--accent);font-weight:600}
+
+/* ── Hero ── */
+.hero{
+  height:530px;position:relative;display:flex;align-items:flex-end;
+  padding:0 44px 52px;overflow:hidden;
+}
+.hero-poster{
+  position:absolute;inset:0;
+  background:linear-gradient(125deg,#1A0D3A 0%,#0D1E3A 45%,#1A0D25 100%);
+}
+.hero-poster::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 68% 35%,rgba(124,95,255,.28) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 75%,rgba(0,212,170,.16) 0%,transparent 40%);
+}
+.hero-poster::after{
+  content:'';position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:140px;opacity:.09;
+}
+.hero-art{
+  position:absolute;right:5%;top:50%;transform:translateY(-50%);
+  font-size:200px;opacity:.18;pointer-events:none;filter:blur(1px);
+}
+.hero-fade{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to right,rgba(7,7,15,.97) 30%,rgba(7,7,15,.5) 60%,transparent 80%),
+    linear-gradient(to top,rgba(7,7,15,1) 0%,transparent 38%);
+}
+.hero-content{position:relative;max-width:520px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(0,212,170,.13);border:1px solid rgba(0,212,170,.28);
+  color:var(--accent);padding:5px 14px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  margin-bottom:18px;
+}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+.hero h1{font-size:52px;font-weight:900;line-height:1.03;margin-bottom:14px;letter-spacing:-1.5px}
+.hero-meta{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-size:13px;color:var(--text2);flex-wrap:wrap}
+.star-badge{background:var(--gold);color:#160900;padding:2px 9px;border-radius:5px;font-weight:800;font-size:12px}
+.quality-tag{background:rgba(255,255,255,.1);padding:2px 9px;border-radius:5px;font-size:12px;font-weight:600}
+.hero-desc{font-size:15px;color:var(--text2);line-height:1.65;margin-bottom:30px;max-width:460px}
+.hero-btns{display:flex;gap:12px}
+.btn-play{
+  padding:12px 30px;border-radius:10px;background:var(--accent);color:#050510;
+  font-weight:800;font-size:15px;border:none;display:flex;align-items:center;gap:9px;
+  transition:all .2s;letter-spacing:.1px;
+}
+.btn-play:hover{background:#00F0C4;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,170,.3)}
+.btn-add{
+  padding:12px 24px;border-radius:10px;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12);
+  color:var(--text);font-weight:600;font-size:15px;
+  display:flex;align-items:center;gap:8px;transition:all .2s;
+}
+.btn-add:hover{background:rgba(255,255,255,.15)}
+
+/* ── Stats bar ── */
+.stats{display:flex;gap:1px;background:rgba(255,255,255,.04);margin:0 44px 4px;border-radius:14px;overflow:hidden}
+.stat{
+  flex:1;padding:18px 20px;background:var(--bg2);
+  display:flex;align-items:center;gap:14px;
+}
+.stat-ico{font-size:26px}
+.stat-lbl{font-size:11px;color:var(--text2);margin-bottom:2px}
+.stat-val{font-size:18px;font-weight:700}
+
+/* ── Content rows ── */
+.section{padding:28px 44px}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.sec-title{font-size:17px;font-weight:700;display:flex;align-items:center;gap:8px}
+.see-all{font-size:13px;color:var(--accent);font-weight:500;border:none;background:none;display:flex;align-items:center;gap:3px;transition:color .15s}
+.see-all:hover{color:#00F0C4}
+.row{display:flex;gap:13px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;scrollbar-color:var(--bg3) transparent}
+.row::-webkit-scrollbar{height:3px}
+.row::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:2px}
+
+/* ── Cards ── */
+.card{flex-shrink:0;border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .22s;position:relative}
+.card:hover{transform:translateY(-5px) scale(1.025)}
+.card-poster{width:148px;height:208px}
+.card-wide{width:238px;height:136px}
+.card-face{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:44px}
+.card-meta{padding:9px 0 3px}
+.card-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-sub{font-size:11px;color:var(--text2);margin-top:2px}
+.card-tag{
+  position:absolute;top:8px;right:8px;
+  background:rgba(255,64,96,.88);color:#fff;
+  font-size:10px;font-weight:800;padding:3px 8px;border-radius:5px;letter-spacing:.3px
+}
+.card-tag.new{background:rgba(0,212,170,.9);color:#050510}
+.card-tag.hd{background:rgba(124,95,255,.88);color:#fff}
+.prog-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,.14)}
+.prog-fill{height:100%;background:var(--accent);border-radius:0 2px 2px 0}
+
+/* ── Live grid (channel cards) ── */
+.ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:12px}
+.ch-card{
+  background:var(--card);border-radius:12px;padding:22px 12px 18px;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  cursor:pointer;transition:all .2s;border:1px solid rgba(255,255,255,.04);
+}
+.ch-card:hover{background:var(--bg3);border-color:rgba(0,212,170,.28);transform:translateY(-3px)}
+.ch-ico{font-size:34px}
+.ch-name{font-size:12px;font-weight:700;text-align:center}
+.ch-now{font-size:10px;color:var(--text2);text-align:center;line-height:1.4;max-width:110px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.live-pill{display:flex;align-items:center;gap:4px;background:rgba(255,64,96,.14);border:1px solid rgba(255,64,96,.28);padding:3px 9px;border-radius:100px;font-size:10px;font-weight:700;color:var(--red)}
+
+/* ── EPG ── */
+.epg-row{display:flex;border-bottom:1px solid rgba(255,255,255,.04)}
+.epg-ch{
+  width:148px;flex-shrink:0;padding:12px 14px;
+  display:flex;align-items:center;gap:10px;
+  background:var(--bg2);border-right:1px solid rgba(255,255,255,.05);
+}
+.epg-ch-ico{font-size:22px}
+.epg-ch-name{font-size:12px;font-weight:600}
+.epg-progs{flex:1;display:flex;gap:5px;padding:10px 14px;overflow:hidden}
+.epg-prog{
+  flex-shrink:0;background:var(--card);border-radius:8px;padding:9px 12px;
+  border-left:3px solid var(--bg3);cursor:pointer;transition:all .15s;
+}
+.epg-prog:hover{background:var(--bg3);border-left-color:var(--accent)}
+.epg-prog.now{border-left-color:var(--red);background:rgba(255,64,96,.06)}
+.epg-prog-t{font-size:12px;font-weight:600;white-space:nowrap}
+.epg-prog-s{font-size:10px;color:var(--text2);margin-top:2px}
+
+/* ── Tabs ── */
+.tabs{display:flex;gap:3px;padding:20px 44px 0;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:24px}
+.tab{
+  padding:8px 20px;border-radius:8px 8px 0 0;font-size:14px;font-weight:500;
+  border:none;background:none;color:var(--text2);transition:all .18s;
+}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--accent);background:rgba(0,212,170,.09);border-bottom:2px solid var(--accent)}
+
+/* ── Movies grid ── */
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:20px}
+.movie-card{cursor:pointer}
+.movie-poster{
+  width:100%;aspect-ratio:2/3;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;font-size:44px;
+  position:relative;overflow:hidden;transition:transform .22s;
+}
+.movie-card:hover .movie-poster{transform:translateY(-4px) scale(1.03)}
+.movie-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(0,0,0,.85),transparent);
+  padding:14px 10px 10px;
+}
+.movie-rating{font-size:11px;color:var(--gold);font-weight:700}
+.movie-name{font-size:13px;font-weight:600;margin-top:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.movie-year{font-size:11px;color:var(--text2);margin-top:2px}
+
+/* ── Toast ── */
+.toast{
+  position:fixed;bottom:28px;right:28px;
+  background:var(--bg2);border:1px solid rgba(0,212,170,.25);border-radius:14px;
+  padding:14px 20px;display:flex;align-items:center;gap:14px;
+  box-shadow:0 20px 50px rgba(0,0,0,.5);z-index:500;
+  transform:translateY(80px);opacity:0;transition:all .3s cubic-bezier(.34,1.56,.64,1);
+}
+.toast.show{transform:translateY(0);opacity:1}
+.toast-ico{font-size:22px}
+.toast-title{font-size:14px;font-weight:600}
+.toast-sub{font-size:12px;color:var(--text2);margin-top:2px}
+
+/* ── Misc ── */
+.sep{height:1px;background:rgba(255,255,255,.05);margin:0 44px}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOAST ═══ -->
+<div class="toast" id="toast">
+  <div class="toast-ico">▶</div>
+  <div>
+    <div class="toast-title">Now Playing</div>
+    <div class="toast-sub" id="toast-msg">Loading stream…</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ LOGIN ═══════════════════════ -->
+<div class="screen active" id="s-login">
+  <div class="login-wrap">
+    <div class="login-box">
+      <div class="login-logo">📺 <span class="logo-s">Bayyari-</span><span class="logo-t">TV</span></div>
+      <div class="login-title">Welcome back</div>
+      <div class="login-sub">Enter your IPTV credentials to continue watching</div>
+
+      <label class="field-label">Server URL</label>
+      <input class="field-input" type="text" placeholder="http://your-provider.com" value="http://bayyari-tv.com">
+
+      <label class="field-label">Username</label>
+      <input class="field-input" type="text" placeholder="Your username" value="demo_user">
+
+      <label class="field-label">Password</label>
+      <input class="field-input" type="password" placeholder="Your password" value="••••••••">
+
+      <button class="login-btn" id="loginBtn">Sign In &rarr;</button>
+      <div class="login-footer">Subscription active until <span>December 31, 2025</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ HOME ═══════════════════════ -->
+<div class="screen" id="s-home">
+  <nav class="navbar">
+    <div class="logo">📺 <span class="logo-s">Bayyari-</span><span class="logo-t">TV</span></div>
+    <div class="nav-links">
+      <button class="nav-link active" onclick="go('home')">Home</button>
+      <button class="nav-link" onclick="go('live')">Live TV</button>
+      <button class="nav-link" onclick="go('movies')">Movies</button>
+      <button class="nav-link" onclick="go('series')">Series</button>
+      <button class="nav-link" onclick="go('catchup')">Catch‑Up</button>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn">🔔</button>
+      <div class="avatar">JD</div>
+    </div>
+  </nav>
+  <div class="main">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-poster"></div>
+      <div class="hero-art">🌌</div>
+      <div class="hero-fade"></div>
+      <div class="hero-content">
+        <div class="hero-badge"><div class="live-dot"></div>Featured Tonight</div>
+        <h1>Interstellar</h1>
+        <div class="hero-meta">
+          <span class="star-badge">★ 8.7</span>
+          <span>2h 49m</span>
+          <span>·</span>
+          <span>Sci‑Fi / Drama</span>
+          <span>·</span>
+          <span class="quality-tag">4K HDR</span>
+        </div>
+        <p class="hero-desc">A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival as Earth faces catastrophic climate change.</p>
+        <div class="hero-btns">
+          <button class="btn-play" onclick="toast('Interstellar')">&#9654;&nbsp; Play Now</button>
+          <button class="btn-add">＋&nbsp; My List</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat"><div class="stat-ico">📺</div><div><div class="stat-lbl">Live Channels</div><div class="stat-val">2,400+</div></div></div>
+      <div class="stat"><div class="stat-ico">🎬</div><div><div class="stat-lbl">Movies</div><div class="stat-val">18,500+</div></div></div>
+      <div class="stat"><div class="stat-ico">📡</div><div><div class="stat-lbl">Server Status</div><div class="stat-val" style="color:var(--accent);font-size:15px">● Online</div></div></div>
+      <div class="stat"><div class="stat-ico">⚡</div><div><div class="stat-lbl">Stream Quality</div><div class="stat-val" style="font-size:15px">4K / FHD</div></div></div>
+    </div>
+
+    <!-- Continue Watching -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-title">⏸ Continue Watching</div>
+        <button class="see-all">See All →</button>
+      </div>
+      <div class="row" id="continue-row"></div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- Live Now -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-title"><span style="color:var(--red)">●</span> Live Now</div>
+        <button class="see-all" onclick="go('live')">View All Channels →</button>
+      </div>
+      <div class="row" id="live-row"></div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- Trending -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-title">🔥 Trending Movies</div>
+        <button class="see-all" onclick="go('movies')">Browse All →</button>
+      </div>
+      <div class="row" id="trending-row"></div>
+    </div>
+
+    <div style="height:40px"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ LIVE TV ═══════════════════════ -->
+<div class="screen" id="s-live">
+  <nav class="navbar">
+    <div class="logo">📺 <span class="logo-s">Bayyari-</span><span class="logo-t">TV</span></div>
+    <div class="nav-links">
+      <button class="nav-link" onclick="go('home')">Home</button>
+      <button class="nav-link active">Live TV</button>
+      <button class="nav-link" onclick="go('movies')">Movies</button>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn">🔍</button>
+      <div class="avatar">JD</div>
+    </div>
+  </nav>
+  <div class="main">
+    <div class="tabs">
+      <button class="tab active">All Channels</button>
+      <button class="tab">⚽ Sports</button>
+      <button class="tab">📰 News</button>
+      <button class="tab">🎭 Entertainment</button>
+      <button class="tab">🎬 Movies</button>
+      <button class="tab">👶 Kids</button>
+    </div>
+
+    <div style="padding:0 44px 20px;display:flex;align-items:center;justify-content:space-between">
+      <div style="font-size:19px;font-weight:800">📡 Channel Guide</div>
+      <div style="font-size:13px;color:var(--text2)">Now: <strong style="color:var(--accent)">21:45</strong> &nbsp;|&nbsp; <span style="color:var(--text2)">2,400 channels live</span></div>
+    </div>
+
+    <div id="epg-wrap" style="padding:0 44px 40px"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ MOVIES ═══════════════════════ -->
+<div class="screen" id="s-movies">
+  <nav class="navbar">
+    <div class="logo">📺 <span class="logo-s">Bayyari-</span><span class="logo-t">TV</span></div>
+    <div class="nav-links">
+      <button class="nav-link" onclick="go('home')">Home</button>
+      <button class="nav-link" onclick="go('live')">Live TV</button>
+      <button class="nav-link active">Movies</button>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn">🔍</button>
+      <div class="avatar">JD</div>
+    </div>
+  </nav>
+  <div class="main" style="padding:24px 44px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px">
+      <div style="font-size:24px;font-weight:900">🎬 Movies Library <span style="font-size:14px;font-weight:400;color:var(--text2);margin-left:8px">18,500+ titles</span></div>
+      <div style="display:flex;gap:8px">
+        <select style="background:var(--bg2);color:var(--text);border:1px solid rgba(255,255,255,.08);padding:8px 14px;border-radius:9px;font-size:13px;outline:none">
+          <option>All Genres</option><option>Action</option><option>Sci-Fi</option><option>Drama</option><option>Comedy</option><option>Thriller</option>
+        </select>
+        <select style="background:var(--bg2);color:var(--text);border:1px solid rgba(255,255,255,.08);padding:8px 14px;border-radius:9px;font-size:13px;outline:none">
+          <option>Latest</option><option>Top Rated</option><option>Year</option>
+        </select>
+      </div>
+    </div>
+    <div class="movie-grid" id="movies-grid"></div>
+    <div style="height:50px"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SERIES ═══════════════════════ -->
+<div class="screen" id="s-series">
+  <nav class="navbar">
+    <div class="logo">📺 <span class="logo-s">Bayyari-</span><span class="logo-t">TV</span></div>
+    <div class="nav-links">
+      <button class="nav-link" onclick="go('home')">Home</button>
+      <button class="nav-link" onclick="go('live')">Live TV</button>
+      <button class="nav-link" onclick="go('movies')">Movies</button>
+      <button class="nav-link active">Series</button>
+    </div>
+    <div class="nav-right"><button class="icon-btn">🔍</button><div class="avatar">JD</div></div>
+  </nav>
+  <div class="main" style="padding:28px 44px">
+    <div style="font-size:24px;font-weight:900;margin-bottom:28px">📺 TV Series</div>
+    <div class="movie-grid" id="series-grid"></div>
+    <div style="height:50px"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ CATCH-UP ═══════════════════════ -->
+<div class="screen" id="s-catchup">
+  <nav class="navbar">
+    <div class="logo">📺 <span class="logo-s">Bayyari-</span><span class="logo-t">TV</span></div>
+    <div class="nav-links">
+      <button class="nav-link" onclick="go('home')">Home</button>
+      <button class="nav-link active">Catch‑Up</button>
+    </div>
+    <div class="nav-right"><div class="avatar">JD</div></div>
+  </nav>
+  <div class="main" style="padding:28px 44px">
+    <div style="font-size:24px;font-weight:900;margin-bottom:6px">⏪ Catch‑Up TV</div>
+    <div style="font-size:14px;color:var(--text2);margin-bottom:28px">Rewind & replay live TV — up to 7 days back</div>
+
+    <!-- Day picker -->
+    <div style="display:flex;gap:8px;margin-bottom:32px" id="day-picker"></div>
+
+    <!-- Catch-up programs -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px" id="catchup-grid"></div>
+    <div style="height:50px"></div>
+  </div>
+</div>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────
+const continueData=[
+  {e:'🎭',t:'Breaking Bad',s:'S3 E7 · 42 min left',p:65,c:'#18102A'},
+  {e:'🚀',t:'The Expanse',s:'S5 E2 · 28 min left',p:34,c:'#0A1A28'},
+  {e:'💼',t:'Succession',s:'S4 E1 · 15 min left',p:82,c:'#18100A'},
+  {e:'👔',t:'Severance',s:'S2 E5 · 32 min left',p:50,c:'#0A1618'},
+  {e:'🌑',t:'Dark',s:'S1 E8 · 20 min left',p:74,c:'#0E0A1C'},
+];
+
+const liveNowData=[
+  {e:'⚽',t:'BeIN Sports 1',s:'Champions League',c:'#0A1C10',tag:'LIVE'},
+  {e:'📰',t:'CNN International',s:'World News',c:'#0A101C'},
+  {e:'🎵',t:'MTV Hits',s:'Top 40 Countdown',c:'#1C0A16',tag:'HD'},
+  {e:'🏀',t:'NBA TV',s:'Lakers vs Celtics',c:'#1C0E00',tag:'LIVE'},
+  {e:'🎬',t:'HBO',s:'House of the Dragon',c:'#1A0A0A'},
+  {e:'🌍',t:'BBC News',s:'Breaking News',c:'#0A0A1C',tag:'LIVE'},
+  {e:'🎭',t:'AMC',s:'Better Call Saul',c:'#181408'},
+];
+
+const trendingData=[
+  {e:'🤖',t:'Dune: Part Two',s:'Sci‑Fi · 2024',c:'#1C1200',tag:'4K'},
+  {e:'🦇',t:'The Batman',s:'Action · 2022',c:'#050510'},
+  {e:'🌊',t:'Aquaman 2',s:'Action · 2023',c:'#001A1C'},
+  {e:'🕵️',t:'Oppenheimer',s:'Drama · 2023',c:'#0E100A',tag:'4K'},
+  {e:'🐉',t:"Dragon's Fire",s:'Fantasy · 2024',c:'#1C0500',tag:'NEW'},
+  {e:'🚗',t:'Fast & Furious 11',s:'Action · 2024',c:'#1A0800'},
+];
+
+const moviesData=[
+  {e:'🤖',t:'Dune: Part Two',y:'2024',r:'8.5',c:'#1C1200',tag:'4K'},
+  {e:'🦇',t:'The Batman',y:'2022',r:'7.9',c:'#050510'},
+  {e:'🌊',t:'Aquaman 2',y:'2023',r:'6.5',c:'#001A1C'},
+  {e:'🕵️',t:'Oppenheimer',y:'2023',r:'8.9',c:'#0E100A',tag:'4K'},
+  {e:'🐉',t:"Dragon's Fire",y:'2024',r:'7.2',c:'#1C0500',tag:'NEW'},
+  {e:'🚗',t:'Fast & Furious 11',y:'2024',r:'6.8',c:'#1A0800'},
+  {e:'🌌',t:'Interstellar',y:'2014',r:'8.7',c:'#0A0A1E'},
+  {e:'🔬',t:'Arrival',y:'2016',r:'7.9',c:'#0A1A10'},
+  {e:'🤠',t:'Mandalorian Movie',y:'2024',r:'8.1',c:'#1A0D00',tag:'NEW'},
+  {e:'👻',t:'A Quiet Place 3',y:'2024',r:'7.5',c:'#0C0C0C'},
+  {e:'🦁',t:'Planet of the Apes',y:'2024',r:'7.0',c:'#1A1000'},
+  {e:'⚡',t:'Deadpool & Wolverine',y:'2024',r:'7.8',c:'#1E0000',tag:'4K'},
+  {e:'🦸',t:'Captain America 5',y:'2024',r:'7.3',c:'#001018',tag:'NEW'},
+  {e:'🤺',t:'Gladiator II',y:'2024',r:'7.6',c:'#180E00'},
+  {e:'🌙',t:'Moonfall',y:'2022',r:'5.2',c:'#0A0A16'},
+  {e:'🎭',t:'Joker: Folie à Deux',y:'2024',r:'5.5',c:'#1A0A1A'},
+];
+
+const seriesData=[
+  {e:'🎭',t:'Breaking Bad',y:'5 Seasons',r:'9.5',c:'#18102A',tag:'4K'},
+  {e:'🌑',t:'Dark',y:'3 Seasons',r:'8.8',c:'#0E0A1C'},
+  {e:'💼',t:'Succession',y:'4 Seasons',r:'8.9',c:'#18100A',tag:'4K'},
+  {e:'🚀',t:'The Expanse',y:'6 Seasons',r:'8.5',c:'#0A1A28'},
+  {e:'👔',t:'Severance',y:'2 Seasons',r:'8.7',c:'#0A1618',tag:'NEW'},
+  {e:'🏰',t:'House of the Dragon',y:'2 Seasons',r:'8.4',c:'#1A0A0A'},
+  {e:'🤖',t:'Westworld',y:'4 Seasons',r:'8.6',c:'#0E100A'},
+  {e:'🧟',t:'The Last of Us',y:'2 Seasons',r:'8.7',c:'#0A1210',tag:'NEW'},
+  {e:'🎸',t:'Daisy Jones & The Six',y:'1 Season',r:'7.8',c:'#1A0810'},
+  {e:'🧙',t:'The Witcher',y:'3 Seasons',r:'8.1',c:'#0E0A1A'},
+  {e:'💊',t:'Dopesick',y:'1 Season',r:'8.6',c:'#100A0A'},
+  {e:'🔬',t:'Severance',y:'2 Seasons',r:'8.7',c:'#0A1618'},
+];
+
+const epgData=[
+  {e:'⚽',n:'BeIN Sports 1',ps:[{t:'Pre-Show',s:'20:30',w:90,now:false},{t:'Champions League Live',s:'21:00',w:220,now:true},{t:'Post Match',s:'23:00',w:80,now:false}]},
+  {e:'📰',n:'CNN International',ps:[{t:'World News',s:'21:00',w:130,now:true},{t:'Business Today',s:'22:00',w:110,now:false},{t:'Night Report',s:'23:00',w:90,now:false}]},
+  {e:'🎬',n:'HBO',ps:[{t:'House of Dragon',s:'20:00',w:170,now:false},{t:'The White Lotus',s:'21:30',w:140,now:true},{t:'Late Night',s:'23:00',w:80,now:false}]},
+  {e:'🏀',n:'NBA TV',ps:[{t:'Pre-Game Show',s:'20:30',w:100,now:false},{t:'Lakers vs Celtics',s:'21:00',w:210,now:true},{t:'Halftime',s:'22:50',w:70,now:false}]},
+  {e:'🌍',n:'BBC News',ps:[{t:'World Affairs',s:'20:30',w:90,now:false},{t:'Breaking Live',s:'21:30',w:160,now:true},{t:'Newsnight',s:'23:00',w:100,now:false}]},
+  {e:'🎵',n:'MTV Hits',ps:[{t:'Top 40',s:'20:00',w:110,now:false},{t:'Chart Show Live',s:'21:30',w:130,now:true},{t:'Late Night Mix',s:'23:00',w:90,now:false}]},
+  {e:'📺',n:'Al Jazeera',ps:[{t:'News Hour',s:'21:00',w:120,now:true},{t:'The Stream',s:'22:00',w:110,now:false},{t:'Inside Story',s:'23:00',w:90,now:false}]},
+];
+
+// ── Render helpers ───────────────────────────────────────────────
+function wideCard(d){
+  const w = d.t.replace(/'/g,"&#39;");
+  return `<div onclick="toast('${w}')">
+    <div class="card card-wide" style="background:${d.c};width:238px;height:136px">
+      <div class="card-face">${d.e}</div>
+      <div class="prog-bar"><div class="prog-fill" style="width:${d.p}%"></div></div>
+    </div>
+    <div class="card-meta">
+      <div class="card-name" style="max-width:238px">${d.t}</div>
+      <div class="card-sub">${d.s}</div>
+    </div>
+  </div>`;
+}
+
+function posterCard(d){
+  const tagClass = d.tag==='NEW'?'new':d.tag==='HD'?'hd':'';
+  const w = d.t.replace(/'/g,"&#39;");
+  return `<div onclick="toast('${w}')">
+    <div class="card card-poster" style="background:${d.c};width:148px;height:208px">
+      <div class="card-face">${d.e}</div>
+      ${d.tag?`<div class="card-tag ${tagClass}">${d.tag}</div>`:''}
+    </div>
+    <div class="card-meta">
+      <div class="card-name">${d.t}</div>
+      <div class="card-sub">${d.s}</div>
+    </div>
+  </div>`;
+}
+
+function movieCard(d){
+  const tagClass = d.tag==='NEW'?'new':d.tag==='4K'?'':'';
+  const w = d.t.replace(/'/g,"&#39;");
+  return `<div class="movie-card" onclick="toast('${w}')">
+    <div class="movie-poster" style="background:${d.c}">
+      ${d.e ? `<span style="font-size:44px">${d.e}</span>` : ''}
+      ${d.tag?`<div class="card-tag" style="top:8px;right:8px;position:absolute;${d.tag==='NEW'?'background:rgba(0,212,170,.9);color:#050510':''}">${d.tag}</div>`:''}
+      <div class="movie-overlay"><div class="movie-rating">★ ${d.r}</div></div>
+    </div>
+    <div class="movie-name">${d.t}</div>
+    <div class="movie-year">${d.y}</div>
+  </div>`;
+}
+
+function renderEPG(){
+  return epgData.map(ch=>`
+    <div class="epg-row">
+      <div class="epg-ch">
+        <div class="epg-ch-ico">${ch.e}</div>
+        <div>
+          <div class="epg-ch-name">${ch.n}</div>
+          <div class="live-pill" style="margin-top:4px"><div class="live-dot"></div>LIVE</div>
+        </div>
+      </div>
+      <div class="epg-progs">
+        ${ch.ps.map(p=>`
+          <div class="epg-prog ${p.now?'now':''}" style="width:${p.w}px;min-width:${p.w}px" onclick="toast('${p.t.replace(/'/g,"&#39;")}')">
+            <div class="epg-prog-t">${p.t}</div>
+            <div class="epg-prog-s">${p.s}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderDayPicker(){
+  const days=['Today','Yesterday','Mon 19','Sun 18','Sat 17','Fri 16','Thu 15'];
+  return days.map((d,i)=>`
+    <button onclick="selectDay(this)" style="padding:9px 18px;border-radius:9px;border:1px solid ${i===0?'rgba(0,212,170,.35)':'rgba(255,255,255,.08)'};background:${i===0?'rgba(0,212,170,.1)':'var(--bg2)'};color:${i===0?'var(--accent)':'var(--text2)'};font-size:13px;font-weight:600;cursor:pointer;transition:all .18s">${d}</button>
+  `).join('');
+}
+
+function renderCatchupGrid(){
+  const programs=[
+    {e:'⚽',ch:'BeIN Sports 1',t:'Champions League Highlights',time:'21:30',dur:'90 min'},
+    {e:'🎬',ch:'HBO',t:'House of the Dragon S2 E6',time:'21:30',dur:'58 min'},
+    {e:'📰',ch:'CNN',t:'World News Hour',time:'22:00',dur:'60 min'},
+    {e:'🏀',ch:'NBA TV',t:'Lakers vs Celtics Full Game',time:'21:00',dur:'2h 15min'},
+    {e:'🎵',ch:'MTV',t:'Chart Show Live',time:'21:30',dur:'60 min'},
+    {e:'🌍',ch:'BBC News',t:'Breaking News Special',time:'21:30',dur:'45 min'},
+  ];
+  return programs.map(p=>`
+    <div onclick="toast('${p.t}')" style="background:var(--card);border-radius:12px;padding:18px;cursor:pointer;border:1px solid rgba(255,255,255,.04);transition:all .2s;display:flex;gap:14px;align-items:center" onmouseover="this.style.background='var(--bg3)';this.style.borderColor='rgba(0,212,170,.2)'" onmouseout="this.style.background='var(--card)';this.style.borderColor='rgba(255,255,255,.04)'">
+      <div style="font-size:36px;flex-shrink:0">${p.e}</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.t}</div>
+        <div style="font-size:12px;color:var(--text2);margin-top:4px">${p.ch} · ${p.time} · ${p.dur}</div>
+      </div>
+      <button style="padding:8px 16px;background:var(--accent);color:#050510;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;flex-shrink:0">▶ Play</button>
+    </div>
+  `).join('');
+}
+
+// ── Navigation ───────────────────────────────────────────────────
+function go(name){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('s-'+name).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ── Toast ────────────────────────────────────────────────────────
+let toastTimer;
+function toast(title){
+  const el=document.getElementById('toast');
+  document.getElementById('toast-msg').textContent=title;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>el.classList.remove('show'),3000);
+}
+
+// ── Catch-up day select ──────────────────────────────────────────
+function selectDay(btn){
+  document.querySelectorAll('#day-picker button').forEach(b=>{
+    b.style.background='var(--bg2)';b.style.color='var(--text2)';b.style.borderColor='rgba(255,255,255,.08)';
+  });
+  btn.style.background='rgba(0,212,170,.1)';btn.style.color='var(--accent)';btn.style.borderColor='rgba(0,212,170,.35)';
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded',function(){
+  // Populate home rows
+  document.getElementById('continue-row').innerHTML=continueData.map(wideCard).join('');
+  document.getElementById('live-row').innerHTML=liveNowData.map(posterCard).join('');
+  document.getElementById('trending-row').innerHTML=trendingData.map(posterCard).join('');
+
+  // EPG
+  document.getElementById('epg-wrap').innerHTML=renderEPG();
+
+  // Movies
+  document.getElementById('movies-grid').innerHTML=moviesData.map(movieCard).join('');
+
+  // Series
+  document.getElementById('series-grid').innerHTML=seriesData.map(movieCard).join('');
+
+  // Catch-up
+  document.getElementById('day-picker').innerHTML=renderDayPicker();
+  document.getElementById('catchup-grid').innerHTML=renderCatchupGrid();
+
+  // Login button
+  document.getElementById('loginBtn').addEventListener('click',function(){
+    this.textContent='Signing in…';
+    this.style.opacity='.7';
+    setTimeout(()=>go('home'),900);
+  });
+});
+</script>
+</body>
+</html>

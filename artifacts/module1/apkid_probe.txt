@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+apkid module: <module 'apkid' from 'C:\\Users\\thaer\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\apkid\\__init__.py'>
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'apkid.cli'

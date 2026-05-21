@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.bayyari.tv.app-mergeDebugResources-63:/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\thaer\\.gradle\\caches\\9.4.1\\transforms\\7a7932c3832da071e1430c54be5e008e\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "71",
+                        "endOffsets": "122"
+                    }
+                }
+            ]
+        }
+    ]
+}

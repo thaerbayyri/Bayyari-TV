@@ -1,0 +1,12 @@
+{
+  "args": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "Proxy-Connection": "Keep-Alive", 
+    "User-Agent": "curl/8.19.0", 
+    "X-Amzn-Trace-Id": "Root=1-6a0f5383-6c54b853494d104c34212150"
+  }, 
+  "origin": "92.253.80.9", 
+  "url": "http://httpbin.org/get"
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.media3.ui.PlayerView android:id="@id/player_view" android:layout_width="match_parent" android:layout_height="match_parent" android:keepScreenOn="true" />
+    <com.bayyari.tv.ui.common.PlayerControlsView android:layout_gravity="bottom" android:id="@id/player_controls" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <com.bayyari.tv.ui.common.EpgOverlayView android:id="@id/epg_overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" />
+</FrameLayout>

@@ -1,0 +1,10 @@
+Name: apkid
+Version: 3.1.0
+Summary: Android Package Identifier
+Home-page: https://github.com/rednaga/APKiD
+Author: Caleb Fenton & Tim Strazzere
+Author-email: rednaga@protonmail.com
+License: GPL & Commercial
+Location: C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages
+Requires: yara-python-dex
+Required-by: 

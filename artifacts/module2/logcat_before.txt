@@ -1,0 +1,27 @@
+--------- beginning of system
+05-21 20:43:21.414 W/ActivityTaskManager(  551): callingPackage for (uid=2000, pid=4944) has no WPC
+05-21 20:43:21.414 D/CompatibilityChangeReporter(  551): Compat change id reported: 244637991; UID 2000; state: ENABLED
+--------- beginning of main
+05-21 20:43:21.422 D/KeyguardService(  761): setOccluded(false)
+05-21 20:43:21.422 D/KeyguardViewMediator(  761): setOccluded(false)
+05-21 20:43:21.423 D/KeyguardViewMediator(  761): handleSetOccluded(false)
+05-21 20:43:21.423 I/ActivityTaskManager(  551): START u0 {flg=0x10000000 cmp=com.bayyari.tv.debug/com.bayyari.tv.ui.MainActivity} with LAUNCH_SINGLE_TOP from uid 2000 (BAL_ALLOW_PERMISSION) result code=3
+05-21 20:43:21.425 D/WindowManagerShell(  761): onActivityRestartAttempt: ComponentInfo{com.bayyari.tv.debug/com.bayyari.tv.ui.MainActivity}
+05-21 20:43:22.948 D/ActivityManager(  551): freezing 1633 com.google.android.gms
+05-21 20:43:24.389 D/ActivityManager(  551): sync unfroze 1633 com.google.android.gms for 3
+05-21 20:43:24.410 I/netd    (  361): tetherGetStats() -> {[]} <0.93ms>
+05-21 20:43:24.413 I/netd    (  361): bandwidthSetGlobalAlert(2097152) <0.18ms>
+05-21 20:43:24.415 I/netd    (  361): bandwidthRemoveInterfaceQuota(eth0) <0.83ms>
+05-21 20:43:24.416 I/netd    (  361): bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <0.33ms>
+05-21 20:43:24.417 I/ChimeraConfigurator( 1633): Starting update, reason: 4 urgentFeatures: vision.ocr:-1
+05-21 20:43:24.439 I/ChimeraConfigurator( 1633): Detected pending changes for urgent request: [vision.ocr]. Pending module sets: container:2318189190800+mlkit.ocr.common,tflite_dynamite:2521301025100800+tflite_dynamite,vision_ocr:2316024025100000+vision.ocr
+05-21 20:43:24.447 I/GmsDebugLogger( 1633): [73] 1801
+05-21 20:43:24.450 W/ZappDownloader( 1633): No successful module downloads for requested features [vision.ocr].
+05-21 20:43:24.450 I/GmsDebugLogger( 1633): [30] [VisionOcrDynamite.integ:231602402100000],[TfliteDynamiteDynamite.integ:252130102100800],[MlkitOcrCommon.optional:231818100800]
+05-21 20:43:24.461 W/ChimeraConfigService( 1633): Retry attempt was throttled. [CONTEXT service_id=264 ]
+05-21 20:43:24.461 I/GmsDebugLogger( 1633): [83] 1 [vision.ocr]
+05-21 20:43:24.463 W/Vision  ( 1633): Request for optional module download of ocr failed. Request again.
+05-21 20:43:24.463 W/Vision  ( 1633): Would have logged:
+05-21 20:43:24.463 W/Vision  ( 1633): # dsae@37884fe7
+05-21 20:43:24.464 I/Vision  ( 1633): Schedule retrying download ocr at 2191464 with backoff 1280 seconds
+05-21 20:43:24.803 D/StatusBarIconController(  761): ignoring old pipeline callbacks, because the new mobile icons are enabled

@@ -1,0 +1,250 @@
+
+> [22:03:49.924][127.0.0.1:59505] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:03:49.925][127.0.0.1:59505] client disconnect
+  [22:03:49.925][127.0.0.1:59505] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:03:56.170][127.0.0.1:63878] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:03:56.171][127.0.0.1:63878] client disconnect
+  [22:03:56.171][127.0.0.1:63878] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:03:59.324][127.0.0.1:53237] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:03:59.325][127.0.0.1:53237] client disconnect
+  [22:03:59.326][127.0.0.1:53237] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:04:03.482][127.0.0.1:53245] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:04:03.483][127.0.0.1:53245] client disconnect
+  [22:04:03.484][127.0.0.1:53245] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:04:09.142][127.0.0.1:55126] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:04:09.143][127.0.0.1:55126] client disconnect
+  [22:04:09.143][127.0.0.1:55126] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:04:18.860][127.0.0.1:55133] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:04:18.861][127.0.0.1:55133] client disconnect
+  [22:04:18.861][127.0.0.1:55133] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:04:36.729][127.0.0.1:65350] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:04:36.730][127.0.0.1:65350] client disconnect
+  [22:04:36.731][127.0.0.1:65350] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:04:49.958][127.0.0.1:65358] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:04:49.959][127.0.0.1:65358] client disconnect
+  [22:04:49.960][127.0.0.1:65358] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:05:06.232][127.0.0.1:65364] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:05:06.233][127.0.0.1:65364] client disconnect
+  [22:05:06.233][127.0.0.1:65364] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.38.223:443)
+> [22:05:10.891][127.0.0.1:65368] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:05:10.892][127.0.0.1:65368] client disconnect
+  [22:05:10.892][127.0.0.1:65368] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:05:49.896][127.0.0.1:64625] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:05:49.896][127.0.0.1:64625] client disconnect
+  [22:05:49.897][127.0.0.1:64625] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:06:17.271][127.0.0.1:58350] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:06:17.272][127.0.0.1:58350] client disconnect
+  [22:06:17.274][127.0.0.1:58350] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:06:50.231][127.0.0.1:53063] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:06:50.232][127.0.0.1:53063] client disconnect
+  [22:06:50.232][127.0.0.1:53063] server disconnect www.google.com:443 (142.251.152.119:443)
+> 127.0.0.1:53719: GET http://httpbin.org/get
+                << 200 OK 680b
+  [22:07:46.607][127.0.0.1:55139] client connect
+> [22:07:47.585][127.0.0.1:55140] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:07:47.586][127.0.0.1:55140] client disconnect
+  [22:07:47.587][127.0.0.1:55140] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:07:47.587][127.0.0.1:55139] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:07:47.588][127.0.0.1:55139] client disconnect
+  [22:07:47.588][127.0.0.1:55139] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:07:50.209][127.0.0.1:55144] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:07:50.211][127.0.0.1:55144] client disconnect
+  [22:07:50.212][127.0.0.1:55144] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:08:24.245][127.0.0.1:62294] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:08:24.246][127.0.0.1:62294] client disconnect
+  [22:08:24.246][127.0.0.1:62294] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:08:27.299][127.0.0.1:62300] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:08:27.299][127.0.0.1:62300] client disconnect
+  [22:08:27.301][127.0.0.1:62300] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:08:50.378][127.0.0.1:60962] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:08:50.378][127.0.0.1:60962] client disconnect
+  [22:08:50.379][127.0.0.1:60962] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:09:50.264][127.0.0.1:53313] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:09:50.265][127.0.0.1:53313] client disconnect
+  [22:09:50.265][127.0.0.1:53313] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:10:36.415][127.0.0.1:53692] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:10:36.416][127.0.0.1:53692] client disconnect
+  [22:10:36.417][127.0.0.1:53692] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:10:50.157][127.0.0.1:53699] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:10:50.159][127.0.0.1:53699] client disconnect
+  [22:10:50.160][127.0.0.1:53699] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:11:50.521][127.0.0.1:53720] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:11:50.522][127.0.0.1:53720] client disconnect
+  [22:11:50.523][127.0.0.1:53720] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:12:45.796][127.0.0.1:59684] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:12:45.797][127.0.0.1:59684] client disconnect
+  [22:12:45.799][127.0.0.1:59684] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:12:50.100][127.0.0.1:64110] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:12:50.101][127.0.0.1:64110] client disconnect
+  [22:12:50.101][127.0.0.1:64110] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:13:27.593][127.0.0.1:61662] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:13:27.593][127.0.0.1:61662] client disconnect
+  [22:13:27.594][127.0.0.1:61662] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.34.223:443)
+> [22:13:27.596][127.0.0.1:61661] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:13:27.597][127.0.0.1:61661] client disconnect
+  [22:13:27.597][127.0.0.1:61661] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.34.223:443)
+> [22:13:50.497][127.0.0.1:61846] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:13:50.498][127.0.0.1:61846] client disconnect
+  [22:13:50.498][127.0.0.1:61846] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:14:46.089][127.0.0.1:49940] Client TLS handshake failed. The client does not trust the proxy's certificate for play.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+> [22:14:46.090][127.0.0.1:49939] Client TLS handshake failed. The client does not trust the proxy's certificate for play.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:14:46.090][127.0.0.1:49940] client disconnect
+  [22:14:46.091][127.0.0.1:49939] client disconnect
+> [22:14:46.137][127.0.0.1:49944] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:14:46.137][127.0.0.1:49944] client disconnect
+  [22:14:46.138][127.0.0.1:49944] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:14:49.253][127.0.0.1:49949] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:14:49.255][127.0.0.1:49949] client disconnect
+  [22:14:49.255][127.0.0.1:49949] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:14:50.343][127.0.0.1:49953] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:14:50.343][127.0.0.1:49953] client disconnect
+  [22:14:50.343][127.0.0.1:49953] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:14:52.953][127.0.0.1:49958] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:14:52.955][127.0.0.1:49958] client disconnect
+  [22:14:52.957][127.0.0.1:49958] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:14:58.650][127.0.0.1:63998] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:14:58.651][127.0.0.1:63998] client disconnect
+  [22:14:58.652][127.0.0.1:63998] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:15:08.430][127.0.0.1:52313] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:15:08.432][127.0.0.1:52313] client disconnect
+  [22:15:08.432][127.0.0.1:52313] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:15:26.302][127.0.0.1:54447] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:15:26.302][127.0.0.1:54447] client disconnect
+  [22:15:26.303][127.0.0.1:54447] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:15:50.756][127.0.0.1:54378] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:15:50.757][127.0.0.1:54378] client disconnect
+  [22:15:50.757][127.0.0.1:54378] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:15:58.420][127.0.0.1:54382] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:15:58.420][127.0.0.1:54382] client disconnect
+  [22:15:58.420][127.0.0.1:54382] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.34.223:443)
+> [22:16:00.539][127.0.0.1:54386] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:16:00.540][127.0.0.1:54386] client disconnect
+  [22:16:00.541][127.0.0.1:54386] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:16:50.732][127.0.0.1:55834] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:16:50.733][127.0.0.1:55834] client disconnect
+  [22:16:50.733][127.0.0.1:55834] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:17:06.532][127.0.0.1:58418] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:17:06.533][127.0.0.1:58418] client disconnect
+  [22:17:06.536][127.0.0.1:58418] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:17:50.671][127.0.0.1:60584] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:17:50.671][127.0.0.1:60584] client disconnect
+  [22:17:50.673][127.0.0.1:60584] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:18:24.658][127.0.0.1:50351] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:18:24.659][127.0.0.1:50351] client disconnect
+  [22:18:24.659][127.0.0.1:50351] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:18:24.924][127.0.0.1:50348] Client TLS handshake failed. The client does not trust the proxy's certificate for httpbin.org (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:18:24.925][127.0.0.1:50348] client disconnect
+  [22:18:24.925][127.0.0.1:50348] server disconnect httpbin.org:443 (52.54.122.173:443)
+> [22:18:24.999][127.0.0.1:50350] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:18:24.999][127.0.0.1:50350] client disconnect
+  [22:18:25.000][127.0.0.1:50350] server disconnect www.google.com:443 (142.251.155.119:443)
+> 127.0.0.1:53509: GET http://httpbin.org/get
+                << 200 OK 645b
+> [22:18:27.103][127.0.0.1:51957] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:18:27.103][127.0.0.1:51957] client disconnect
+  [22:18:27.104][127.0.0.1:51957] server disconnect www.google.com:443 (142.251.155.119:443)
+> [22:18:53.569][127.0.0.1:54222] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:18:53.569][127.0.0.1:54222] client disconnect
+  [22:18:53.570][127.0.0.1:54222] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:18:53.571][127.0.0.1:54221] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:18:53.572][127.0.0.1:54221] client disconnect
+  [22:18:53.572][127.0.0.1:54221] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:19:16.989][127.0.0.1:49228] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:19:16.990][127.0.0.1:49228] client disconnect
+  [22:19:16.990][127.0.0.1:49228] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:19:27.202][127.0.0.1:49235] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:19:27.202][127.0.0.1:49235] client disconnect
+  [22:19:27.203][127.0.0.1:49235] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:20:27.400][127.0.0.1:59395] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:20:27.400][127.0.0.1:59395] client disconnect
+  [22:20:27.401][127.0.0.1:59395] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:21:27.138][127.0.0.1:59119] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:21:27.139][127.0.0.1:59119] client disconnect
+  [22:21:27.141][127.0.0.1:59119] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:21:46.467][127.0.0.1:59126] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:21:46.468][127.0.0.1:59126] client disconnect
+  [22:21:46.469][127.0.0.1:59126] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:22:27.522][127.0.0.1:59141] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:22:27.523][127.0.0.1:59141] client disconnect
+  [22:22:27.524][127.0.0.1:59141] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:23:27.454][127.0.0.1:59159] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:23:27.455][127.0.0.1:59159] client disconnect
+  [22:23:27.455][127.0.0.1:59159] server disconnect www.google.com:443 (142.251.157.119:443)
+> [22:23:35.646][127.0.0.1:59164] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:23:35.646][127.0.0.1:59164] client disconnect
+  [22:23:35.647][127.0.0.1:59164] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:24:27.637][127.0.0.1:59404] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:24:27.639][127.0.0.1:59404] client disconnect
+  [22:24:27.639][127.0.0.1:59404] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:24:40.358][127.0.0.1:59408] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:24:40.358][127.0.0.1:59408] client disconnect
+  [22:24:40.359][127.0.0.1:59408] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:25:27.532][127.0.0.1:56731] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:25:27.532][127.0.0.1:56731] client disconnect
+  [22:25:27.533][127.0.0.1:56731] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:25:36.653][127.0.0.1:52956] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:25:36.654][127.0.0.1:52956] client disconnect
+  [22:25:36.655][127.0.0.1:52956] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:25:39.759][127.0.0.1:52961] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:25:39.761][127.0.0.1:52961] client disconnect
+  [22:25:39.763][127.0.0.1:52961] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:25:43.416][127.0.0.1:62324] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:25:43.417][127.0.0.1:62324] client disconnect
+  [22:25:43.418][127.0.0.1:62324] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:25:49.076][127.0.0.1:62333] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:25:49.077][127.0.0.1:62333] client disconnect
+  [22:25:49.079][127.0.0.1:62333] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:25:58.769][127.0.0.1:62340] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:25:58.771][127.0.0.1:62340] client disconnect
+  [22:25:58.771][127.0.0.1:62340] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:26:16.578][127.0.0.1:62352] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:26:16.578][127.0.0.1:62352] client disconnect
+  [22:26:16.579][127.0.0.1:62352] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:26:27.278][127.0.0.1:62361] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:26:27.278][127.0.0.1:62361] client disconnect
+  [22:26:27.279][127.0.0.1:62361] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:26:50.654][127.0.0.1:62373] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:26:50.655][127.0.0.1:62373] client disconnect
+  [22:26:50.655][127.0.0.1:62373] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:27:22.695][127.0.0.1:50203] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:27:22.696][127.0.0.1:50203] client disconnect
+  [22:27:22.697][127.0.0.1:50203] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:27:22.698][127.0.0.1:50202] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:27:22.698][127.0.0.1:50202] client disconnect
+  [22:27:22.699][127.0.0.1:50202] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:27:27.304][127.0.0.1:55716] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:27:27.305][127.0.0.1:55716] client disconnect
+  [22:27:27.306][127.0.0.1:55716] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:27:56.746][127.0.0.1:49778] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:27:56.748][127.0.0.1:49778] client disconnect
+  [22:27:56.749][127.0.0.1:49778] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:28:24.993][127.0.0.1:52074] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:28:24.994][127.0.0.1:52074] client disconnect
+  [22:28:24.995][127.0.0.1:52074] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:28:27.701][127.0.0.1:52079] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:28:27.702][127.0.0.1:52079] client disconnect
+  [22:28:27.702][127.0.0.1:52079] server disconnect www.google.com:443 (142.251.152.119:443)
+> [22:29:27.448][127.0.0.1:56824] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:29:27.448][127.0.0.1:56824] client disconnect
+  [22:29:27.449][127.0.0.1:56824] server disconnect www.google.com:443 (142.251.153.119:443)
+> [22:30:03.450][127.0.0.1:49941] Client TLS handshake failed. The client does not trust the proxy's certificate for optimizationguide-pa.googleapis.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:30:03.451][127.0.0.1:49941] client disconnect
+  [22:30:03.451][127.0.0.1:49941] server disconnect optimizationguide-pa.googleapis.com:443 (216.239.36.223:443)
+> [22:30:11.166][127.0.0.1:58346] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:30:11.167][127.0.0.1:58346] client disconnect
+  [22:30:11.168][127.0.0.1:58346] server disconnect www.google.com:443 (142.251.153.119:443)
+> [22:30:27.486][127.0.0.1:58361] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:30:27.487][127.0.0.1:58361] client disconnect
+  [22:30:27.488][127.0.0.1:58361] server disconnect www.google.com:443 (142.251.153.119:443)
+> [22:31:27.785][127.0.0.1:55430] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:31:27.786][127.0.0.1:55430] client disconnect
+  [22:31:27.787][127.0.0.1:55430] server disconnect www.google.com:443 (142.251.153.119:443)
+> [22:32:20.519][127.0.0.1:50521] Client TLS handshake failed. The client does not trust the proxy's certificate for httpbin.org (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:32:20.520][127.0.0.1:50521] client disconnect
+  [22:32:20.521][127.0.0.1:50521] server disconnect httpbin.org:443 (34.234.10.121:443)
+> [22:32:20.591][127.0.0.1:50522] Client TLS handshake failed. The client does not trust the proxy's certificate for www.google.com (OpenSSL Error([('SSL routines', '', 'ssl/tls alert certificate unknown')]))
+  [22:32:20.591][127.0.0.1:50522] client disconnect
+  [22:32:20.591][127.0.0.1:50522] server disconnect www.google.com:443 (142.251.153.119:443)
+> 127.0.0.1:50529: GET http://httpbin.org/get
+                << 200 OK 645b
+

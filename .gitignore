@@ -1,0 +1,3 @@
+# Test server credentials — NEVER commit
+app/src/test/resources/test_server.properties
+app/src/androidTest/assets/test_server.properties

@@ -1,0 +1,13 @@
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module2
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           5/21/2026  8:42 PM             20 mitm_launch.txt
+-a---           5/21/2026  9:31 PM             81 mitm_launch2.txt
+-a---           5/21/2026  9:41 PM              0 mitm_proc.txt
+-a---           5/21/2026  9:41 PM              0 mitm_ps.txt
+-a---           5/21/2026  9:42 PM           5387 mitm_version.txt
+-a---           5/21/2026  9:42 PM            114 mitm_version2.txt
+-a---           5/21/2026  9:42 PM            114 mitm_version3.txt
+

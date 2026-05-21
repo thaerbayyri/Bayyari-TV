@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  BottomNavigationView supports a maximum of 5 items. Search and Favorites are reachable
+  from the Home screen (search bar + favorites action) and from Settings; only the five
+  core sections are exposed as bottom-bar tabs.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="@string/nav_home"
+        android:icon="@drawable/ic_home" />
+    <item
+        android:id="@+id/liveFragment"
+        android:title="@string/nav_live"
+        android:icon="@drawable/ic_live" />
+    <item
+        android:id="@+id/movieFragment"
+        android:title="@string/nav_movies"
+        android:icon="@drawable/ic_movies" />
+    <item
+        android:id="@+id/seriesFragment"
+        android:title="@string/nav_series"
+        android:icon="@drawable/ic_series" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:title="@string/nav_settings"
+        android:icon="@drawable/ic_settings" />
+</menu>

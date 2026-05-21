@@ -1,0 +1,398 @@
+[
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_favorites.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_favorites.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_activity_live_player.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\activity_live_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_channel.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_channel.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_season.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_season.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_hero_gradient.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_hero_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_plus.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_plus.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_activity_tv_main.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\activity_tv_main.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-debug-65:/layout-land_activity_movie_player.xml.flat",
+        "source": "com.bayyari.tv.app-main-67:/layout-land/activity_movie_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\menu_menu_bottom_nav.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\menu\\menu_bottom_nav.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-debug-65:/layout-sw600dp-land_activity_catchup_player.xml.flat",
+        "source": "com.bayyari.tv.app-main-67:/layout-sw600dp-land/activity_catchup_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_navchip_active.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_navchip_active.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_catchup.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_catchup.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_search_all.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_search_all.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_favorites.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_favorites.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_banner_tv.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\banner_tv.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_series_detail.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_series_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_season.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_season.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_pill_accent.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_pill_accent.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_continue_watching.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_continue_watching.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_series.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_series.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable-xhdpi_banner_tv.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable-xhdpi\\banner_tv.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_live.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_live.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_tag_4k.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_tag_4k.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_movie.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_play_solid.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_play_solid.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_search_results.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_search_results.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_overlay_card_bottom.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_overlay_card_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_movie_detail.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_movie_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_search.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.bayyari.tv.app-debug-65:/layout-land_activity_catchup_player.xml.flat",
+        "source": "com.bayyari.tv.app-main-67:/layout-land/activity_catchup_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_pill_live.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_pill_live.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-debug-65:/layout-land_activity_episode_player.xml.flat",
+        "source": "com.bayyari.tv.app-main-67:/layout-land/activity_episode_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\xml_preferences_settings.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\xml\\preferences_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_episode.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_episode.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_btn_ghost.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_btn_ghost.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_epg.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_epg.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_server.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_server.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_server_manager.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_server_manager.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_star_filled.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_star_filled.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_view_epg_overlay.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\view_epg_overlay.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_category.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_category.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_live.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_live.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_tag_live.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_tag_live.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_featured.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_featured.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_movies.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_movies.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-debug-65:/layout-land_activity_live_player.xml.flat",
+        "source": "com.bayyari.tv.app-main-67:/layout-land/activity_live_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.bayyari.tv.app-debug-65:/layout-sw600dp-land_activity_movie_player.xml.flat",
+        "source": "com.bayyari.tv.app-main-67:/layout-sw600dp-land/activity_movie_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_settings.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_home.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_home.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-debug-65:/layout-sw600dp-land_activity_live_player.xml.flat",
+        "source": "com.bayyari.tv.app-main-67:/layout-sw600dp-land/activity_live_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_activity_catchup_player.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\activity_catchup_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_view_loading_state.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\view_loading_state.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_logo_tv.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_logo_tv.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_input_field.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_input_field.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_tag_new.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_tag_new.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_avatar_gradient.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_avatar_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_login.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_activity_tv_live_player.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\activity_tv_live_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_favorite.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_epg_program.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_epg_program.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_add_server.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_add_server.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.bayyari.tv.app-debug-65:/layout-sw600dp-land_activity_episode_player.xml.flat",
+        "source": "com.bayyari.tv.app-main-67:/layout-sw600dp-land/activity_episode_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_card_rounded.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_card_rounded.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_activity_movie_player.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\activity_movie_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_iconbtn_circle.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_iconbtn_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_fragment_series.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\fragment_series.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_activity_tv_movie_player.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\activity_tv_movie_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_series.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_series.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_activity_episode_player.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\activity_episode_player.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_view_player_controls.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\view_player_controls.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_item_movie.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\item_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_ic_bell.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\ic_bell.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\layout_include_stat_cell.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\layout\\include_stat_cell.xml"
+    },
+    {
+        "merged": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-debug-65:\\drawable_bg_btn_primary.xml.flat",
+        "source": "C:\\Users\\thaer\\.gradle\\daemon\\9.4.1\\com.bayyari.tv.app-main-67:\\drawable\\bg_btn_primary.xml"
+    }
+]

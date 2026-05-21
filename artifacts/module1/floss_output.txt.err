@@ -1,0 +1,4 @@
+Usage: floss [OPTIONS] COMMAND [ARGS]...
+Try 'floss --help' for help.
+
+Error: No such option: -s

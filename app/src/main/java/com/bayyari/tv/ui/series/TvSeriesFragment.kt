@@ -1,0 +1,32 @@
+package com.bayyari.tv.ui.series
+
+import android.os.Bundle
+import androidx.fragment.app.viewModels
+import androidx.leanback.app.VerticalGridSupportFragment
+import androidx.leanback.widget.ArrayObjectAdapter
+import androidx.leanback.widget.VerticalGridPresenter
+import com.bayyari.tv.ui.home.MediaCardPresenter
+import dagger.hilt.android.AndroidEntryPoint
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
+class TvSeriesFragment : VerticalGridSupportFragment() {
+
+    private val viewModel: SeriesViewModel by viewModels()
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val presenter = VerticalGridPresenter().apply { numberOfColumns = 5 }
+        setGridPresenter(presenter)
+        val adapter = ArrayObjectAdapter(MediaCardPresenter())
+        this.adapter = adapter
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.series.collectLatest { adapter.setItems(it, null) }
+        }
+
+        viewModel.refresh()
+    }
+}

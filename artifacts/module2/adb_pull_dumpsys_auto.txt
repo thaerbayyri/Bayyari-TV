@@ -1,0 +1,1 @@
+adb: error: failed to stat remote object '/sdcard/dumpsys_trust_auto.txt': No such file or directory

@@ -1,0 +1,67 @@
+.class public final Landroidx/media3/session/R$drawable;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/media3/session/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "drawable"
+.end annotation
+
+
+# static fields
+.field public static media3_icon_circular_play:I = 0x7f08014b
+
+.field public static media3_notification_pause:I = 0x7f08014c
+
+.field public static media3_notification_play:I = 0x7f08014d
+
+.field public static media3_notification_seek_back:I = 0x7f08014e
+
+.field public static media3_notification_seek_forward:I = 0x7f08014f
+
+.field public static media3_notification_seek_to_next:I = 0x7f080150
+
+.field public static media3_notification_seek_to_previous:I = 0x7f080151
+
+.field public static media3_notification_small_icon:I = 0x7f080152
+
+.field public static media_session_service_notification_ic_music_note:I = 0x7f080153
+
+.field public static notification_action_background:I = 0x7f08017a
+
+.field public static notification_bg:I = 0x7f08017b
+
+.field public static notification_bg_low:I = 0x7f08017c
+
+.field public static notification_bg_low_normal:I = 0x7f08017d
+
+.field public static notification_bg_low_pressed:I = 0x7f08017e
+
+.field public static notification_bg_normal:I = 0x7f08017f
+
+.field public static notification_bg_normal_pressed:I = 0x7f080180
+
+.field public static notification_icon_background:I = 0x7f080181
+
+.field public static notification_template_icon_bg:I = 0x7f080183
+
+.field public static notification_template_icon_low_bg:I = 0x7f080184
+
+.field public static notification_tile_bg:I = 0x7f080185
+
+.field public static notify_panel_notification_icon_bg:I = 0x7f080186
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

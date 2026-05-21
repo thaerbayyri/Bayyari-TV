@@ -1,0 +1,1 @@
+-keep,allowobfuscation,allowshrinking class com.bayyari.tv.ui.movies.MovieDetailViewModel

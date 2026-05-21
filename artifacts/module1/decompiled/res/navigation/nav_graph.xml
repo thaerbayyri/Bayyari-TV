@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/nav_graph" app:startDestination="@id/homeFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="@string/nav_home" android:name="com.bayyari.tv.ui.home.HomeFragment" android:id="@id/homeFragment" />
+    <fragment android:label="@string/nav_live" android:name="com.bayyari.tv.ui.live.LiveFragment" android:id="@id/liveFragment">
+        <action android:id="@id/action_live_to_epg" app:destination="@id/epgFragment" />
+        <action android:id="@id/action_live_to_catchup" app:destination="@id/catchUpFragment" />
+    </fragment>
+    <fragment android:label="@string/nav_movies" android:name="com.bayyari.tv.ui.movies.MovieFragment" android:id="@id/movieFragment">
+        <action android:id="@id/action_movie_to_detail" app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment android:label="@string/nav_movies" android:name="com.bayyari.tv.ui.movies.MovieDetailFragment" android:id="@id/movieDetailFragment" />
+    <fragment android:label="@string/nav_series" android:name="com.bayyari.tv.ui.series.SeriesFragment" android:id="@id/seriesFragment">
+        <action android:id="@id/action_series_to_detail" app:destination="@id/seriesDetailFragment" />
+    </fragment>
+    <fragment android:label="@string/nav_series" android:name="com.bayyari.tv.ui.series.SeriesDetailFragment" android:id="@id/seriesDetailFragment">
+        <action android:id="@id/action_series_to_season" app:destination="@id/seasonFragment" />
+    </fragment>
+    <fragment android:label="@string/nav_series" android:name="com.bayyari.tv.ui.series.SeasonFragment" android:id="@id/seasonFragment" />
+    <fragment android:label="@string/nav_search" android:name="com.bayyari.tv.ui.search.SearchFragment" android:id="@id/searchFragment" />
+    <fragment android:label="@string/nav_favorites" android:name="com.bayyari.tv.ui.favorites.FavoritesFragment" android:id="@id/favoritesFragment" />
+    <fragment android:label="@string/nav_settings" android:name="com.bayyari.tv.ui.settings.SettingsFragment" android:id="@id/settingsFragment">
+        <action android:id="@id/action_settings_to_server_manager" app:destination="@id/serverManagerFragment" />
+    </fragment>
+    <fragment android:label="@string/settings_servers" android:name="com.bayyari.tv.ui.settings.ServerManagerFragment" android:id="@id/serverManagerFragment" />
+    <fragment android:label="@string/live_epg" android:name="com.bayyari.tv.ui.live.EpgFragment" android:id="@id/epgFragment" />
+    <fragment android:label="@string/nav_catchup" android:name="com.bayyari.tv.ui.catchup.CatchUpFragment" android:id="@id/catchUpFragment" />
+</navigation>

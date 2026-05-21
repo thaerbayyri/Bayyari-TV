@@ -1,0 +1,1 @@
+Starting: Intent { dat=file:///... typ=application/x-pkcs12 cmp=com.android.certinstaller/.CertInstaller }

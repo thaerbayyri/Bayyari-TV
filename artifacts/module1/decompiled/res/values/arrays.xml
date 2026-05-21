@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>Normal</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="movie_sort_entries">
+        <item>Name</item>
+        <item>Rating</item>
+        <item>Year</item>
+        <item>Added</item>
+    </string-array>
+    <string-array name="player_entries">
+        <item>@string/settings_player_internal</item>
+        <item>@string/settings_player_vlc</item>
+        <item>@string/settings_player_mx</item>
+    </string-array>
+    <string-array name="player_values">
+        <item>internal</item>
+        <item>vlc</item>
+        <item>mx</item>
+    </string-array>
+    <string-array name="stream_entries">
+        <item>@string/settings_stream_hls</item>
+        <item>@string/settings_stream_ts</item>
+    </string-array>
+    <string-array name="stream_values">
+        <item>hls</item>
+        <item>ts</item>
+    </string-array>
+</resources>

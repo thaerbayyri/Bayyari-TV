@@ -1,0 +1,7 @@
+
+artifacts\module1\decompiled\AndroidManifest.xml:19:        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:launchMode="singleTop" android:name="com.bayyari.tv.ui.MainActivity" android:theme="@style/Theme.BayyariTv">
+artifacts\module1\decompiled\AndroidManifest.xml:25:        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.bayyari.tv.ui.TvMainActivity" android:theme="@style/Theme.BayyariTv.Leanback">
+artifacts\module1\decompiled\AndroidManifest.xml:49:        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+artifacts\module1\decompiled\AndroidManifest.xml:87:        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+artifacts\module1\decompiled\AndroidManifest.xml:95:        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+

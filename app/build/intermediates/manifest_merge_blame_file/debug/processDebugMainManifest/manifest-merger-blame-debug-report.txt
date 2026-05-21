@@ -1,0 +1,562 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.bayyari.tv.debug"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+7-->INJECTED
+8        android:minSdkVersion="23"
+8-->INJECTED
+9        android:targetSdkVersion="34" />
+9-->INJECTED
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:5:5-67
+11-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:6:5-79
+12-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:7:5-76
+13-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:7:22-73
+14    <uses-permission android:name="android.permission.WAKE_LOCK" />
+14-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:8:5-68
+14-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:8:22-65
+15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+15-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:9:5-77
+15-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:9:22-74
+16    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+16-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:10:5-92
+16-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:10:22-89
+17    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+17-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:11:5-77
+17-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:11:22-74
+18    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+18-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:12:5-81
+18-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:12:22-78
+19
+20    <!-- TV (Fire Stick / Shield) -->
+21    <uses-feature
+21-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:15:5-87
+22        android:name="android.software.leanback"
+22-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:15:19-59
+23        android:required="false" />
+23-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:15:60-84
+24    <uses-feature
+24-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:16:5-90
+25        android:name="android.hardware.touchscreen"
+25-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:16:19-62
+26        android:required="false" />
+26-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:16:63-87
+27    <uses-feature
+27-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:17:5-89
+28        android:name="android.hardware.microphone"
+28-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:17:19-61
+29        android:required="false" />
+29-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:17:62-86
+30
+31    <uses-permission android:name="com.android.providers.tv.permission.WRITE_EPG_DATA" />
+31-->[androidx.tvprovider:tvprovider:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\aaf01e37ccdd8624910ddf1be50c63b7\transformed\tvprovider-1.0.0\AndroidManifest.xml:22:5-90
+31-->[androidx.tvprovider:tvprovider:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\aaf01e37ccdd8624910ddf1be50c63b7\transformed\tvprovider-1.0.0\AndroidManifest.xml:22:22-87
+32    <uses-permission android:name="com.android.providers.tv.permission.READ_EPG_DATA" />
+32-->[androidx.tvprovider:tvprovider:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\aaf01e37ccdd8624910ddf1be50c63b7\transformed\tvprovider-1.0.0\AndroidManifest.xml:23:5-89
+32-->[androidx.tvprovider:tvprovider:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\aaf01e37ccdd8624910ddf1be50c63b7\transformed\tvprovider-1.0.0\AndroidManifest.xml:23:22-86
+33
+34    <permission
+34-->[androidx.core:core:1.12.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\61b1307243bf1e7e006143f74d31f4a2\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+35        android:name="com.bayyari.tv.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+35-->[androidx.core:core:1.12.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\61b1307243bf1e7e006143f74d31f4a2\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+36        android:protectionLevel="signature" />
+36-->[androidx.core:core:1.12.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\61b1307243bf1e7e006143f74d31f4a2\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+37
+38    <uses-permission android:name="com.bayyari.tv.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+38-->[androidx.core:core:1.12.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\61b1307243bf1e7e006143f74d31f4a2\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+38-->[androidx.core:core:1.12.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\61b1307243bf1e7e006143f74d31f4a2\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+39
+40    <application
+40-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:19:5-146:19
+41        android:name="com.bayyari.tv.MyIptvApp"
+41-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:20:9-34
+42        android:allowBackup="false"
+42-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:21:9-36
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.12.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\61b1307243bf1e7e006143f74d31f4a2\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+44        android:banner="@drawable/banner_tv"
+44-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:26:9-45
+45        android:dataExtractionRules="@xml/data_extraction_rules"
+45-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:22:9-65
+46        android:debuggable="true"
+47        android:extractNativeLibs="false"
+47-->INJECTED
+48        android:fullBackupContent="@xml/backup_rules"
+48-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:23:9-54
+49        android:icon="@mipmap/ic_launcher"
+49-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:24:9-43
+50        android:label="@string/app_name"
+50-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:27:9-41
+51        android:largeHeap="true"
+51-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:28:9-33
+52        android:networkSecurityConfig="@xml/network_security_config"
+52-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:29:9-69
+53        android:roundIcon="@mipmap/ic_launcher_round"
+53-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:25:9-54
+54        android:supportsRtl="true"
+54-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:30:9-35
+55        android:theme="@style/Theme.BayyariTv"
+55-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:31:9-47
+56        android:usesCleartextTraffic="true" >
+56-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:32:9-44
+57
+58        <!-- Phone / tablet launcher -->
+59        <activity
+59-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:36:9-47:20
+60            android:name="com.bayyari.tv.ui.MainActivity"
+60-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:37:13-44
+61            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
+61-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:39:13-106
+62            android:exported="true"
+62-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:38:13-36
+63            android:launchMode="singleTop"
+63-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:40:13-43
+64            android:screenOrientation="sensorLandscape"
+64-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:41:13-56
+65            android:theme="@style/Theme.BayyariTv" >
+65-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:42:13-51
+66            <intent-filter>
+66-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:43:13-46:29
+67                <action android:name="android.intent.action.MAIN" />
+67-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:44:17-69
+67-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:44:25-66
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:45:17-77
+69-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:45:27-74
+70            </intent-filter>
+71        </activity>
+72
+73        <!-- Android TV launcher -->
+74        <activity
+74-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:50:9-61:20
+75            android:name="com.bayyari.tv.ui.TvMainActivity"
+75-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:51:13-46
+76            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout"
+76-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:53:13-87
+77            android:exported="true"
+77-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:52:13-36
+78            android:launchMode="singleTop"
+78-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:54:13-43
+79            android:screenOrientation="sensorLandscape"
+79-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:55:13-56
+80            android:theme="@style/Theme.BayyariTv.Leanback" >
+80-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:56:13-60
+81            <intent-filter>
+81-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:57:13-60:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:44:17-69
+82-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:44:25-66
+83
+84                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+84-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:59:17-86
+84-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:59:27-83
+85            </intent-filter>
+86        </activity>
+87        <activity
+87-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:63:9-67:66
+88            android:name="com.bayyari.tv.ui.auth.LoginActivity"
+88-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:64:13-50
+89            android:exported="false"
+89-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:65:13-37
+90            android:screenOrientation="portrait"
+90-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:66:13-49
+91            android:theme="@style/Theme.BayyariTv.NoActionBar" />
+91-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:67:13-63
+92        <activity
+92-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:69:9-77:65
+93            android:name="com.bayyari.tv.ui.live.LivePlayerActivity"
+93-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:70:13-55
+94            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
+94-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:72:13-106
+95            android:exported="false"
+95-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:71:13-37
+96            android:launchMode="singleTask"
+96-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:73:13-44
+97            android:resizeableActivity="true"
+97-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:75:13-46
+98            android:screenOrientation="sensorLandscape"
+98-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:74:13-56
+99            android:supportsPictureInPicture="true"
+99-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:76:13-52
+100            android:theme="@style/Theme.BayyariTv.Fullscreen" />
+100-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:77:13-62
+101        <activity
+101-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:79:9-87:65
+102            android:name="com.bayyari.tv.ui.live.TvLivePlayerActivity"
+102-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:80:13-57
+103            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout"
+103-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:82:13-87
+104            android:exported="false"
+104-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:81:13-37
+105            android:launchMode="singleTask"
+105-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:83:13-44
+106            android:resizeableActivity="true"
+106-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:85:13-46
+107            android:screenOrientation="sensorLandscape"
+107-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:84:13-56
+108            android:supportsPictureInPicture="true"
+108-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:86:13-52
+109            android:theme="@style/Theme.BayyariTv.Fullscreen" />
+109-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:87:13-62
+110        <activity
+110-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:89:9-96:65
+111            android:name="com.bayyari.tv.ui.movies.MoviePlayerActivity"
+111-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:90:13-58
+112            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
+112-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:92:13-106
+113            android:exported="false"
+113-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:91:13-37
+114            android:resizeableActivity="true"
+114-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:94:13-46
+115            android:screenOrientation="sensorLandscape"
+115-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:93:13-56
+116            android:supportsPictureInPicture="true"
+116-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:95:13-52
+117            android:theme="@style/Theme.BayyariTv.Fullscreen" />
+117-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:96:13-62
+118        <activity
+118-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:98:9-105:65
+119            android:name="com.bayyari.tv.ui.movies.TvMoviePlayerActivity"
+119-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:99:13-60
+120            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout"
+120-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:101:13-87
+121            android:exported="false"
+121-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:100:13-37
+122            android:resizeableActivity="true"
+122-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:103:13-46
+123            android:screenOrientation="sensorLandscape"
+123-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:102:13-56
+124            android:supportsPictureInPicture="true"
+124-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:104:13-52
+125            android:theme="@style/Theme.BayyariTv.Fullscreen" />
+125-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:105:13-62
+126        <activity
+126-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:107:9-114:65
+127            android:name="com.bayyari.tv.ui.series.EpisodePlayerActivity"
+127-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:108:13-60
+128            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
+128-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:110:13-106
+129            android:exported="false"
+129-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:109:13-37
+130            android:resizeableActivity="true"
+130-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:112:13-46
+131            android:screenOrientation="sensorLandscape"
+131-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:111:13-56
+132            android:supportsPictureInPicture="true"
+132-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:113:13-52
+133            android:theme="@style/Theme.BayyariTv.Fullscreen" />
+133-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:114:13-62
+134        <activity
+134-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:116:9-123:65
+135            android:name="com.bayyari.tv.ui.catchup.CatchUpPlayerActivity"
+135-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:117:13-61
+136            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
+136-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:119:13-106
+137            android:exported="false"
+137-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:118:13-37
+138            android:resizeableActivity="true"
+138-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:121:13-46
+139            android:screenOrientation="sensorLandscape"
+139-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:120:13-56
+140            android:supportsPictureInPicture="true"
+140-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:122:13-52
+141            android:theme="@style/Theme.BayyariTv.Fullscreen" />
+141-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:123:13-62
+142
+143        <!-- Background media playback service (MediaSession) -->
+144        <service
+144-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:126:9-133:19
+145            android:name="com.bayyari.tv.player.PlayerService"
+145-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:127:13-49
+146            android:exported="false"
+146-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:128:13-37
+147            android:foregroundServiceType="mediaPlayback" >
+147-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:129:13-58
+148            <intent-filter>
+148-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:130:13-132:29
+149                <action android:name="androidx.media3.session.MediaSessionService" />
+149-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:131:17-86
+149-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:131:25-83
+150            </intent-filter>
+151        </service>
+152
+153        <!-- WorkManager initializer (Hilt-managed) -->
+154        <provider
+154-->INJECTED
+155            android:name="androidx.startup.InitializationProvider"
+155-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:137:13-67
+156            android:authorities="com.bayyari.tv.debug.androidx-startup"
+156-->INJECTED
+157            android:exported="false" >
+157-->E:\nashamaiptv page\apps\BAYYARI player\app\src\main\AndroidManifest.xml:139:13-37
+158            <meta-data
+158-->[androidx.emoji2:emoji2:1.2.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\2bde3130b4b41df34d9c9a8e45e0c337\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+159                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+159-->[androidx.emoji2:emoji2:1.2.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\2bde3130b4b41df34d9c9a8e45e0c337\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+160                android:value="androidx.startup" />
+160-->[androidx.emoji2:emoji2:1.2.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\2bde3130b4b41df34d9c9a8e45e0c337\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+161            <meta-data
+161-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\23d1b890727fc9899fd6734c78fb6468\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+162                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+162-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\23d1b890727fc9899fd6734c78fb6468\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+163                android:value="androidx.startup" />
+163-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\23d1b890727fc9899fd6734c78fb6468\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+164            <meta-data
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+165                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+166                android:value="androidx.startup" />
+166-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+167        </provider>
+168
+169        <service
+169-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:39:9-45:35
+170            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+170-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:40:13-88
+171            android:directBootAware="false"
+171-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:41:13-44
+172            android:enabled="@bool/enable_system_alarm_service_default"
+172-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:42:13-72
+173            android:exported="false" />
+173-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:43:13-37
+174        <service
+174-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:46:9-52:35
+175            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+175-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:47:13-84
+176            android:directBootAware="false"
+176-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:48:13-44
+177            android:enabled="@bool/enable_system_job_service_default"
+177-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:49:13-70
+178            android:exported="true"
+178-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:50:13-36
+179            android:permission="android.permission.BIND_JOB_SERVICE" />
+179-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:51:13-69
+180        <service
+180-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:53:9-59:35
+181            android:name="androidx.work.impl.foreground.SystemForegroundService"
+181-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:54:13-81
+182            android:directBootAware="false"
+182-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:55:13-44
+183            android:enabled="@bool/enable_system_foreground_service_default"
+183-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:56:13-77
+184            android:exported="false" />
+184-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:57:13-37
+185
+186        <receiver
+186-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:61:9-66:35
+187            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+187-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:62:13-88
+188            android:directBootAware="false"
+188-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:63:13-44
+189            android:enabled="true"
+189-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:64:13-35
+190            android:exported="false" />
+190-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:65:13-37
+191        <receiver
+191-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:67:9-77:20
+192            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+192-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:68:13-106
+193            android:directBootAware="false"
+193-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:69:13-44
+194            android:enabled="false"
+194-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:70:13-36
+195            android:exported="false" >
+195-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:71:13-37
+196            <intent-filter>
+196-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:73:13-76:29
+197                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+197-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:17-87
+197-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:74:25-84
+198                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+198-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:17-90
+198-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:75:25-87
+199            </intent-filter>
+200        </receiver>
+201        <receiver
+201-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:78:9-88:20
+202            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+202-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:79:13-104
+203            android:directBootAware="false"
+203-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:80:13-44
+204            android:enabled="false"
+204-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:81:13-36
+205            android:exported="false" >
+205-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:82:13-37
+206            <intent-filter>
+206-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:84:13-87:29
+207                <action android:name="android.intent.action.BATTERY_OKAY" />
+207-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:17-77
+207-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:85:25-74
+208                <action android:name="android.intent.action.BATTERY_LOW" />
+208-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:17-76
+208-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:86:25-73
+209            </intent-filter>
+210        </receiver>
+211        <receiver
+211-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:89:9-99:20
+212            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+212-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:90:13-104
+213            android:directBootAware="false"
+213-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:91:13-44
+214            android:enabled="false"
+214-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:92:13-36
+215            android:exported="false" >
+215-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:93:13-37
+216            <intent-filter>
+216-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:95:13-98:29
+217                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+217-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:17-83
+217-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:96:25-80
+218                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+218-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:17-82
+218-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:97:25-79
+219            </intent-filter>
+220        </receiver>
+221        <receiver
+221-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:100:9-109:20
+222            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+222-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:101:13-103
+223            android:directBootAware="false"
+223-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:102:13-44
+224            android:enabled="false"
+224-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:103:13-36
+225            android:exported="false" >
+225-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:104:13-37
+226            <intent-filter>
+226-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:106:13-108:29
+227                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+227-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:17-79
+227-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:107:25-76
+228            </intent-filter>
+229        </receiver>
+230        <receiver
+230-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:110:9-121:20
+231            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+231-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:111:13-88
+232            android:directBootAware="false"
+232-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:112:13-44
+233            android:enabled="false"
+233-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:113:13-36
+234            android:exported="false" >
+234-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:114:13-37
+235            <intent-filter>
+235-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:116:13-120:29
+236                <action android:name="android.intent.action.BOOT_COMPLETED" />
+236-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:17-79
+236-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:25-76
+237                <action android:name="android.intent.action.TIME_SET" />
+237-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:17-73
+237-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:25-70
+238                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+238-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:17-81
+238-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:119:25-78
+239            </intent-filter>
+240        </receiver>
+241        <receiver
+241-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:122:9-131:20
+242            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+242-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:123:13-99
+243            android:directBootAware="false"
+243-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:124:13-44
+244            android:enabled="@bool/enable_system_alarm_service_default"
+244-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:125:13-72
+245            android:exported="false" >
+245-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:126:13-37
+246            <intent-filter>
+246-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:128:13-130:29
+247                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+247-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:17-98
+247-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:129:25-95
+248            </intent-filter>
+249        </receiver>
+250        <receiver
+250-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:132:9-142:20
+251            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+251-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:133:13-78
+252            android:directBootAware="false"
+252-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:134:13-44
+253            android:enabled="true"
+253-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:135:13-35
+254            android:exported="true"
+254-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:136:13-36
+255            android:permission="android.permission.DUMP" >
+255-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:137:13-57
+256            <intent-filter>
+256-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:139:13-141:29
+257                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+257-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:17-88
+257-->[androidx.work:work-runtime:2.9.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4998db2694ef374d0c943b8dc74405b7\transformed\work-runtime-2.9.0\AndroidManifest.xml:140:25-85
+258            </intent-filter>
+259        </receiver>
+260
+261        <uses-library
+261-->[androidx.window:window:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\d52937bb451f045c44f39b49b080baa4\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+262            android:name="androidx.window.extensions"
+262-->[androidx.window:window:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\d52937bb451f045c44f39b49b080baa4\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+263            android:required="false" />
+263-->[androidx.window:window:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\d52937bb451f045c44f39b49b080baa4\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+264        <uses-library
+264-->[androidx.window:window:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\d52937bb451f045c44f39b49b080baa4\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+265            android:name="androidx.window.sidecar"
+265-->[androidx.window:window:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\d52937bb451f045c44f39b49b080baa4\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+266            android:required="false" />
+266-->[androidx.window:window:1.0.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\d52937bb451f045c44f39b49b080baa4\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+267
+268        <service
+268-->[androidx.room:room-runtime-android:2.8.4] C:\Users\thaer\.gradle\caches\9.4.1\transforms\6604df82af8d17e9a48eae8c67e65f86\transformed\room-runtime\AndroidManifest.xml:24:9-28:63
+269            android:name="androidx.room.MultiInstanceInvalidationService"
+269-->[androidx.room:room-runtime-android:2.8.4] C:\Users\thaer\.gradle\caches\9.4.1\transforms\6604df82af8d17e9a48eae8c67e65f86\transformed\room-runtime\AndroidManifest.xml:25:13-74
+270            android:directBootAware="true"
+270-->[androidx.room:room-runtime-android:2.8.4] C:\Users\thaer\.gradle\caches\9.4.1\transforms\6604df82af8d17e9a48eae8c67e65f86\transformed\room-runtime\AndroidManifest.xml:26:13-43
+271            android:exported="false" />
+271-->[androidx.room:room-runtime-android:2.8.4] C:\Users\thaer\.gradle\caches\9.4.1\transforms\6604df82af8d17e9a48eae8c67e65f86\transformed\room-runtime\AndroidManifest.xml:27:13-37
+272
+273        <receiver
+273-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+274            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+274-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+275            android:directBootAware="false"
+275-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+276            android:enabled="true"
+276-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+277            android:exported="true"
+277-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+278            android:permission="android.permission.DUMP" >
+278-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+279            <intent-filter>
+279-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+280                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+280-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+280-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+281            </intent-filter>
+282            <intent-filter>
+282-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+283                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+283-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+283-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+284            </intent-filter>
+285            <intent-filter>
+285-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+286                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+286-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+286-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+287            </intent-filter>
+288            <intent-filter>
+288-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+289                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+289-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+289-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\thaer\.gradle\caches\9.4.1\transforms\4347b8717c182bc97f3aa0dd5d0bc28b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+290            </intent-filter>
+291        </receiver>
+292    </application>
+293
+294</manifest>

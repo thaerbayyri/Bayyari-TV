@@ -1,0 +1,1 @@
+SUCCESS: The process "mitmdump.exe" with PID 31788 has been terminated.

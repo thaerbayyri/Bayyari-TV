@@ -1,0 +1,1 @@
+E:\mitmconf\frida-server-17.9.10-android-x86_64: 1 file pushed, 0 skipped. 144.1 MB/s (110833224 bytes in 0.734s)

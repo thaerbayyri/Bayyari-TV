@@ -1,0 +1,3 @@
+total 16
+-rw-rw---- 1 u0_a172 media_rw 1035 2026-05-21 21:50 mitmproxy-ca-cert.p12
+-rw-rw---- 1 u0_a172 media_rw 1172 2026-05-21 21:50 mitmproxy-ca-cert.pem

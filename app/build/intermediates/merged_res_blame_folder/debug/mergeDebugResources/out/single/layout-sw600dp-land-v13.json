@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout-sw600dp-land-v13/activity_movie_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout-sw600dp-land/activity_movie_player.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout-sw600dp-land-v13/activity_live_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout-sw600dp-land/activity_live_player.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout-sw600dp-land-v13/activity_episode_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout-sw600dp-land/activity_episode_player.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout-sw600dp-land-v13/activity_catchup_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout-sw600dp-land/activity_catchup_player.xml"
+    }
+]

@@ -1,0 +1,1 @@
+/sdcard/window_dump_sec_6.xml: 1 file pulled, 0 skipped. 8.1 MB/s (19217 bytes in 0.002s)

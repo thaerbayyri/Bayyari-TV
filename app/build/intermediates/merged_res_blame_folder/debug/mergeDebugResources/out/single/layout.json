@@ -1,0 +1,166 @@
+[
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_channel.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_channel.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/view_epg_overlay.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/view_epg_overlay.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_series_detail.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_series_detail.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_movie_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_movie_player.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_favorites.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_favorites.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_movie.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_movie.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_epg_program.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_epg_program.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_catchup_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_catchup_player.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_search_all.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_search_all.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_server.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_server.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_live.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_live.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_season.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_season.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_series.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_series.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_continue_watching.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_continue_watching.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_series.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_series.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_settings.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_tv_live_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_tv_live_player.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_login.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_movie.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_movie.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/view_player_controls.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/view_player_controls.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_episode_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_episode_player.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_home.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_search.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_search.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/include_stat_cell.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/include_stat_cell.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/view_loading_state.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/view_loading_state.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_login.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_epg.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_epg.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_catchup.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_catchup.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_favorite.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_favorite.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_movie_detail.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_movie_detail.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_featured.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_featured.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_tv_main.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_tv_main.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_add_server.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_add_server.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_tv_movie_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_tv_movie_player.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_episode.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_episode.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_season.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_season.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_live_player.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_live_player.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_server_manager.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_server_manager.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_main.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_category.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_category.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_search_results.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/fragment_search_results.xml"
+    }
+]

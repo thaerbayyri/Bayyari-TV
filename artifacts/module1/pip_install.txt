@@ -1,0 +1,29 @@
+Collecting apkid
+  Downloading apkid-3.1.0-py2.py3-none-any.whl.metadata (7.9 kB)
+Collecting floss
+  Downloading floss-0.1.0-py3-none-any.whl.metadata (26 kB)
+Collecting yara-python-dex>=1.0.1 (from apkid)
+  Downloading yara_python_dex-1.0.7-cp311-cp311-win_amd64.whl.metadata (2.7 kB)
+Requirement already satisfied: rich>=14.0.1 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from floss) (14.3.3)
+Requirement already satisfied: click>=8.1.8 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from floss) (8.3.1)
+Requirement already satisfied: pytest>=8.3.5 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from floss) (9.0.2)
+Requirement already satisfied: numpy>=1.24.4 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from floss) (1.26.4)
+Requirement already satisfied: coverage>=7.6.1 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from floss) (7.14.0)
+Requirement already satisfied: pytest-cov>=4.0.0 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from floss) (7.1.0)
+Requirement already satisfied: colorama in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from click>=8.1.8->floss) (0.4.6)
+Requirement already satisfied: iniconfig>=1.0.1 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from pytest>=8.3.5->floss) (2.3.0)
+Requirement already satisfied: packaging>=22 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from pytest>=8.3.5->floss) (26.0)
+Requirement already satisfied: pluggy<2,>=1.5 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from pytest>=8.3.5->floss) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from pytest>=8.3.5->floss) (2.19.2)
+Requirement already satisfied: markdown-it-py>=2.2.0 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from rich>=14.0.1->floss) (4.0.0)
+Requirement already satisfied: mdurl~=0.1 in C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages (from markdown-it-py>=2.2.0->rich>=14.0.1->floss) (0.1.2)
+Downloading apkid-3.1.0-py2.py3-none-any.whl (197 kB)
+Downloading floss-0.1.0-py3-none-any.whl (98 kB)
+Downloading yara_python_dex-1.0.7-cp311-cp311-win_amd64.whl (129 kB)
+Installing collected packages: yara-python-dex, apkid, floss
+  WARNING: The script apkid.exe is installed in 'C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script floss.exe is installed in 'C:\Users\thaer\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+Successfully installed apkid-3.1.0 floss-0.1.0 yara-python-dex-1.0.7

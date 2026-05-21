@@ -1,0 +1,7 @@
+total 64
+drwxrwx--x  3 system system  4096 2026-05-21 16:07 .
+drwxrwx--t 67 system misc    4096 2026-05-21 16:05 ..
+drwx--x--x  2 system system  4096 2026-05-21 16:07 metadata
+-rw-r--r--  1 system system 39938 2026-05-21 16:07 pins
+-rw-r--r--  1 system system   860 2026-05-21 16:06 pubkey_blacklist.txt
+-rw-r--r--  1 system system     0 2026-05-21 16:06 serial_blacklist.txt

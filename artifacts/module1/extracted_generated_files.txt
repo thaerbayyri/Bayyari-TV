@@ -1,0 +1,2692 @@
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                extracted
+-a---           5/21/2026  8:07 PM           5993 aapt_badging.txt
+-a---           5/21/2026  8:07 PM             38 adb_install.txt
+-a---           5/21/2026  8:07 PM             17 apkid.txt
+-a---           5/21/2026  8:07 PM             19 apktool.txt
+-a---           5/21/2026  8:07 PM             60 boot_status.txt
+-a---           5/21/2026  8:07 PM             31 exported_true.txt
+-a---           5/21/2026  8:09 PM              0 extracted_generated_files.txt
+-a---           5/21/2026  8:09 PM              0 extracted_strings_search.txt
+-a---           5/21/2026  8:07 PM            860 generated_files.txt
+-a---           5/21/2026  8:09 PM           2835 manifest_exported_search.txt
+-a---           5/21/2026  8:09 PM          19423 manifest_xmltree.txt
+-a---           5/21/2026  8:06 PM             81 sdk_launch.txt
+-a---           5/21/2026  8:06 PM            171 sdk_search.txt
+-a---           5/21/2026  8:07 PM             19 strings_search.txt
+-a---           5/21/2026  8:07 PM            104 summary.txt
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                kotlin
+d----           5/21/2026  8:09 PM                META-INF
+d----           5/21/2026  8:09 PM                okhttp3
+d----           5/21/2026  8:09 PM                res
+-a---            1/1/1981  1:01 AM          17236 AndroidManifest.xml
+-a---            1/1/1981  1:01 AM       11053800 classes.dex
+-a---            1/1/1981  1:01 AM          69320 classes10.dex
+-a---            1/1/1981  1:01 AM          27816 classes11.dex
+-a---            1/1/1981  1:01 AM         133320 classes12.dex
+-a---            1/1/1981  1:01 AM         135048 classes13.dex
+-a---            1/1/1981  1:01 AM         134536 classes14.dex
+-a---            1/1/1981  1:01 AM          69368 classes15.dex
+-a---            1/1/1981  1:01 AM          12260 classes16.dex
+-a---            1/1/1981  1:01 AM         124340 classes17.dex
+-a---            1/1/1981  1:01 AM        2394312 classes18.dex
+-a---            1/1/1981  1:01 AM        7453024 classes19.dex
+-a---            1/1/1981  1:01 AM         727044 classes2.dex
+-a---            1/1/1981  1:01 AM        7583468 classes20.dex
+-a---            1/1/1981  1:01 AM         135028 classes3.dex
+-a---            1/1/1981  1:01 AM          56344 classes4.dex
+-a---            1/1/1981  1:01 AM          85004 classes5.dex
+-a---            1/1/1981  1:01 AM          35824 classes6.dex
+-a---            1/1/1981  1:01 AM         120996 classes7.dex
+-a---            1/1/1981  1:01 AM          77660 classes8.dex
+-a---            1/1/1981  1:01 AM          86720 classes9.dex
+-a---            1/1/1981  1:01 AM           1738 DebugProbesKt.bin
+-a---            1/1/1981  1:01 AM        1765372 resources.arsc
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\kotlin
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                annotation
+d----           5/21/2026  8:09 PM                collections
+d----           5/21/2026  8:09 PM                concurrent
+d----           5/21/2026  8:09 PM                coroutines
+d----           5/21/2026  8:09 PM                internal
+d----           5/21/2026  8:09 PM                ranges
+d----           5/21/2026  8:09 PM                reflect
+-a---            1/1/1981  1:01 AM          29399 kotlin.kotlin_builtins
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\kotlin\annotation
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           1006 annotation.kotlin_builtins
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\kotlin\collections
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           8308 collections.kotlin_builtins
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\kotlin\concurrent
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                atomics
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\kotlin\concurrent\atomics
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           2674 atomics.kotlin_builtins
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\kotlin\coroutines
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            137 coroutines.kotlin_builtins
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\kotlin\internal
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            590 internal.kotlin_builtins
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\kotlin\ranges
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           4184 ranges.kotlin_builtins
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\kotlin\reflect
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           4827 reflect.kotlin_builtins
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                androidx
+d----           5/21/2026  8:09 PM                com
+d----           5/21/2026  8:09 PM                services
+-a---            1/1/1981  1:01 AM              6 androidx.activity_activity-ktx
+                                                  .version
+-a---            1/1/1981  1:01 AM              6 androidx.activity_activity.ver
+                                                  sion
+-a---            1/1/1981  1:01 AM              6 androidx.annotation_annotation
+                                                  -experimental.version
+-a---            1/1/1981  1:01 AM              6 androidx.appcompat_appcompat-r
+                                                  esources.version
+-a---            1/1/1981  1:01 AM              6 androidx.appcompat_appcompat.v
+                                                  ersion
+-a---            1/1/1981  1:01 AM             67 androidx.arch.core_core-runtim
+                                                  e.version
+-a---            1/1/1981  1:01 AM              6 androidx.cardview_cardview.ver
+                                                  sion
+-a---            1/1/1981  1:01 AM              6 androidx.coordinatorlayout_coo
+                                                  rdinatorlayout.version
+-a---            1/1/1981  1:01 AM              7 androidx.core_core-ktx.version
+-a---            1/1/1981  1:01 AM              7 androidx.core_core.version
+-a---            1/1/1981  1:01 AM              6 androidx.cursoradapter_cursora
+                                                  dapter.version
+-a---            1/1/1981  1:01 AM              6 androidx.customview_customview
+                                                  -poolingcontainer.version
+-a---            1/1/1981  1:01 AM              6 androidx.customview_customview
+                                                  .version
+-a---            1/1/1981  1:01 AM              5 androidx.databinding_viewbindi
+                                                  ng.version
+-a---            1/1/1981  1:01 AM              6 androidx.documentfile_document
+                                                  file.version
+-a---            1/1/1981  1:01 AM              6 androidx.drawerlayout_drawerla
+                                                  yout.version
+-a---            1/1/1981  1:01 AM              6 androidx.dynamicanimation_dyna
+                                                  micanimation.version
+-a---            1/1/1981  1:01 AM              6 androidx.emoji2_emoji2-views-h
+                                                  elper.version
+-a---            1/1/1981  1:01 AM              6 androidx.emoji2_emoji2.version
+-a---            1/1/1981  1:01 AM              6 androidx.exifinterface_exifint
+                                                  erface.version
+-a---            1/1/1981  1:01 AM              6 androidx.fragment_fragment-ktx
+                                                  .version
+-a---            1/1/1981  1:01 AM              6 androidx.fragment_fragment.ver
+                                                  sion
+-a---            1/1/1981  1:01 AM              6 androidx.hilt_hilt-work.versio
+                                                  n
+-a---            1/1/1981  1:01 AM              6 androidx.interpolator_interpol
+                                                  ator.version
+-a---            1/1/1981  1:01 AM             14 androidx.leanback_leanback-gri
+                                                  d.version
+-a---            1/1/1981  1:01 AM             14 androidx.leanback_leanback-pre
+                                                  ference.version
+-a---            1/1/1981  1:01 AM             14 androidx.leanback_leanback.ver
+                                                  sion
+-a---            1/1/1981  1:01 AM              6 androidx.legacy_legacy-support
+                                                  -core-utils.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-l
+                                                  ivedata-core-ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-l
+                                                  ivedata-core.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-l
+                                                  ivedata-ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-l
+                                                  ivedata.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-p
+                                                  rocess.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-r
+                                                  untime-ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-r
+                                                  untime.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-s
+                                                  ervice.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-v
+                                                  iewmodel-ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-v
+                                                  iewmodel-savedstate.version
+-a---            1/1/1981  1:01 AM              6 androidx.lifecycle_lifecycle-v
+                                                  iewmodel.version
+-a---            1/1/1981  1:01 AM              6 androidx.loader_loader.version
+-a---            1/1/1981  1:01 AM              6 androidx.localbroadcastmanager
+                                                  _localbroadcastmanager.version
+-a---            1/1/1981  1:01 AM              6 androidx.media_media.version
+-a---            1/1/1981  1:01 AM              6 androidx.navigation_navigation
+                                                  -common-ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.navigation_navigation
+                                                  -common.version
+-a---            1/1/1981  1:01 AM              6 androidx.navigation_navigation
+                                                  -fragment-ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.navigation_navigation
+                                                  -fragment.version
+-a---            1/1/1981  1:01 AM              6 androidx.navigation_navigation
+                                                  -runtime-ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.navigation_navigation
+                                                  -runtime.version
+-a---            1/1/1981  1:01 AM              6 androidx.navigation_navigation
+                                                  -ui-ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.navigation_navigation
+                                                  -ui.version
+-a---            1/1/1981  1:01 AM              6 androidx.preference_preference
+                                                  -ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.preference_preference
+                                                  .version
+-a---            1/1/1981  1:01 AM              6 androidx.print_print.version
+-a---            1/1/1981  1:01 AM              6 androidx.profileinstaller_prof
+                                                  ileinstaller.version
+-a---            1/1/1981  1:01 AM              6 androidx.recyclerview_recycler
+                                                  view.version
+-a---            1/1/1981  1:01 AM              6 androidx.room_room-ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.room_room-runtime.ver
+                                                  sion
+-a---            1/1/1981  1:01 AM              6 androidx.savedstate_savedstate
+                                                  -ktx.version
+-a---            1/1/1981  1:01 AM              6 androidx.savedstate_savedstate
+                                                  .version
+-a---            1/1/1981  1:01 AM             14 androidx.security_security-cry
+                                                  pto.version
+-a---            1/1/1981  1:01 AM              6 androidx.slidingpanelayout_sli
+                                                  dingpanelayout.version
+-a---            1/1/1981  1:01 AM              6 androidx.sqlite_sqlite-framewo
+                                                  rk.version
+-a---            1/1/1981  1:01 AM              6 androidx.sqlite_sqlite.version
+-a---            1/1/1981  1:01 AM              6 androidx.startup_startup-runti
+                                                  me.version
+-a---            1/1/1981  1:01 AM              6 androidx.swiperefreshlayout_sw
+                                                  iperefreshlayout.version
+-a---            1/1/1981  1:01 AM              6 androidx.tracing_tracing.versi
+                                                  on
+-a---            1/1/1981  1:01 AM              6 androidx.transition_transition
+                                                  .version
+-a---            1/1/1981  1:01 AM              6 androidx.tvprovider_tvprovider
+                                                  .version
+-a---            1/1/1981  1:01 AM              6 androidx.vectordrawable_vector
+                                                  drawable-animated.version
+-a---            1/1/1981  1:01 AM              6 androidx.vectordrawable_vector
+                                                  drawable.version
+-a---            1/1/1981  1:01 AM              6 androidx.versionedparcelable_v
+                                                  ersionedparcelable.version
+-a---            1/1/1981  1:01 AM              6 androidx.viewpager_viewpager.v
+                                                  ersion
+-a---            1/1/1981  1:01 AM             13 androidx.viewpager2_viewpager2
+                                                  .version
+-a---            1/1/1981  1:01 AM              6 androidx.window_window.version
+-a---            1/1/1981  1:01 AM              6 androidx.work_work-runtime-ktx
+                                                  .version
+-a---            1/1/1981  1:01 AM              6 androidx.work_work-runtime.ver
+                                                  sion
+-a---            1/1/1981  1:01 AM           1167 CERT.RSA
+-a---            1/1/1981  1:01 AM         179863 CERT.SF
+-a---            1/1/1981  1:01 AM              7 com.google.android.material_ma
+                                                  terial.version
+-a---            1/1/1981  1:01 AM              7 com.google.dagger_dagger-lint-
+                                                  aar.version
+-a---            1/1/1981  1:01 AM              7 com.google.dagger_dagger.versi
+                                                  on
+-a---            1/1/1981  1:01 AM              7 com.google.dagger_hilt-android
+                                                  .version
+-a---            1/1/1981  1:01 AM              7 com.google.dagger_hilt-core.ve
+                                                  rsion
+-a---            1/1/1981  1:01 AM              5 kotlinx_coroutines_android.ver
+                                                  sion
+-a---            1/1/1981  1:01 AM              5 kotlinx_coroutines_core.versio
+                                                  n
+-a---            1/1/1981  1:01 AM         179789 MANIFEST.MF
+-a---            1/1/1981  1:01 AM           1074 NOTICE.md
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                annotation
+d----           5/21/2026  8:09 PM                collection
+d----           5/21/2026  8:09 PM                hilt
+d----           5/21/2026  8:09 PM                room
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx\annotation
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                annotation
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx\annotation\annotation
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM          10175 LICENSE.txt
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx\collection
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                collection
+d----           5/21/2026  8:09 PM                collection-ktx
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx\collection\collection
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM          10175 LICENSE.txt
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx\collection\collection-ktx
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM          10175 LICENSE.txt
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx\hilt
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                hilt-common
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx\hilt\hilt-common
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM          10175 LICENSE.txt
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx\room
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                room-common
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\androidx\room\room-common
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM          10175 LICENSE.txt
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\com
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                android
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\com\android
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                build
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\com\android\build
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                gradle
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\com\android\build\gradle
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM             56 app-metadata.properties
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\META-INF\services
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM             54 kotlinx.coroutines.CoroutineEx
+                                                  ceptionHandler
+-a---            1/1/1981  1:01 AM             52 kotlinx.coroutines.internal.Ma
+                                                  inDispatcherFactory
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\okhttp3
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                internal
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\okhttp3\internal
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                publicsuffix
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\okhttp3\internal\publicsuffix
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            218 NOTICE
+-a---            1/1/1981  1:01 AM          41394 publicsuffixes.gz
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           5/21/2026  8:09 PM                anim
+d----           5/21/2026  8:09 PM                anim-v21
+d----           5/21/2026  8:09 PM                animator
+d----           5/21/2026  8:09 PM                animator-v21
+d----           5/21/2026  8:09 PM                color
+d----           5/21/2026  8:09 PM                color-night-v8
+d----           5/21/2026  8:09 PM                color-v23
+d----           5/21/2026  8:09 PM                color-v31
+d----           5/21/2026  8:09 PM                drawable
+d----           5/21/2026  8:09 PM                drawable-anydpi-v21
+d----           5/21/2026  8:09 PM                drawable-hdpi-v4
+d----           5/21/2026  8:09 PM                drawable-ldpi-v4
+d----           5/21/2026  8:09 PM                drawable-ldrtl-hdpi-v17
+d----           5/21/2026  8:09 PM                drawable-ldrtl-mdpi-v17
+d----           5/21/2026  8:09 PM                drawable-ldrtl-xhdpi-v17
+d----           5/21/2026  8:09 PM                drawable-ldrtl-xxhdpi-v17
+d----           5/21/2026  8:09 PM                drawable-ldrtl-xxxhdpi-v17
+d----           5/21/2026  8:09 PM                drawable-mdpi-v4
+d----           5/21/2026  8:09 PM                drawable-v21
+d----           5/21/2026  8:09 PM                drawable-v23
+d----           5/21/2026  8:09 PM                drawable-watch-v20
+d----           5/21/2026  8:09 PM                drawable-xhdpi-v4
+d----           5/21/2026  8:09 PM                drawable-xxhdpi-v4
+d----           5/21/2026  8:09 PM                drawable-xxxhdpi-v4
+d----           5/21/2026  8:09 PM                font
+d----           5/21/2026  8:09 PM                interpolator
+d----           5/21/2026  8:09 PM                interpolator-v21
+d----           5/21/2026  8:09 PM                layout
+d----           5/21/2026  8:09 PM                layout-land
+d----           5/21/2026  8:09 PM                layout-sw600dp-v13
+d----           5/21/2026  8:09 PM                layout-v21
+d----           5/21/2026  8:09 PM                layout-v23
+d----           5/21/2026  8:09 PM                layout-v26
+d----           5/21/2026  8:09 PM                layout-watch-v20
+d----           5/21/2026  8:09 PM                menu
+d----           5/21/2026  8:09 PM                mipmap-anydpi-v26
+d----           5/21/2026  8:09 PM                mipmap-hdpi-v4
+d----           5/21/2026  8:09 PM                mipmap-mdpi-v4
+d----           5/21/2026  8:09 PM                mipmap-xhdpi-v4
+d----           5/21/2026  8:09 PM                mipmap-xxhdpi-v4
+d----           5/21/2026  8:09 PM                mipmap-xxxhdpi-v4
+d----           5/21/2026  8:09 PM                navigation
+d----           5/21/2026  8:09 PM                raw
+d----           5/21/2026  8:09 PM                transition-v21
+d----           5/21/2026  8:09 PM                xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\anim
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            388 abc_fade_in.xml
+-a---            1/1/1981  1:01 AM            388 abc_fade_out.xml
+-a---            1/1/1981  1:01 AM            852 abc_grow_fade_in_from_bottom.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            508 abc_popup_enter.xml
+-a---            1/1/1981  1:01 AM            508 abc_popup_exit.xml
+-a---            1/1/1981  1:01 AM            852 abc_shrink_fade_out_from_botto
+                                                  m.xml
+-a---            1/1/1981  1:01 AM            396 abc_slide_in_bottom.xml
+-a---            1/1/1981  1:01 AM            396 abc_slide_in_top.xml
+-a---            1/1/1981  1:01 AM            396 abc_slide_out_bottom.xml
+-a---            1/1/1981  1:01 AM            396 abc_slide_out_top.xml
+-a---            1/1/1981  1:01 AM            388 abc_tooltip_enter.xml
+-a---            1/1/1981  1:01 AM            388 abc_tooltip_exit.xml
+-a---            1/1/1981  1:01 AM           2124 btn_checkbox_to_checked_box_in
+                                                  ner_merged_animation.xml
+-a---            1/1/1981  1:01 AM           2780 btn_checkbox_to_checked_box_ou
+                                                  ter_merged_animation.xml
+-a---            1/1/1981  1:01 AM           1196 btn_checkbox_to_checked_icon_n
+                                                  ull_animation.xml
+-a---            1/1/1981  1:01 AM           2360 btn_checkbox_to_unchecked_box_
+                                                  inner_merged_animation.xml
+-a---            1/1/1981  1:01 AM           2520 btn_checkbox_to_unchecked_chec
+                                                  k_path_merged_animation.xml
+-a---            1/1/1981  1:01 AM           1196 btn_checkbox_to_unchecked_icon
+                                                  _null_animation.xml
+-a---            1/1/1981  1:01 AM           1656 btn_radio_to_off_mtrl_dot_grou
+                                                  p_animation.xml
+-a---            1/1/1981  1:01 AM           1656 btn_radio_to_off_mtrl_ring_out
+                                                  er_animation.xml
+-a---            1/1/1981  1:01 AM           1028 btn_radio_to_off_mtrl_ring_out
+                                                  er_path_animation.xml
+-a---            1/1/1981  1:01 AM           1656 btn_radio_to_on_mtrl_dot_group
+                                                  _animation.xml
+-a---            1/1/1981  1:01 AM           1656 btn_radio_to_on_mtrl_ring_oute
+                                                  r_animation.xml
+-a---            1/1/1981  1:01 AM           1028 btn_radio_to_on_mtrl_ring_oute
+                                                  r_path_animation.xml
+-a---            1/1/1981  1:01 AM            312 design_snackbar_in.xml
+-a---            1/1/1981  1:01 AM            312 design_snackbar_out.xml
+-a---            1/1/1981  1:01 AM            284 lb_decelerator_2.xml
+-a---            1/1/1981  1:01 AM            284 lb_decelerator_4.xml
+-a---            1/1/1981  1:01 AM            400 linear_indeterminate_line1_hea
+                                                  d_interpolator.xml
+-a---            1/1/1981  1:01 AM            400 linear_indeterminate_line1_tai
+                                                  l_interpolator.xml
+-a---            1/1/1981  1:01 AM            400 linear_indeterminate_line2_hea
+                                                  d_interpolator.xml
+-a---            1/1/1981  1:01 AM            400 linear_indeterminate_line2_tai
+                                                  l_interpolator.xml
+-a---            1/1/1981  1:01 AM            812 m3_motion_fade_enter.xml
+-a---            1/1/1981  1:01 AM            508 m3_motion_fade_exit.xml
+-a---            1/1/1981  1:01 AM            400 mtrl_card_lowers_interpolator.
+                                                  xml
+-a---            1/1/1981  1:01 AM            388 nav_default_enter_anim.xml
+-a---            1/1/1981  1:01 AM            388 nav_default_exit_anim.xml
+-a---            1/1/1981  1:01 AM            388 nav_default_pop_enter_anim.xml
+-a---            1/1/1981  1:01 AM            388 nav_default_pop_exit_anim.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\anim-v21
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            616 design_bottom_sheet_slide_in.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            616 design_bottom_sheet_slide_out.
+                                                  xml
+-a---            1/1/1981  1:01 AM            364 fragment_fast_out_extra_slow_i
+                                                  n.xml
+-a---            1/1/1981  1:01 AM            616 m3_bottom_sheet_slide_in.xml
+-a---            1/1/1981  1:01 AM            656 m3_bottom_sheet_slide_out.xml
+-a---            1/1/1981  1:01 AM            464 m3_side_sheet_enter_from_left.
+                                                  xml
+-a---            1/1/1981  1:01 AM            464 m3_side_sheet_enter_from_right
+                                                  .xml
+-a---            1/1/1981  1:01 AM            464 m3_side_sheet_exit_to_left.xml
+-a---            1/1/1981  1:01 AM            464 m3_side_sheet_exit_to_right.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            616 mtrl_bottom_sheet_slide_in.xml
+-a---            1/1/1981  1:01 AM            616 mtrl_bottom_sheet_slide_out.xm
+                                                  l
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\animator
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            796 design_fab_hide_motion_spec.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            796 design_fab_show_motion_spec.xm
+                                                  l
+-a---            1/1/1981  1:01 AM           1128 fragment_close_enter.xml
+-a---            1/1/1981  1:01 AM           1128 fragment_close_exit.xml
+-a---            1/1/1981  1:01 AM            452 fragment_fade_enter.xml
+-a---            1/1/1981  1:01 AM            452 fragment_fade_exit.xml
+-a---            1/1/1981  1:01 AM           1128 fragment_open_enter.xml
+-a---            1/1/1981  1:01 AM           1128 fragment_open_exit.xml
+-a---            1/1/1981  1:01 AM            408 lb_guidedactions_item_pressed.
+                                                  xml
+-a---            1/1/1981  1:01 AM            408 lb_guidedactions_item_unpresse
+                                                  d.xml
+-a---            1/1/1981  1:01 AM            456 lb_guidedstep_slide_down.xml
+-a---            1/1/1981  1:01 AM            456 lb_guidedstep_slide_up.xml
+-a---            1/1/1981  1:01 AM            524 lb_onboarding_page_indicator_f
+                                                  ade_in.xml
+-a---            1/1/1981  1:01 AM            524 lb_onboarding_page_indicator_f
+                                                  ade_out.xml
+-a---            1/1/1981  1:01 AM            700 lb_onboarding_start_button_fad
+                                                  e_in.xml
+-a---            1/1/1981  1:01 AM            700 lb_onboarding_start_button_fad
+                                                  e_out.xml
+-a---            1/1/1981  1:01 AM            388 lb_playback_controls_fade_in.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            388 lb_playback_controls_fade_out.
+                                                  xml
+-a---            1/1/1981  1:01 AM            388 lb_playback_description_fade_i
+                                                  n.xml
+-a---            1/1/1981  1:01 AM            432 lb_playback_rows_fade_in.xml
+-a---            1/1/1981  1:01 AM            388 lb_playback_rows_fade_out.xml
+-a---            1/1/1981  1:01 AM           1796 m3_btn_elevated_btn_state_list
+                                                  _anim.xml
+-a---            1/1/1981  1:01 AM           1796 m3_btn_state_list_anim.xml
+-a---            1/1/1981  1:01 AM           1632 m3_card_elevated_state_list_an
+                                                  im.xml
+-a---            1/1/1981  1:01 AM           1584 m3_card_state_list_anim.xml
+-a---            1/1/1981  1:01 AM           1180 m3_chip_state_list_anim.xml
+-a---            1/1/1981  1:01 AM           1072 m3_elevated_chip_state_list_an
+                                                  im.xml
+-a---            1/1/1981  1:01 AM           1116 m3_extended_fab_change_size_co
+                                                  llapse_motion_spec.xml
+-a---            1/1/1981  1:01 AM           1116 m3_extended_fab_change_size_ex
+                                                  pand_motion_spec.xml
+-a---            1/1/1981  1:01 AM            820 m3_extended_fab_hide_motion_sp
+                                                  ec.xml
+-a---            1/1/1981  1:01 AM            820 m3_extended_fab_show_motion_sp
+                                                  ec.xml
+-a---            1/1/1981  1:01 AM           2724 m3_extended_fab_state_list_ani
+                                                  mator.xml
+-a---            1/1/1981  1:01 AM           2664 mtrl_btn_state_list_anim.xml
+-a---            1/1/1981  1:01 AM            120 mtrl_btn_unelevated_state_list
+                                                  _anim.xml
+-a---            1/1/1981  1:01 AM           1208 mtrl_card_state_list_anim.xml
+-a---            1/1/1981  1:01 AM           1072 mtrl_chip_state_list_anim.xml
+-a---            1/1/1981  1:01 AM           1116 mtrl_extended_fab_change_size_
+                                                  collapse_motion_spec.xml
+-a---            1/1/1981  1:01 AM           1116 mtrl_extended_fab_change_size_
+                                                  expand_motion_spec.xml
+-a---            1/1/1981  1:01 AM            608 mtrl_extended_fab_hide_motion_
+                                                  spec.xml
+-a---            1/1/1981  1:01 AM            820 mtrl_extended_fab_show_motion_
+                                                  spec.xml
+-a---            1/1/1981  1:01 AM           2724 mtrl_extended_fab_state_list_a
+                                                  nimator.xml
+-a---            1/1/1981  1:01 AM            796 mtrl_fab_hide_motion_spec.xml
+-a---            1/1/1981  1:01 AM            796 mtrl_fab_show_motion_spec.xml
+-a---            1/1/1981  1:01 AM           1888 mtrl_fab_transformation_sheet_
+                                                  collapse_spec.xml
+-a---            1/1/1981  1:01 AM           1888 mtrl_fab_transformation_sheet_
+                                                  expand_spec.xml
+-a---            1/1/1981  1:01 AM            452 nav_default_enter_anim.xml
+-a---            1/1/1981  1:01 AM            452 nav_default_exit_anim.xml
+-a---            1/1/1981  1:01 AM            452 nav_default_pop_enter_anim.xml
+-a---            1/1/1981  1:01 AM            452 nav_default_pop_exit_anim.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\animator-v21
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           1216 design_appbar_state_list_anima
+                                                  tor.xml
+-a---            1/1/1981  1:01 AM            764 lb_onboarding_description_ente
+                                                  r.xml
+-a---            1/1/1981  1:01 AM            524 lb_onboarding_logo_enter.xml
+-a---            1/1/1981  1:01 AM            524 lb_onboarding_logo_exit.xml
+-a---            1/1/1981  1:01 AM            524 lb_onboarding_page_indicator_e
+                                                  nter.xml
+-a---            1/1/1981  1:01 AM            764 lb_onboarding_title_enter.xml
+-a---            1/1/1981  1:01 AM            432 lb_playback_bg_fade_in.xml
+-a---            1/1/1981  1:01 AM            432 lb_playback_bg_fade_out.xml
+-a---            1/1/1981  1:01 AM            432 lb_playback_description_fade_o
+                                                  ut.xml
+-a---            1/1/1981  1:01 AM           1216 m3_appbar_state_list_animator.
+                                                  xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\color
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            468 abc_background_cache_hint_sele
+                                                  ctor_material_dark.xml
+-a---            1/1/1981  1:01 AM            468 abc_background_cache_hint_sele
+                                                  ctor_material_light.xml
+-a---            1/1/1981  1:01 AM            564 abc_hint_foreground_material_d
+                                                  ark.xml
+-a---            1/1/1981  1:01 AM            564 abc_hint_foreground_material_l
+                                                  ight.xml
+-a---            1/1/1981  1:01 AM            464 abc_primary_text_disable_only_
+                                                  material_dark.xml
+-a---            1/1/1981  1:01 AM            464 abc_primary_text_disable_only_
+                                                  material_light.xml
+-a---            1/1/1981  1:01 AM            464 abc_primary_text_material_dark
+                                                  .xml
+-a---            1/1/1981  1:01 AM            464 abc_primary_text_material_ligh
+                                                  t.xml
+-a---            1/1/1981  1:01 AM            588 abc_search_url_text.xml
+-a---            1/1/1981  1:01 AM            464 abc_secondary_text_material_da
+                                                  rk.xml
+-a---            1/1/1981  1:01 AM            464 abc_secondary_text_material_li
+                                                  ght.xml
+-a---            1/1/1981  1:01 AM            712 design_box_stroke_color.xml
+-a---            1/1/1981  1:01 AM            464 design_error.xml
+-a---            1/1/1981  1:01 AM            376 design_icon_tint.xml
+-a---            1/1/1981  1:01 AM            464 lb_preference_item_primary_tex
+                                                  t_color.xml
+-a---            1/1/1981  1:01 AM            464 lb_preference_item_secondary_t
+                                                  ext_color.xml
+-a---            1/1/1981  1:01 AM            376 m3_appbar_overlay_color.xml
+-a---            1/1/1981  1:01 AM            500 m3_assist_chip_icon_tint_color
+                                                  .xml
+-a---            1/1/1981  1:01 AM            872 m3_assist_chip_stroke_color.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            340 m3_bottom_sheet_drag_handle_co
+                                                  lor.xml
+-a---            1/1/1981  1:01 AM            500 m3_button_background_color_sel
+                                                  ector.xml
+-a---            1/1/1981  1:01 AM            500 m3_button_foreground_color_sel
+                                                  ector.xml
+-a---            1/1/1981  1:01 AM            500 m3_button_outline_color_select
+                                                  or.xml
+-a---            1/1/1981  1:01 AM            808 m3_button_ripple_color_selecto
+                                                  r.xml
+-a---            1/1/1981  1:01 AM            808 m3_button_ripple_color.xml
+-a---            1/1/1981  1:01 AM            376 m3_calendar_item_disabled_text
+                                                  .xml
+-a---            1/1/1981  1:01 AM            712 m3_calendar_item_stroke_color.
+                                                  xml
+-a---            1/1/1981  1:01 AM            768 m3_card_foreground_color.xml
+-a---            1/1/1981  1:01 AM           1556 m3_card_ripple_color.xml
+-a---            1/1/1981  1:01 AM           1224 m3_card_stroke_color.xml
+-a---            1/1/1981  1:01 AM            964 m3_checkbox_button_icon_tint.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           1000 m3_checkbox_button_tint.xml
+-a---            1/1/1981  1:01 AM            500 m3_chip_assist_text_color.xml
+-a---            1/1/1981  1:01 AM            712 m3_chip_background_color.xml
+-a---            1/1/1981  1:01 AM           1556 m3_chip_ripple_color.xml
+-a---            1/1/1981  1:01 AM            872 m3_chip_stroke_color.xml
+-a---            1/1/1981  1:01 AM            624 m3_chip_text_color.xml
+-a---            1/1/1981  1:01 AM            500 m3_dark_default_color_primary_
+                                                  text.xml
+-a---            1/1/1981  1:01 AM            500 m3_dark_default_color_secondar
+                                                  y_text.xml
+-a---            1/1/1981  1:01 AM            376 m3_dark_highlighted_text.xml
+-a---            1/1/1981  1:01 AM            564 m3_dark_hint_foreground.xml
+-a---            1/1/1981  1:01 AM            500 m3_dark_primary_text_disable_o
+                                                  nly.xml
+-a---            1/1/1981  1:01 AM            500 m3_default_color_primary_text.
+                                                  xml
+-a---            1/1/1981  1:01 AM            500 m3_default_color_secondary_tex
+                                                  t.xml
+-a---            1/1/1981  1:01 AM            808 m3_efab_ripple_color_selector.
+                                                  xml
+-a---            1/1/1981  1:01 AM            748 m3_elevated_chip_background_co
+                                                  lor.xml
+-a---            1/1/1981  1:01 AM            500 m3_fab_efab_background_color_s
+                                                  elector.xml
+-a---            1/1/1981  1:01 AM            500 m3_fab_efab_foreground_color_s
+                                                  elector.xml
+-a---            1/1/1981  1:01 AM            808 m3_fab_ripple_color_selector.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            668 m3_filled_icon_button_containe
+                                                  r_color_selector.xml
+-a---            1/1/1981  1:01 AM            376 m3_highlighted_text.xml
+-a---            1/1/1981  1:01 AM            564 m3_hint_foreground.xml
+-a---            1/1/1981  1:01 AM            668 m3_icon_button_icon_color_sele
+                                                  ctor.xml
+-a---            1/1/1981  1:01 AM           1196 m3_navigation_bar_item_with_in
+                                                  dicator_icon_tint.xml
+-a---            1/1/1981  1:01 AM           1196 m3_navigation_bar_item_with_in
+                                                  dicator_label_tint.xml
+-a---            1/1/1981  1:01 AM           1232 m3_navigation_bar_ripple_color
+                                                  _selector.xml
+-a---            1/1/1981  1:01 AM            588 m3_navigation_item_background_
+                                                  color.xml
+-a---            1/1/1981  1:01 AM           1356 m3_navigation_item_icon_tint.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           1372 m3_navigation_item_ripple_colo
+                                                  r.xml
+-a---            1/1/1981  1:01 AM           1356 m3_navigation_item_text_color.
+                                                  xml
+-a---            1/1/1981  1:01 AM            464 m3_navigation_rail_item_with_i
+                                                  ndicator_icon_tint.xml
+-a---            1/1/1981  1:01 AM            464 m3_navigation_rail_item_with_i
+                                                  ndicator_label_tint.xml
+-a---            1/1/1981  1:01 AM           1232 m3_navigation_rail_ripple_colo
+                                                  r_selector.xml
+-a---            1/1/1981  1:01 AM            376 m3_popupmenu_overlay_color.xml
+-a---            1/1/1981  1:01 AM            500 m3_primary_text_disable_only.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           1576 m3_radiobutton_button_tint.xml
+-a---            1/1/1981  1:01 AM           1372 m3_radiobutton_ripple_tint.xml
+-a---            1/1/1981  1:01 AM           1372 m3_selection_control_ripple_co
+                                                  lor_selector.xml
+-a---            1/1/1981  1:01 AM            748 m3_simple_item_ripple_color.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            500 m3_slider_active_track_color.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            500 m3_slider_halo_color.xml
+-a---            1/1/1981  1:01 AM            500 m3_slider_inactive_track_color
+                                                  .xml
+-a---            1/1/1981  1:01 AM            500 m3_slider_thumb_color.xml
+-a---            1/1/1981  1:01 AM            588 m3_switch_thumb_tint.xml
+-a---            1/1/1981  1:01 AM            624 m3_switch_track_tint.xml
+-a---            1/1/1981  1:01 AM            624 m3_tabs_icon_color_secondary.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            624 m3_tabs_icon_color.xml
+-a---            1/1/1981  1:01 AM           1372 m3_tabs_ripple_color_secondary
+                                                  .xml
+-a---            1/1/1981  1:01 AM           1372 m3_tabs_ripple_color.xml
+-a---            1/1/1981  1:01 AM            624 m3_tabs_text_color_secondary.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            624 m3_tabs_text_color.xml
+-a---            1/1/1981  1:01 AM            508 m3_text_button_background_colo
+                                                  r_selector.xml
+-a---            1/1/1981  1:01 AM            748 m3_text_button_foreground_colo
+                                                  r_selector.xml
+-a---            1/1/1981  1:01 AM           1936 m3_text_button_ripple_color_se
+                                                  lector.xml
+-a---            1/1/1981  1:01 AM            500 m3_textfield_filled_background
+                                                  _color.xml
+-a---            1/1/1981  1:01 AM            872 m3_textfield_indicator_text_co
+                                                  lor.xml
+-a---            1/1/1981  1:01 AM            748 m3_textfield_input_text_color.
+                                                  xml
+-a---            1/1/1981  1:01 AM            624 m3_textfield_label_color.xml
+-a---            1/1/1981  1:01 AM            748 m3_textfield_stroke_color.xml
+-a---            1/1/1981  1:01 AM            528 m3_timepicker_button_backgroun
+                                                  d_color.xml
+-a---            1/1/1981  1:01 AM           1536 m3_timepicker_button_ripple_co
+                                                  lor.xml
+-a---            1/1/1981  1:01 AM            768 m3_timepicker_button_text_colo
+                                                  r.xml
+-a---            1/1/1981  1:01 AM            464 m3_timepicker_clock_text_color
+                                                  .xml
+-a---            1/1/1981  1:01 AM            464 m3_timepicker_display_backgrou
+                                                  nd_color.xml
+-a---            1/1/1981  1:01 AM           1372 m3_timepicker_display_ripple_c
+                                                  olor.xml
+-a---            1/1/1981  1:01 AM            624 m3_timepicker_display_text_col
+                                                  or.xml
+-a---            1/1/1981  1:01 AM            808 m3_timepicker_secondary_text_b
+                                                  utton_ripple_color.xml
+-a---            1/1/1981  1:01 AM            500 m3_timepicker_secondary_text_b
+                                                  utton_text_color.xml
+-a---            1/1/1981  1:01 AM            464 m3_timepicker_time_input_strok
+                                                  e_color.xml
+-a---            1/1/1981  1:01 AM            808 m3_tonal_button_ripple_color_s
+                                                  elector.xml
+-a---            1/1/1981  1:01 AM            340 material_cursor_color.xml
+-a---            1/1/1981  1:01 AM            376 material_divider_color.xml
+-a---            1/1/1981  1:01 AM            376 material_on_background_disable
+                                                  d.xml
+-a---            1/1/1981  1:01 AM            376 material_on_background_emphasi
+                                                  s_high_type.xml
+-a---            1/1/1981  1:01 AM            376 material_on_background_emphasi
+                                                  s_medium.xml
+-a---            1/1/1981  1:01 AM            376 material_on_primary_disabled.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            376 material_on_primary_emphasis_h
+                                                  igh_type.xml
+-a---            1/1/1981  1:01 AM            376 material_on_primary_emphasis_m
+                                                  edium.xml
+-a---            1/1/1981  1:01 AM            376 material_on_surface_disabled.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            376 material_on_surface_emphasis_h
+                                                  igh_type.xml
+-a---            1/1/1981  1:01 AM            376 material_on_surface_emphasis_m
+                                                  edium.xml
+-a---            1/1/1981  1:01 AM            376 material_on_surface_stroke.xml
+-a---            1/1/1981  1:01 AM            376 material_personalized__highlig
+                                                  hted_text_inverse.xml
+-a---            1/1/1981  1:01 AM            376 material_personalized__highlig
+                                                  hted_text.xml
+-a---            1/1/1981  1:01 AM            500 material_personalized_color_pr
+                                                  imary_text_inverse.xml
+-a---            1/1/1981  1:01 AM            500 material_personalized_color_pr
+                                                  imary_text.xml
+-a---            1/1/1981  1:01 AM            500 material_personalized_color_se
+                                                  condary_text_inverse.xml
+-a---            1/1/1981  1:01 AM            500 material_personalized_color_se
+                                                  condary_text.xml
+-a---            1/1/1981  1:01 AM            564 material_personalized_hint_for
+                                                  eground_inverse.xml
+-a---            1/1/1981  1:01 AM            564 material_personalized_hint_for
+                                                  eground.xml
+-a---            1/1/1981  1:01 AM            500 material_personalized_primary_
+                                                  inverse_text_disable_only.xml
+-a---            1/1/1981  1:01 AM            500 material_personalized_primary_
+                                                  text_disable_only.xml
+-a---            1/1/1981  1:01 AM            520 material_slider_active_tick_ma
+                                                  rks_color.xml
+-a---            1/1/1981  1:01 AM            500 material_slider_active_track_c
+                                                  olor.xml
+-a---            1/1/1981  1:01 AM            500 material_slider_halo_color.xml
+-a---            1/1/1981  1:01 AM            520 material_slider_inactive_tick_
+                                                  marks_color.xml
+-a---            1/1/1981  1:01 AM            520 material_slider_inactive_track
+                                                  _color.xml
+-a---            1/1/1981  1:01 AM            500 material_slider_thumb_color.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            500 material_timepicker_button_bac
+                                                  kground.xml
+-a---            1/1/1981  1:01 AM            376 material_timepicker_button_str
+                                                  oke.xml
+-a---            1/1/1981  1:01 AM            464 material_timepicker_clock_text
+                                                  _color.xml
+-a---            1/1/1981  1:01 AM            376 material_timepicker_clockface.
+                                                  xml
+-a---            1/1/1981  1:01 AM            376 material_timepicker_modebutton
+                                                  _tint.xml
+-a---            1/1/1981  1:01 AM            500 mtrl_btn_bg_color_selector.xml
+-a---            1/1/1981  1:01 AM            948 mtrl_btn_ripple_color.xml
+-a---            1/1/1981  1:01 AM            520 mtrl_btn_stroke_color_selector
+                                                  .xml
+-a---            1/1/1981  1:01 AM            520 mtrl_btn_text_btn_bg_color_sel
+                                                  ector.xml
+-a---            1/1/1981  1:01 AM            948 mtrl_btn_text_btn_ripple_color
+                                                  .xml
+-a---            1/1/1981  1:01 AM            500 mtrl_btn_text_color_selector.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            808 mtrl_calendar_item_stroke_colo
+                                                  r.xml
+-a---            1/1/1981  1:01 AM            376 mtrl_calendar_selected_range.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            788 mtrl_card_view_foreground.xml
+-a---            1/1/1981  1:01 AM            768 mtrl_card_view_ripple.xml
+-a---            1/1/1981  1:01 AM            848 mtrl_chip_background_color.xml
+-a---            1/1/1981  1:01 AM           1092 mtrl_chip_close_icon_tint.xml
+-a---            1/1/1981  1:01 AM            340 mtrl_chip_surface_color.xml
+-a---            1/1/1981  1:01 AM            520 mtrl_chip_text_color.xml
+-a---            1/1/1981  1:01 AM            848 mtrl_choice_chip_background_co
+                                                  lor.xml
+-a---            1/1/1981  1:01 AM            948 mtrl_choice_chip_ripple_color.
+                                                  xml
+-a---            1/1/1981  1:01 AM            808 mtrl_choice_chip_text_color.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            464 mtrl_error.xml
+-a---            1/1/1981  1:01 AM            500 mtrl_fab_bg_color_selector.xml
+-a---            1/1/1981  1:01 AM            500 mtrl_fab_icon_text_color_selec
+                                                  tor.xml
+-a---            1/1/1981  1:01 AM            948 mtrl_fab_ripple_color.xml
+-a---            1/1/1981  1:01 AM            808 mtrl_filled_background_color.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            644 mtrl_filled_icon_tint.xml
+-a---            1/1/1981  1:01 AM            788 mtrl_filled_stroke_color.xml
+-a---            1/1/1981  1:01 AM            520 mtrl_indicator_text_color.xml
+-a---            1/1/1981  1:01 AM            520 mtrl_navigation_bar_colored_it
+                                                  em_tint.xml
+-a---            1/1/1981  1:01 AM            948 mtrl_navigation_bar_colored_ri
+                                                  pple_color.xml
+-a---            1/1/1981  1:01 AM            520 mtrl_navigation_bar_item_tint.
+                                                  xml
+-a---            1/1/1981  1:01 AM           1672 mtrl_navigation_bar_ripple_col
+                                                  or.xml
+-a---            1/1/1981  1:01 AM            644 mtrl_navigation_item_backgroun
+                                                  d_color.xml
+-a---            1/1/1981  1:01 AM            624 mtrl_navigation_item_icon_tint
+                                                  .xml
+-a---            1/1/1981  1:01 AM            624 mtrl_navigation_item_text_colo
+                                                  r.xml
+-a---            1/1/1981  1:01 AM            500 mtrl_on_primary_text_btn_text_
+                                                  color_selector.xml
+-a---            1/1/1981  1:01 AM            808 mtrl_on_surface_ripple_color.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            644 mtrl_outlined_icon_tint.xml
+-a---            1/1/1981  1:01 AM            788 mtrl_outlined_stroke_color.xml
+-a---            1/1/1981  1:01 AM            376 mtrl_popupmenu_overlay_color.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           1236 mtrl_switch_thumb_icon_tint.xm
+                                                  l
+-a---            1/1/1981  1:01 AM           1028 mtrl_switch_thumb_tint.xml
+-a---            1/1/1981  1:01 AM            624 mtrl_switch_track_decoration_t
+                                                  int.xml
+-a---            1/1/1981  1:01 AM           1236 mtrl_switch_track_tint.xml
+-a---            1/1/1981  1:01 AM            948 mtrl_tabs_colored_ripple_color
+                                                  .xml
+-a---            1/1/1981  1:01 AM            500 mtrl_tabs_icon_color_selector_
+                                                  colored.xml
+-a---            1/1/1981  1:01 AM            500 mtrl_tabs_icon_color_selector.
+                                                  xml
+-a---            1/1/1981  1:01 AM            464 mtrl_tabs_legacy_text_color_se
+                                                  lector.xml
+-a---            1/1/1981  1:01 AM           1672 mtrl_tabs_ripple_color.xml
+-a---            1/1/1981  1:01 AM            888 mtrl_text_btn_text_color_selec
+                                                  tor.xml
+-a---            1/1/1981  1:01 AM            464 switch_thumb_material_dark.xml
+-a---            1/1/1981  1:01 AM            464 switch_thumb_material_light.xm
+                                                  l
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\color-night-v8
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            376 material_timepicker_button_str
+                                                  oke.xml
+-a---            1/1/1981  1:01 AM            376 material_timepicker_clockface.
+                                                  xml
+-a---            1/1/1981  1:01 AM            340 material_timepicker_modebutton
+                                                  _tint.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\color-v23
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            500 abc_btn_colored_borderless_tex
+                                                  t_material.xml
+-a---            1/1/1981  1:01 AM            500 abc_btn_colored_text_material.
+                                                  xml
+-a---            1/1/1981  1:01 AM            544 abc_color_highlight_material.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            624 abc_tint_btn_checkable.xml
+-a---            1/1/1981  1:01 AM           1120 abc_tint_default.xml
+-a---            1/1/1981  1:01 AM            668 abc_tint_edittext.xml
+-a---            1/1/1981  1:01 AM            500 abc_tint_seek_thumb.xml
+-a---            1/1/1981  1:01 AM            668 abc_tint_spinner.xml
+-a---            1/1/1981  1:01 AM            664 abc_tint_switch_track.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\color-v31
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            500 m3_dynamic_dark_default_color_
+                                                  primary_text.xml
+-a---            1/1/1981  1:01 AM            500 m3_dynamic_dark_default_color_
+                                                  secondary_text.xml
+-a---            1/1/1981  1:01 AM            376 m3_dynamic_dark_highlighted_te
+                                                  xt.xml
+-a---            1/1/1981  1:01 AM            564 m3_dynamic_dark_hint_foregroun
+                                                  d.xml
+-a---            1/1/1981  1:01 AM            500 m3_dynamic_dark_primary_text_d
+                                                  isable_only.xml
+-a---            1/1/1981  1:01 AM            500 m3_dynamic_default_color_prima
+                                                  ry_text.xml
+-a---            1/1/1981  1:01 AM            500 m3_dynamic_default_color_secon
+                                                  dary_text.xml
+-a---            1/1/1981  1:01 AM            376 m3_dynamic_highlighted_text.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            564 m3_dynamic_hint_foreground.xml
+-a---            1/1/1981  1:01 AM            500 m3_dynamic_primary_text_disabl
+                                                  e_only.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant12.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant17.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant22.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant24.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant4.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant6.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant87.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant92.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant94.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant96.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  _variant98.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  12.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  17.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  22.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  24.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  4.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  6.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  87.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  92.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  94.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  96.xml
+-a---            1/1/1981  1:01 AM            376 m3_ref_palette_dynamic_neutral
+                                                  98.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           1176 $avd_hide_password__0.xml
+-a---            1/1/1981  1:01 AM            592 $avd_hide_password__1.xml
+-a---            1/1/1981  1:01 AM            556 $avd_hide_password__2.xml
+-a---            1/1/1981  1:01 AM           1136 $avd_show_password__0.xml
+-a---            1/1/1981  1:01 AM            592 $avd_show_password__1.xml
+-a---            1/1/1981  1:01 AM            556 $avd_show_password__2.xml
+-a---            1/1/1981  1:01 AM           1176 $m3_avd_hide_password__0.xml
+-a---            1/1/1981  1:01 AM            592 $m3_avd_hide_password__1.xml
+-a---            1/1/1981  1:01 AM            556 $m3_avd_hide_password__2.xml
+-a---            1/1/1981  1:01 AM           1136 $m3_avd_show_password__0.xml
+-a---            1/1/1981  1:01 AM            592 $m3_avd_show_password__1.xml
+-a---            1/1/1981  1:01 AM            556 $m3_avd_show_password__2.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_checked_
+                                                  unchecked__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_checked_
+                                                  unchecked__1.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_checked_
+                                                  unchecked__2.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_che
+                                                  cked_indeterminate__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_che
+                                                  cked_unchecked__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_che
+                                                  cked_unchecked__1.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_che
+                                                  cked_unchecked__2.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_ind
+                                                  eterminate_checked__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_ind
+                                                  eterminate_unchecked__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_ind
+                                                  eterminate_unchecked__1.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_ind
+                                                  eterminate_unchecked__2.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_unc
+                                                  hecked_checked__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_unc
+                                                  hecked_checked__1.xml
+-a---            1/1/1981  1:01 AM            596 $mtrl_checkbox_button_icon_unc
+                                                  hecked_checked__2.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_unc
+                                                  hecked_indeterminate__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_unc
+                                                  hecked_indeterminate__1.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_icon_unc
+                                                  hecked_indeterminate__2.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_unchecke
+                                                  d_checked__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_unchecke
+                                                  d_checked__1.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_checkbox_button_unchecke
+                                                  d_checked__2.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_switch_thumb_checked_pre
+                                                  ssed__0.xml
+-a---            1/1/1981  1:01 AM            548 $mtrl_switch_thumb_checked_unc
+                                                  hecked__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_switch_thumb_checked_unc
+                                                  hecked__1.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_switch_thumb_pressed_che
+                                                  cked__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_switch_thumb_pressed_unc
+                                                  hecked__0.xml
+-a---            1/1/1981  1:01 AM            548 $mtrl_switch_thumb_unchecked_c
+                                                  hecked__0.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_switch_thumb_unchecked_c
+                                                  hecked__1.xml
+-a---            1/1/1981  1:01 AM            592 $mtrl_switch_thumb_unchecked_p
+                                                  ressed__0.xml
+-a---            1/1/1981  1:01 AM            588 abc_btn_borderless_material.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            816 abc_btn_check_material_anim.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            464 abc_btn_check_material.xml
+-a---            1/1/1981  1:01 AM            932 abc_btn_default_mtrl_shape.xml
+-a---            1/1/1981  1:01 AM            816 abc_btn_radio_material_anim.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            464 abc_btn_radio_material.xml
+-a---            1/1/1981  1:01 AM            372 abc_cab_background_internal_bg
+                                                  .xml
+-a---            1/1/1981  1:01 AM            336 abc_cab_background_top_materia
+                                                  l.xml
+-a---            1/1/1981  1:01 AM            692 abc_ic_ab_back_material.xml
+-a---            1/1/1981  1:01 AM           1000 abc_ic_arrow_drop_right_black_
+                                                  24dp.xml
+-a---            1/1/1981  1:01 AM            684 abc_ic_clear_material.xml
+-a---            1/1/1981  1:01 AM            640 abc_ic_go_search_api_material.
+                                                  xml
+-a---            1/1/1981  1:01 AM            756 abc_ic_menu_copy_mtrl_am_alpha
+                                                  .xml
+-a---            1/1/1981  1:01 AM           1096 abc_ic_menu_cut_mtrl_alpha.xml
+-a---            1/1/1981  1:01 AM            792 abc_ic_menu_overflow_material.
+                                                  xml
+-a---            1/1/1981  1:01 AM            796 abc_ic_menu_paste_mtrl_am_alph
+                                                  a.xml
+-a---            1/1/1981  1:01 AM            920 abc_ic_menu_selectall_mtrl_alp
+                                                  ha.xml
+-a---            1/1/1981  1:01 AM            980 abc_ic_menu_share_mtrl_alpha.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            812 abc_ic_search_api_material.xml
+-a---            1/1/1981  1:01 AM            828 abc_ic_voice_search_api_materi
+                                                  al.xml
+-a---            1/1/1981  1:01 AM           1012 abc_item_background_holo_dark.
+                                                  xml
+-a---            1/1/1981  1:01 AM           1012 abc_item_background_holo_light
+                                                  .xml
+-a---            1/1/1981  1:01 AM            424 abc_list_selector_background_t
+                                                  ransition_holo_dark.xml
+-a---            1/1/1981  1:01 AM            424 abc_list_selector_background_t
+                                                  ransition_holo_light.xml
+-a---            1/1/1981  1:01 AM           1064 abc_list_selector_holo_dark.xm
+                                                  l
+-a---            1/1/1981  1:01 AM           1064 abc_list_selector_holo_light.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            124 abc_ratingbar_indicator_materi
+                                                  al.xml
+-a---            1/1/1981  1:01 AM            124 abc_ratingbar_material.xml
+-a---            1/1/1981  1:01 AM            124 abc_ratingbar_small_material.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           1100 abc_seekbar_thumb_material.xml
+-a---            1/1/1981  1:01 AM            516 abc_seekbar_tick_mark_material
+                                                  .xml
+-a---            1/1/1981  1:01 AM           1408 abc_seekbar_track_material.xml
+-a---            1/1/1981  1:01 AM           1160 abc_spinner_textfield_backgrou
+                                                  nd_material.xml
+-a---            1/1/1981  1:01 AM            640 abc_star_black_48dp.xml
+-a---            1/1/1981  1:01 AM            600 abc_star_half_black_48dp.xml
+-a---            1/1/1981  1:01 AM            464 abc_switch_thumb_material.xml
+-a---            1/1/1981  1:01 AM            468 abc_tab_indicator_material.xml
+-a---            1/1/1981  1:01 AM            516 abc_text_cursor_material.xml
+-a---            1/1/1981  1:01 AM            756 abc_textfield_search_material.
+                                                  xml
+-a---            1/1/1981  1:01 AM            612 abc_vector_test.xml
+-a---            1/1/1981  1:01 AM            660 avd_hide_password.xml
+-a---            1/1/1981  1:01 AM            660 avd_show_password.xml
+-a---            1/1/1981  1:01 AM            480 banner_tv.xml
+-a---            1/1/1981  1:01 AM            492 bg_avatar_gradient.xml
+-a---            1/1/1981  1:01 AM            612 bg_btn_ghost.xml
+-a---            1/1/1981  1:01 AM            484 bg_btn_primary.xml
+-a---            1/1/1981  1:01 AM            612 bg_card_rounded.xml
+-a---            1/1/1981  1:01 AM            980 bg_hero_gradient.xml
+-a---            1/1/1981  1:01 AM            372 bg_iconbtn_circle.xml
+-a---            1/1/1981  1:01 AM            612 bg_input_field.xml
+-a---            1/1/1981  1:01 AM            484 bg_navchip_active.xml
+-a---            1/1/1981  1:01 AM            492 bg_overlay_card_bottom.xml
+-a---            1/1/1981  1:01 AM            612 bg_pill_accent.xml
+-a---            1/1/1981  1:01 AM            612 bg_pill_live.xml
+-a---            1/1/1981  1:01 AM            484 bg_tag_4k.xml
+-a---            1/1/1981  1:01 AM            484 bg_tag_live.xml
+-a---            1/1/1981  1:01 AM            484 bg_tag_new.xml
+-a---            1/1/1981  1:01 AM           2688 btn_checkbox_checked_mtrl.xml
+-a---            1/1/1981  1:01 AM            688 btn_checkbox_checked_to_unchec
+                                                  ked_mtrl_animation.xml
+-a---            1/1/1981  1:01 AM           2660 btn_checkbox_unchecked_mtrl.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            688 btn_checkbox_unchecked_to_chec
+                                                  ked_mtrl_animation.xml
+-a---            1/1/1981  1:01 AM           1728 btn_radio_off_mtrl.xml
+-a---            1/1/1981  1:01 AM            680 btn_radio_off_to_on_mtrl_anima
+                                                  tion.xml
+-a---            1/1/1981  1:01 AM           1656 btn_radio_on_mtrl.xml
+-a---            1/1/1981  1:01 AM            680 btn_radio_on_to_off_mtrl_anima
+                                                  tion.xml
+-a---            1/1/1981  1:01 AM            372 design_fab_background.xml
+-a---            1/1/1981  1:01 AM           1144 design_ic_visibility_off.xml
+-a---            1/1/1981  1:01 AM            540 design_ic_visibility.xml
+-a---            1/1/1981  1:01 AM            816 design_password_eye.xml
+-a---            1/1/1981  1:01 AM            484 design_snackbar_background.xml
+-a---            1/1/1981  1:01 AM            484 exo_rounded_rectangle.xml
+-a---            1/1/1981  1:01 AM            612 ic_arrow_back_black_24.xml
+-a---            1/1/1981  1:01 AM            768 ic_bell.xml
+-a---            1/1/1981  1:01 AM            684 ic_clear_black_24.xml
+-a---            1/1/1981  1:01 AM            752 ic_clock_black_24dp.xml
+-a---            1/1/1981  1:01 AM            624 ic_favorites.xml
+-a---            1/1/1981  1:01 AM            580 ic_home.xml
+-a---            1/1/1981  1:01 AM            852 ic_keyboard_black_24dp.xml
+-a---            1/1/1981  1:01 AM            688 ic_live.xml
+-a---            1/1/1981  1:01 AM            696 ic_logo_tv.xml
+-a---            1/1/1981  1:01 AM            704 ic_m3_chip_check.xml
+-a---            1/1/1981  1:01 AM            900 ic_m3_chip_checked_circle.xml
+-a---            1/1/1981  1:01 AM            648 ic_m3_chip_close.xml
+-a---            1/1/1981  1:01 AM            680 ic_movies.xml
+-a---            1/1/1981  1:01 AM            672 ic_mtrl_checked_circle.xml
+-a---            1/1/1981  1:01 AM            600 ic_mtrl_chip_checked_black.xml
+-a---            1/1/1981  1:01 AM            940 ic_mtrl_chip_checked_circle.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            808 ic_mtrl_chip_close_circle.xml
+-a---            1/1/1981  1:01 AM            564 ic_play_solid.xml
+-a---            1/1/1981  1:01 AM            616 ic_plus.xml
+-a---            1/1/1981  1:01 AM            800 ic_search_black_24.xml
+-a---            1/1/1981  1:01 AM            708 ic_search.xml
+-a---            1/1/1981  1:01 AM            816 ic_series.xml
+-a---            1/1/1981  1:01 AM            796 ic_settings.xml
+-a---            1/1/1981  1:01 AM            676 ic_star_filled.xml
+-a---            1/1/1981  1:01 AM            476 lb_background.xml
+-a---            1/1/1981  1:01 AM            456 lb_headers_right_fading.xml
+-a---            1/1/1981  1:01 AM            592 lb_onboarding_start_button_bac
+                                                  kground.xml
+-a---            1/1/1981  1:01 AM            480 lb_playback_now_playing_bar.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            708 lb_playback_progress_bar.xml
+-a---            1/1/1981  1:01 AM            264 lb_search_orb.xml
+-a---            1/1/1981  1:01 AM            264 lb_speech_orb.xml
+-a---            1/1/1981  1:01 AM            660 m3_avd_hide_password.xml
+-a---            1/1/1981  1:01 AM            660 m3_avd_show_password.xml
+-a---            1/1/1981  1:01 AM            628 m3_bottom_sheet_drag_handle.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            816 m3_password_eye.xml
+-a---            1/1/1981  1:01 AM            740 m3_popupmenu_background_overla
+                                                  y.xml
+-a---            1/1/1981  1:01 AM            480 m3_tabs_line_indicator.xml
+-a---            1/1/1981  1:01 AM            956 m3_tabs_rounded_line_indicator
+                                                  .xml
+-a---            1/1/1981  1:01 AM            696 material_ic_calendar_black_24d
+                                                  p.xml
+-a---            1/1/1981  1:01 AM            752 material_ic_clear_black_24dp.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            716 material_ic_edit_black_24dp.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            712 material_ic_keyboard_arrow_lef
+                                                  t_black_24dp.xml
+-a---            1/1/1981  1:01 AM            700 material_ic_keyboard_arrow_rig
+                                                  ht_black_24dp.xml
+-a---            1/1/1981  1:01 AM            648 material_ic_menu_arrow_down_bl
+                                                  ack_24dp.xml
+-a---            1/1/1981  1:01 AM            648 material_ic_menu_arrow_up_blac
+                                                  k_24dp.xml
+-a---            1/1/1981  1:01 AM           2683 media3_icon_circular_play.png
+-a---            1/1/1981  1:01 AM            628 mtrl_bottomsheet_drag_handle.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            724 mtrl_checkbox_button_checked_u
+                                                  nchecked.xml
+-a---            1/1/1981  1:01 AM            524 mtrl_checkbox_button_icon_chec
+                                                  ked_indeterminate.xml
+-a---            1/1/1981  1:01 AM            724 mtrl_checkbox_button_icon_chec
+                                                  ked_unchecked.xml
+-a---            1/1/1981  1:01 AM            524 mtrl_checkbox_button_icon_inde
+                                                  terminate_checked.xml
+-a---            1/1/1981  1:01 AM            724 mtrl_checkbox_button_icon_inde
+                                                  terminate_unchecked.xml
+-a---            1/1/1981  1:01 AM            724 mtrl_checkbox_button_icon_unch
+                                                  ecked_checked.xml
+-a---            1/1/1981  1:01 AM            724 mtrl_checkbox_button_icon_unch
+                                                  ecked_indeterminate.xml
+-a---            1/1/1981  1:01 AM           1572 mtrl_checkbox_button_icon.xml
+-a---            1/1/1981  1:01 AM            724 mtrl_checkbox_button_unchecked
+                                                  _checked.xml
+-a---            1/1/1981  1:01 AM           1332 mtrl_checkbox_button.xml
+-a---            1/1/1981  1:01 AM            716 mtrl_dialog_background.xml
+-a---            1/1/1981  1:01 AM            464 mtrl_dropdown_arrow.xml
+-a---            1/1/1981  1:01 AM            564 mtrl_ic_arrow_drop_down.xml
+-a---            1/1/1981  1:01 AM            564 mtrl_ic_arrow_drop_up.xml
+-a---            1/1/1981  1:01 AM            724 mtrl_ic_cancel.xml
+-a---            1/1/1981  1:01 AM            744 mtrl_ic_check_mark.xml
+-a---            1/1/1981  1:01 AM            904 mtrl_ic_checkbox_checked.xml
+-a---            1/1/1981  1:01 AM            612 mtrl_ic_checkbox_unchecked.xml
+-a---            1/1/1981  1:01 AM            644 mtrl_ic_error.xml
+-a---            1/1/1981  1:01 AM            744 mtrl_ic_indeterminate.xml
+-a---            1/1/1981  1:01 AM            740 mtrl_popupmenu_background.xml
+-a---            1/1/1981  1:01 AM            524 mtrl_switch_thumb_checked_pres
+                                                  sed.xml
+-a---            1/1/1981  1:01 AM            784 mtrl_switch_thumb_checked_unch
+                                                  ecked.xml
+-a---            1/1/1981  1:01 AM            744 mtrl_switch_thumb_checked.xml
+-a---            1/1/1981  1:01 AM            524 mtrl_switch_thumb_pressed_chec
+                                                  ked.xml
+-a---            1/1/1981  1:01 AM            524 mtrl_switch_thumb_pressed_unch
+                                                  ecked.xml
+-a---            1/1/1981  1:01 AM            744 mtrl_switch_thumb_pressed.xml
+-a---            1/1/1981  1:01 AM            784 mtrl_switch_thumb_unchecked_ch
+                                                  ecked.xml
+-a---            1/1/1981  1:01 AM            524 mtrl_switch_thumb_unchecked_pr
+                                                  essed.xml
+-a---            1/1/1981  1:01 AM            744 mtrl_switch_thumb_unchecked.xm
+                                                  l
+-a---            1/1/1981  1:01 AM           2004 mtrl_switch_thumb.xml
+-a---            1/1/1981  1:01 AM            636 mtrl_switch_track_decoration.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            588 mtrl_switch_track.xml
+-a---            1/1/1981  1:01 AM            628 mtrl_tabs_default_indicator.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            516 navigation_empty_icon.xml
+-a---            1/1/1981  1:01 AM            532 notification_bg_low.xml
+-a---            1/1/1981  1:01 AM            532 notification_bg.xml
+-a---            1/1/1981  1:01 AM            372 notification_icon_background.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            304 notification_tile_bg.xml
+-a---            1/1/1981  1:01 AM            448 test_level_drawable.xml
+-a---            1/1/1981  1:01 AM            484 tooltip_frame_dark.xml
+-a---            1/1/1981  1:01 AM            484 tooltip_frame_light.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-anydpi-v21
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           4112 exo_edit_mode_logo.xml
+-a---            1/1/1981  1:01 AM           1120 exo_ic_audiotrack.xml
+-a---            1/1/1981  1:01 AM            700 exo_ic_check.xml
+-a---            1/1/1981  1:01 AM            596 exo_ic_chevron_left.xml
+-a---            1/1/1981  1:01 AM            596 exo_ic_chevron_right.xml
+-a---            1/1/1981  1:01 AM            844 exo_ic_default_album_image.xml
+-a---            1/1/1981  1:01 AM            880 exo_ic_forward.xml
+-a---            1/1/1981  1:01 AM            644 exo_ic_fullscreen_enter.xml
+-a---            1/1/1981  1:01 AM            644 exo_ic_fullscreen_exit.xml
+-a---            1/1/1981  1:01 AM            656 exo_ic_pause_circle_filled.xml
+-a---            1/1/1981  1:01 AM            640 exo_ic_play_circle_filled.xml
+-a---            1/1/1981  1:01 AM            880 exo_ic_rewind.xml
+-a---            1/1/1981  1:01 AM           1420 exo_ic_settings.xml
+-a---            1/1/1981  1:01 AM            584 exo_ic_skip_next.xml
+-a---            1/1/1981  1:01 AM            584 exo_ic_skip_previous.xml
+-a---            1/1/1981  1:01 AM           1148 exo_ic_speed.xml
+-a---            1/1/1981  1:01 AM           1212 exo_ic_subtitle_off.xml
+-a---            1/1/1981  1:01 AM            960 exo_ic_subtitle_on.xml
+-a---            1/1/1981  1:01 AM            588 exo_icon_fastforward.xml
+-a---            1/1/1981  1:01 AM            684 exo_icon_fullscreen_enter.xml
+-a---            1/1/1981  1:01 AM            684 exo_icon_fullscreen_exit.xml
+-a---            1/1/1981  1:01 AM            584 exo_icon_next.xml
+-a---            1/1/1981  1:01 AM            588 exo_icon_pause.xml
+-a---            1/1/1981  1:01 AM            564 exo_icon_play.xml
+-a---            1/1/1981  1:01 AM            584 exo_icon_previous.xml
+-a---            1/1/1981  1:01 AM            620 exo_icon_repeat_all.xml
+-a---            1/1/1981  1:01 AM            620 exo_icon_repeat_off.xml
+-a---            1/1/1981  1:01 AM            656 exo_icon_repeat_one.xml
+-a---            1/1/1981  1:01 AM            600 exo_icon_rewind.xml
+-a---            1/1/1981  1:01 AM            724 exo_icon_shuffle_off.xml
+-a---            1/1/1981  1:01 AM            724 exo_icon_shuffle_on.xml
+-a---            1/1/1981  1:01 AM            660 exo_icon_stop.xml
+-a---            1/1/1981  1:01 AM           1320 ic_call_answer_low.xml
+-a---            1/1/1981  1:01 AM            736 ic_call_answer_video_low.xml
+-a---            1/1/1981  1:01 AM            772 ic_call_answer_video.xml
+-a---            1/1/1981  1:01 AM           1356 ic_call_answer.xml
+-a---            1/1/1981  1:01 AM           1492 ic_call_decline_low.xml
+-a---            1/1/1981  1:01 AM           1528 ic_call_decline.xml
+-a---            1/1/1981  1:01 AM            648 media_session_service_notifica
+                                                  tion_ic_music_note.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-hdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            272 abc_ab_share_pack_mtrl_alpha.9
+                                                  .png
+-a---            1/1/1981  1:01 AM            227 abc_btn_check_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            404 abc_btn_check_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            464 abc_btn_radio_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            563 abc_btn_radio_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM           1096 abc_btn_switch_to_on_mtrl_0000
+                                                  1.9.png
+-a---            1/1/1981  1:01 AM           1243 abc_btn_switch_to_on_mtrl_0001
+                                                  2.9.png
+-a---            1/1/1981  1:01 AM            226 abc_cab_background_top_mtrl_al
+                                                  pha.9.png
+-a---            1/1/1981  1:01 AM            171 abc_ic_commit_search_api_mtrl_
+                                                  alpha.png
+-a---            1/1/1981  1:01 AM            167 abc_list_divider_mtrl_alpha.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            244 abc_list_focused_holo.9.png
+-a---            1/1/1981  1:01 AM            212 abc_list_longpressed_holo.9.pn
+                                                  g
+-a---            1/1/1981  1:01 AM            208 abc_list_pressed_holo_dark.9.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            208 abc_list_pressed_holo_light.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            228 abc_list_selector_disabled_hol
+                                                  o_dark.9.png
+-a---            1/1/1981  1:01 AM            229 abc_list_selector_disabled_hol
+                                                  o_light.9.png
+-a---            1/1/1981  1:01 AM            738 abc_menu_hardkey_panel_mtrl_mu
+                                                  lt.9.png
+-a---            1/1/1981  1:01 AM           1098 abc_popup_background_mtrl_mult
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            201 abc_scrubber_control_off_mtrl_
+                                                  alpha.png
+-a---            1/1/1981  1:01 AM            196 abc_scrubber_control_to_presse
+                                                  d_mtrl_000.png
+-a---            1/1/1981  1:01 AM            272 abc_scrubber_control_to_presse
+                                                  d_mtrl_005.png
+-a---            1/1/1981  1:01 AM            205 abc_scrubber_primary_mtrl_alph
+                                                  a.9.png
+-a---            1/1/1981  1:01 AM            196 abc_scrubber_track_mtrl_alpha.
+                                                  9.png
+-a---            1/1/1981  1:01 AM            345 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+-a---            1/1/1981  1:01 AM            484 abc_switch_track_mtrl_alpha.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            190 abc_tab_indicator_mtrl_alpha.9
+                                                  .png
+-a---            1/1/1981  1:01 AM            278 abc_text_select_handle_left_mt
+                                                  rl.png
+-a---            1/1/1981  1:01 AM            396 abc_text_select_handle_middle_
+                                                  mtrl.png
+-a---            1/1/1981  1:01 AM            262 abc_text_select_handle_right_m
+                                                  trl.png
+-a---            1/1/1981  1:01 AM            186 abc_textfield_activated_mtrl_a
+                                                  lpha.9.png
+-a---            1/1/1981  1:01 AM            192 abc_textfield_default_mtrl_alp
+                                                  ha.9.png
+-a---            1/1/1981  1:01 AM            178 abc_textfield_search_activated
+                                                  _mtrl_alpha.9.png
+-a---            1/1/1981  1:01 AM            178 abc_textfield_search_default_m
+                                                  trl_alpha.9.png
+-a---            1/1/1981  1:01 AM            458 exo_edit_mode_logo.png
+-a---            1/1/1981  1:01 AM            390 exo_ic_audiotrack.png
+-a---            1/1/1981  1:01 AM            174 exo_ic_check.png
+-a---            1/1/1981  1:01 AM            140 exo_ic_chevron_left.png
+-a---            1/1/1981  1:01 AM            138 exo_ic_chevron_right.png
+-a---            1/1/1981  1:01 AM           1362 exo_ic_default_album_image.png
+-a---            1/1/1981  1:01 AM            290 exo_ic_forward.png
+-a---            1/1/1981  1:01 AM            139 exo_ic_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            125 exo_ic_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            362 exo_ic_pause_circle_filled.png
+-a---            1/1/1981  1:01 AM            391 exo_ic_play_circle_filled.png
+-a---            1/1/1981  1:01 AM            289 exo_ic_rewind.png
+-a---            1/1/1981  1:01 AM            309 exo_ic_settings.png
+-a---            1/1/1981  1:01 AM            225 exo_ic_skip_next.png
+-a---            1/1/1981  1:01 AM            230 exo_ic_skip_previous.png
+-a---            1/1/1981  1:01 AM            386 exo_ic_speed.png
+-a---            1/1/1981  1:01 AM            224 exo_ic_subtitle_off.png
+-a---            1/1/1981  1:01 AM            221 exo_ic_subtitle_on.png
+-a---            1/1/1981  1:01 AM            995 exo_icon_circular_play.png
+-a---            1/1/1981  1:01 AM            283 exo_icon_fastforward.png
+-a---            1/1/1981  1:01 AM            107 exo_icon_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            105 exo_icon_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            264 exo_icon_next.png
+-a---            1/1/1981  1:01 AM             90 exo_icon_pause.png
+-a---            1/1/1981  1:01 AM            233 exo_icon_play.png
+-a---            1/1/1981  1:01 AM            255 exo_icon_previous.png
+-a---            1/1/1981  1:01 AM            203 exo_icon_repeat_all.png
+-a---            1/1/1981  1:01 AM            223 exo_icon_repeat_off.png
+-a---            1/1/1981  1:01 AM            223 exo_icon_repeat_one.png
+-a---            1/1/1981  1:01 AM            332 exo_icon_rewind.png
+-a---            1/1/1981  1:01 AM            265 exo_icon_shuffle_off.png
+-a---            1/1/1981  1:01 AM            268 exo_icon_shuffle_on.png
+-a---            1/1/1981  1:01 AM             90 exo_icon_stop.png
+-a---            1/1/1981  1:01 AM            291 exo_icon_vr.png
+-a---            1/1/1981  1:01 AM            472 ic_call_answer_low.png
+-a---            1/1/1981  1:01 AM            254 ic_call_answer_video_low.png
+-a---            1/1/1981  1:01 AM            254 ic_call_answer_video.png
+-a---            1/1/1981  1:01 AM            472 ic_call_answer.png
+-a---            1/1/1981  1:01 AM            375 ic_call_decline_low.png
+-a---            1/1/1981  1:01 AM            375 ic_call_decline.png
+-a---            1/1/1981  1:01 AM           7533 ic_launcher_foreground.png
+-a---            1/1/1981  1:01 AM            309 lb_action_bg_focused.9.png
+-a---            1/1/1981  1:01 AM            165 lb_ic_actions_right_arrow.png
+-a---            1/1/1981  1:01 AM            519 lb_ic_in_app_search.png
+-a---            1/1/1981  1:01 AM           2119 lb_ic_sad_cloud.png
+-a---            1/1/1981  1:01 AM            429 lb_ic_search_mic_out.png
+-a---            1/1/1981  1:01 AM            391 lb_ic_search_mic.png
+-a---            1/1/1981  1:01 AM            322 lb_in_app_search_bg.9.png
+-a---            1/1/1981  1:01 AM           1605 lb_in_app_search_shadow_focuse
+                                                  d.9.png
+-a---            1/1/1981  1:01 AM            648 lb_in_app_search_shadow_normal
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            227 media_session_service_notifica
+                                                  tion_ic_music_note.png
+-a---            1/1/1981  1:01 AM            212 notification_bg_low_normal.9.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            225 notification_bg_low_pressed.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            225 notification_bg_normal_pressed
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            212 notification_bg_normal.9.png
+-a---            1/1/1981  1:01 AM            909 notification_oversize_large_ic
+                                                  on_bg.png
+-a---            1/1/1981  1:01 AM            107 notify_panel_notification_icon
+                                                  _bg.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-ldpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            265 exo_edit_mode_logo.png
+-a---            1/1/1981  1:01 AM            229 exo_ic_audiotrack.png
+-a---            1/1/1981  1:01 AM            133 exo_ic_check.png
+-a---            1/1/1981  1:01 AM            109 exo_ic_chevron_left.png
+-a---            1/1/1981  1:01 AM            110 exo_ic_chevron_right.png
+-a---            1/1/1981  1:01 AM            675 exo_ic_default_album_image.png
+-a---            1/1/1981  1:01 AM            187 exo_ic_forward.png
+-a---            1/1/1981  1:01 AM            135 exo_ic_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            130 exo_ic_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            220 exo_ic_pause_circle_filled.png
+-a---            1/1/1981  1:01 AM            247 exo_ic_play_circle_filled.png
+-a---            1/1/1981  1:01 AM            189 exo_ic_rewind.png
+-a---            1/1/1981  1:01 AM            193 exo_ic_settings.png
+-a---            1/1/1981  1:01 AM            164 exo_ic_skip_next.png
+-a---            1/1/1981  1:01 AM            173 exo_ic_skip_previous.png
+-a---            1/1/1981  1:01 AM            233 exo_ic_speed.png
+-a---            1/1/1981  1:01 AM            174 exo_ic_subtitle_off.png
+-a---            1/1/1981  1:01 AM            161 exo_ic_subtitle_on.png
+-a---            1/1/1981  1:01 AM            457 exo_icon_circular_play.png
+-a---            1/1/1981  1:01 AM            173 exo_icon_fastforward.png
+-a---            1/1/1981  1:01 AM            139 exo_icon_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            146 exo_icon_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            152 exo_icon_next.png
+-a---            1/1/1981  1:01 AM             88 exo_icon_pause.png
+-a---            1/1/1981  1:01 AM            167 exo_icon_play.png
+-a---            1/1/1981  1:01 AM            161 exo_icon_previous.png
+-a---            1/1/1981  1:01 AM            142 exo_icon_repeat_all.png
+-a---            1/1/1981  1:01 AM            166 exo_icon_repeat_off.png
+-a---            1/1/1981  1:01 AM            160 exo_icon_repeat_one.png
+-a---            1/1/1981  1:01 AM            186 exo_icon_rewind.png
+-a---            1/1/1981  1:01 AM            182 exo_icon_shuffle_off.png
+-a---            1/1/1981  1:01 AM            187 exo_icon_shuffle_on.png
+-a---            1/1/1981  1:01 AM             88 exo_icon_stop.png
+-a---            1/1/1981  1:01 AM            170 exo_icon_vr.png
+-a---            1/1/1981  1:01 AM            270 ic_call_answer_low.png
+-a---            1/1/1981  1:01 AM            199 ic_call_answer_video_low.png
+-a---            1/1/1981  1:01 AM            199 ic_call_answer_video.png
+-a---            1/1/1981  1:01 AM            270 ic_call_answer.png
+-a---            1/1/1981  1:01 AM            201 ic_call_decline_low.png
+-a---            1/1/1981  1:01 AM            201 ic_call_decline.png
+-a---            1/1/1981  1:01 AM            188 media_session_service_notifica
+                                                  tion_ic_music_note.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-ldrtl-hdpi-v17
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            345 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-ldrtl-mdpi-v17
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            318 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-ldrtl-xhdpi-v17
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            417 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-ldrtl-xxhdpi-v17
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            525 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-ldrtl-xxxhdpi-v17
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            437 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-mdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            267 abc_ab_share_pack_mtrl_alpha.9
+                                                  .png
+-a---            1/1/1981  1:01 AM            214 abc_btn_check_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            321 abc_btn_check_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            324 abc_btn_radio_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            356 abc_btn_radio_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            754 abc_btn_switch_to_on_mtrl_0000
+                                                  1.9.png
+-a---            1/1/1981  1:01 AM            825 abc_btn_switch_to_on_mtrl_0001
+                                                  2.9.png
+-a---            1/1/1981  1:01 AM            216 abc_cab_background_top_mtrl_al
+                                                  pha.9.png
+-a---            1/1/1981  1:01 AM            173 abc_ic_commit_search_api_mtrl_
+                                                  alpha.png
+-a---            1/1/1981  1:01 AM            167 abc_list_divider_mtrl_alpha.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            222 abc_list_focused_holo.9.png
+-a---            1/1/1981  1:01 AM            211 abc_list_longpressed_holo.9.pn
+                                                  g
+-a---            1/1/1981  1:01 AM            207 abc_list_pressed_holo_dark.9.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            207 abc_list_pressed_holo_light.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            217 abc_list_selector_disabled_hol
+                                                  o_dark.9.png
+-a---            1/1/1981  1:01 AM            217 abc_list_selector_disabled_hol
+                                                  o_light.9.png
+-a---            1/1/1981  1:01 AM            541 abc_menu_hardkey_panel_mtrl_mu
+                                                  lt.9.png
+-a---            1/1/1981  1:01 AM            776 abc_popup_background_mtrl_mult
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            159 abc_scrubber_control_off_mtrl_
+                                                  alpha.png
+-a---            1/1/1981  1:01 AM            145 abc_scrubber_control_to_presse
+                                                  d_mtrl_000.png
+-a---            1/1/1981  1:01 AM            197 abc_scrubber_control_to_presse
+                                                  d_mtrl_005.png
+-a---            1/1/1981  1:01 AM            203 abc_scrubber_primary_mtrl_alph
+                                                  a.9.png
+-a---            1/1/1981  1:01 AM            194 abc_scrubber_track_mtrl_alpha.
+                                                  9.png
+-a---            1/1/1981  1:01 AM            327 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+-a---            1/1/1981  1:01 AM            395 abc_switch_track_mtrl_alpha.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            186 abc_tab_indicator_mtrl_alpha.9
+                                                  .png
+-a---            1/1/1981  1:01 AM            203 abc_text_select_handle_left_mt
+                                                  rl.png
+-a---            1/1/1981  1:01 AM            310 abc_text_select_handle_middle_
+                                                  mtrl.png
+-a---            1/1/1981  1:01 AM            186 abc_text_select_handle_right_m
+                                                  trl.png
+-a---            1/1/1981  1:01 AM            181 abc_textfield_activated_mtrl_a
+                                                  lpha.9.png
+-a---            1/1/1981  1:01 AM            178 abc_textfield_default_mtrl_alp
+                                                  ha.9.png
+-a---            1/1/1981  1:01 AM            178 abc_textfield_search_activated
+                                                  _mtrl_alpha.9.png
+-a---            1/1/1981  1:01 AM            178 abc_textfield_search_default_m
+                                                  trl_alpha.9.png
+-a---            1/1/1981  1:01 AM            368 exo_edit_mode_logo.png
+-a---            1/1/1981  1:01 AM            206 exo_ic_audiotrack.png
+-a---            1/1/1981  1:01 AM            141 exo_ic_check.png
+-a---            1/1/1981  1:01 AM            113 exo_ic_chevron_left.png
+-a---            1/1/1981  1:01 AM            112 exo_ic_chevron_right.png
+-a---            1/1/1981  1:01 AM            855 exo_ic_default_album_image.png
+-a---            1/1/1981  1:01 AM            228 exo_ic_forward.png
+-a---            1/1/1981  1:01 AM             98 exo_ic_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM             96 exo_ic_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            282 exo_ic_pause_circle_filled.png
+-a---            1/1/1981  1:01 AM            294 exo_ic_play_circle_filled.png
+-a---            1/1/1981  1:01 AM            226 exo_ic_rewind.png
+-a---            1/1/1981  1:01 AM            218 exo_ic_settings.png
+-a---            1/1/1981  1:01 AM            186 exo_ic_skip_next.png
+-a---            1/1/1981  1:01 AM            188 exo_ic_skip_previous.png
+-a---            1/1/1981  1:01 AM            269 exo_ic_speed.png
+-a---            1/1/1981  1:01 AM            157 exo_ic_subtitle_off.png
+-a---            1/1/1981  1:01 AM            145 exo_ic_subtitle_on.png
+-a---            1/1/1981  1:01 AM            672 exo_icon_circular_play.png
+-a---            1/1/1981  1:01 AM            217 exo_icon_fastforward.png
+-a---            1/1/1981  1:01 AM            101 exo_icon_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            101 exo_icon_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            209 exo_icon_next.png
+-a---            1/1/1981  1:01 AM            140 exo_icon_pause.png
+-a---            1/1/1981  1:01 AM            200 exo_icon_play.png
+-a---            1/1/1981  1:01 AM            180 exo_icon_previous.png
+-a---            1/1/1981  1:01 AM            210 exo_icon_repeat_all.png
+-a---            1/1/1981  1:01 AM            227 exo_icon_repeat_off.png
+-a---            1/1/1981  1:01 AM            232 exo_icon_repeat_one.png
+-a---            1/1/1981  1:01 AM            217 exo_icon_rewind.png
+-a---            1/1/1981  1:01 AM            228 exo_icon_shuffle_off.png
+-a---            1/1/1981  1:01 AM            230 exo_icon_shuffle_on.png
+-a---            1/1/1981  1:01 AM             97 exo_icon_stop.png
+-a---            1/1/1981  1:01 AM            207 exo_icon_vr.png
+-a---            1/1/1981  1:01 AM            317 ic_call_answer_low.png
+-a---            1/1/1981  1:01 AM            206 ic_call_answer_video_low.png
+-a---            1/1/1981  1:01 AM            206 ic_call_answer_video.png
+-a---            1/1/1981  1:01 AM            317 ic_call_answer.png
+-a---            1/1/1981  1:01 AM            264 ic_call_decline_low.png
+-a---            1/1/1981  1:01 AM            264 ic_call_decline.png
+-a---            1/1/1981  1:01 AM           3837 ic_launcher_foreground.png
+-a---            1/1/1981  1:01 AM            278 lb_action_bg_focused.9.png
+-a---            1/1/1981  1:01 AM            142 lb_ic_actions_right_arrow.png
+-a---            1/1/1981  1:01 AM            382 lb_ic_in_app_search.png
+-a---            1/1/1981  1:01 AM           1520 lb_ic_sad_cloud.png
+-a---            1/1/1981  1:01 AM            303 lb_ic_search_mic_out.png
+-a---            1/1/1981  1:01 AM            281 lb_ic_search_mic.png
+-a---            1/1/1981  1:01 AM            275 lb_in_app_search_bg.9.png
+-a---            1/1/1981  1:01 AM           1036 lb_in_app_search_shadow_focuse
+                                                  d.9.png
+-a---            1/1/1981  1:01 AM            493 lb_in_app_search_shadow_normal
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            150 media_session_service_notifica
+                                                  tion_ic_music_note.png
+-a---            1/1/1981  1:01 AM            215 notification_bg_low_normal.9.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            223 notification_bg_low_pressed.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            223 notification_bg_normal_pressed
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            215 notification_bg_normal.9.png
+-a---            1/1/1981  1:01 AM             98 notify_panel_notification_icon
+                                                  _bg.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-v21
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            264 abc_action_bar_item_background
+                                                  _material.xml
+-a---            1/1/1981  1:01 AM           1716 abc_btn_colored_material.xml
+-a---            1/1/1981  1:01 AM            716 abc_dialog_material_background
+                                                  .xml
+-a---            1/1/1981  1:01 AM           1172 abc_edit_text_material.xml
+-a---            1/1/1981  1:01 AM            516 abc_list_divider_material.xml
+-a---            1/1/1981  1:01 AM            644 ic_arrow_down_24dp.xml
+-a---            1/1/1981  1:01 AM            680 lb_action_bg.xml
+-a---            1/1/1981  1:01 AM            264 lb_card_foreground.xml
+-a---            1/1/1981  1:01 AM            936 lb_control_button_primary.xml
+-a---            1/1/1981  1:01 AM            936 lb_control_button_secondary.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            680 lb_selectable_item_rounded_rec
+                                                  t.xml
+-a---            1/1/1981  1:01 AM            588 material_cursor_drawable.xml
+-a---            1/1/1981  1:01 AM            264 mtrl_navigation_bar_item_backg
+                                                  round.xml
+-a---            1/1/1981  1:01 AM           1180 notification_action_background
+                                                  .xml
+-a---            1/1/1981  1:01 AM            516 preference_list_divider_materi
+                                                  al.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-v23
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            304 abc_control_background_materia
+                                                  l.xml
+-a---            1/1/1981  1:01 AM            304 m3_radiobutton_ripple.xml
+-a---            1/1/1981  1:01 AM            304 m3_selection_control_ripple.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            868 m3_tabs_background.xml
+-a---            1/1/1981  1:01 AM            632 m3_tabs_transparent_background
+                                                  .xml
+-a---            1/1/1981  1:01 AM           1228 mtrl_popupmenu_background_over
+                                                  lay.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-watch-v20
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            372 abc_dialog_material_background
+                                                  .xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-xhdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            280 abc_ab_share_pack_mtrl_alpha.9
+                                                  .png
+-a---            1/1/1981  1:01 AM            281 abc_btn_check_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            432 abc_btn_check_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            651 abc_btn_radio_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            785 abc_btn_radio_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM           1526 abc_btn_switch_to_on_mtrl_0000
+                                                  1.9.png
+-a---            1/1/1981  1:01 AM           1731 abc_btn_switch_to_on_mtrl_0001
+                                                  2.9.png
+-a---            1/1/1981  1:01 AM            229 abc_cab_background_top_mtrl_al
+                                                  pha.9.png
+-a---            1/1/1981  1:01 AM            228 abc_ic_commit_search_api_mtrl_
+                                                  alpha.png
+-a---            1/1/1981  1:01 AM            167 abc_list_divider_mtrl_alpha.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            244 abc_list_focused_holo.9.png
+-a---            1/1/1981  1:01 AM            214 abc_list_longpressed_holo.9.pn
+                                                  g
+-a---            1/1/1981  1:01 AM            209 abc_list_pressed_holo_dark.9.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            209 abc_list_pressed_holo_light.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            236 abc_list_selector_disabled_hol
+                                                  o_dark.9.png
+-a---            1/1/1981  1:01 AM            235 abc_list_selector_disabled_hol
+                                                  o_light.9.png
+-a---            1/1/1981  1:01 AM            966 abc_menu_hardkey_panel_mtrl_mu
+                                                  lt.9.png
+-a---            1/1/1981  1:01 AM           1544 abc_popup_background_mtrl_mult
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            267 abc_scrubber_control_off_mtrl_
+                                                  alpha.png
+-a---            1/1/1981  1:01 AM            267 abc_scrubber_control_to_presse
+                                                  d_mtrl_000.png
+-a---            1/1/1981  1:01 AM            391 abc_scrubber_control_to_presse
+                                                  d_mtrl_005.png
+-a---            1/1/1981  1:01 AM            208 abc_scrubber_primary_mtrl_alph
+                                                  a.9.png
+-a---            1/1/1981  1:01 AM            198 abc_scrubber_track_mtrl_alpha.
+                                                  9.png
+-a---            1/1/1981  1:01 AM            448 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+-a---            1/1/1981  1:01 AM            618 abc_switch_track_mtrl_alpha.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            194 abc_tab_indicator_mtrl_alpha.9
+                                                  .png
+-a---            1/1/1981  1:01 AM            335 abc_text_select_handle_left_mt
+                                                  rl.png
+-a---            1/1/1981  1:01 AM            585 abc_text_select_handle_middle_
+                                                  mtrl.png
+-a---            1/1/1981  1:01 AM            318 abc_text_select_handle_right_m
+                                                  trl.png
+-a---            1/1/1981  1:01 AM            189 abc_textfield_activated_mtrl_a
+                                                  lpha.9.png
+-a---            1/1/1981  1:01 AM            187 abc_textfield_default_mtrl_alp
+                                                  ha.9.png
+-a---            1/1/1981  1:01 AM            184 abc_textfield_search_activated
+                                                  _mtrl_alpha.9.png
+-a---            1/1/1981  1:01 AM            182 abc_textfield_search_default_m
+                                                  trl_alpha.9.png
+-a---            1/1/1981  1:01 AM          24888 banner_tv.png
+-a---            1/1/1981  1:01 AM            658 exo_edit_mode_logo.png
+-a---            1/1/1981  1:01 AM            346 exo_ic_audiotrack.png
+-a---            1/1/1981  1:01 AM            192 exo_ic_check.png
+-a---            1/1/1981  1:01 AM            153 exo_ic_chevron_left.png
+-a---            1/1/1981  1:01 AM            153 exo_ic_chevron_right.png
+-a---            1/1/1981  1:01 AM           1892 exo_ic_default_album_image.png
+-a---            1/1/1981  1:01 AM            361 exo_ic_forward.png
+-a---            1/1/1981  1:01 AM            101 exo_ic_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            101 exo_ic_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            478 exo_ic_pause_circle_filled.png
+-a---            1/1/1981  1:01 AM            509 exo_ic_play_circle_filled.png
+-a---            1/1/1981  1:01 AM            360 exo_ic_rewind.png
+-a---            1/1/1981  1:01 AM            386 exo_ic_settings.png
+-a---            1/1/1981  1:01 AM            265 exo_ic_skip_next.png
+-a---            1/1/1981  1:01 AM            273 exo_ic_skip_previous.png
+-a---            1/1/1981  1:01 AM            501 exo_ic_speed.png
+-a---            1/1/1981  1:01 AM            214 exo_ic_subtitle_off.png
+-a---            1/1/1981  1:01 AM            202 exo_ic_subtitle_on.png
+-a---            1/1/1981  1:01 AM           1322 exo_icon_circular_play.png
+-a---            1/1/1981  1:01 AM            386 exo_icon_fastforward.png
+-a---            1/1/1981  1:01 AM            109 exo_icon_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            106 exo_icon_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            269 exo_icon_next.png
+-a---            1/1/1981  1:01 AM            164 exo_icon_pause.png
+-a---            1/1/1981  1:01 AM            270 exo_icon_play.png
+-a---            1/1/1981  1:01 AM            328 exo_icon_previous.png
+-a---            1/1/1981  1:01 AM            288 exo_icon_repeat_all.png
+-a---            1/1/1981  1:01 AM            322 exo_icon_repeat_off.png
+-a---            1/1/1981  1:01 AM            331 exo_icon_repeat_one.png
+-a---            1/1/1981  1:01 AM            391 exo_icon_rewind.png
+-a---            1/1/1981  1:01 AM            342 exo_icon_shuffle_off.png
+-a---            1/1/1981  1:01 AM            342 exo_icon_shuffle_on.png
+-a---            1/1/1981  1:01 AM             91 exo_icon_stop.png
+-a---            1/1/1981  1:01 AM            375 exo_icon_vr.png
+-a---            1/1/1981  1:01 AM            623 ic_call_answer_low.png
+-a---            1/1/1981  1:01 AM            290 ic_call_answer_video_low.png
+-a---            1/1/1981  1:01 AM            290 ic_call_answer_video.png
+-a---            1/1/1981  1:01 AM            623 ic_call_answer.png
+-a---            1/1/1981  1:01 AM            452 ic_call_decline_low.png
+-a---            1/1/1981  1:01 AM            452 ic_call_decline.png
+-a---            1/1/1981  1:01 AM          12381 ic_launcher_foreground.png
+-a---            1/1/1981  1:01 AM            367 lb_action_bg_focused.9.png
+-a---            1/1/1981  1:01 AM           3415 lb_card_shadow_focused.9.png
+-a---            1/1/1981  1:01 AM           1500 lb_card_shadow_normal.9.png
+-a---            1/1/1981  1:01 AM            262 lb_ic_actions_right_arrow.png
+-a---            1/1/1981  1:01 AM            412 lb_ic_cc.png
+-a---            1/1/1981  1:01 AM            342 lb_ic_fast_forward.png
+-a---            1/1/1981  1:01 AM            404 lb_ic_fast_rewind.png
+-a---            1/1/1981  1:01 AM            165 lb_ic_guidedactions_item_chevr
+                                                  on.png
+-a---            1/1/1981  1:01 AM            451 lb_ic_hq.png
+-a---            1/1/1981  1:01 AM            668 lb_ic_in_app_search.png
+-a---            1/1/1981  1:01 AM            301 lb_ic_loop_one.png
+-a---            1/1/1981  1:01 AM            225 lb_ic_loop.png
+-a---            1/1/1981  1:01 AM            193 lb_ic_more.png
+-a---            1/1/1981  1:01 AM            187 lb_ic_nav_arrow.png
+-a---            1/1/1981  1:01 AM            153 lb_ic_pause.png
+-a---            1/1/1981  1:01 AM            162 lb_ic_pip.png
+-a---            1/1/1981  1:01 AM            394 lb_ic_play_fit.png
+-a---            1/1/1981  1:01 AM            325 lb_ic_play.png
+-a---            1/1/1981  1:01 AM            410 lb_ic_playback_loop.png
+-a---            1/1/1981  1:01 AM            750 lb_ic_replay.png
+-a---            1/1/1981  1:01 AM           2787 lb_ic_sad_cloud.png
+-a---            1/1/1981  1:01 AM            534 lb_ic_search_mic_out.png
+-a---            1/1/1981  1:01 AM            491 lb_ic_search_mic.png
+-a---            1/1/1981  1:01 AM            438 lb_ic_shuffle.png
+-a---            1/1/1981  1:01 AM            301 lb_ic_skip_next.png
+-a---            1/1/1981  1:01 AM            324 lb_ic_skip_previous.png
+-a---            1/1/1981  1:01 AM            131 lb_ic_stop.png
+-a---            1/1/1981  1:01 AM            600 lb_ic_thumb_down_outline.png
+-a---            1/1/1981  1:01 AM            435 lb_ic_thumb_down.png
+-a---            1/1/1981  1:01 AM            603 lb_ic_thumb_up_outline.png
+-a---            1/1/1981  1:01 AM            444 lb_ic_thumb_up.png
+-a---            1/1/1981  1:01 AM            356 lb_in_app_search_bg.9.png
+-a---            1/1/1981  1:01 AM           2310 lb_in_app_search_shadow_focuse
+                                                  d.9.png
+-a---            1/1/1981  1:01 AM            785 lb_in_app_search_shadow_normal
+                                                  .9.png
+-a---            1/1/1981  1:01 AM             92 lb_text_dot_one_small.png
+-a---            1/1/1981  1:01 AM            123 lb_text_dot_one.png
+-a---            1/1/1981  1:01 AM            101 lb_text_dot_two_small.png
+-a---            1/1/1981  1:01 AM            181 lb_text_dot_two.png
+-a---            1/1/1981  1:01 AM            234 media_session_service_notifica
+                                                  tion_ic_music_note.png
+-a---            1/1/1981  1:01 AM            221 notification_bg_low_normal.9.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            252 notification_bg_low_pressed.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            247 notification_bg_normal_pressed
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            221 notification_bg_normal.9.png
+-a---            1/1/1981  1:01 AM            138 notify_panel_notification_icon
+                                                  _bg.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-xxhdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            286 abc_ab_share_pack_mtrl_alpha.9
+                                                  .png
+-a---            1/1/1981  1:01 AM            307 abc_btn_check_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            593 abc_btn_check_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            984 abc_btn_radio_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM           1208 abc_btn_radio_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM           2463 abc_btn_switch_to_on_mtrl_0000
+                                                  1.9.png
+-a---            1/1/1981  1:01 AM           2834 abc_btn_switch_to_on_mtrl_0001
+                                                  2.9.png
+-a---            1/1/1981  1:01 AM            237 abc_cab_background_top_mtrl_al
+                                                  pha.9.png
+-a---            1/1/1981  1:01 AM            224 abc_ic_commit_search_api_mtrl_
+                                                  alpha.png
+-a---            1/1/1981  1:01 AM            171 abc_list_divider_mtrl_alpha.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            245 abc_list_focused_holo.9.png
+-a---            1/1/1981  1:01 AM            221 abc_list_longpressed_holo.9.pn
+                                                  g
+-a---            1/1/1981  1:01 AM            212 abc_list_pressed_holo_dark.9.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            212 abc_list_pressed_holo_light.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            260 abc_list_selector_disabled_hol
+                                                  o_dark.9.png
+-a---            1/1/1981  1:01 AM            258 abc_list_selector_disabled_hol
+                                                  o_light.9.png
+-a---            1/1/1981  1:01 AM           1779 abc_menu_hardkey_panel_mtrl_mu
+                                                  lt.9.png
+-a---            1/1/1981  1:01 AM           2305 abc_popup_background_mtrl_mult
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            322 abc_scrubber_control_off_mtrl_
+                                                  alpha.png
+-a---            1/1/1981  1:01 AM            403 abc_scrubber_control_to_presse
+                                                  d_mtrl_000.png
+-a---            1/1/1981  1:01 AM            595 abc_scrubber_control_to_presse
+                                                  d_mtrl_005.png
+-a---            1/1/1981  1:01 AM            210 abc_scrubber_primary_mtrl_alph
+                                                  a.9.png
+-a---            1/1/1981  1:01 AM            207 abc_scrubber_track_mtrl_alpha.
+                                                  9.png
+-a---            1/1/1981  1:01 AM            524 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+-a---            1/1/1981  1:01 AM            851 abc_switch_track_mtrl_alpha.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            204 abc_tab_indicator_mtrl_alpha.9
+                                                  .png
+-a---            1/1/1981  1:01 AM            420 abc_text_select_handle_left_mt
+                                                  rl.png
+-a---            1/1/1981  1:01 AM            753 abc_text_select_handle_middle_
+                                                  mtrl.png
+-a---            1/1/1981  1:01 AM            422 abc_text_select_handle_right_m
+                                                  trl.png
+-a---            1/1/1981  1:01 AM            199 abc_textfield_activated_mtrl_a
+                                                  lpha.9.png
+-a---            1/1/1981  1:01 AM            200 abc_textfield_default_mtrl_alp
+                                                  ha.9.png
+-a---            1/1/1981  1:01 AM            187 abc_textfield_search_activated
+                                                  _mtrl_alpha.9.png
+-a---            1/1/1981  1:01 AM            186 abc_textfield_search_default_m
+                                                  trl_alpha.9.png
+-a---            1/1/1981  1:01 AM            998 exo_edit_mode_logo.png
+-a---            1/1/1981  1:01 AM            513 exo_ic_audiotrack.png
+-a---            1/1/1981  1:01 AM            236 exo_ic_check.png
+-a---            1/1/1981  1:01 AM            191 exo_ic_chevron_left.png
+-a---            1/1/1981  1:01 AM            191 exo_ic_chevron_right.png
+-a---            1/1/1981  1:01 AM           3131 exo_ic_default_album_image.png
+-a---            1/1/1981  1:01 AM            526 exo_ic_forward.png
+-a---            1/1/1981  1:01 AM            107 exo_ic_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            105 exo_ic_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            648 exo_ic_pause_circle_filled.png
+-a---            1/1/1981  1:01 AM            712 exo_ic_play_circle_filled.png
+-a---            1/1/1981  1:01 AM            527 exo_ic_rewind.png
+-a---            1/1/1981  1:01 AM            574 exo_ic_settings.png
+-a---            1/1/1981  1:01 AM            336 exo_ic_skip_next.png
+-a---            1/1/1981  1:01 AM            345 exo_ic_skip_previous.png
+-a---            1/1/1981  1:01 AM            727 exo_ic_speed.png
+-a---            1/1/1981  1:01 AM            281 exo_ic_subtitle_off.png
+-a---            1/1/1981  1:01 AM            265 exo_ic_subtitle_on.png
+-a---            1/1/1981  1:01 AM           2020 exo_icon_circular_play.png
+-a---            1/1/1981  1:01 AM            575 exo_icon_fastforward.png
+-a---            1/1/1981  1:01 AM            123 exo_icon_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            123 exo_icon_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            385 exo_icon_next.png
+-a---            1/1/1981  1:01 AM            111 exo_icon_pause.png
+-a---            1/1/1981  1:01 AM            378 exo_icon_play.png
+-a---            1/1/1981  1:01 AM            458 exo_icon_previous.png
+-a---            1/1/1981  1:01 AM            266 exo_icon_repeat_all.png
+-a---            1/1/1981  1:01 AM            309 exo_icon_repeat_off.png
+-a---            1/1/1981  1:01 AM            309 exo_icon_repeat_one.png
+-a---            1/1/1981  1:01 AM            561 exo_icon_rewind.png
+-a---            1/1/1981  1:01 AM            438 exo_icon_shuffle_off.png
+-a---            1/1/1981  1:01 AM            436 exo_icon_shuffle_on.png
+-a---            1/1/1981  1:01 AM             95 exo_icon_stop.png
+-a---            1/1/1981  1:01 AM            602 exo_icon_vr.png
+-a---            1/1/1981  1:01 AM            884 ic_call_answer_low.png
+-a---            1/1/1981  1:01 AM            384 ic_call_answer_video_low.png
+-a---            1/1/1981  1:01 AM            384 ic_call_answer_video.png
+-a---            1/1/1981  1:01 AM            884 ic_call_answer.png
+-a---            1/1/1981  1:01 AM            628 ic_call_decline_low.png
+-a---            1/1/1981  1:01 AM            628 ic_call_decline.png
+-a---            1/1/1981  1:01 AM          24764 ic_launcher_foreground.png
+-a---            1/1/1981  1:01 AM            420 lb_action_bg_focused.9.png
+-a---            1/1/1981  1:01 AM            264 lb_ic_actions_right_arrow.png
+-a---            1/1/1981  1:01 AM            977 lb_ic_in_app_search.png
+-a---            1/1/1981  1:01 AM           2572 lb_ic_sad_cloud.png
+-a---            1/1/1981  1:01 AM            788 lb_ic_search_mic_out.png
+-a---            1/1/1981  1:01 AM            720 lb_ic_search_mic.png
+-a---            1/1/1981  1:01 AM            459 lb_in_app_search_bg.9.png
+-a---            1/1/1981  1:01 AM           3917 lb_in_app_search_shadow_focuse
+                                                  d.9.png
+-a---            1/1/1981  1:01 AM           1197 lb_in_app_search_shadow_normal
+                                                  .9.png
+-a---            1/1/1981  1:01 AM            346 media_session_service_notifica
+                                                  tion_ic_music_note.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\drawable-xxxhdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            275 abc_btn_check_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            476 abc_btn_check_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            785 abc_btn_radio_to_on_mtrl_000.p
+                                                  ng
+-a---            1/1/1981  1:01 AM            946 abc_btn_radio_to_on_mtrl_015.p
+                                                  ng
+-a---            1/1/1981  1:01 AM           2505 abc_btn_switch_to_on_mtrl_0000
+                                                  1.9.png
+-a---            1/1/1981  1:01 AM           2816 abc_btn_switch_to_on_mtrl_0001
+                                                  2.9.png
+-a---            1/1/1981  1:01 AM            415 abc_scrubber_control_to_presse
+                                                  d_mtrl_000.png
+-a---            1/1/1981  1:01 AM            631 abc_scrubber_control_to_presse
+                                                  d_mtrl_005.png
+-a---            1/1/1981  1:01 AM            430 abc_spinner_mtrl_am_alpha.9.pn
+                                                  g
+-a---            1/1/1981  1:01 AM            813 abc_switch_track_mtrl_alpha.9.
+                                                  png
+-a---            1/1/1981  1:01 AM            202 abc_tab_indicator_mtrl_alpha.9
+                                                  .png
+-a---            1/1/1981  1:01 AM            513 abc_text_select_handle_left_mt
+                                                  rl.png
+-a---            1/1/1981  1:01 AM            513 abc_text_select_handle_right_m
+                                                  trl.png
+-a---            1/1/1981  1:01 AM           1397 exo_edit_mode_logo.png
+-a---            1/1/1981  1:01 AM            650 exo_ic_audiotrack.png
+-a---            1/1/1981  1:01 AM            277 exo_ic_check.png
+-a---            1/1/1981  1:01 AM            238 exo_ic_chevron_left.png
+-a---            1/1/1981  1:01 AM            237 exo_ic_chevron_right.png
+-a---            1/1/1981  1:01 AM           4781 exo_ic_default_album_image.png
+-a---            1/1/1981  1:01 AM            670 exo_ic_forward.png
+-a---            1/1/1981  1:01 AM            109 exo_ic_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            106 exo_ic_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM           1081 exo_ic_pause_circle_filled.png
+-a---            1/1/1981  1:01 AM           1152 exo_ic_play_circle_filled.png
+-a---            1/1/1981  1:01 AM            673 exo_ic_rewind.png
+-a---            1/1/1981  1:01 AM            752 exo_ic_settings.png
+-a---            1/1/1981  1:01 AM            428 exo_ic_skip_next.png
+-a---            1/1/1981  1:01 AM            433 exo_ic_skip_previous.png
+-a---            1/1/1981  1:01 AM            955 exo_ic_speed.png
+-a---            1/1/1981  1:01 AM            316 exo_ic_subtitle_off.png
+-a---            1/1/1981  1:01 AM            305 exo_ic_subtitle_on.png
+-a---            1/1/1981  1:01 AM           2683 exo_icon_circular_play.png
+-a---            1/1/1981  1:01 AM            592 exo_icon_fastforward.png
+-a---            1/1/1981  1:01 AM            219 exo_icon_fullscreen_enter.png
+-a---            1/1/1981  1:01 AM            227 exo_icon_fullscreen_exit.png
+-a---            1/1/1981  1:01 AM            502 exo_icon_next.png
+-a---            1/1/1981  1:01 AM            218 exo_icon_pause.png
+-a---            1/1/1981  1:01 AM            495 exo_icon_play.png
+-a---            1/1/1981  1:01 AM            513 exo_icon_previous.png
+-a---            1/1/1981  1:01 AM            529 exo_icon_repeat_all.png
+-a---            1/1/1981  1:01 AM            529 exo_icon_repeat_off.png
+-a---            1/1/1981  1:01 AM            595 exo_icon_repeat_one.png
+-a---            1/1/1981  1:01 AM            627 exo_icon_rewind.png
+-a---            1/1/1981  1:01 AM            802 exo_icon_shuffle_off.png
+-a---            1/1/1981  1:01 AM            911 exo_icon_shuffle_on.png
+-a---            1/1/1981  1:01 AM            144 exo_icon_stop.png
+-a---            1/1/1981  1:01 AM           1171 ic_call_answer_low.png
+-a---            1/1/1981  1:01 AM            465 ic_call_answer_video_low.png
+-a---            1/1/1981  1:01 AM            465 ic_call_answer_video.png
+-a---            1/1/1981  1:01 AM           1171 ic_call_answer.png
+-a---            1/1/1981  1:01 AM            823 ic_call_decline_low.png
+-a---            1/1/1981  1:01 AM            823 ic_call_decline.png
+-a---            1/1/1981  1:01 AM          40226 ic_launcher_foreground.png
+-a---            1/1/1981  1:01 AM            465 media_session_service_notifica
+                                                  tion_ic_music_note.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\font
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           3316 roboto_medium_numbers.ttf
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\interpolator
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            316 btn_checkbox_checked_mtrl_anim
+                                                  ation_interpolator_0.xml
+-a---            1/1/1981  1:01 AM            328 btn_checkbox_checked_mtrl_anim
+                                                  ation_interpolator_1.xml
+-a---            1/1/1981  1:01 AM            316 btn_checkbox_unchecked_mtrl_an
+                                                  imation_interpolator_0.xml
+-a---            1/1/1981  1:01 AM            328 btn_checkbox_unchecked_mtrl_an
+                                                  imation_interpolator_1.xml
+-a---            1/1/1981  1:01 AM            320 btn_radio_to_off_mtrl_animatio
+                                                  n_interpolator_0.xml
+-a---            1/1/1981  1:01 AM            320 btn_radio_to_on_mtrl_animation
+                                                  _interpolator_0.xml
+-a---            1/1/1981  1:01 AM            400 fast_out_slow_in.xml
+-a---            1/1/1981  1:01 AM            132 mtrl_linear.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\interpolator-v21
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            400 m3_sys_motion_easing_emphasize
+                                                  d_accelerate.xml
+-a---            1/1/1981  1:01 AM            400 m3_sys_motion_easing_emphasize
+                                                  d_decelerate.xml
+-a---            1/1/1981  1:01 AM            280 m3_sys_motion_easing_emphasize
+                                                  d.xml
+-a---            1/1/1981  1:01 AM            400 m3_sys_motion_easing_linear.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            400 m3_sys_motion_easing_standard_
+                                                  accelerate.xml
+-a---            1/1/1981  1:01 AM            400 m3_sys_motion_easing_standard_
+                                                  decelerate.xml
+-a---            1/1/1981  1:01 AM            400 m3_sys_motion_easing_standard.
+                                                  xml
+-a---            1/1/1981  1:01 AM            400 mtrl_fast_out_linear_in.xml
+-a---            1/1/1981  1:01 AM            400 mtrl_fast_out_slow_in.xml
+-a---            1/1/1981  1:01 AM            400 mtrl_linear_out_slow_in.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\layout
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            872 abc_action_bar_title_item.xml
+-a---            1/1/1981  1:01 AM            440 abc_action_bar_up_container.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            768 abc_action_menu_item_layout.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            576 abc_action_menu_layout.xml
+-a---            1/1/1981  1:01 AM            464 abc_action_mode_bar.xml
+-a---            1/1/1981  1:01 AM            840 abc_action_mode_close_item_mat
+                                                  erial.xml
+-a---            1/1/1981  1:01 AM           1304 abc_activity_chooser_view_list
+                                                  _item.xml
+-a---            1/1/1981  1:01 AM           1684 abc_activity_chooser_view.xml
+-a---            1/1/1981  1:01 AM           1584 abc_alert_dialog_button_bar_ma
+                                                  terial.xml
+-a---            1/1/1981  1:01 AM           2648 abc_alert_dialog_material.xml
+-a---            1/1/1981  1:01 AM           1560 abc_alert_dialog_title_materia
+                                                  l.xml
+-a---            1/1/1981  1:01 AM           1868 abc_cascading_menu_item_layout
+                                                  .xml
+-a---            1/1/1981  1:01 AM           1116 abc_dialog_title_material.xml
+-a---            1/1/1981  1:01 AM            388 abc_expanded_menu_layout.xml
+-a---            1/1/1981  1:01 AM            528 abc_list_menu_item_checkbox.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            780 abc_list_menu_item_icon.xml
+-a---            1/1/1981  1:01 AM           1396 abc_list_menu_item_layout.xml
+-a---            1/1/1981  1:01 AM            532 abc_list_menu_item_radio.xml
+-a---            1/1/1981  1:01 AM            848 abc_popup_menu_header_item_lay
+                                                  out.xml
+-a---            1/1/1981  1:01 AM           2072 abc_popup_menu_item_layout.xml
+-a---            1/1/1981  1:01 AM            548 abc_screen_content_include.xml
+-a---            1/1/1981  1:01 AM            792 abc_screen_simple_overlay_acti
+                                                  on_mode.xml
+-a---            1/1/1981  1:01 AM            832 abc_screen_simple.xml
+-a---            1/1/1981  1:01 AM           1504 abc_screen_toolbar.xml
+-a---            1/1/1981  1:01 AM           1916 abc_search_dropdown_item_icons
+                                                  _2line.xml
+-a---            1/1/1981  1:01 AM           3472 abc_search_view.xml
+-a---            1/1/1981  1:01 AM           1020 abc_select_dialog_material.xml
+-a---            1/1/1981  1:01 AM           1056 abc_tooltip.xml
+-a---            1/1/1981  1:01 AM            748 activity_catchup_player.xml
+-a---            1/1/1981  1:01 AM            748 activity_episode_player.xml
+-a---            1/1/1981  1:01 AM            956 activity_live_player.xml
+-a---            1/1/1981  1:01 AM            388 activity_login.xml
+-a---            1/1/1981  1:01 AM           6344 activity_main.xml
+-a---            1/1/1981  1:01 AM            748 activity_movie_player.xml
+-a---            1/1/1981  1:01 AM            748 activity_tv_live_player.xml
+-a---            1/1/1981  1:01 AM            356 activity_tv_main.xml
+-a---            1/1/1981  1:01 AM            532 activity_tv_movie_player.xml
+-a---            1/1/1981  1:01 AM            612 custom_dialog.xml
+-a---            1/1/1981  1:01 AM           1860 design_bottom_navigation_item.
+                                                  xml
+-a---            1/1/1981  1:01 AM           1224 design_bottom_sheet_dialog.xml
+-a---            1/1/1981  1:01 AM           1444 design_layout_snackbar_include
+                                                  .xml
+-a---            1/1/1981  1:01 AM            528 design_layout_snackbar.xml
+-a---            1/1/1981  1:01 AM            408 design_layout_tab_icon.xml
+-a---            1/1/1981  1:01 AM            436 design_layout_tab_text.xml
+-a---            1/1/1981  1:01 AM            320 design_menu_item_action_area.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            440 design_navigation_item_header.
+                                                  xml
+-a---            1/1/1981  1:01 AM            472 design_navigation_item_separat
+                                                  or.xml
+-a---            1/1/1981  1:01 AM            564 design_navigation_item_subhead
+                                                  er.xml
+-a---            1/1/1981  1:01 AM            636 design_navigation_item.xml
+-a---            1/1/1981  1:01 AM            856 design_navigation_menu_item.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            528 design_navigation_menu.xml
+-a---            1/1/1981  1:01 AM            656 design_text_input_end_icon.xml
+-a---            1/1/1981  1:01 AM            652 design_text_input_start_icon.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           2628 exo_legacy_player_control_view
+                                                  .xml
+-a---            1/1/1981  1:01 AM            356 exo_list_divider.xml
+-a---            1/1/1981  1:01 AM           4056 exo_player_control_view.xml
+-a---            1/1/1981  1:01 AM           2100 exo_player_view.xml
+-a---            1/1/1981  1:01 AM           1584 exo_styled_settings_list_item.
+                                                  xml
+-a---            1/1/1981  1:01 AM            468 exo_styled_settings_list.xml
+-a---            1/1/1981  1:01 AM           1280 exo_styled_sub_settings_list_i
+                                                  tem.xml
+-a---            1/1/1981  1:01 AM            496 exo_track_selection_dialog.xml
+-a---            1/1/1981  1:01 AM           1720 expand_button.xml
+-a---            1/1/1981  1:01 AM           4644 fragment_add_server.xml
+-a---            1/1/1981  1:01 AM           2348 fragment_catchup.xml
+-a---            1/1/1981  1:01 AM            384 fragment_epg.xml
+-a---            1/1/1981  1:01 AM            384 fragment_favorites.xml
+-a---            1/1/1981  1:01 AM           9384 fragment_home.xml
+-a---            1/1/1981  1:01 AM           3196 fragment_live.xml
+-a---            1/1/1981  1:01 AM           6328 fragment_login.xml
+-a---            1/1/1981  1:01 AM           1308 fragment_movie_detail.xml
+-a---            1/1/1981  1:01 AM           3524 fragment_movie.xml
+-a---            1/1/1981  1:01 AM            384 fragment_search_results.xml
+-a---            1/1/1981  1:01 AM           1380 fragment_search.xml
+-a---            1/1/1981  1:01 AM            892 fragment_season.xml
+-a---            1/1/1981  1:01 AM           1308 fragment_series_detail.xml
+-a---            1/1/1981  1:01 AM           2684 fragment_series.xml
+-a---            1/1/1981  1:01 AM            384 fragment_server_manager.xml
+-a---            1/1/1981  1:01 AM            356 fragment_settings.xml
+-a---            1/1/1981  1:01 AM           1088 image_frame.xml
+-a---            1/1/1981  1:01 AM            364 ime_base_split_test_activity.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            876 ime_secondary_split_test_activ
+                                                  ity.xml
+-a---            1/1/1981  1:01 AM           1056 include_stat_cell.xml
+-a---            1/1/1981  1:01 AM            880 item_category.xml
+-a---            1/1/1981  1:01 AM           3196 item_channel.xml
+-a---            1/1/1981  1:01 AM           2444 item_continue_watching.xml
+-a---            1/1/1981  1:01 AM           1172 item_epg_program.xml
+-a---            1/1/1981  1:01 AM           1228 item_episode.xml
+-a---            1/1/1981  1:01 AM            428 item_favorite.xml
+-a---            1/1/1981  1:01 AM            676 item_featured.xml
+-a---            1/1/1981  1:01 AM           3516 item_movie.xml
+-a---            1/1/1981  1:01 AM            428 item_search_all.xml
+-a---            1/1/1981  1:01 AM            468 item_season.xml
+-a---            1/1/1981  1:01 AM           2992 item_series.xml
+-a---            1/1/1981  1:01 AM           1172 item_server.xml
+-a---            1/1/1981  1:01 AM            416 lb_action_1_line.xml
+-a---            1/1/1981  1:01 AM            416 lb_action_2_lines.xml
+-a---            1/1/1981  1:01 AM            320 lb_background_window.xml
+-a---            1/1/1981  1:01 AM           1212 lb_browse_fragment.xml
+-a---            1/1/1981  1:01 AM            408 lb_browse_title.xml
+-a---            1/1/1981  1:01 AM            420 lb_control_bar.xml
+-a---            1/1/1981  1:01 AM            916 lb_control_button_primary.xml
+-a---            1/1/1981  1:01 AM            740 lb_control_button_secondary.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            872 lb_details_description.xml
+-a---            1/1/1981  1:01 AM            940 lb_details_fragment.xml
+-a---            1/1/1981  1:01 AM           2376 lb_details_overview.xml
+-a---            1/1/1981  1:01 AM            584 lb_divider.xml
+-a---            1/1/1981  1:01 AM           1596 lb_error_fragment.xml
+-a---            1/1/1981  1:01 AM            520 lb_fullwidth_details_overview_
+                                                  logo.xml
+-a---            1/1/1981  1:01 AM           2120 lb_fullwidth_details_overview.
+                                                  xml
+-a---            1/1/1981  1:01 AM            940 lb_guidance.xml
+-a---            1/1/1981  1:01 AM            888 lb_guidedactions_datepicker_it
+                                                  em.xml
+-a---            1/1/1981  1:01 AM           1096 lb_guidedactions_item.xml
+-a---            1/1/1981  1:01 AM           1888 lb_guidedactions.xml
+-a---            1/1/1981  1:01 AM           1212 lb_guidedbuttonactions.xml
+-a---            1/1/1981  1:01 AM            500 lb_guidedstep_background.xml
+-a---            1/1/1981  1:01 AM           2240 lb_guidedstep_fragment.xml
+-a---            1/1/1981  1:01 AM            504 lb_header.xml
+-a---            1/1/1981  1:01 AM            908 lb_headers_fragment.xml
+-a---            1/1/1981  1:01 AM            448 lb_image_card_view_themed_badg
+                                                  e_left.xml
+-a---            1/1/1981  1:01 AM            448 lb_image_card_view_themed_badg
+                                                  e_right.xml
+-a---            1/1/1981  1:01 AM            296 lb_image_card_view_themed_cont
+                                                  ent.xml
+-a---            1/1/1981  1:01 AM            296 lb_image_card_view_themed_titl
+                                                  e.xml
+-a---            1/1/1981  1:01 AM            632 lb_image_card_view.xml
+-a---            1/1/1981  1:01 AM            704 lb_list_row_hovercard.xml
+-a---            1/1/1981  1:01 AM            604 lb_list_row.xml
+-a---            1/1/1981  1:01 AM           1008 lb_media_item_number_view_flip
+                                                  per.xml
+-a---            1/1/1981  1:01 AM            496 lb_media_list_header.xml
+-a---            1/1/1981  1:01 AM           2024 lb_onboarding_fragment.xml
+-a---            1/1/1981  1:01 AM            760 lb_picker_column.xml
+-a---            1/1/1981  1:01 AM            484 lb_picker_item.xml
+-a---            1/1/1981  1:01 AM            476 lb_picker_separator.xml
+-a---            1/1/1981  1:01 AM            480 lb_picker.xml
+-a---            1/1/1981  1:01 AM            524 lb_pinpicker_item.xml
+-a---            1/1/1981  1:01 AM           2228 lb_playback_controls_row.xml
+-a---            1/1/1981  1:01 AM           1736 lb_playback_controls.xml
+-a---            1/1/1981  1:01 AM            736 lb_playback_fragment.xml
+-a---            1/1/1981  1:01 AM            936 lb_playback_now_playing_bars.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           3576 lb_playback_transport_controls
+                                                  _row.xml
+-a---            1/1/1981  1:01 AM            744 lb_playback_transport_controls
+                                                  .xml
+-a---            1/1/1981  1:01 AM            584 lb_row_container.xml
+-a---            1/1/1981  1:01 AM            804 lb_row_header.xml
+-a---            1/1/1981  1:01 AM            624 lb_row_media_item_action.xml
+-a---            1/1/1981  1:01 AM           1668 lb_row_media_item.xml
+-a---            1/1/1981  1:01 AM            460 lb_rows_fragment.xml
+-a---            1/1/1981  1:01 AM           2236 lb_search_bar.xml
+-a---            1/1/1981  1:01 AM            796 lb_search_fragment.xml
+-a---            1/1/1981  1:01 AM            724 lb_search_orb.xml
+-a---            1/1/1981  1:01 AM            452 lb_section_header.xml
+-a---            1/1/1981  1:01 AM            676 lb_shadow.xml
+-a---            1/1/1981  1:01 AM            724 lb_speech_orb.xml
+-a---            1/1/1981  1:01 AM           1088 lb_title_view.xml
+-a---            1/1/1981  1:01 AM            788 lb_vertical_grid_fragment.xml
+-a---            1/1/1981  1:01 AM            652 lb_vertical_grid.xml
+-a---            1/1/1981  1:01 AM            428 lb_video_surface.xml
+-a---            1/1/1981  1:01 AM           1224 leanback_edit_preference_fragm
+                                                  ent.xml
+-a---            1/1/1981  1:01 AM           1260 leanback_list_preference_fragm
+                                                  ent.xml
+-a---            1/1/1981  1:01 AM           1608 leanback_list_preference_item_
+                                                  multi.xml
+-a---            1/1/1981  1:01 AM           1612 leanback_list_preference_item_
+                                                  single.xml
+-a---            1/1/1981  1:01 AM            824 leanback_preference_category.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            868 leanback_preference_fragment.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           1728 leanback_preference_informatio
+                                                  n.xml
+-a---            1/1/1981  1:01 AM            504 leanback_preference_widget_che
+                                                  ckbox.xml
+-a---            1/1/1981  1:01 AM           2648 leanback_preference_widget_see
+                                                  kbar.xml
+-a---            1/1/1981  1:01 AM            504 leanback_preference_widget_swi
+                                                  tch.xml
+-a---            1/1/1981  1:01 AM           2148 leanback_preference.xml
+-a---            1/1/1981  1:01 AM            464 leanback_preferences_list.xml
+-a---            1/1/1981  1:01 AM            728 leanback_settings_fragment.xml
+-a---            1/1/1981  1:01 AM           1584 m3_alert_dialog_actions.xml
+-a---            1/1/1981  1:01 AM            956 m3_alert_dialog_title.xml
+-a---            1/1/1981  1:01 AM           2720 m3_alert_dialog.xml
+-a---            1/1/1981  1:01 AM            612 m3_auto_complete_simple_item.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           1180 m3_side_sheet_dialog.xml
+-a---            1/1/1981  1:01 AM            372 material_chip_input_combo.xml
+-a---            1/1/1981  1:01 AM            444 material_clock_display_divider
+                                                  .xml
+-a---            1/1/1981  1:01 AM            796 material_clock_display.xml
+-a---            1/1/1981  1:01 AM           1220 material_clock_period_toggle.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            476 material_clockface_textview.xm
+                                                  l
+-a---            1/1/1981  1:01 AM           1012 material_clockface_view.xml
+-a---            1/1/1981  1:01 AM            768 material_radial_view_group.xml
+-a---            1/1/1981  1:01 AM            720 material_textinput_timepicker.
+                                                  xml
+-a---            1/1/1981  1:01 AM            380 material_time_chip.xml
+-a---            1/1/1981  1:01 AM            956 material_time_input.xml
+-a---            1/1/1981  1:01 AM           2892 material_timepicker_dialog.xml
+-a---            1/1/1981  1:01 AM            728 material_timepicker_textinput_
+                                                  display.xml
+-a---            1/1/1981  1:01 AM           1608 material_timepicker.xml
+-a---            1/1/1981  1:01 AM           1764 mtrl_alert_dialog_actions.xml
+-a---            1/1/1981  1:01 AM            956 mtrl_alert_dialog_title.xml
+-a---            1/1/1981  1:01 AM           2476 mtrl_alert_dialog.xml
+-a---            1/1/1981  1:01 AM            588 mtrl_alert_select_dialog_item.
+                                                  xml
+-a---            1/1/1981  1:01 AM            940 mtrl_alert_select_dialog_multi
+                                                  choice.xml
+-a---            1/1/1981  1:01 AM            940 mtrl_alert_select_dialog_singl
+                                                  echoice.xml
+-a---            1/1/1981  1:01 AM            612 mtrl_auto_complete_simple_item
+                                                  .xml
+-a---            1/1/1981  1:01 AM            352 mtrl_calendar_day_of_week.xml
+-a---            1/1/1981  1:01 AM            352 mtrl_calendar_day.xml
+-a---            1/1/1981  1:01 AM            436 mtrl_calendar_days_of_week.xml
+-a---            1/1/1981  1:01 AM           1176 mtrl_calendar_horizontal.xml
+-a---            1/1/1981  1:01 AM            728 mtrl_calendar_month_labeled.xm
+                                                  l
+-a---            1/1/1981  1:01 AM           1748 mtrl_calendar_month_navigation
+                                                  .xml
+-a---            1/1/1981  1:01 AM            688 mtrl_calendar_month.xml
+-a---            1/1/1981  1:01 AM            428 mtrl_calendar_months.xml
+-a---            1/1/1981  1:01 AM            740 mtrl_calendar_vertical.xml
+-a---            1/1/1981  1:01 AM            352 mtrl_calendar_year.xml
+-a---            1/1/1981  1:01 AM            952 mtrl_layout_snackbar_include.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            492 mtrl_layout_snackbar.xml
+-a---            1/1/1981  1:01 AM           1860 mtrl_navigation_rail_item.xml
+-a---            1/1/1981  1:01 AM            984 mtrl_picker_actions.xml
+-a---            1/1/1981  1:01 AM           1172 mtrl_picker_dialog.xml
+-a---            1/1/1981  1:01 AM            880 mtrl_picker_fullscreen.xml
+-a---            1/1/1981  1:01 AM           1492 mtrl_picker_header_dialog.xml
+-a---            1/1/1981  1:01 AM           2800 mtrl_picker_header_fullscreen.
+                                                  xml
+-a---            1/1/1981  1:01 AM            712 mtrl_picker_header_selection_t
+                                                  ext.xml
+-a---            1/1/1981  1:01 AM            624 mtrl_picker_header_title_text.
+                                                  xml
+-a---            1/1/1981  1:01 AM            528 mtrl_picker_header_toggle.xml
+-a---            1/1/1981  1:01 AM           1580 mtrl_picker_text_input_date_ra
+                                                  nge.xml
+-a---            1/1/1981  1:01 AM            984 mtrl_picker_text_input_date.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            488 mtrl_search_bar.xml
+-a---            1/1/1981  1:01 AM           3424 mtrl_search_view.xml
+-a---            1/1/1981  1:01 AM            564 notification_media_action.xml
+-a---            1/1/1981  1:01 AM            744 notification_media_cancel_acti
+                                                  on.xml
+-a---            1/1/1981  1:01 AM           3044 notification_template_big_medi
+                                                  a_custom.xml
+-a---            1/1/1981  1:01 AM           3216 notification_template_big_medi
+                                                  a_narrow_custom.xml
+-a---            1/1/1981  1:01 AM           1824 notification_template_big_medi
+                                                  a_narrow.xml
+-a---            1/1/1981  1:01 AM           1696 notification_template_big_medi
+                                                  a.xml
+-a---            1/1/1981  1:01 AM           2872 notification_template_lines_me
+                                                  dia.xml
+-a---            1/1/1981  1:01 AM           2756 notification_template_media_cu
+                                                  stom.xml
+-a---            1/1/1981  1:01 AM           1292 notification_template_media.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            440 notification_template_part_chr
+                                                  onometer.xml
+-a---            1/1/1981  1:01 AM            440 notification_template_part_tim
+                                                  e.xml
+-a---            1/1/1981  1:01 AM           1768 preference_category_material.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            384 preference_category.xml
+-a---            1/1/1981  1:01 AM           1312 preference_dialog_edittext.xml
+-a---            1/1/1981  1:01 AM            712 preference_dropdown_material.x
+                                                  ml
+-a---            1/1/1981  1:01 AM           2544 preference_dropdown.xml
+-a---            1/1/1981  1:01 AM           2056 preference_information_materia
+                                                  l.xml
+-a---            1/1/1981  1:01 AM           1732 preference_information.xml
+-a---            1/1/1981  1:01 AM            812 preference_list_fragment.xml
+-a---            1/1/1981  1:01 AM           2052 preference_material.xml
+-a---            1/1/1981  1:01 AM            544 preference_recyclerview.xml
+-a---            1/1/1981  1:01 AM            472 preference_widget_checkbox.xml
+-a---            1/1/1981  1:01 AM           3096 preference_widget_seekbar_mate
+                                                  rial.xml
+-a---            1/1/1981  1:01 AM           2896 preference_widget_seekbar.xml
+-a---            1/1/1981  1:01 AM            504 preference_widget_switch_compa
+                                                  t.xml
+-a---            1/1/1981  1:01 AM            472 preference_widget_switch.xml
+-a---            1/1/1981  1:01 AM           2352 preference.xml
+-a---            1/1/1981  1:01 AM            640 select_dialog_item_material.xm
+                                                  l
+-a---            1/1/1981  1:01 AM            864 select_dialog_multichoice_mate
+                                                  rial.xml
+-a---            1/1/1981  1:01 AM            864 select_dialog_singlechoice_mat
+                                                  erial.xml
+-a---            1/1/1981  1:01 AM            464 support_simple_spinner_dropdow
+                                                  n_item.xml
+-a---            1/1/1981  1:01 AM            320 video_surface_fragment.xml
+-a---            1/1/1981  1:01 AM           1360 view_epg_overlay.xml
+-a---            1/1/1981  1:01 AM           1292 view_loading_state.xml
+-a---            1/1/1981  1:01 AM           3528 view_player_controls.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\layout-land
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           1232 material_clock_period_toggle_l
+                                                  and.xml
+-a---            1/1/1981  1:01 AM           1676 material_timepicker.xml
+-a---            1/1/1981  1:01 AM           1532 mtrl_picker_header_dialog.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\layout-sw600dp-v13
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            528 design_layout_snackbar.xml
+-a---            1/1/1981  1:01 AM            492 mtrl_layout_snackbar.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\layout-v21
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           1228 notification_action_tombstone.
+                                                  xml
+-a---            1/1/1981  1:01 AM           1052 notification_action.xml
+-a---            1/1/1981  1:01 AM           2456 notification_template_custom_b
+                                                  ig.xml
+-a---            1/1/1981  1:01 AM            988 notification_template_icon_gro
+                                                  up.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\layout-v23
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            408 exo_player_control_ffwd_button
+                                                  .xml
+-a---            1/1/1981  1:01 AM            408 exo_player_control_rewind_butt
+                                                  on.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\layout-v26
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           1560 abc_screen_toolbar.xml
+-a---            1/1/1981  1:01 AM            744 mtrl_calendar_month.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\layout-watch-v20
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           1208 abc_alert_dialog_button_bar_ma
+                                                  terial.xml
+-a---            1/1/1981  1:01 AM           1352 abc_alert_dialog_title_materia
+                                                  l.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\menu
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            884 menu_bottom_nav.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\mipmap-anydpi-v26
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            448 ic_launcher_round.xml
+-a---            1/1/1981  1:01 AM            448 ic_launcher.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\mipmap-hdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           3910 ic_launcher_round.png
+-a---            1/1/1981  1:01 AM           3910 ic_launcher.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\mipmap-mdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           2080 ic_launcher_round.png
+-a---            1/1/1981  1:01 AM           2080 ic_launcher.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\mipmap-xhdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           6220 ic_launcher_round.png
+-a---            1/1/1981  1:01 AM           6220 ic_launcher.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\mipmap-xxhdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM          12199 ic_launcher_round.png
+-a---            1/1/1981  1:01 AM          12199 ic_launcher.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\mipmap-xxxhdpi-v4
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM          19634 ic_launcher_round.png
+-a---            1/1/1981  1:01 AM          19634 ic_launcher.png
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\navigation
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           3276 nav_graph.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\raw
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM           4530 lb_voice_failure.ogg
+-a---            1/1/1981  1:01 AM           4557 lb_voice_no_input.ogg
+-a---            1/1/1981  1:01 AM           4074 lb_voice_open.ogg
+-a---            1/1/1981  1:01 AM           4383 lb_voice_success.ogg
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\transition-v21
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            388 lb_browse_enter_transition.xml
+-a---            1/1/1981  1:01 AM            548 lb_browse_entrance_transition.
+                                                  xml
+-a---            1/1/1981  1:01 AM           1012 lb_browse_headers_in.xml
+-a---            1/1/1981  1:01 AM            972 lb_browse_headers_out.xml
+-a---            1/1/1981  1:01 AM           1308 lb_browse_return_transition.xm
+                                                  l
+-a---            1/1/1981  1:01 AM           1572 lb_details_enter_transition.xm
+                                                  l
+-a---            1/1/1981  1:01 AM           1572 lb_details_return_transition.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            432 lb_enter_transition.xml
+-a---            1/1/1981  1:01 AM            548 lb_guidedstep_activity_enter_b
+                                                  ottom.xml
+-a---            1/1/1981  1:01 AM           2008 lb_guidedstep_activity_enter.x
+                                                  ml
+-a---            1/1/1981  1:01 AM            432 lb_return_transition.xml
+-a---            1/1/1981  1:01 AM            676 lb_shared_element_enter_transi
+                                                  tion.xml
+-a---            1/1/1981  1:01 AM            756 lb_shared_element_return_trans
+                                                  ition.xml
+-a---            1/1/1981  1:01 AM            688 lb_title_in.xml
+-a---            1/1/1981  1:01 AM            688 lb_title_out.xml
+-a---            1/1/1981  1:01 AM            388 lb_vertical_grid_enter_transit
+                                                  ion.xml
+-a---            1/1/1981  1:01 AM            432 lb_vertical_grid_entrance_tran
+                                                  sition.xml
+-a---            1/1/1981  1:01 AM            888 lb_vertical_grid_return_transi
+                                                  tion.xml
+
+    Directory: E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1\extracted\res\xml
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---            1/1/1981  1:01 AM            444 backup_rules.xml
+-a---            1/1/1981  1:01 AM            708 data_extraction_rules.xml
+-a---            1/1/1981  1:01 AM            560 network_security_config.xml
+-a---            1/1/1981  1:01 AM           1616 preferences_settings.xml
+

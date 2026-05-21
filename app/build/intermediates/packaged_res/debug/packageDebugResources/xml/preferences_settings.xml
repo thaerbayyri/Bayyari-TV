@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="pref_change_playlist"
+        android:title="@string/settings_change_playlist"
+        android:summary="@string/settings_change_playlist_summary" />
+
+    <Preference
+        android:key="pref_servers"
+        android:title="@string/settings_servers" />
+
+    <ListPreference
+        android:key="pref_default_player"
+        android:title="@string/settings_default_player"
+        android:entries="@array/player_entries"
+        android:entryValues="@array/player_values"
+        android:defaultValue="internal" />
+
+    <ListPreference
+        android:key="pref_stream_format"
+        android:title="@string/settings_stream_format"
+        android:entries="@array/stream_entries"
+        android:entryValues="@array/stream_values"
+        android:defaultValue="hls" />
+
+    <SwitchPreferenceCompat
+        android:key="pref_auto_play_next"
+        android:title="@string/settings_auto_play_next"
+        android:defaultValue="true" />
+
+    <Preference
+        android:key="pref_clear_cache"
+        android:title="@string/settings_clear_cache" />
+
+    <Preference
+        android:key="pref_app_info"
+        android:title="@string/settings_app_info" />
+
+    <EditTextPreference
+        android:key="pref_parental_pin"
+        android:title="@string/settings_parental_pin" />
+
+</PreferenceScreen>

@@ -1,0 +1,3 @@
+Module-1 commands completed. Artifacts under E:\nashamaiptv page\apps\BAYYARI player\artifacts\module1
+Extraction and search complete.
+apktool complete. Files written: apktool_run.txt, decompiled_search.txt, decompiled_exported.txt
