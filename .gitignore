@@ -1,3 +1,34 @@
 # Test server credentials — NEVER commit
 app/src/test/resources/test_server.properties
 app/src/androidTest/assets/test_server.properties
+
+# Build / IDE
+/build/
+/app/build/
+/.gradle/
+.idea/
+/*.iml
+
+# Local gradle wrapper
+/gradle/
+
+# Android artifacts
+*.apk
+*.ap_ 
+*.aab
+
+# Generated files
+/out/
+/captures/
+
+# Artifacts and tools outputs
+/artifacts/
+
+# Android Studio specific
+.gradle/
+.idea/
+local.properties
+
+# Logs
+*.log
+
