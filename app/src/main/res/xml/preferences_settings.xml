@@ -8,7 +8,8 @@
 
     <Preference
         android:key="pref_servers"
-        android:title="@string/settings_servers" />
+        android:title="@string/settings_servers"
+        android:summary="@string/settings_servers_summary" />
 
     <ListPreference
         android:key="pref_default_player"
@@ -23,6 +24,13 @@
         android:entries="@array/stream_entries"
         android:entryValues="@array/stream_values"
         android:defaultValue="hls" />
+
+    <ListPreference
+        android:key="pref_buffer_size"
+        android:title="@string/settings_buffer"
+        android:entries="@array/buffer_entries"
+        android:entryValues="@array/buffer_values"
+        android:defaultValue="30000" />
 
     <SwitchPreferenceCompat
         android:key="pref_auto_play_next"
@@ -40,5 +48,10 @@
     <EditTextPreference
         android:key="pref_parental_pin"
         android:title="@string/settings_parental_pin" />
+
+    <Preference
+        android:key="pref_restore_hidden_categories"
+        android:title="@string/settings_restore_hidden_categories"
+        android:summary="@string/settings_restore_hidden_categories_summary" />
 
 </PreferenceScreen>

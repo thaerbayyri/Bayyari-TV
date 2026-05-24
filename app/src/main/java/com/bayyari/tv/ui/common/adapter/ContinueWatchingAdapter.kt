@@ -6,13 +6,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bayyari.tv.R
-import com.bayyari.tv.data.local.entities.WatchHistoryEntity
 import com.bayyari.tv.databinding.ItemContinueWatchingBinding
+import com.bayyari.tv.domain.model.WatchEntry
 import com.bumptech.glide.Glide
 
 class ContinueWatchingAdapter(
-    private val onClick: (WatchHistoryEntity) -> Unit
-) : ListAdapter<WatchHistoryEntity, ContinueWatchingAdapter.WatchViewHolder>(Diff) {
+    private val onClick: (WatchEntry) -> Unit
+) : ListAdapter<WatchEntry, ContinueWatchingAdapter.WatchViewHolder>(Diff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WatchViewHolder {
         val binding = ItemContinueWatchingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -27,7 +27,7 @@ class ContinueWatchingAdapter(
         private val binding: ItemContinueWatchingBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: WatchHistoryEntity) {
+        fun bind(item: WatchEntry) {
             binding.textTitle.text = item.title.ifBlank { item.contentType.replaceFirstChar { it.uppercaseChar() } }
             val remaining = ((item.durationMs - item.positionMs).coerceAtLeast(0) / 60_000L)
             binding.textSubtitle.text = if (remaining > 0) "$remaining min left" else item.contentType
@@ -45,11 +45,11 @@ class ContinueWatchingAdapter(
         }
     }
 
-    private object Diff : DiffUtil.ItemCallback<WatchHistoryEntity>() {
-        override fun areItemsTheSame(oldItem: WatchHistoryEntity, newItem: WatchHistoryEntity): Boolean =
+    private object Diff : DiffUtil.ItemCallback<WatchEntry>() {
+        override fun areItemsTheSame(oldItem: WatchEntry, newItem: WatchEntry): Boolean =
             oldItem.id == newItem.id
 
-        override fun areContentsTheSame(oldItem: WatchHistoryEntity, newItem: WatchHistoryEntity): Boolean =
+        override fun areContentsTheSame(oldItem: WatchEntry, newItem: WatchEntry): Boolean =
             oldItem == newItem
     }
 }

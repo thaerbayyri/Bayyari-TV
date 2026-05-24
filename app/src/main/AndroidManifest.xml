@@ -38,7 +38,6 @@
             android:exported="true"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
             android:launchMode="singleTop"
-            android:screenOrientation="sensorLandscape"
             android:theme="@style/Theme.BayyariTv">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,6 +61,12 @@
 
         <activity
             android:name=".ui.auth.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BayyariTv.NoActionBar" />
+
+        <activity
+            android:name=".ui.sync.SyncActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.BayyariTv.NoActionBar" />

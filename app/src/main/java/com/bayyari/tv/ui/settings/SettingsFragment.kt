@@ -55,6 +55,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
             true
         }
 
+        findPreference<ListPreference>("pref_buffer_size")?.setOnPreferenceChangeListener { _, newValue ->
+            viewModel.setBufferSizeMs((newValue as String).toInt())
+            true
+        }
+
         findPreference<SwitchPreferenceCompat>("pref_auto_play_next")?.setOnPreferenceChangeListener { _, newValue ->
             viewModel.setAutoPlayNext(newValue as Boolean)
             true
@@ -71,6 +76,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
             viewLifecycleOwner.lifecycleScope.launch {
                 viewModel.clearCache()
             }
+            true
+        }
+
+        findPreference<Preference>("pref_restore_hidden_categories")?.setOnPreferenceClickListener {
+            viewModel.clearHiddenLiveCategories()
             true
         }
     }

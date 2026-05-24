@@ -1,5 +1,6 @@
 package com.bayyari.tv.ui.favorites
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bayyari.tv.data.local.dao.FavoriteDao
@@ -8,43 +9,62 @@ import com.bayyari.tv.data.repository.LiveRepository
 import com.bayyari.tv.data.repository.MovieRepository
 import com.bayyari.tv.data.repository.SeriesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.mapLatest
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
 class FavoritesViewModel @Inject constructor(
-    authRepository: AuthRepository,
+    private val authRepository: AuthRepository,
     private val favoriteDao: FavoriteDao,
     private val liveRepository: LiveRepository,
     private val movieRepository: MovieRepository,
     private val seriesRepository: SeriesRepository
 ) : ViewModel() {
 
-    data class FavoriteItem(val id: Int, val type: String, val title: String)
+    private val serverId = authRepository.activeServerFlow()
+        .map { it?.id ?: 0 }
+        .stateIn(viewModelScope, SharingStarted.Eagerly, authRepository.getActiveServer()?.id ?: 0)
 
-    private val serverId = authRepository.getActiveServer()?.id ?: 0
-
-    val favorites = if (serverId == 0) {
-        flowOf(emptyList())
-    } else {
-        favoriteDao.observeAll(serverId).mapLatest { list ->
-            list.mapNotNull { fav ->
+    val favorites = serverId.flatMapLatest { id ->
+        if (id == 0) return@flatMapLatest flowOf(emptyList<FavoriteItem>())
+        combine(
+            favoriteDao.observeAll(id),
+            liveRepository.observeChannels(id, null),
+            movieRepository.observeMovies(id, null),
+            seriesRepository.observeSeries(id, null)
+        ) { favs, channels, movies, series ->
+            val channelById = channels.associateBy { it.streamId }
+            val movieById = movies.associateBy { it.streamId }
+            val seriesById = series.associateBy { it.seriesId }
+            favs.mapNotNull { fav ->
                 when (fav.contentType) {
-                    "live" -> liveRepository.getChannel(serverId, fav.contentId)?.let {
-                        FavoriteItem(fav.contentId, fav.contentType, it.name)
+                    "live" -> channelById[fav.contentId]?.let {
+                        FavoriteItem(fav.id, "Live", it.name)
                     }
-                    "movie" -> movieRepository.getMovie(serverId, fav.contentId)?.let {
-                        FavoriteItem(fav.contentId, fav.contentType, it.name)
+                    "movie" -> movieById[fav.contentId]?.let {
+                        FavoriteItem(fav.id, "Movie", it.name)
                     }
-                    "series" -> seriesRepository.getSeries(serverId, fav.contentId)?.let {
-                        FavoriteItem(fav.contentId, fav.contentType, it.name)
+                    "series" -> seriesById[fav.contentId]?.let {
+                        FavoriteItem(fav.id, "Series", it.name)
                     }
                     else -> null
                 }
             }
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+
+    fun removeFavorite(item: FavoriteItem) {
+        viewModelScope.launch {
+            runCatching { favoriteDao.deleteById(item.id) }
+                .onFailure { Log.e("FavoritesViewModel", "removeFavorite failed", it) }
+        }
+    }
 }

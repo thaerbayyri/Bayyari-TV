@@ -25,6 +25,13 @@ class TvMainActivity : BaseActivity() {
         }
     }
 
+    fun showTvSection(fragment: androidx.fragment.app.Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.tv_container, fragment)
+            .addToBackStack(fragment.javaClass.name)
+            .commit()
+    }
+
     override fun onStart() {
         super.onStart()
         if (authRepository.getActiveServer() == null) {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.bayyari.tv.R
 import com.bayyari.tv.data.repository.AuthRepository
 import com.bayyari.tv.data.repository.EpgRepository
@@ -25,8 +26,11 @@ class EpgFragment : Fragment(R.layout.fragment_epg) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentEpgBinding.bind(view)
-        val streamId = arguments?.getInt("streamId") ?: 0
-        if (streamId == 0) return
+        val streamId = requireArguments().getInt("streamId")
+        if (streamId == 0) {
+            findNavController().popBackStack()
+            return
+        }
         viewLifecycleOwner.lifecycleScope.launch {
             val server = authRepository.getActiveServer() ?: return@launch
             val epg = epgRepository.refresh(server, streamId)

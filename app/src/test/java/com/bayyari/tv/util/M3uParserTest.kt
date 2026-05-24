@@ -1,6 +1,7 @@
 package com.bayyari.tv.util
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class M3uParserTest {
@@ -8,16 +9,23 @@ class M3uParserTest {
     private val parser = M3uParser()
 
     @Test
-    fun parses_basic_m3u() {
-        val m3u = """
-            #EXTM3U
-            #EXTINF:-1 tvg-id="id1" tvg-name="Channel 1" tvg-logo="logo.png" group-title="News",Channel 1
-            http://example.com/stream/1
-        """.trimIndent()
+    fun parse_simpleM3u_parsesChannels() {
+        val m3u = """#EXTM3U
+#EXTINF:-1 tvg-id="100" tvg-name="Channel A" tvg-logo="http://x/logo.png" group-title="News",Channel A
+http://example.com/100.m3u8
+""".trimIndent()
+        val list = parser.parse(m3u, serverId = 1)
+        assertEquals(1, list.size)
+        val ch = list[0]
+        assertEquals(100, ch.streamId)
+        assertEquals("Channel A", ch.name)
+        assertEquals("http://x/logo.png", ch.streamIcon)
+        assertEquals("News", ch.categoryId)
+        assertEquals(1, ch.serverId)
+    }
 
-        val items = parser.parse(m3u, 1)
-        assertEquals(1, items.size)
-        assertEquals("Channel 1", items.first().name)
-        assertEquals("News", items.first().categoryName)
+    @Test
+    fun parse_empty_returnsEmpty() {
+        assertTrue(parser.parse("", 0).isEmpty())
     }
 }

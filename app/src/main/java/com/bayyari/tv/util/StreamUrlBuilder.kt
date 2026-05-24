@@ -31,12 +31,12 @@ class StreamUrlBuilder @Inject constructor() {
     }
 
     fun movie(serverUrl: String, user: String, pass: String, vodId: Int, containerExt: String): String {
-        val ext = containerExt.ifBlank { "mp4" }
+        val ext = containerExt.normalizeExtension()
         return "${serverUrl.ensureTrailingSlash()}movie/${encode(user)}/${encode(pass)}/$vodId.$ext"
     }
 
     fun episode(serverUrl: String, user: String, pass: String, episodeId: Int, containerExt: String): String {
-        val ext = containerExt.ifBlank { "mp4" }
+        val ext = containerExt.normalizeExtension()
         return "${serverUrl.ensureTrailingSlash()}series/${encode(user)}/${encode(pass)}/$episodeId.$ext"
     }
 
@@ -64,4 +64,11 @@ class StreamUrlBuilder @Inject constructor() {
     private fun encode(value: String): String = URLEncoder.encode(value, "UTF-8")
         // Retrofit/HTTP path semantics: Xtream treats '+' as literal in path, but URLEncoder uses '+' for space.
         .replace("+", "%20")
+
+    private fun String.normalizeExtension(): String =
+        trim()
+            .removePrefix(".")
+            .substringBefore('?')
+            .substringBefore('&')
+            .ifBlank { "mp4" }
 }

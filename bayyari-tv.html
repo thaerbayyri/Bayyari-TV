@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bayyari TV — Watch live channels, movies, series and more.">
+<meta property="og:title" content="Bayyari TV – Premium IPTV">
+<meta property="og:site_name" content="Bayyari TV">
+<meta property="og:description" content="Bayyari TV brings live channels, movies, series and catch-up TV together in one warm cinematic interface.">
+<meta name="application-name" content="Bayyari TV">
+<meta name="apple-mobile-web-app-title" content="Bayyari TV">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='7' fill='%23E8A020'/><path d='M7 9h14M7 14h9M7 19h11' stroke='%230A0A0A' stroke-width='2.2' stroke-linecap='round'/></svg>">
+<title>Bayyari TV – Premium IPTV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080708;--bg2:#111010;--bg3:#1C1A18;--card:#221F1C;--card2:#2A2520;
+  --gold-light:#F5C842;--gold-mid:#E8A020;--gold-dark:#C47010;--gold-glow:rgba(232,160,32,.18);--gold-border:rgba(232,160,32,.28);--gold-bg:rgba(232,160,32,.10);
+  --amber:#FF8C00;--crimson:#E03050;--star:#F5C842;
+  --text:#F2EDE8;--text2:#9A8F85;--text3:#5A5248;
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-8:32px;--sp-10:40px;--sp-12:48px;
+  --r-sm:6px;--r-md:10px;--r-lg:14px;--r-xl:20px;--r-full:9999px;
+  --t-fast:150ms ease;--t-base:220ms ease;--t-slow:340ms cubic-bezier(.4,0,.2,1);
+  --focus-ring:0 0 0 3px rgba(232,160,32,.40);--z-nav:200;--z-toast:500;
+}
+html{scroll-behavior:smooth}*{outline:none}*:focus-visible{box-shadow:var(--focus-ring);border-radius:inherit}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+button,select,input{font-family:'Sora',sans-serif;cursor:pointer}.hero h1,.login-logo .logo-wordmark,.login-title{font-family:'DM Serif Display',serif}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--sp-10);background:linear-gradient(to bottom,rgba(8,7,8,.96) 70%,transparent);border-bottom:1px solid rgba(255,255,255,.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:-.3px;font-size:20px}.logo-icon{flex-shrink:0}.logo-wordmark{display:flex;align-items:baseline;gap:1px}.logo-bayyari{color:var(--text);font-weight:900}.logo-tv{color:var(--gold-mid);font-weight:700;font-size:.8em;letter-spacing:.5px}
+.nav-links{display:flex;gap:4px}.nav-link{padding:8px 16px;border-radius:var(--r-md);font-size:14px;font-weight:500;border:none;background:none;color:var(--text2);transition:var(--t-base);font-family:'Sora',sans-serif;cursor:pointer}.nav-link:hover{color:var(--text);background:rgba(255,255,255,.05)}.nav-link.active{color:var(--gold-mid);background:var(--gold-bg)}.nav-link:focus-visible{box-shadow:var(--focus-ring);outline:none}.nav-right{display:flex;align-items:center;gap:10px}
+.icon-btn{width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.07);color:var(--text);display:flex;align-items:center;justify-content:center;font-size:15px;transition:background var(--t-fast)}.icon-btn:hover{background:rgba(255,255,255,.13)}.avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--amber),var(--gold-light));color:#0A0700;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;cursor:pointer;letter-spacing:.5px}
+.screen{display:none}.screen.active{display:block;animation:screenIn 240ms ease both}@keyframes screenIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.main{padding-top:64px}
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 20% 55%,rgba(232,160,32,.09) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(255,140,0,.07) 0%,transparent 50%),radial-gradient(ellipse at 50% 100%,rgba(200,112,16,.06) 0%,transparent 45%),var(--bg)}.login-box{background:var(--bg2);border:1px solid rgba(232,160,32,.12);border-radius:var(--r-xl);padding:48px 42px;width:min(440px,calc(100vw - 32px));box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px rgba(232,160,32,.05)}.login-logo{text-align:center;margin-bottom:32px;display:flex;align-items:center;justify-content:center;gap:12px}.login-logo .logo-icon svg{width:36px;height:36px}.login-logo .logo-wordmark{font-size:26px}.login-title{font-size:28px;font-weight:700;margin-bottom:5px}.login-sub{font-size:14px;color:var(--text2);margin-bottom:30px}.field-label{font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.5px;text-transform:uppercase;margin-bottom:7px;display:block}.field-input{width:100%;padding:12px 16px;background:var(--bg3);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-md);color:var(--text);font-size:15px;outline:none;transition:border-color var(--t-base);margin-bottom:14px}.field-input:focus{border-color:var(--gold-mid)}.field-input::placeholder{color:var(--text3)}.login-btn{width:100%;padding:14px;background:var(--gold-mid);color:#050300;border:none;border-radius:var(--r-md);font-size:15px;font-weight:800;margin-top:4px;transition:all var(--t-base);letter-spacing:.2px;display:flex;align-items:center;justify-content:center;gap:8px}.login-btn:hover{background:var(--gold-light);transform:translateY(-1px)}.login-btn:disabled{cursor:wait}.btn-spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(5,3,0,.3);border-top-color:#050300;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.login-footer{text-align:center;margin-top:20px;font-size:12px;color:var(--text2)}.login-footer span{color:var(--gold-mid);font-weight:700}
+.hero{height:530px;position:relative;display:flex;align-items:flex-end;padding:0 44px 52px;overflow:hidden}.hero-poster{position:absolute;inset:0;background:linear-gradient(135deg,#1A0E00 0%,#150C02 40%,#0A0800 100%)}.hero-poster::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 30%,rgba(232,160,32,.22) 0%,transparent 55%),radial-gradient(ellipse at 82% 70%,rgba(255,140,0,.12) 0%,transparent 40%),radial-gradient(ellipse at 10% 80%,rgba(200,112,16,.08) 0%,transparent 50%)}.hero-art{position:absolute;right:5%;top:50%;transform:translateY(-50%);font-size:200px;opacity:.18;pointer-events:none;filter:blur(1px)}.hero-fade{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,7,8,.97) 28%,rgba(8,7,8,.55) 58%,transparent 78%),linear-gradient(to top,rgba(8,7,8,1) 0%,transparent 36%)}.hero-content{position:relative;max-width:520px}.hero-badge{display:inline-flex;align-items:center;gap:7px;background:var(--gold-bg);border:1px solid var(--gold-border);color:var(--gold-mid);padding:5px 14px;border-radius:var(--r-full);font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-bottom:18px}.live-dot{width:6px;height:6px;border-radius:50%;background:var(--crimson);animation:blink 1.4s infinite}@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}.hero h1{font-size:54px;font-weight:700;line-height:1.03;margin-bottom:14px;letter-spacing:0}.hero-meta{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-size:13px;color:var(--text2);flex-wrap:wrap}.star-badge{background:var(--star);color:#0A0700;padding:2px 9px;border-radius:5px;font-weight:800;font-size:12px}.quality-tag{background:rgba(255,255,255,.1);padding:2px 9px;border-radius:5px;font-size:12px;font-weight:600}.hero-desc{font-size:15px;color:var(--text2);line-height:1.65;margin-bottom:30px;max-width:460px}.hero-btns{display:flex;gap:12px}.btn-play{padding:12px 30px;border-radius:var(--r-md);background:var(--gold-mid);color:#050300;font-weight:800;font-size:15px;border:none;display:flex;align-items:center;gap:9px;transition:all var(--t-base);letter-spacing:.1px}.btn-play:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px var(--gold-glow)}.btn-add{padding:12px 24px;border-radius:var(--r-md);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12);color:var(--text);font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px;transition:all var(--t-base)}.btn-add:hover{background:rgba(255,255,255,.15)}
+.stats{display:flex;gap:1px;background:rgba(255,255,255,.03);margin:0 var(--sp-10) var(--sp-1);border-radius:var(--r-lg);overflow:hidden}.stat{flex:1;padding:18px 20px;background:var(--bg2);display:flex;align-items:center;gap:14px;transition:background var(--t-fast)}.stat:hover{background:var(--bg3)}.stat-ico{font-size:26px}.stat-lbl{font-size:11px;color:var(--text2);margin-bottom:2px}.stat-val{font-size:17px;font-weight:700}.stat-val.status{color:var(--gold-mid);font-size:15px}.stat-val.quality{font-size:15px}
+.section{padding:28px 44px}.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.sec-title{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}.see-all{font-size:13px;color:var(--gold-mid);font-weight:600;border:none;background:none;display:flex;align-items:center;gap:3px;transition:color var(--t-fast)}.see-all:hover{color:var(--gold-light)}.row{display:flex;gap:13px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;scrollbar-color:var(--bg3) transparent}.row::-webkit-scrollbar{height:3px}.row::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:2px}
+.card{flex-shrink:0;border-radius:12px;overflow:hidden;cursor:pointer;transition:transform var(--t-base),box-shadow var(--t-base);position:relative}.card:hover{transform:translateY(-5px) scale(1.025);box-shadow:0 16px 36px rgba(0,0,0,.45),0 0 0 1px rgba(232,160,32,.12)}.card:focus-visible,.ch-card:focus-visible,.movie-card:focus-visible{outline:2px solid var(--gold-mid);outline-offset:2px;box-shadow:none}.card-poster{width:148px;height:208px}.card-wide{width:238px;height:136px}.card-face{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:44px}.card-meta{padding:9px 0 3px}.card-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card-sub{font-size:11px;color:var(--text2);margin-top:2px}.card-tag{position:absolute;top:8px;right:8px;background:rgba(224,48,80,.88);color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:5px;letter-spacing:.3px}.card-tag.new{background:rgba(232,160,32,.92);color:#050300}.card-tag.hd{background:rgba(255,140,0,.88);color:#fff}.prog-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,.14)}.prog-fill{height:100%;background:var(--gold-mid);border-radius:0 2px 2px 0}
+.ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:12px}.ch-card{background:var(--card);border-radius:var(--r-lg);padding:22px 12px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;transition:var(--t-base);border:1px solid rgba(255,255,255,.04)}.ch-card:hover{background:var(--bg3);border-color:var(--gold-border);transform:translateY(-3px);box-shadow:0 8px 24px var(--gold-glow)}.ch-card:active{transform:scale(.98)}.ch-ico{font-size:34px}.ch-name{font-size:12px;font-weight:700;text-align:center}.ch-now{font-size:10px;color:var(--text2);text-align:center;line-height:1.4;max-width:110px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.live-pill{display:flex;align-items:center;gap:4px;background:rgba(224,48,80,.14);border:1px solid rgba(224,48,80,.28);padding:3px 9px;border-radius:var(--r-full);font-size:10px;font-weight:700;color:var(--crimson)}
+.epg-row{display:flex;border-bottom:1px solid rgba(255,255,255,.04)}.epg-ch{width:148px;flex-shrink:0;padding:12px 14px;display:flex;align-items:center;gap:10px;background:var(--bg2);border-right:1px solid rgba(255,255,255,.05)}.epg-ch-ico{font-size:22px}.epg-ch-name{font-size:12px;font-weight:600}.epg-progs{flex:1;display:flex;gap:5px;padding:10px 14px;overflow:hidden}.epg-prog{flex-shrink:0;background:var(--card);border-radius:var(--r-md);padding:9px 12px;border-left:3px solid var(--bg3);cursor:pointer;transition:var(--t-fast)}.epg-prog:hover{background:var(--bg3);border-left-color:var(--gold-mid)}.epg-prog.now{border-left-color:var(--crimson);background:rgba(224,48,80,.06)}.epg-prog-t{font-size:12px;font-weight:600;white-space:nowrap}.epg-prog-s{font-size:10px;color:var(--text2);margin-top:2px}
+.tabs{display:flex;gap:3px;padding:20px 44px 0;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:24px}.tab{padding:8px 20px;border-radius:8px 8px 0 0;font-size:14px;font-weight:500;border:none;background:none;color:var(--text2);transition:var(--t-base)}.tab:hover{color:var(--text)}.tab.active{color:var(--gold-mid);background:var(--gold-bg);border-bottom:2px solid var(--gold-mid)}
+.toolbar-select{background:var(--bg2);color:var(--text);border:1px solid rgba(255,255,255,.08);padding:8px 14px;border-radius:9px;font-size:13px;outline:none}.toolbar-select:focus{border-color:var(--gold-mid)}.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:20px}.movie-card{cursor:pointer}.movie-poster{width:100%;aspect-ratio:2/3;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:44px;position:relative;overflow:hidden;transition:transform var(--t-base),box-shadow var(--t-base)}.movie-card:hover .movie-poster{transform:translateY(-4px) scale(1.03);box-shadow:0 12px 32px rgba(0,0,0,.5),0 0 0 1px rgba(232,160,32,.15)}.movie-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);padding:14px 10px 10px}.movie-rating{font-size:11px;color:var(--star);font-weight:700}.movie-name{font-size:13px;font-weight:600;margin-top:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.movie-year{font-size:11px;color:var(--text2);margin-top:2px}
+.day-btn{padding:9px 18px;border-radius:var(--r-md);border:1px solid rgba(255,255,255,.08);background:var(--bg2);color:var(--text2);font-size:13px;font-weight:600;cursor:pointer;transition:var(--t-base);font-family:'Sora',sans-serif}.day-btn.active{background:var(--gold-bg);color:var(--gold-mid);border-color:var(--gold-border)}.day-btn:hover:not(.active){background:var(--bg3);color:var(--text)}.catchup-card{background:var(--card);border-radius:12px;padding:18px;cursor:pointer;border:1px solid rgba(255,255,255,.04);transition:var(--t-base);display:flex;gap:14px;align-items:center}.catchup-card:hover{background:var(--bg3);border-color:rgba(232,160,32,.2)}
+.toast{position:fixed;bottom:28px;right:28px;background:var(--bg2);border:1px solid var(--gold-border);border-radius:var(--r-lg);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px rgba(232,160,32,.08);z-index:var(--z-toast);transform:translateY(80px);opacity:0;transition:all .32s cubic-bezier(.34,1.56,.64,1)}.toast.show{transform:translateY(0);opacity:1}.toast-title{font-size:14px;font-weight:600;color:var(--text)}.toast-sub{font-size:12px;color:var(--text2);margin-top:2px}.toast-ico{font-size:20px}.sep{height:1px;background:rgba(255,255,255,.05);margin:0 44px}
+@media(max-width:760px){.navbar{padding:0 16px}.nav-links{gap:0;overflow-x:auto}.nav-link{padding:8px 10px}.hero{height:560px;padding:0 20px 44px}.hero h1{font-size:42px}.stats{margin:0 20px;display:grid;grid-template-columns:1fr 1fr}.section,.tabs{padding-left:20px;padding-right:20px}.main[style],#s-movies .main,#s-series .main,#s-catchup .main{padding-left:20px!important;padding-right:20px!important}.login-box{padding:40px 26px}.logo-wordmark{font-size:18px}.hero-art{font-size:130px;right:-18px}}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOAST ═══ -->
+<div class="toast" id="toast">
+  <div class="toast-ico">▶</div>
+  <div>
+    <div class="toast-title">Now Playing</div>
+    <div class="toast-sub" id="toast-msg">Loading stream…</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ LOGIN ═══════════════════════ -->
+<div class="screen active" id="s-login">
+  <div class="login-wrap">
+    <div class="login-box">
+      <div class="login-logo">
+  <div class="logo-icon" aria-hidden="true">
+    <svg width="36" height="36" viewBox="0 0 28 28" fill="none">
+      <rect width="28" height="28" rx="7" fill="url(#loginLg)"/>
+      <path d="M7 9h14M7 14h9M7 19h11" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/>
+      <defs><linearGradient id="loginLg" x1="0" y1="0" x2="28" y2="28"><stop offset="0%" stop-color="#E8A020"/><stop offset="100%" stop-color="#C47010"/></linearGradient></defs>
+    </svg>
+  </div>
+  <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
+</div>
+      <div class="login-title">Welcome back</div>
+      <div class="login-sub">Enter your Bayyari TV credentials to continue</div>
+
+      <label class="field-label">Server URL</label>
+      <input class="field-input" type="text" placeholder="https://bayyari.tv" value="https://bayyari.tv">
+
+      <label class="field-label">Username</label>
+      <input class="field-input" type="text" placeholder="Your username" value="your_username">
+
+      <label class="field-label">Password</label>
+      <input class="field-input" type="password" placeholder="Your password" value="••••••••">
+
+      <button class="login-btn" id="loginBtn">Sign In &rarr;</button>
+      <div class="login-footer"><span>Bayyari TV</span> · Subscription Active</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ HOME ═══════════════════════ -->
+<div class="screen" id="s-home">
+  <nav class="navbar">
+    <a class="logo" href="#" aria-label="Bayyari TV home" onclick="go('home');return false">
+  <div class="logo-icon" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <rect width="28" height="28" rx="7" fill="url(#lg)"/>
+      <path d="M7 9h14M7 14h9M7 19h11" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/>
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28"><stop offset="0%" stop-color="#E8A020"/><stop offset="100%" stop-color="#C47010"/></linearGradient></defs>
+    </svg>
+  </div>
+  <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
+</a>
+    <div class="nav-links">
+      <button class="nav-link active" onclick="go('home')">Home</button>
+      <button class="nav-link" onclick="go('live')">Live TV</button>
+      <button class="nav-link" onclick="go('movies')">Movies</button>
+      <button class="nav-link" onclick="go('series')">Series</button>
+      <button class="nav-link" onclick="go('catchup')">Catch‑Up</button>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn">🔔</button>
+      <div class="avatar">BY</div>
+    </div>
+  </nav>
+  <div class="main">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-poster"></div>
+      <div class="hero-art">🎬</div>
+      <div class="hero-fade"></div>
+      <div class="hero-content">
+        <div class="hero-badge"><div class="live-dot"></div>Featured Tonight</div>
+        <h1>Interstellar</h1>
+        <div class="hero-meta">
+          <span class="star-badge">★ 8.7</span>
+          <span>2h 49m</span>
+          <span>·</span>
+          <span>Sci‑Fi / Drama</span>
+          <span>·</span>
+          <span class="quality-tag">4K HDR</span>
+        </div>
+        <p class="hero-desc">A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival as Earth faces catastrophic climate change.</p>
+        <div class="hero-btns">
+          <button class="btn-play" onclick="toast('Interstellar')">&#9654;&nbsp; Play Now</button>
+          <button class="btn-add">＋&nbsp; My List</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat"><div class="stat-ico">📺</div><div><div class="stat-lbl">Live Channels</div><div class="stat-val">3,000+</div></div></div>
+      <div class="stat"><div class="stat-ico">🎬</div><div><div class="stat-lbl">Movies</div><div class="stat-val">20,000+</div></div></div>
+      <div class="stat"><div class="stat-ico">📡</div><div><div class="stat-lbl">Server Status</div><div class="stat-val" class="stat-val status">● Online</div></div></div>
+      <div class="stat"><div class="stat-ico">⚡</div><div><div class="stat-lbl">Stream Quality</div><div class="stat-val" class="stat-val quality">4K / FHD</div></div></div>
+    </div>
+
+    <!-- Continue Watching -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-title">⏸ Continue Watching</div>
+        <button class="see-all">See All →</button>
+      </div>
+      <div class="row" id="continue-row"></div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- Live Now -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-title"><span style="color:var(--crimson)">●</span> Live Now</div>
+        <button class="see-all" onclick="go('live')">View All Channels →</button>
+      </div>
+      <div class="row" id="live-row"></div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- Trending -->
+    <div class="section">
+      <div class="sec-head">
+        <div class="sec-title">🔥 Trending Movies</div>
+        <button class="see-all" onclick="go('movies')">Browse All →</button>
+      </div>
+      <div class="row" id="trending-row"></div>
+    </div>
+
+    <div style="height:40px"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ LIVE TV ═══════════════════════ -->
+<div class="screen" id="s-live">
+  <nav class="navbar">
+    <a class="logo" href="#" aria-label="Bayyari TV home" onclick="go('home');return false">
+  <div class="logo-icon" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <rect width="28" height="28" rx="7" fill="url(#lg)"/>
+      <path d="M7 9h14M7 14h9M7 19h11" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/>
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28"><stop offset="0%" stop-color="#E8A020"/><stop offset="100%" stop-color="#C47010"/></linearGradient></defs>
+    </svg>
+  </div>
+  <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
+</a>
+    <div class="nav-links">
+      <button class="nav-link" onclick="go('home')">Home</button>
+      <button class="nav-link active">Live TV</button>
+      <button class="nav-link" onclick="go('movies')">Movies</button>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn">🔍</button>
+      <div class="avatar">BY</div>
+    </div>
+  </nav>
+  <div class="main">
+    <div class="tabs">
+      <button class="tab active">All Channels</button>
+      <button class="tab">⚽ Sports</button>
+      <button class="tab">📰 News</button>
+      <button class="tab">🎭 Entertainment</button>
+      <button class="tab">🎬 Movies</button>
+      <button class="tab">👶 Kids</button>
+    </div>
+
+    <div style="padding:0 44px 20px;display:flex;align-items:center;justify-content:space-between">
+      <div style="font-size:19px;font-weight:800">📡 Channel Guide</div>
+      <div style="font-size:13px;color:var(--text2)">Now: <strong style="color:var(--gold-mid)">21:45</strong> &nbsp;|&nbsp; <span style="color:var(--text2)">3,000 channels live</span></div>
+    </div>
+
+    <div id="epg-wrap" style="padding:0 44px 40px"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ MOVIES ═══════════════════════ -->
+<div class="screen" id="s-movies">
+  <nav class="navbar">
+    <a class="logo" href="#" aria-label="Bayyari TV home" onclick="go('home');return false">
+  <div class="logo-icon" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <rect width="28" height="28" rx="7" fill="url(#lg)"/>
+      <path d="M7 9h14M7 14h9M7 19h11" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/>
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28"><stop offset="0%" stop-color="#E8A020"/><stop offset="100%" stop-color="#C47010"/></linearGradient></defs>
+    </svg>
+  </div>
+  <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
+</a>
+    <div class="nav-links">
+      <button class="nav-link" onclick="go('home')">Home</button>
+      <button class="nav-link" onclick="go('live')">Live TV</button>
+      <button class="nav-link active">Movies</button>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn">🔍</button>
+      <div class="avatar">BY</div>
+    </div>
+  </nav>
+  <div class="main" style="padding:24px 44px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px">
+      <div style="font-size:24px;font-weight:900">🎬 Movies Library <span style="font-size:14px;font-weight:400;color:var(--text2);margin-left:8px">20,000+ titles</span></div>
+      <div style="display:flex;gap:8px">
+        <select class="toolbar-select">
+          <option>All Genres</option><option>Action</option><option>Sci-Fi</option><option>Drama</option><option>Comedy</option><option>Thriller</option>
+        </select>
+        <select class="toolbar-select">
+          <option>Latest</option><option>Top Rated</option><option>Year</option>
+        </select>
+      </div>
+    </div>
+    <div class="movie-grid" id="movies-grid"></div>
+    <div style="height:50px"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SERIES ═══════════════════════ -->
+<div class="screen" id="s-series">
+  <nav class="navbar">
+    <a class="logo" href="#" aria-label="Bayyari TV home" onclick="go('home');return false">
+  <div class="logo-icon" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <rect width="28" height="28" rx="7" fill="url(#lg)"/>
+      <path d="M7 9h14M7 14h9M7 19h11" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/>
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28"><stop offset="0%" stop-color="#E8A020"/><stop offset="100%" stop-color="#C47010"/></linearGradient></defs>
+    </svg>
+  </div>
+  <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
+</a>
+    <div class="nav-links">
+      <button class="nav-link" onclick="go('home')">Home</button>
+      <button class="nav-link" onclick="go('live')">Live TV</button>
+      <button class="nav-link" onclick="go('movies')">Movies</button>
+      <button class="nav-link active">Series</button>
+    </div>
+    <div class="nav-right"><button class="icon-btn">🔍</button><div class="avatar">BY</div></div>
+  </nav>
+  <div class="main" style="padding:28px 44px">
+    <div style="font-size:24px;font-weight:900;margin-bottom:28px">📺 TV Series</div>
+    <div class="movie-grid" id="series-grid"></div>
+    <div style="height:50px"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ CATCH-UP ═══════════════════════ -->
+<div class="screen" id="s-catchup">
+  <nav class="navbar">
+    <a class="logo" href="#" aria-label="Bayyari TV home" onclick="go('home');return false">
+  <div class="logo-icon" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <rect width="28" height="28" rx="7" fill="url(#lg)"/>
+      <path d="M7 9h14M7 14h9M7 19h11" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/>
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28"><stop offset="0%" stop-color="#E8A020"/><stop offset="100%" stop-color="#C47010"/></linearGradient></defs>
+    </svg>
+  </div>
+  <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
+</a>
+    <div class="nav-links">
+      <button class="nav-link" onclick="go('home')">Home</button>
+      <button class="nav-link active">Catch‑Up</button>
+    </div>
+    <div class="nav-right"><div class="avatar">BY</div></div>
+  </nav>
+  <div class="main" style="padding:28px 44px">
+    <div style="font-size:24px;font-weight:900;margin-bottom:6px">⏪ Catch‑Up TV</div>
+    <div style="font-size:14px;color:var(--text2);margin-bottom:28px">Rewind & replay live TV — up to 7 days back</div>
+
+    <!-- Day picker -->
+    <div style="display:flex;gap:8px;margin-bottom:32px" id="day-picker"></div>
+
+    <!-- Catch-up programs -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px" id="catchup-grid"></div>
+    <div style="height:50px"></div>
+  </div>
+</div>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────
+const continueData=[
+  {e:'🎭',t:'Breaking Bad',s:'S3 E7 · 42 min left',p:65,c:'#1A1008'},
+  {e:'🚀',t:'The Expanse',s:'S5 E2 · 28 min left',p:34,c:'#180E04'},
+  {e:'💼',t:'Succession',s:'S4 E1 · 15 min left',p:82,c:'#1A1008'},
+  {e:'👔',t:'Severance',s:'S2 E5 · 32 min left',p:50,c:'#160E06'},
+  {e:'🌑',t:'Dark',s:'S1 E8 · 20 min left',p:74,c:'#1A0E06'},
+];
+
+const liveNowData=[
+  {e:'⚽',t:'BeIN Sports 1',s:'Champions League',c:'#1A1006',tag:'LIVE'},
+  {e:'📰',t:'CNN International',s:'World News',c:'#10100A'},
+  {e:'🎵',t:'MTV Hits',s:'Top 40 Countdown',c:'#1A0C06',tag:'HD'},
+  {e:'🏀',t:'NBA TV',s:'Lakers vs Celtics',c:'#1A0E00',tag:'LIVE'},
+  {e:'🎬',t:'HBO',s:'House of the Dragon',c:'#1A0A04'},
+  {e:'🌍',t:'BBC News',s:'Breaking News',c:'#100A04',tag:'LIVE'},
+  {e:'🎭',t:'AMC',s:'Better Call Saul',c:'#1A1204'},
+];
+
+const trendingData=[
+  {e:'🤖',t:'Dune: Part Two',s:'Sci‑Fi · 2024',c:'#1A0D00',tag:'4K'},
+  {e:'🦇',t:'The Batman',s:'Action · 2022',c:'#100A04'},
+  {e:'🌊',t:'Aquaman 2',s:'Action · 2023',c:'#1A0E04'},
+  {e:'🕵️',t:'Oppenheimer',s:'Drama · 2023',c:'#180E04',tag:'4K'},
+  {e:'🐉',t:"Dragon's Fire",s:'Fantasy · 2024',c:'#1A0800',tag:'NEW'},
+  {e:'🚗',t:'Fast & Furious 11',s:'Action · 2024',c:'#1A0800'},
+];
+
+const moviesData=[
+  {e:'🤖',t:'Dune: Part Two',y:'2024',r:'8.5',c:'#1A0D00',tag:'4K'},
+  {e:'🦇',t:'The Batman',y:'2022',r:'7.9',c:'#100A04'},
+  {e:'🌊',t:'Aquaman 2',y:'2023',r:'6.5',c:'#1A0E04'},
+  {e:'🕵️',t:'Oppenheimer',y:'2023',r:'8.9',c:'#180E04',tag:'4K'},
+  {e:'🐉',t:"Dragon's Fire",y:'2024',r:'7.2',c:'#1A0800',tag:'NEW'},
+  {e:'🚗',t:'Fast & Furious 11',y:'2024',r:'6.8',c:'#1A0800'},
+  {e:'🌌',t:'Interstellar',y:'2014',r:'8.7',c:'#180C04'},
+  {e:'🔬',t:'Arrival',y:'2016',r:'7.9',c:'#1A1004'},
+  {e:'🤠',t:'Mandalorian Movie',y:'2024',r:'8.1',c:'#1A0D00',tag:'NEW'},
+  {e:'👻',t:'A Quiet Place 3',y:'2024',r:'7.5',c:'#120A04'},
+  {e:'🦁',t:'Planet of the Apes',y:'2024',r:'7.0',c:'#1A1000'},
+  {e:'⚡',t:'Deadpool & Wolverine',y:'2024',r:'7.8',c:'#1A0400',tag:'4K'},
+  {e:'🦸',t:'Captain America 5',y:'2024',r:'7.3',c:'#160E06',tag:'NEW'},
+  {e:'🤺',t:'Gladiator II',y:'2024',r:'7.6',c:'#1A0D00'},
+  {e:'🌙',t:'Moonfall',y:'2022',r:'5.2',c:'#100A04'},
+  {e:'🎭',t:'Joker: Folie à Deux',y:'2024',r:'5.5',c:'#1A0E06'},
+];
+
+const seriesData=[
+  {e:'🎭',t:'Breaking Bad',y:'5 Seasons',r:'9.5',c:'#1A1008',tag:'4K'},
+  {e:'🌑',t:'Dark',y:'3 Seasons',r:'8.8',c:'#1A0E06'},
+  {e:'💼',t:'Succession',y:'4 Seasons',r:'8.9',c:'#1A1008',tag:'4K'},
+  {e:'🚀',t:'The Expanse',y:'6 Seasons',r:'8.5',c:'#180E04'},
+  {e:'👔',t:'Severance',y:'2 Seasons',r:'8.7',c:'#160E06',tag:'NEW'},
+  {e:'🏰',t:'House of the Dragon',y:'2 Seasons',r:'8.4',c:'#1A0A04'},
+  {e:'🤖',t:'Westworld',y:'4 Seasons',r:'8.6',c:'#180E04'},
+  {e:'🧟',t:'The Last of Us',y:'2 Seasons',r:'8.7',c:'#1A1004',tag:'NEW'},
+  {e:'🎸',t:'Daisy Jones & The Six',y:'1 Season',r:'7.8',c:'#1A0A04'},
+  {e:'🧙',t:'The Witcher',y:'3 Seasons',r:'8.1',c:'#1A0E06'},
+  {e:'💊',t:'Dopesick',y:'1 Season',r:'8.6',c:'#1A0A04'},
+  {e:'🔬',t:'Severance',y:'2 Seasons',r:'8.7',c:'#160E06'},
+];
+
+const epgData=[
+  {e:'⚽',n:'BeIN Sports 1',ps:[{t:'Pre-Show',s:'20:30',w:90,now:false},{t:'Champions League Live',s:'21:00',w:220,now:true},{t:'Post Match',s:'23:00',w:80,now:false}]},
+  {e:'📰',n:'CNN International',ps:[{t:'World News',s:'21:00',w:130,now:true},{t:'Business Today',s:'22:00',w:110,now:false},{t:'Night Report',s:'23:00',w:90,now:false}]},
+  {e:'🎬',n:'HBO',ps:[{t:'House of Dragon',s:'20:00',w:170,now:false},{t:'The White Lotus',s:'21:30',w:140,now:true},{t:'Late Night',s:'23:00',w:80,now:false}]},
+  {e:'🏀',n:'NBA TV',ps:[{t:'Pre-Game Show',s:'20:30',w:100,now:false},{t:'Lakers vs Celtics',s:'21:00',w:210,now:true},{t:'Halftime',s:'22:50',w:70,now:false}]},
+  {e:'🌍',n:'BBC News',ps:[{t:'World Affairs',s:'20:30',w:90,now:false},{t:'Breaking Live',s:'21:30',w:160,now:true},{t:'Newsnight',s:'23:00',w:100,now:false}]},
+  {e:'🎵',n:'MTV Hits',ps:[{t:'Top 40',s:'20:00',w:110,now:false},{t:'Chart Show Live',s:'21:30',w:130,now:true},{t:'Late Night Mix',s:'23:00',w:90,now:false}]},
+  {e:'📺',n:'Al Jazeera',ps:[{t:'News Hour',s:'21:00',w:120,now:true},{t:'The Stream',s:'22:00',w:110,now:false},{t:'Inside Story',s:'23:00',w:90,now:false}]},
+];
+
+// ── Render helpers ───────────────────────────────────────────────
+function wideCard(d){
+  const w = d.t.replace(/'/g,"&#39;");
+  return `<div onclick="toast('${w}')">
+    <div class="card card-wide" style="background:${d.c};width:238px;height:136px">
+      <div class="card-face">${d.e}</div>
+      <div class="prog-bar"><div class="prog-fill" style="width:${d.p}%"></div></div>
+    </div>
+    <div class="card-meta">
+      <div class="card-name" style="max-width:238px">${d.t}</div>
+      <div class="card-sub">${d.s}</div>
+    </div>
+  </div>`;
+}
+
+function posterCard(d){
+  const tagClass = d.tag==='NEW'?'new':d.tag==='HD'?'hd':'';
+  const w = d.t.replace(/'/g,"&#39;");
+  return `<div onclick="toast('${w}')">
+    <div class="card card-poster" style="background:${d.c};width:148px;height:208px">
+      <div class="card-face">${d.e}</div>
+      ${d.tag?`<div class="card-tag ${tagClass}">${d.tag}</div>`:''}
+    </div>
+    <div class="card-meta">
+      <div class="card-name">${d.t}</div>
+      <div class="card-sub">${d.s}</div>
+    </div>
+  </div>`;
+}
+
+function movieCard(d){
+  const tagClass = d.tag==='NEW'?'new':d.tag==='4K'?'':'';
+  const w = d.t.replace(/'/g,"&#39;");
+  return `<div class="movie-card" onclick="toast('${w}')">
+    <div class="movie-poster" style="background:${d.c}">
+      ${d.e ? `<span style="font-size:44px">${d.e}</span>` : ''}
+      ${d.tag?`<div class="card-tag" style="top:8px;right:8px;position:absolute;${d.tag==='NEW'?'background:rgba(232,160,32,.9);color:#100A04':''}">${d.tag}</div>`:''}
+      <div class="movie-overlay"><div class="movie-rating">★ ${d.r}</div></div>
+    </div>
+    <div class="movie-name">${d.t}</div>
+    <div class="movie-year">${d.y}</div>
+  </div>`;
+}
+
+function renderEPG(){
+  return epgData.map(ch=>`
+    <div class="epg-row">
+      <div class="epg-ch">
+        <div class="epg-ch-ico">${ch.e}</div>
+        <div>
+          <div class="epg-ch-name">${ch.n}</div>
+          <div class="live-pill" style="margin-top:4px"><div class="live-dot"></div>LIVE</div>
+        </div>
+      </div>
+      <div class="epg-progs">
+        ${ch.ps.map(p=>`
+          <div class="epg-prog ${p.now?'now':''}" style="width:${p.w}px;min-width:${p.w}px" onclick="toast('${p.t.replace(/'/g,"&#39;")}')">
+            <div class="epg-prog-t">${p.t}</div>
+            <div class="epg-prog-s">${p.s}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderDayPicker(){
+  const days=['Today','Yesterday','Mon 19','Sun 18','Sat 17','Fri 16','Thu 15'];
+  return days.map((d,i)=>`<button class="day-btn${i===0?' active':''}" onclick="selectDay(this)">${d}</button>`).join('');
+}
+
+function renderCatchupGrid(){
+  const programs=[
+    {e:'⚽',ch:'BeIN Sports 1',t:'Champions League Highlights',time:'21:30',dur:'90 min'},
+    {e:'🎬',ch:'HBO',t:'House of the Dragon S2 E6',time:'21:30',dur:'58 min'},
+    {e:'📰',ch:'CNN',t:'World News Hour',time:'22:00',dur:'60 min'},
+    {e:'🏀',ch:'NBA TV',t:'Lakers vs Celtics Full Game',time:'21:00',dur:'2h 15min'},
+    {e:'🎵',ch:'MTV',t:'Chart Show Live',time:'21:30',dur:'60 min'},
+    {e:'🌍',ch:'BBC News',t:'Breaking News Special',time:'21:30',dur:'45 min'},
+  ];
+  return programs.map(p=>`
+    <div class="catchup-card" onclick="toast('${p.t}')">
+      <div style="font-size:36px;flex-shrink:0">${p.e}</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.t}</div>
+        <div style="font-size:12px;color:var(--text2);margin-top:4px">${p.ch} · ${p.time} · ${p.dur}</div>
+      </div>
+      <button style="padding:8px 16px;background:var(--gold-mid);color:#050300;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;flex-shrink:0">▶ Play</button>
+    </div>
+  `).join('');
+}
+
+// ── Navigation ───────────────────────────────────────────────────
+function go(name){
+  const screens=document.querySelectorAll('.screen');
+  screens.forEach(s=>{s.classList.remove('active');s.style.animation='';});
+  const next=document.getElementById('s-'+name);
+  next.classList.add('active');
+  next.style.animation='none';
+  next.offsetHeight;
+  next.style.animation='';
+  window.scrollTo({top:0,behavior:'instant'});
+  updateNavActive(name);
+}
+function updateNavActive(name){
+  document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+  document.querySelectorAll(`.nav-link[onclick*="'${name}'"]`).forEach(l=>l.classList.add('active'));
+}
+
+// ── Toast ────────────────────────────────────────────────────────
+let toastTimer;
+function toast(title){
+  const el=document.getElementById('toast');
+  document.getElementById('toast-msg').textContent=title;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>el.classList.remove('show'),3000);
+}
+
+// ── Catch-up day select ──────────────────────────────────────────
+function selectDay(btn){
+  document.querySelectorAll('.day-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded',function(){
+  // Populate home rows
+  document.getElementById('continue-row').innerHTML=continueData.map(wideCard).join('');
+  document.getElementById('live-row').innerHTML=liveNowData.map(posterCard).join('');
+  document.getElementById('trending-row').innerHTML=trendingData.map(posterCard).join('');
+
+  // EPG
+  document.getElementById('epg-wrap').innerHTML=renderEPG();
+
+  // Movies
+  document.getElementById('movies-grid').innerHTML=moviesData.map(movieCard).join('');
+
+  // Series
+  document.getElementById('series-grid').innerHTML=seriesData.map(movieCard).join('');
+
+  // Catch-up
+  document.getElementById('day-picker').innerHTML=renderDayPicker();
+  document.getElementById('catchup-grid').innerHTML=renderCatchupGrid();
+
+  // Login button
+  document.getElementById('loginBtn').addEventListener('click',function(){
+    this.innerHTML='<span class="btn-spinner"></span> Signing in…';
+    this.disabled=true;
+    this.style.opacity='.75';
+    setTimeout(()=>go('home'),1000);
+  });
+});
+</script>
+</body>
+</html>
+
+
+

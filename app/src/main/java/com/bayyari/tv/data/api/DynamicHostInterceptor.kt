@@ -23,12 +23,25 @@ class DynamicHostInterceptor @Inject constructor(
         val original = chain.request()
         val active = prefs.getActiveServer() ?: return chain.proceed(original)
 
-        val baseUrl = active.url.toHttpUrl()
-        val rewritten = original.url.newBuilder()
+        val baseUrl = try {
+            active.url.toHttpUrl()
+        } catch (e: IllegalArgumentException) {
+            return chain.proceed(original)
+        }
+        val builder = original.url.newBuilder()
             .scheme(baseUrl.scheme)
             .host(baseUrl.host)
             .port(baseUrl.port)
-            .build()
+
+        val basePathSegments = baseUrl.encodedPathSegments.filter { it.isNotEmpty() }
+        if (basePathSegments.isNotEmpty()) {
+            val originalPathSegments = original.url.encodedPathSegments.filter { it.isNotEmpty() }
+            builder.encodedPath("/")
+            basePathSegments.forEach { builder.addEncodedPathSegment(it) }
+            originalPathSegments.forEach { builder.addEncodedPathSegment(it) }
+        }
+
+        val rewritten = builder.build()
         return chain.proceed(original.newBuilder().url(rewritten).build())
     }
 }

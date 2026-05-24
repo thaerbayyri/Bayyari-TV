@@ -20,12 +20,13 @@
             android:background="@drawable/bg_card_rounded"
             android:elevation="6dp"
             android:orientation="vertical"
-            android:paddingHorizontal="28dp"
-            android:paddingVertical="36dp"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="34dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_max="@dimen/content_max_width">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -81,71 +82,72 @@
                 android:textColor="@color/colorTextSecondary"
                 android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login_server_url"
-                android:textAllCaps="true"
-                android:textAppearance="@style/TextAppearance.Bayyari.FieldLabel"
-                android:layout_marginBottom="6dp" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editServer"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_input_field"
-                android:paddingHorizontal="14dp"
-                android:paddingVertical="12dp"
-                android:textColor="@color/colorTextPrimary"
-                android:textColorHint="@color/colorTextHint"
-                android:textSize="15sp"
-                android:hint="http://your-provider.com"
-                android:inputType="textUri"
-                android:layout_marginBottom="14dp" />
+                android:layout_marginBottom="@dimen/input_gap"
+                android:hint="@string/login_server_url"
+                app:boxBackgroundColor="@color/colorSurfaceVariant"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/colorOutline"
+                app:boxStrokeErrorColor="@color/colorAccentLive"
+                app:hintTextColor="@color/colorTextSecondary">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login_username"
-                android:textAllCaps="true"
-                android:textAppearance="@style/TextAppearance.Bayyari.FieldLabel"
-                android:layout_marginBottom="6dp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editServer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textUri"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextHint"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editUsername"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_input_field"
-                android:paddingHorizontal="14dp"
-                android:paddingVertical="12dp"
-                android:textColor="@color/colorTextPrimary"
-                android:textColorHint="@color/colorTextHint"
-                android:textSize="15sp"
-                android:hint="Your username"
-                android:inputType="text"
-                android:layout_marginBottom="14dp" />
+                android:layout_marginBottom="@dimen/input_gap"
+                android:hint="@string/login_username"
+                app:boxBackgroundColor="@color/colorSurfaceVariant"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/colorOutline"
+                app:boxStrokeErrorColor="@color/colorAccentLive"
+                app:hintTextColor="@color/colorTextSecondary">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login_password"
-                android:textAllCaps="true"
-                android:textAppearance="@style/TextAppearance.Bayyari.FieldLabel"
-                android:layout_marginBottom="6dp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextHint"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editPassword"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_input_field"
-                android:paddingHorizontal="14dp"
-                android:paddingVertical="12dp"
-                android:textColor="@color/colorTextPrimary"
-                android:textColorHint="@color/colorTextHint"
-                android:textSize="15sp"
-                android:hint="Your password"
-                android:inputType="textPassword"
-                android:layout_marginBottom="14dp" />
+                android:layout_marginBottom="@dimen/input_gap"
+                android:hint="@string/login_password"
+                app:boxBackgroundColor="@color/colorSurfaceVariant"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/colorOutline"
+                app:boxStrokeErrorColor="@color/colorAccentLive"
+                app:endIconMode="password_toggle"
+                app:hintTextColor="@color/colorTextSecondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textColorHint="@color/colorTextHint"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switchRemember"
@@ -162,7 +164,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/login_button"
-                android:layout_marginBottom="14dp" />
+                android:layout_marginBottom="10dp" />
+
+            <ProgressBar
+                android:id="@+id/progressLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="6dp"
+                android:visibility="gone"
+                android:indeterminateTint="@color/colorPrimary"
+                style="?android:attr/progressBarStyle" />
 
             <TextView
                 android:id="@+id/buttonAddM3u"
@@ -183,6 +195,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:importantForAccessibility="yes"
                 android:textColor="@color/colorTextSecondary"
                 android:textSize="12sp" />
         </LinearLayout>

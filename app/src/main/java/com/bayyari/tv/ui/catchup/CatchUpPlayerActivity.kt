@@ -10,10 +10,8 @@ import com.bayyari.tv.player.PlayerService
 import com.bayyari.tv.ui.BaseActivity
 import com.bayyari.tv.util.NetworkUtils
 import com.bayyari.tv.util.StreamUrlBuilder
+import com.bayyari.tv.util.collectStarted
 import dagger.hilt.android.AndroidEntryPoint
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -58,14 +56,12 @@ class CatchUpPlayerActivity : BaseActivity() {
             iptvPlayer.prepare(url)
         }
 
-        lifecycleScope.launch {
-            networkUtils.observe().collectLatest { connected ->
-                if (!connected) {
-                    wasPlaying = iptvPlayer.getPlayer().isPlaying
-                    iptvPlayer.pause()
-                } else if (wasPlaying) {
-                    iptvPlayer.play()
-                }
+        collectStarted(networkUtils.observe()) { connected ->
+            if (!connected) {
+                wasPlaying = iptvPlayer.getPlayer().isPlaying
+                iptvPlayer.pause()
+            } else if (wasPlaying) {
+                iptvPlayer.play()
             }
         }
     }
@@ -73,5 +69,18 @@ class CatchUpPlayerActivity : BaseActivity() {
     override fun onDestroy() {
         iptvPlayer.release()
         super.onDestroy()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        hideSystemUi()
+    }
+
+    private fun hideSystemUi() {
+        androidx.core.view.WindowCompat.setDecorFitsSystemWindows(window, false)
+        val controller = androidx.core.view.WindowInsetsControllerCompat(window, binding.root)
+        controller.hide(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+        controller.systemBarsBehavior =
+            androidx.core.view.WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
     }
 }

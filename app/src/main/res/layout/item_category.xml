@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/textCategory"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?android:attr/selectableItemBackground"
-    android:ellipsize="end"
-    android:fontFamily="sans-serif-medium"
-    android:maxLines="2"
-    android:paddingHorizontal="14dp"
-    android:paddingVertical="14dp"
-    android:textColor="@color/colorTextSecondary"
-    android:textSize="13sp" />
+    android:gravity="center_vertical"
+    android:minHeight="44dp"
+    android:orientation="horizontal"
+    android:paddingEnd="8dp"
+    android:paddingStart="0dp"
+    android:paddingVertical="10dp">
+
+    <View
+        android:id="@+id/accentBar"
+        android:layout_width="3dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimary"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="2"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="12sp"
+        tools:text="Action" />
+
+    <TextView
+        android:id="@+id/textCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="10sp"
+        android:visibility="gone"
+        tools:text="124" />
+
+</LinearLayout>

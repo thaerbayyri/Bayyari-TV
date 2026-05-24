@@ -17,8 +17,8 @@ object PlayerModule {
     @Provides
     @Singleton
     fun provideLoadControl(prefs: EncryptedPrefs): LoadControl {
-        val minBuffer = prefs.getBufferSizeMs().coerceAtLeast(Constants.MIN_BUFFER_MS)
-        val maxBuffer = maxOf(Constants.MAX_BUFFER_MS, minBuffer * 3)
+        val maxBuffer = prefs.getBufferSizeMs().coerceIn(Constants.MIN_BUFFER_MS, Constants.MAX_BUFFER_MS)
+        val minBuffer = maxBuffer
         return DefaultLoadControl.Builder()
             .setBufferDurationsMs(
                 minBuffer,
@@ -26,6 +26,7 @@ object PlayerModule {
                 Constants.BUFFER_FOR_PLAYBACK_MS,
                 Constants.BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS
             )
+            .setPrioritizeTimeOverSizeThresholds(true)
             .build()
     }
 }

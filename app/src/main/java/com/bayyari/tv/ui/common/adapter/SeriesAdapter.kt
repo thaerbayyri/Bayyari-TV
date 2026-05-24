@@ -11,11 +11,23 @@ import com.bayyari.tv.domain.model.Series
 import com.bumptech.glide.Glide
 
 class SeriesAdapter(
+    private val compact: Boolean = false,
     private val onClick: (Series) -> Unit
 ) : ListAdapter<Series, SeriesAdapter.SeriesViewHolder>(Diff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeriesViewHolder {
         val binding = ItemSeriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        if (compact) {
+            val density = parent.resources.displayMetrics.density
+            binding.root.layoutParams = RecyclerView.LayoutParams(
+                (124 * density).toInt(),
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            ).apply {
+                val horizontal = (6 * density).toInt()
+                val vertical = (3 * density).toInt()
+                setMargins(horizontal, vertical, horizontal, vertical)
+            }
+        }
         return SeriesViewHolder(binding)
     }
 

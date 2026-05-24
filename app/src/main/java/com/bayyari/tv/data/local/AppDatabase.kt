@@ -2,6 +2,7 @@ package com.bayyari.tv.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.bayyari.tv.data.local.dao.CategoryDao
 import com.bayyari.tv.data.local.dao.ChannelDao
 import com.bayyari.tv.data.local.dao.EpgDao
 import com.bayyari.tv.data.local.dao.FavoriteDao
@@ -27,7 +28,7 @@ import com.bayyari.tv.data.local.entities.WatchHistoryEntity
         CategoryEntity::class
     ],
     version = 1,
-    exportSchema = false
+    exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun channelDao(): ChannelDao
@@ -36,4 +37,5 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun favoriteDao(): FavoriteDao
     abstract fun epgDao(): EpgDao
     abstract fun watchHistoryDao(): WatchHistoryDao
+    abstract fun categoryDao(): CategoryDao
 }

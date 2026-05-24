@@ -14,28 +14,42 @@ import kotlin.math.abs
  *  - tvg-logo      → streamIcon
  *  - group-title   → categoryId / categoryName
  *
+ * `#EXTM3U` header attributes supported:
+ *  - url-tvg       → returned in [ParseResult.epgUrl]
+ *
  * Lines beginning with `#` other than `#EXTINF` are treated as headers/comments and skipped.
  */
 @Singleton
 class M3uParser @Inject constructor() {
 
-    fun parse(content: String, serverId: Int = 0): List<Channel> {
-        val lines = content.lineSequence().map { it.trim() }.filter { it.isNotEmpty() }.toList()
-        if (lines.isEmpty() || !lines.first().startsWith("#EXTM3U")) return emptyList()
+    data class ParseResult(val channels: List<Channel>, val epgUrl: String?)
+
+    fun parse(content: String, serverId: Int = 0): List<Channel> =
+        parseFull(content, serverId).channels
+
+    fun parseFull(content: String, serverId: Int = 0): ParseResult {
+        val lines = content.lineSequence().map { it.trim() }.filter { it.isNotEmpty() }.iterator()
+        if (!lines.hasNext()) return ParseResult(emptyList(), null)
+
+        val firstLine = lines.next()
+        if (!firstLine.startsWith("#EXTM3U")) return ParseResult(emptyList(), null)
+
+        val epgUrl = parseAttributes(firstLine.substringAfter("#EXTM3U").trim())["url-tvg"]
+            ?.takeIf { it.isNotBlank() }
 
         val out = mutableListOf<Channel>()
         var current: ExtInf? = null
         var fallbackId = -1
-        var i = 1
-        while (i < lines.size) {
-            val line = lines[i]
+
+        while (lines.hasNext()) {
+            val line = lines.next()
             when {
                 line.startsWith("#EXTINF") -> current = parseExtInf(line)
-                line.startsWith("#") -> Unit // ignore other tags (#EXTGRP, #EXTVLCOPT, etc.)
+                line.startsWith("#") -> Unit
                 else -> {
                     val info = current
                     if (info != null) {
-                        val streamId = parseStreamIdFromUrl(line) ?: (fallbackId--).also { /* synthetic id */ }
+                        val streamId = parseStreamIdFromUrl(line) ?: (fallbackId--).also { }
                         out += Channel(
                             streamId = streamId,
                             name = info.name,
@@ -53,13 +67,11 @@ class M3uParser @Inject constructor() {
                     }
                 }
             }
-            i++
         }
-        return out
+        return ParseResult(out, epgUrl)
     }
 
     private fun parseExtInf(line: String): ExtInf {
-        // #EXTINF:-1 tvg-id="x" tvg-name="y" tvg-logo="z" group-title="g",Display Name
         val afterColon = line.substringAfter(":", "").ifBlank { return ExtInf() }
         val commaIdx = findUnquotedComma(afterColon)
         val attrsPart = if (commaIdx >= 0) afterColon.substring(0, commaIdx) else afterColon
@@ -78,10 +90,9 @@ class M3uParser @Inject constructor() {
     private fun findUnquotedComma(s: String): Int {
         var inQuotes = false
         for (i in s.indices) {
-            when (val c = s[i]) {
+            when (s[i]) {
                 '"' -> inQuotes = !inQuotes
                 ',' -> if (!inQuotes) return i
-                else -> Unit
             }
         }
         return -1
@@ -96,7 +107,6 @@ class M3uParser @Inject constructor() {
         return map
     }
 
-    /** Try to derive a stable numeric stream id from the URL itself (Xtream URLs end with `/<id>.ext`). */
     private fun parseStreamIdFromUrl(url: String): Int? {
         val noQuery = url.substringBefore('?')
         val tail = noQuery.substringAfterLast('/')

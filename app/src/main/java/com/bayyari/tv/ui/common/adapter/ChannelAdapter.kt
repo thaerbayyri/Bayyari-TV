@@ -12,11 +12,23 @@ import com.bumptech.glide.Glide
 
 class ChannelAdapter(
     private val onClick: (Channel) -> Unit,
-    private val onLongClick: (Channel) -> Unit = {}
+    private val onLongClick: (Channel) -> Unit = {},
+    private val compact: Boolean = false
 ) : ListAdapter<Channel, ChannelAdapter.ChannelViewHolder>(Diff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChannelViewHolder {
         val binding = ItemChannelBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        if (compact) {
+            val density = parent.resources.displayMetrics.density
+            binding.root.layoutParams = RecyclerView.LayoutParams(
+                (124 * density).toInt(),
+                (104 * density).toInt()
+            ).apply {
+                val horizontal = (6 * density).toInt()
+                val vertical = (3 * density).toInt()
+                setMargins(horizontal, vertical, horizontal, vertical)
+            }
+        }
         return ChannelViewHolder(binding)
     }
 
@@ -36,8 +48,8 @@ class ChannelAdapter(
             )
             Glide.with(binding.imageLogo)
                 .load(item.streamIcon.takeIf { it.isNotBlank() })
-                .placeholder(R.color.colorSurface)
-                .error(R.color.colorSurface)
+                .placeholder(R.drawable.ic_logo_tv)
+                .error(R.drawable.ic_logo_tv)
                 .fitCenter()
                 .into(binding.imageLogo)
             binding.root.setOnClickListener { onClick(item) }

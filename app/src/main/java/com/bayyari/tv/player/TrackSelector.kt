@@ -26,6 +26,14 @@ object TrackSelector {
         applySelection(selector, C.TRACK_TYPE_TEXT, groupIndex, trackIndex)
     }
 
+    fun clearSubtitleTrack(selector: DefaultTrackSelector) {
+        selector.setParameters(
+            selector.buildUponParameters()
+                .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
+        )
+    }
+
     private fun extractTracks(selector: DefaultTrackSelector, trackType: Int): List<TrackInfo> {
         val mapped = selector.currentMappedTrackInfo ?: return emptyList()
         val rendererIndex = (0 until mapped.rendererCount)
@@ -53,6 +61,7 @@ object TrackSelector {
         val rendererIndex = (0 until mapped.rendererCount)
             .firstOrNull { mapped.getRendererType(it) == trackType } ?: return
         val builder = selector.buildUponParameters()
+        builder.setTrackTypeDisabled(trackType, false)
         builder.clearOverridesOfType(trackType)
         val groups = mapped.getTrackGroups(rendererIndex)
         if (groupIndex < groups.length) {

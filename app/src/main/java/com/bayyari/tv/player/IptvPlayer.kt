@@ -1,64 +1,86 @@
 package com.bayyari.tv.player
 
 import android.content.Context
-import android.net.Uri
-import android.os.Handler
-import android.os.Looper
+import androidx.annotation.OptIn
+import androidx.media3.common.AudioAttributes
 import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
+import androidx.media3.common.MediaItem.LiveConfiguration
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DefaultDataSource
+import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.LoadControl
-import androidx.media3.exoplayer.source.MediaSource
-import androidx.media3.exoplayer.source.ProgressiveMediaSource
-import androidx.media3.exoplayer.hls.HlsMediaSource
-import androidx.media3.exoplayer.rtsp.RtspMediaSource
+import androidx.media3.exoplayer.DefaultRenderersFactory
+import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import com.bayyari.tv.util.Constants
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import javax.inject.Singleton
 import dagger.hilt.android.qualifiers.ApplicationContext
 
+@OptIn(UnstableApi::class)
 @Singleton
 class IptvPlayer @Inject constructor(
-    @ApplicationContext private val appContext: Context,
+    @param:ApplicationContext private val appContext: Context,
     private val loadControl: LoadControl
 ) {
 
-    private val trackSelector = DefaultTrackSelector(appContext)
-    private val player = ExoPlayer.Builder(appContext)
-        .setLoadControl(loadControl)
-        .setTrackSelector(trackSelector)
-        .build()
-
-    private val mainHandler = Handler(Looper.getMainLooper())
+    private var trackSelector = DefaultTrackSelector(appContext)
+    private var player = createPlayer()
+    private var released = false
+    private var playerScope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
     private var retryJob: Job? = null
+    private var retryCallback: ((PlaybackException) -> Unit)? = null
+    private var retryListener: Player.Listener? = null
+    private var lastMediaItem: MediaItem? = null
 
-    fun getPlayer(): ExoPlayer = player
+    fun getPlayer(): ExoPlayer = ensurePlayer()
 
     fun prepare(url: String, playWhenReady: Boolean = true) {
-        player.setMediaSource(buildMediaSource(url))
-        player.prepare()
-        player.playWhenReady = playWhenReady
+        val activePlayer = ensurePlayer()
+        lastMediaItem = MediaItem.Builder()
+            .setUri(url)
+            .setLiveConfiguration(
+                LiveConfiguration.Builder()
+                    .setTargetOffsetMs(5_000L) // stay 5 s behind live edge
+                    .setMaxOffsetMs(15_000L)
+                    .build()
+            )
+            .build()
+        activePlayer.setMediaItem(lastMediaItem!!)
+        activePlayer.playWhenReady = playWhenReady
+        activePlayer.prepare()
+        if (playWhenReady) activePlayer.play()
     }
 
     fun release() {
         retryJob?.cancel()
+        retryJob = null
+        playerScope.coroutineContext[Job]?.cancel()
+        playerScope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
         player.release()
+        released = true
     }
 
-    fun pause() { player.pause() }
-    fun play() { player.play() }
+    fun pause() {
+        if (!released) player.pause()
+    }
+
+    fun play() {
+        if (!released) player.play()
+    }
 
     fun setPlaybackSpeed(speed: Float) {
-        player.setPlaybackSpeed(speed)
+        ensurePlayer().setPlaybackSpeed(speed)
     }
 
     fun setAudioTrack(groupIndex: Int, trackIndex: Int) {
@@ -69,43 +91,95 @@ class IptvPlayer @Inject constructor(
         TrackSelector.applySubtitleTrack(trackSelector, groupIndex, trackIndex)
     }
 
+    fun clearSubtitleTrack() {
+        TrackSelector.clearSubtitleTrack(trackSelector)
+    }
+
     fun audioTracks(): List<TrackSelector.TrackInfo> = TrackSelector.audioTracks(trackSelector)
 
     fun subtitleTracks(): List<TrackSelector.TrackInfo> = TrackSelector.subtitleTracks(trackSelector)
 
     fun addRetryListener(onFinalError: (PlaybackException) -> Unit) {
-        player.addListener(object : Player.Listener {
+        retryCallback = onFinalError
+        val activePlayer = ensurePlayer()
+        retryListener?.let { activePlayer.removeListener(it) }
+        val listener = object : Player.Listener {
             override fun onPlayerError(error: PlaybackException) {
                 scheduleRetry(error, onFinalError)
             }
-        })
+        }
+        retryListener = listener
+        activePlayer.addListener(listener)
     }
 
     private fun scheduleRetry(error: PlaybackException, onFinalError: (PlaybackException) -> Unit) {
         if (retryJob?.isActive == true) return
-        retryJob = CoroutineScope(Dispatchers.Main).launch {
+        retryJob = playerScope.launch {
             var attempt = 0
             while (attempt < Constants.PLAYER_RETRY_COUNT) {
                 val backoff = Constants.PLAYER_RETRY_BACKOFF_BASE_MS * (1L shl attempt)
                 delay(backoff)
-                player.prepare()
+                val activePlayer = ensurePlayer()
+                val mediaItem = lastMediaItem
+                if (mediaItem != null) {
+                    activePlayer.setMediaItem(mediaItem, false)
+                    activePlayer.playWhenReady = true
+                    activePlayer.prepare()
+                    activePlayer.play()
+                } else {
+                    activePlayer.prepare()
+                }
                 attempt++
-                if (player.playbackState == Player.STATE_READY) return@launch
+                if (activePlayer.playbackState == Player.STATE_READY || activePlayer.isPlaying) {
+                    retryJob = null
+                    return@launch
+                }
             }
+            retryJob = null
             onFinalError(error)
         }
     }
 
-    private fun buildMediaSource(url: String): MediaSource {
-        val uri = Uri.parse(url)
-        val factory = DefaultDataSource.Factory(appContext)
-        return when {
-            url.contains(".m3u8", ignoreCase = true) ->
-                HlsMediaSource.Factory(factory).createMediaSource(MediaItem.fromUri(uri))
-            url.startsWith("rtsp", ignoreCase = true) ->
-                RtspMediaSource.Factory().createMediaSource(MediaItem.fromUri(uri))
-            else ->
-                ProgressiveMediaSource.Factory(factory).createMediaSource(MediaItem.fromUri(uri))
+    private fun ensurePlayer(): ExoPlayer {
+        if (released) {
+            playerScope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
+            player = createPlayer()
+            retryListener = null
+            released = false
+            retryCallback?.let { addRetryListener(it) }
         }
+        return player
+    }
+
+    private fun createPlayer(): ExoPlayer {
+        trackSelector = DefaultTrackSelector(appContext)
+        val renderersFactory = DefaultRenderersFactory(appContext)
+            .setEnableDecoderFallback(true)
+        return ExoPlayer.Builder(appContext)
+            .setRenderersFactory(renderersFactory)
+            .setLoadControl(loadControl)
+            .setTrackSelector(trackSelector)
+            .setMediaSourceFactory(buildMediaSourceFactory())
+            .build()
+            .apply {
+                setAudioAttributes(AudioAttributes.DEFAULT, true)
+            }
+    }
+
+    private fun buildMediaSourceFactory(): DefaultMediaSourceFactory {
+        val httpFactory = DefaultHttpDataSource.Factory()
+            .setUserAgent("BAYYARI-TV/1.0")
+            .setAllowCrossProtocolRedirects(true)
+            .setConnectTimeoutMs(TimeUnit.SECONDS.toMillis(Constants.CONNECT_TIMEOUT_SECONDS).toInt())
+            .setReadTimeoutMs(TimeUnit.SECONDS.toMillis(Constants.READ_TIMEOUT_SECONDS).toInt())
+            .setDefaultRequestProperties(
+                mapOf(
+                    "Accept" to "*/*",
+                    "Icy-MetaData" to "1"
+                )
+            )
+        val dataSourceFactory = DefaultDataSource.Factory(appContext, httpFactory)
+        return DefaultMediaSourceFactory(appContext)
+            .setDataSourceFactory(dataSourceFactory)
     }
 }

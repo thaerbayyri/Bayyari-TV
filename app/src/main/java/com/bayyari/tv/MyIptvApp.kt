@@ -1,13 +1,20 @@
 package com.bayyari.tv
 
 import android.app.Application
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import com.bayyari.tv.data.work.RefreshScheduler
 import com.bayyari.tv.util.CrashReporter
 import dagger.hilt.android.HiltAndroidApp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import javax.inject.Inject
+import javax.inject.Provider
 
 /**
  * Application entry point. Owns Hilt graph and the Hilt-aware WorkManager configuration.
@@ -23,10 +30,12 @@ class MyIptvApp : Application(), Configuration.Provider {
     lateinit var workerFactory: HiltWorkerFactory
 
     @Inject
-    lateinit var refreshScheduler: RefreshScheduler
+    lateinit var refreshScheduler: Provider<RefreshScheduler>
 
     @Inject
     lateinit var crashReporter: CrashReporter
+
+    private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     override val workManagerConfiguration: Configuration
         get() = Configuration.Builder()
@@ -37,8 +46,16 @@ class MyIptvApp : Application(), Configuration.Provider {
     override fun onCreate() {
         super.onCreate()
         runSafely("install crash handler") { crashReporter.install() }
-        runSafely("schedule refresh worker") { refreshScheduler.schedule() }
-        runSafely("log app start") { crashReporter.log("App started v=${BuildConfig.VERSION_NAME}") }
+        deferAfterLaunch {
+            runSafely("schedule refresh worker") { refreshScheduler.get().schedule() }
+            runSafely("log app start") { crashReporter.log("App started v=${BuildConfig.VERSION_NAME}") }
+        }
+    }
+
+    private fun deferAfterLaunch(block: () -> Unit) {
+        Handler(Looper.getMainLooper()).post {
+            appScope.launch { block() }
+        }
     }
 
     private inline fun runSafely(label: String, block: () -> Unit) {

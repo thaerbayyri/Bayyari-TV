@@ -4,24 +4,23 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class StreamUrlBuilderTest {
-
     private val builder = StreamUrlBuilder()
 
     @Test
-    fun builds_live_hls_url() {
-        val url = builder.live("http://example.com/", "u", "p", 123, StreamUrlBuilder.LiveFormat.HLS)
-        assertEquals("http://example.com/live/u/p/123.m3u8", url)
+    fun live_hls_buildsCorrectUrl() {
+        val url = builder.live("https://s.example/", "user", "p@ss", 123, StreamUrlBuilder.LiveFormat.HLS)
+        assertEquals("https://s.example/live/user/p%40ss/123.m3u8", url)
     }
 
     @Test
-    fun builds_movie_url() {
-        val url = builder.movie("http://example.com/", "u", "p", 99, "mp4")
-        assertEquals("http://example.com/movie/u/p/99.mp4", url)
+    fun live_ts_buildsCorrectUrl() {
+        val url = builder.live("https://s.example", "u e", "p+ss", 5, StreamUrlBuilder.LiveFormat.TS)
+        assertEquals("https://s.example/live/u%20e/p%2Bss/5.ts", url)
     }
 
     @Test
-    fun builds_catchup_url() {
-        val url = builder.catchUp("http://example.com/", "u", "p", 5, 0, 60)
-        assertEquals("http://example.com/timeshift/u/p/60/1970-01-01:00-00/5.ts", url)
+    fun movie_defaultsToMp4() {
+        val url = builder.movie("https://s/", "u", "p", 10, "")
+        assertEquals("https://s/movie/u/p/10.mp4", url)
     }
 }

@@ -5,6 +5,7 @@ import com.bayyari.tv.data.local.dao.ChannelDao
 import com.bayyari.tv.data.local.entities.ChannelEntity
 import com.bayyari.tv.domain.model.Channel
 import com.bayyari.tv.domain.model.Server
+import com.bayyari.tv.util.Constants
 import com.bayyari.tv.util.M3uParser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -20,6 +21,8 @@ class LiveRepository @Inject constructor(
     private val m3uParser: M3uParser
 ) {
 
+    fun observeChannelCount(serverId: Int): Flow<Int> = channelDao.observeCount(serverId)
+
     fun observeChannels(serverId: Int, categoryId: String?): Flow<List<Channel>> {
         val flow = if (categoryId.isNullOrBlank()) {
             channelDao.observeAll(serverId)
@@ -31,37 +34,48 @@ class LiveRepository @Inject constructor(
 
     suspend fun refresh(server: Server): Int = withContext(Dispatchers.IO) {
         if (server.isM3uOnly) {
-            val response = api.fetchRaw(server.url)
-            val content = response.body()?.string().orEmpty()
-            val channels = m3uParser.parse(content, server.id)
-            val entities = channels.map { channel ->
-                ChannelEntity(
-                    streamId = channel.streamId,
-                    name = channel.name,
-                    streamIcon = channel.streamIcon,
-                    categoryId = channel.categoryId,
-                    categoryName = channel.categoryName,
-                    tvArchive = channel.tvArchive,
-                    tvArchiveDuration = channel.tvArchiveDuration,
-                    epgChannelId = channel.epgChannelId,
-                    added = channel.addedEpochSeconds,
-                    serverId = channel.serverId,
-                    directStreamUrl = channel.directStreamUrl
-                )
+            return@withContext runCatching {
+                val response = api.fetchRaw(server.url)
+                if (!response.isSuccessful) {
+                    safeLogWarning("fetchRaw failed with HTTP ${response.code()}", null)
+                    return@runCatching 0
+                }
+
+                val content = response.body()?.string().orEmpty()
+                val channels = m3uParser.parse(content, server.id)
+                val entities = channels.map { channel ->
+                    ChannelEntity(
+                        streamId = channel.streamId,
+                        name = channel.name,
+                        streamIcon = channel.streamIcon,
+                        categoryId = channel.categoryId,
+                        categoryName = channel.categoryName,
+                        tvArchive = channel.tvArchive,
+                        tvArchiveDuration = channel.tvArchiveDuration,
+                        epgChannelId = channel.epgChannelId,
+                        added = channel.addedEpochSeconds,
+                        serverId = channel.serverId,
+                        directStreamUrl = channel.directStreamUrl
+                    )
+                }
+                channelDao.clearForServer(server.id)
+                entities.chunked(Constants.DB_UPSERT_CHUNK_SIZE).forEach { channelDao.upsertAll(it) }
+                entities.size
+            }.getOrElse { t ->
+                safeLogWarning("M3U refresh failed", t)
+                0
             }
-            channelDao.clearForServer(server.id)
-            channelDao.upsertAll(entities)
-            return@withContext entities.size
         }
+
         val categories = runCatching { api.getLiveCategories(server.username, server.password) }
             .getOrElse {
-                android.util.Log.w("LiveRepository", "getLiveCategories failed", it)
+                safeLogWarning("getLiveCategories failed", it)
                 emptyList()
             }
         val categoryMap = categories.associate { it.categoryId to it.categoryName }
         val channels = runCatching { api.getLiveStreams(server.username, server.password) }
             .getOrElse {
-                android.util.Log.w("LiveRepository", "getLiveStreams failed", it)
+                safeLogWarning("getLiveStreams failed", it)
                 return@withContext 0
             }
         val entities = channels.map { dto ->
@@ -80,7 +94,7 @@ class LiveRepository @Inject constructor(
             )
         }
         channelDao.clearForServer(server.id)
-        channelDao.upsertAll(entities)
+        entities.chunked(Constants.DB_UPSERT_CHUNK_SIZE).forEach { channelDao.upsertAll(it) }
         entities.size
     }
 
@@ -103,4 +117,14 @@ class LiveRepository @Inject constructor(
         serverId = serverId,
         directStreamUrl = directStreamUrl
     )
+
+    private fun safeLogWarning(message: String, throwable: Throwable?) {
+        runCatching {
+            if (throwable != null) {
+                android.util.Log.w("LiveRepository", message, throwable)
+            } else {
+                android.util.Log.w("LiveRepository", message)
+            }
+        }
+    }
 }

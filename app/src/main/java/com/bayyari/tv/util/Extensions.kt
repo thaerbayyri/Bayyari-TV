@@ -4,6 +4,13 @@ import android.content.Context
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -19,6 +26,14 @@ fun View.visible() { visibility = View.VISIBLE }
 fun View.gone() { visibility = View.GONE }
 fun View.invisible() { visibility = View.INVISIBLE }
 fun View.visibleIf(condition: Boolean) { visibility = if (condition) View.VISIBLE else View.GONE }
+
+fun <T> LifecycleOwner.collectStarted(flow: Flow<T>, collector: suspend (T) -> Unit) {
+    lifecycleScope.launch {
+        repeatOnLifecycle(Lifecycle.State.STARTED) {
+            flow.collectLatest(collector)
+        }
+    }
+}
 
 fun Long.formatAsClock(): String {
     val totalSeconds = TimeUnit.MILLISECONDS.toSeconds(this).coerceAtLeast(0)

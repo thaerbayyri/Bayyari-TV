@@ -3,6 +3,7 @@ package com.bayyari.tv.di
 import android.content.Context
 import androidx.room.Room
 import com.bayyari.tv.data.local.AppDatabase
+import com.bayyari.tv.data.local.dao.CategoryDao
 import com.bayyari.tv.data.local.dao.ChannelDao
 import com.bayyari.tv.data.local.dao.EpgDao
 import com.bayyari.tv.data.local.dao.FavoriteDao
@@ -25,7 +26,6 @@ object DatabaseModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase =
         Room.databaseBuilder(context, AppDatabase::class.java, Constants.DB_NAME)
-            .fallbackToDestructiveMigration()
             .build()
 
     @Provides
@@ -45,4 +45,7 @@ object DatabaseModule {
 
     @Provides
     fun provideWatchHistoryDao(db: AppDatabase): WatchHistoryDao = db.watchHistoryDao()
+
+    @Provides
+    fun provideCategoryDao(db: AppDatabase): CategoryDao = db.categoryDao()
 }

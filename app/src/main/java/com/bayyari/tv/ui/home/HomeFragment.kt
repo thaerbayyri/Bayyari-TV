@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import android.widget.Toast
 import com.bayyari.tv.R
 import com.bayyari.tv.databinding.FragmentHomeBinding
 import com.bayyari.tv.databinding.IncludeStatCellBinding
@@ -18,10 +18,9 @@ import com.bayyari.tv.ui.common.adapter.MovieAdapter
 import com.bayyari.tv.ui.common.adapter.SeriesAdapter
 import com.bayyari.tv.ui.live.LivePlayerActivity
 import com.bayyari.tv.ui.movies.MoviePlayerActivity
+import com.bayyari.tv.util.collectStarted
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -52,15 +51,15 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             startActivity(Intent(requireContext(), LivePlayerActivity::class.java).apply {
                 putExtra(LivePlayerActivity.EXTRA_STREAM_ID, ch.streamId)
             })
-        })
-        val movieAdapter = MovieAdapter { movie ->
+        }, compact = true)
+        val movieAdapter = MovieAdapter(compact = true) { movie ->
             openMovieDetail(movie)
         }
-        val seriesAdapter = SeriesAdapter { series ->
-            try {
+        val seriesAdapter = SeriesAdapter(compact = true) { series ->
+            runCatching {
                 val args = Bundle().apply { putInt("seriesId", series.seriesId) }
-                findNavController().navigate(R.id.seriesDetailFragment, args)
-            } catch (_: Throwable) { /* nav graph missing arg is fine */ }
+                findNavController().navigate(R.id.action_home_to_series_detail, args)
+            }
         }
 
         b.recyclerContinue.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -82,30 +81,22 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         b.buttonHeroPlay.setOnClickListener {
             (b.heroTitle.tag as? Movie)?.let { openMoviePlayer(it) }
         }
-        b.buttonHeroAdd.setOnClickListener { /* TODO add to favorites */ }
+        b.buttonHeroAdd.setOnClickListener {
+            val movie = b.heroTitle.tag as? Movie ?: return@setOnClickListener
+            viewModel.addMovieFavorite(movie)
+            Toast.makeText(requireContext(), R.string.live_add_favorite, Toast.LENGTH_SHORT).show()
+        }
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.continueWatching.collectLatest { continueAdapter.submitList(it) }
+        viewLifecycleOwner.collectStarted(viewModel.continueWatching) { continueAdapter.submitList(it) }
+        viewLifecycleOwner.collectStarted(viewModel.liveChannels) { liveAdapter.submitList(it) }
+        viewLifecycleOwner.collectStarted(viewModel.latestMovies) { movieAdapter.submitList(it) }
+        viewLifecycleOwner.collectStarted(viewModel.latestSeries) { seriesAdapter.submitList(it) }
+        viewLifecycleOwner.collectStarted(viewModel.stats) { s ->
+            statBindings[0].first.statValue.text = formatCount(s.channelCount)
+            statBindings[1].first.statValue.text = formatCount(s.movieCount)
+            statBindings[2].first.statValue.text = formatCount(s.seriesCount)
         }
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.liveChannels.collectLatest { liveAdapter.submitList(it) }
-        }
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.latestMovies.collectLatest { movieAdapter.submitList(it) }
-        }
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.latestSeries.collectLatest { seriesAdapter.submitList(it) }
-        }
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.stats.collectLatest { s ->
-                statBindings[0].first.statValue.text = formatCount(s.channelCount)
-                statBindings[1].first.statValue.text = formatCount(s.movieCount)
-                statBindings[2].first.statValue.text = formatCount(s.seriesCount)
-            }
-        }
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.featured.collectLatest { movie -> bindHero(movie) }
-        }
+        viewLifecycleOwner.collectStarted(viewModel.featured) { movie -> bindHero(movie) }
 
         viewModel.refreshAll()
     }
@@ -126,10 +117,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun openMovieDetail(movie: Movie) {
-        try {
-            val args = Bundle().apply { putInt("movieId", movie.streamId) }
-            findNavController().navigate(R.id.movieDetailFragment, args)
-        } catch (_: Throwable) {
+        runCatching {
+            val args = Bundle().apply { putInt("streamId", movie.streamId) }
+            findNavController().navigate(R.id.action_home_to_movie_detail, args)
+        }.onFailure {
             openMoviePlayer(movie)
         }
     }
@@ -145,8 +136,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun formatCount(n: Int): String = when {
-        n >= 1_000_000 -> String.format("%.1fM+", n / 1_000_000.0)
-        n >= 1_000 -> String.format("%.1fk+", n / 1_000.0)
+        n >= 1_000 -> java.text.NumberFormat.getIntegerInstance().format(n)
         n > 0 -> n.toString()
         else -> "0"
     }

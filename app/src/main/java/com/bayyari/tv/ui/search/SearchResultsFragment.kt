@@ -4,16 +4,14 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayyari.tv.R
 import com.bayyari.tv.databinding.FragmentSearchResultsBinding
 import com.bayyari.tv.ui.common.adapter.ChannelAdapter
 import com.bayyari.tv.ui.common.adapter.MovieAdapter
 import com.bayyari.tv.ui.common.adapter.SeriesAdapter
+import com.bayyari.tv.util.collectStarted
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SearchResultsFragment : Fragment(R.layout.fragment_search_results) {
@@ -47,18 +45,16 @@ class SearchResultsFragment : Fragment(R.layout.fragment_search_results) {
             else -> allAdapter
         }
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.result.collectLatest { result ->
-                when (tab) {
-                    "live" -> liveAdapter.submitList(result.live)
-                    "movies" -> movieAdapter.submitList(result.movies)
-                    "series" -> seriesAdapter.submitList(result.series)
-                    else -> {
-                        val items = result.live.map { SearchItem.Live(it.name) } +
-                            result.movies.map { SearchItem.Movie(it.name) } +
-                            result.series.map { SearchItem.Series(it.name) }
-                        allAdapter.submitList(items)
-                    }
+        viewLifecycleOwner.collectStarted(viewModel.result) { result ->
+            when (tab) {
+                "live" -> liveAdapter.submitList(result.live)
+                "movies" -> movieAdapter.submitList(result.movies)
+                "series" -> seriesAdapter.submitList(result.series)
+                else -> {
+                    val items = result.live.map { SearchItem.Live(it.name) } +
+                        result.movies.map { SearchItem.Movie(it.name) } +
+                        result.series.map { SearchItem.Series(it.name) }
+                    allAdapter.submitList(items)
                 }
             }
         }

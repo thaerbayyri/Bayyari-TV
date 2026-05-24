@@ -6,10 +6,8 @@ import androidx.activity.viewModels
 import com.bayyari.tv.databinding.ActivityTvLivePlayerBinding
 import com.bayyari.tv.player.IptvPlayer
 import com.bayyari.tv.ui.BaseActivity
+import com.bayyari.tv.util.collectStarted
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -33,12 +31,10 @@ class TvLivePlayerActivity : BaseActivity() {
         if (streamId != 0) {
             viewModel.load(streamId)
         }
-        lifecycleScope.launch {
-            viewModel.channel.collectLatest { channel ->
-                if (channel == null) return@collectLatest
-                val url = viewModel.buildStreamUrl(channel)
-                if (url.isNotBlank()) iptvPlayer.prepare(url)
-            }
+        collectStarted(viewModel.channel) { channel ->
+            if (channel == null) return@collectStarted
+            val url = viewModel.buildStreamUrl(channel)
+            if (url.isNotBlank()) iptvPlayer.prepare(url)
         }
     }
 

@@ -5,8 +5,8 @@ import com.bayyari.tv.data.local.dao.ChannelDao
 import com.bayyari.tv.data.local.dao.EpgDao
 import com.bayyari.tv.data.local.dao.MovieDao
 import com.bayyari.tv.data.local.dao.SeriesDao
-import com.bayyari.tv.data.local.dao.WatchHistoryDao
 import com.bayyari.tv.data.repository.AuthRepository
+import com.bayyari.tv.data.repository.WatchHistoryRepository
 import com.bayyari.tv.util.EncryptedPrefs
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +21,7 @@ class SettingsViewModel @Inject constructor(
     private val movieDao: MovieDao,
     private val seriesDao: SeriesDao,
     private val epgDao: EpgDao,
-    private val watchHistoryDao: WatchHistoryDao
+    private val watchHistoryRepository: WatchHistoryRepository
 ) : ViewModel() {
 
     fun getServerInfo(): String {
@@ -35,6 +35,7 @@ class SettingsViewModel @Inject constructor(
     fun setBufferSizeMs(value: Int) = prefs.setBufferSizeMs(value)
     fun setAutoPlayNext(enabled: Boolean) = prefs.setAutoPlayNext(enabled)
     fun setParentalPin(pin: String) = prefs.setParentalPin(pin)
+    fun clearHiddenLiveCategories() = prefs.clearHiddenLiveCategories()
 
     /**
      * Wipe the active server's id so MainActivity routes back to LoginActivity on the next
@@ -51,6 +52,6 @@ class SettingsViewModel @Inject constructor(
         movieDao.clearForServer(serverId)
         seriesDao.clearForServer(serverId)
         epgDao.clearForServer(serverId)
-        watchHistoryDao.clear(serverId)
+        watchHistoryRepository.clear(serverId)
     }
 }

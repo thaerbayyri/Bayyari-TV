@@ -4,13 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.content.pm.ActivityInfo
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import com.bayyari.tv.R
-import com.bayyari.tv.data.repository.AuthRepository
 import com.bayyari.tv.databinding.ActivityMainBinding
+import com.bayyari.tv.util.Constants
 import com.bayyari.tv.util.CrashReporter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -23,7 +24,6 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
-    @Inject lateinit var authRepository: AuthRepository
     @Inject lateinit var crashReporter: CrashReporter
 
     private lateinit var binding: ActivityMainBinding
@@ -36,6 +36,7 @@ class MainActivity : BaseActivity() {
             R.id.chipMovies to R.id.movieFragment,
             R.id.chipSeries to R.id.seriesFragment,
             R.id.chipCatchup to R.id.catchUpFragment,
+            R.id.chipFavorites to R.id.favoritesFragment,
             R.id.chipSettings to R.id.settingsFragment
         )
     }
@@ -76,6 +77,7 @@ class MainActivity : BaseActivity() {
 
             navController.addOnDestinationChangedListener { _, destination, _ ->
                 highlightChip(destination)
+                updateOrientation(destination)
             }
 
             // Icon buttons (top right)
@@ -105,7 +107,6 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    /** Highlight the chip whose destination matches the current nav target. */
     private fun highlightChip(destination: NavDestination) {
         val activeChipId = chipDestinations.firstOrNull { it.second == destination.id }?.first
         for ((chipId, _) in chipDestinations) {
@@ -120,15 +121,27 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun hasActiveServer(): Boolean = try {
-        authRepository.getActiveServer() != null
-    } catch (t: Throwable) {
-        Log.e(TAG, "Failed to read active server", t)
-        runCatching { crashReporter.recordException(t) }
-        false
+    private fun updateOrientation(destination: NavDestination) {
+        requestedOrientation = when (destination.id) {
+            R.id.homeFragment -> ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+            R.id.liveFragment,
+            R.id.movieFragment,
+            R.id.movieDetailFragment,
+            R.id.seriesFragment,
+            R.id.seriesDetailFragment,
+            R.id.seasonFragment,
+            R.id.catchUpFragment,
+            R.id.favoritesFragment -> ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
+            else -> ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
     }
+
+    private fun hasActiveServer(): Boolean =
+        getSharedPreferences(Constants.APP_PREFS, MODE_PRIVATE)
+            .getBoolean(Constants.PREF_HAS_ACTIVE_SERVER, false)
 
     companion object {
         private const val TAG = "MainActivity"
+        const val EXTRA_SYNC_ON_START = "extra_sync_on_start"
     }
 }

@@ -9,7 +9,8 @@ import com.bayyari.tv.databinding.ItemServerBinding
 import com.bayyari.tv.domain.model.Server
 
 class ServerAdapter(
-    private val onClick: (Server) -> Unit
+    private val onClick: (Server) -> Unit,
+    private val onDelete: (Server) -> Unit
 ) : ListAdapter<Server, ServerAdapter.ViewHolder>(Diff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,8 +25,13 @@ class ServerAdapter(
     inner class ViewHolder(private val binding: ItemServerBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Server) {
             binding.textTitle.text = item.label
-            binding.textSubtitle.text = item.url
+            binding.textSubtitle.text = if (item.isM3uOnly) {
+                "M3U playlist"
+            } else {
+                "Xtream account"
+            }
             binding.root.setOnClickListener { onClick(item) }
+            binding.buttonDelete.setOnClickListener { onDelete(item) }
         }
     }
 

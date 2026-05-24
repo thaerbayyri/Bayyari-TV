@@ -30,4 +30,7 @@ interface ChannelDao {
 
     @Query("SELECT COUNT(*) FROM channels WHERE serverId = :serverId")
     suspend fun count(serverId: Int): Int
+
+    @Query("SELECT COUNT(*) FROM channels WHERE serverId = :serverId")
+    fun observeCount(serverId: Int): Flow<Int>
 }

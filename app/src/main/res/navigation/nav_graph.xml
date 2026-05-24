@@ -7,7 +7,14 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.bayyari.tv.ui.home.HomeFragment"
-        android:label="@string/nav_home" />
+        android:label="@string/nav_home">
+        <action
+            android:id="@+id/action_home_to_movie_detail"
+            app:destination="@id/movieDetailFragment" />
+        <action
+            android:id="@+id/action_home_to_series_detail"
+            app:destination="@id/seriesDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/liveFragment"
@@ -42,6 +49,9 @@
         <action
             android:id="@+id/action_series_to_detail"
             app:destination="@id/seriesDetailFragment" />
+        <action
+            android:id="@+id/action_series_to_season"
+            app:destination="@id/seasonFragment" />
     </fragment>
 
     <fragment
@@ -85,7 +95,12 @@
     <fragment
         android:id="@+id/epgFragment"
         android:name="com.bayyari.tv.ui.live.EpgFragment"
-        android:label="@string/live_epg" />
+        android:label="@string/live_epg">
+        <argument
+            android:name="streamId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 
     <fragment
         android:id="@+id/catchUpFragment"

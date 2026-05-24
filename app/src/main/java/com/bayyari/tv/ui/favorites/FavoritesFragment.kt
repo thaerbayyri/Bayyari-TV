@@ -2,15 +2,14 @@ package com.bayyari.tv.ui.favorites
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayyari.tv.R
 import com.bayyari.tv.databinding.FragmentFavoritesBinding
+import com.bayyari.tv.util.collectStarted
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
@@ -19,13 +18,26 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
     private var binding: FragmentFavoritesBinding? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding = FragmentFavoritesBinding.bind(view)
+        val b = FragmentFavoritesBinding.bind(view)
+        binding = b
         val adapter = FavoriteAdapter()
-        binding?.recyclerFavorites?.layoutManager = LinearLayoutManager(requireContext())
-        binding?.recyclerFavorites?.adapter = adapter
+        b.recyclerFavorites.layoutManager = LinearLayoutManager(requireContext())
+        b.recyclerFavorites.adapter = adapter
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.favorites.collectLatest { adapter.submitList(it) }
+        adapter.setOnLongClickListener { item ->
+            AlertDialog.Builder(requireContext())
+                .setTitle(item.title)
+                .setItems(arrayOf(getString(R.string.action_remove))) { _, _ ->
+                    viewModel.removeFavorite(item)
+                }
+                .show()
+        }
+
+        viewLifecycleOwner.collectStarted(viewModel.favorites) { items ->
+            adapter.submitList(items)
+            b.textFavoritesCount.text = if (items.size == 1) "1 item" else "${items.size} items"
+            b.emptyState.visibility = if (items.isEmpty()) View.VISIBLE else View.GONE
+            b.recyclerFavorites.visibility = if (items.isEmpty()) View.GONE else View.VISIBLE
         }
     }
 

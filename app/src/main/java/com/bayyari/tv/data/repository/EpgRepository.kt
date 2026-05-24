@@ -1,6 +1,7 @@
 package com.bayyari.tv.data.repository
 
 import android.util.Base64
+import android.util.Log
 import com.bayyari.tv.data.api.XtreamApiService
 import com.bayyari.tv.data.local.dao.EpgDao
 import com.bayyari.tv.data.local.entities.EpgEntity
@@ -80,7 +81,10 @@ class EpgRepository @Inject constructor(
         return runCatching {
             val decoded = Base64.decode(raw, Base64.DEFAULT)
             String(decoded)
-        }.getOrDefault(raw)
+        }.getOrElse {
+            Log.w(TAG, "Base64 decode failed — dropping field value")
+            ""
+        }
     }
 
     private fun parseTimestamp(epochSeconds: String?, dateTime: String?): Long? {
@@ -91,6 +95,13 @@ class EpgRepository @Inject constructor(
                 timeZone = TimeZone.getTimeZone("UTC")
             }
             fmt.parse(dateTime)?.time
-        }.getOrNull()
+        }.getOrElse {
+            Log.w(TAG, "EPG timestamp parse failed for '$dateTime' — entry will be dropped")
+            null
+        }
+    }
+
+    companion object {
+        private const val TAG = "EpgRepository"
     }
 }

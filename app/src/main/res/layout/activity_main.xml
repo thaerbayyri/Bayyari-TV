@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
-    <!-- Top navbar -->
+    <!-- Single-row top navbar: Logo | Chips (scrollable) | Icons -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/topBarHolder"
         android:layout_width="0dp"
@@ -17,28 +17,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:id="@+id/topBar"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:background="@color/colorBackground"
-            android:paddingHorizontal="14dp">
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp">
 
             <!-- Left: logo -->
             <LinearLayout
                 android:id="@+id/logoGroup"
-                android:layout_width="wrap_content"
+                android:layout_width="126dp"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="6dp"
                     android:src="@drawable/ic_logo_tv"
                     android:contentDescription="@string/app_name" />
 
@@ -46,159 +46,198 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
+                    android:includeFontPadding="false"
                     android:letterSpacing="-0.02"
-                    android:text="Bayyari-"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Bayyari-TV"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:letterSpacing="-0.02"
-                    android:text="TV"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
-            <!-- Right cluster: search + bell + avatar -->
+            <!-- Center: nav chips (scrollable, fills remaining space) -->
+            <HorizontalScrollView
+                android:id="@+id/navScroll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:paddingHorizontal="8dp">
+
+                <LinearLayout
+                    android:id="@+id/navChipsRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/chipHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_navchip_active"
+                        android:clickable="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minHeight="@dimen/control_min_height"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:text="@string/nav_home"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13sp"
+                        android:layout_marginEnd="2dp" />
+
+                    <TextView
+                        android:id="@+id/chipLive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_navchip_inactive"
+                        android:clickable="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minHeight="@dimen/control_min_height"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:text="@string/nav_live"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="13sp"
+                        android:layout_marginEnd="2dp" />
+
+                    <TextView
+                        android:id="@+id/chipMovies"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_navchip_inactive"
+                        android:clickable="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minHeight="@dimen/control_min_height"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:text="@string/nav_movies"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="13sp"
+                        android:layout_marginEnd="2dp" />
+
+                    <TextView
+                        android:id="@+id/chipSeries"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_navchip_inactive"
+                        android:clickable="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minHeight="@dimen/control_min_height"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:text="@string/nav_series"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="13sp"
+                        android:layout_marginEnd="2dp" />
+
+                    <TextView
+                        android:id="@+id/chipCatchup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_navchip_inactive"
+                        android:clickable="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minHeight="@dimen/control_min_height"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:text="@string/nav_catchup"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="13sp"
+                        android:layout_marginEnd="2dp" />
+
+                    <TextView
+                        android:id="@+id/chipFavorites"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_navchip_inactive"
+                        android:clickable="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minHeight="@dimen/control_min_height"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:text="@string/nav_favorites"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="13sp"
+                        android:layout_marginEnd="2dp" />
+
+                    <TextView
+                        android:id="@+id/chipSettings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_navchip_inactive"
+                        android:clickable="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minHeight="@dimen/control_min_height"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:text="@string/nav_settings"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Right: search + bell + avatar -->
             <LinearLayout
                 android:id="@+id/rightCluster"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
+                android:orientation="horizontal">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/iconSearch"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:background="@drawable/bg_iconbtn_circle"
                     android:contentDescription="@string/nav_search"
                     android:padding="8dp"
+                    android:scaleType="centerInside"
                     android:src="@drawable/ic_search"
-                    android:layout_marginEnd="8dp" />
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="6dp" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/iconBell"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:background="@drawable/bg_iconbtn_circle"
                     android:contentDescription="@string/nav_favorites"
                     android:padding="8dp"
-                    android:src="@drawable/ic_bell"
-                    android:layout_marginEnd="8dp" />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_favorites"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="6dp" />
 
                 <TextView
                     android:id="@+id/avatar"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:background="@drawable/bg_avatar_gradient"
                     android:gravity="center"
                     android:fontFamily="sans-serif-black"
-                    android:text="JD"
+                    android:text="BY"
                     android:textColor="#FFFFFFFF"
-                    android:textSize="11sp" />
+                    android:textSize="10sp" />
             </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!-- Nav chips (scroll horizontally if needed) -->
-        <HorizontalScrollView
-            android:id="@+id/navScroll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:overScrollMode="never"
-            android:paddingHorizontal="14dp"
-            android:paddingBottom="10dp">
-
-            <LinearLayout
-                android:id="@+id/navChipsRow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/chipHome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_navchip_active"
-                    android:fontFamily="sans-serif-medium"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@string/nav_home"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp"
-                    android:layout_marginEnd="4dp" />
-
-                <TextView
-                    android:id="@+id/chipLive"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:fontFamily="sans-serif-medium"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@string/nav_live"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="14sp"
-                    android:layout_marginEnd="4dp" />
-
-                <TextView
-                    android:id="@+id/chipMovies"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:fontFamily="sans-serif-medium"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@string/nav_movies"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="14sp"
-                    android:layout_marginEnd="4dp" />
-
-                <TextView
-                    android:id="@+id/chipSeries"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:fontFamily="sans-serif-medium"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@string/nav_series"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="14sp"
-                    android:layout_marginEnd="4dp" />
-
-                <TextView
-                    android:id="@+id/chipCatchup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:fontFamily="sans-serif-medium"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@string/nav_catchup"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="14sp"
-                    android:layout_marginEnd="4dp" />
-
-                <TextView
-                    android:id="@+id/chipSettings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:fontFamily="sans-serif-medium"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@string/nav_settings"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="14sp" />
-            </LinearLayout>
-        </HorizontalScrollView>
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -215,5 +254,52 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topBarHolder"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/playlistLoadingOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorBackground"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="28dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_logo_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/sync_playlist_title"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/sync_playlist_message"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="14sp" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:indeterminateTint="@color/colorPrimary" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

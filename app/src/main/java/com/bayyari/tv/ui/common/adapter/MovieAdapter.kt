@@ -12,11 +12,23 @@ import com.bayyari.tv.domain.model.Movie
 import com.bumptech.glide.Glide
 
 class MovieAdapter(
+    private val compact: Boolean = false,
     private val onClick: (Movie) -> Unit
 ) : ListAdapter<Movie, MovieAdapter.MovieViewHolder>(Diff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val binding = ItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        if (compact) {
+            val density = parent.resources.displayMetrics.density
+            binding.root.layoutParams = RecyclerView.LayoutParams(
+                (124 * density).toInt(),
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            ).apply {
+                val horizontal = (6 * density).toInt()
+                val vertical = (3 * density).toInt()
+                setMargins(horizontal, vertical, horizontal, vertical)
+            }
+        }
         return MovieViewHolder(binding)
     }
 

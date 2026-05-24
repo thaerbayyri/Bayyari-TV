@@ -6,6 +6,7 @@ import com.bayyari.tv.data.local.dao.SeriesDao
 import com.bayyari.tv.data.local.entities.SeriesEntity
 import com.bayyari.tv.domain.model.Series
 import com.bayyari.tv.domain.model.Server
+import com.bayyari.tv.util.Constants
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -18,6 +19,8 @@ class SeriesRepository @Inject constructor(
     private val api: XtreamApiService,
     private val seriesDao: SeriesDao
 ) {
+
+    fun observeSeriesCount(serverId: Int): Flow<Int> = seriesDao.observeCount(serverId)
 
     fun observeSeries(serverId: Int, categoryId: String?): Flow<List<Series>> {
         val flow = if (categoryId.isNullOrBlank()) {
@@ -52,7 +55,7 @@ class SeriesRepository @Inject constructor(
             )
         }
         seriesDao.clearForServer(server.id)
-        seriesDao.upsertAll(entities)
+        entities.chunked(Constants.DB_UPSERT_CHUNK_SIZE).forEach { seriesDao.upsertAll(it) }
         entities.size
     }
 
@@ -62,8 +65,23 @@ class SeriesRepository @Inject constructor(
     suspend fun latest(serverId: Int, limit: Int): List<Series> =
         seriesDao.latest(serverId, limit).map { it.toDomain() }
 
+    suspend fun hasCachedSeries(serverId: Int): Boolean = withContext(Dispatchers.IO) {
+        seriesDao.countForServer(serverId) > 0
+    }
+
+    suspend fun cachedSeriesCount(serverId: Int): Int = withContext(Dispatchers.IO) {
+        seriesDao.countForServer(serverId)
+    }
+
     suspend fun search(serverId: Int, query: String): List<Series> =
         seriesDao.search(serverId, query).map { it.toDomain() }
+
+    suspend fun fetchCategoryNames(server: Server): Map<String, String> =
+        withContext(Dispatchers.IO) {
+            runCatching { api.getSeriesCategories(server.username, server.password) }
+                .getOrElse { emptyList() }
+                .associate { it.categoryId to it.categoryName }
+        }
 
     suspend fun getSeriesInfo(server: Server, seriesId: Int): SeriesInfoDto =
         withContext(Dispatchers.IO) {

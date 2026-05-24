@@ -3,6 +3,7 @@ package com.bayyari.tv.ui.common
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.FrameLayout
 import com.bayyari.tv.databinding.ViewPlayerControlsBinding
 
@@ -45,7 +46,22 @@ class PlayerControlsView @JvmOverloads constructor(
         binding.textSubtitle.text = subtitle
     }
 
+    fun setTitleVisible(visible: Boolean) {
+        val visibility = if (visible) View.VISIBLE else View.GONE
+        binding.textTitle.visibility = visibility
+        binding.textSubtitle.visibility = visibility
+    }
+
     fun setPlayState(isPlaying: Boolean) {
         binding.buttonPlayPause.text = if (isPlaying) "||" else ">"
+    }
+
+    fun setMovieMode() {
+        binding.buttonPrev.visibility = View.GONE
+        binding.buttonNext.visibility = View.GONE
+        binding.buttonEpg.visibility = View.GONE
+        binding.buttonLock.visibility = View.GONE
+        binding.buttonPip.visibility = View.GONE
+        binding.buttonExternal.visibility = View.GONE
     }
 }

@@ -6,6 +6,7 @@ import com.bayyari.tv.data.local.dao.MovieDao
 import com.bayyari.tv.data.local.entities.MovieEntity
 import com.bayyari.tv.domain.model.Movie
 import com.bayyari.tv.domain.model.Server
+import com.bayyari.tv.util.Constants
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -18,6 +19,8 @@ class MovieRepository @Inject constructor(
     private val api: XtreamApiService,
     private val movieDao: MovieDao
 ) {
+
+    fun observeMovieCount(serverId: Int): Flow<Int> = movieDao.observeCount(serverId)
 
     fun observeMovies(serverId: Int, categoryId: String?): Flow<List<Movie>> {
         val flow = if (categoryId.isNullOrBlank()) {
@@ -51,7 +54,7 @@ class MovieRepository @Inject constructor(
             )
         }
         movieDao.clearForServer(server.id)
-        movieDao.upsertAll(entities)
+        entities.chunked(Constants.DB_UPSERT_CHUNK_SIZE).forEach { movieDao.upsertAll(it) }
         entities.size
     }
 
@@ -61,8 +64,23 @@ class MovieRepository @Inject constructor(
     suspend fun latest(serverId: Int, limit: Int): List<Movie> =
         movieDao.latest(serverId, limit).map { it.toDomain() }
 
+    suspend fun hasCachedMovies(serverId: Int): Boolean = withContext(Dispatchers.IO) {
+        movieDao.countForServer(serverId) > 0
+    }
+
+    suspend fun cachedMovieCount(serverId: Int): Int = withContext(Dispatchers.IO) {
+        movieDao.countForServer(serverId)
+    }
+
     suspend fun search(serverId: Int, query: String): List<Movie> =
         movieDao.search(serverId, query).map { it.toDomain() }
+
+    suspend fun fetchCategoryNames(server: Server): Map<String, String> =
+        withContext(Dispatchers.IO) {
+            runCatching { api.getVodCategories(server.username, server.password) }
+                .getOrElse { emptyList() }
+                .associate { it.categoryId to it.categoryName }
+        }
 
     suspend fun getMovieDetail(server: Server, vodId: Int): MovieDetailResponse =
         withContext(Dispatchers.IO) {

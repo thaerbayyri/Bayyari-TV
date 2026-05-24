@@ -214,6 +214,10 @@
                 android:id="@+id/seeAllContinue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:minHeight="@dimen/control_min_height"
                 android:padding="6dp"
                 android:text="See all →"
                 android:textColor="@color/colorPrimary"
@@ -227,7 +231,7 @@
             android:layout_marginTop="12dp"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:paddingHorizontal="14dp"
+            android:paddingHorizontal="10dp"
             tools:itemCount="3"
             tools:listitem="@layout/item_continue_watching" />
 
@@ -235,7 +239,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="14dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingHorizontal="20dp">
@@ -254,6 +258,10 @@
                 android:id="@+id/seeAllLive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:minHeight="@dimen/control_min_height"
                 android:padding="6dp"
                 android:text="View all →"
                 android:textColor="@color/colorPrimary"
@@ -264,10 +272,10 @@
             android:id="@+id/recyclerLive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:paddingHorizontal="14dp"
+            android:paddingHorizontal="10dp"
             tools:itemCount="5"
             tools:listitem="@layout/item_channel" />
 
@@ -275,7 +283,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="14dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingHorizontal="20dp">
@@ -304,10 +312,10 @@
             android:id="@+id/recyclerMovies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:paddingHorizontal="14dp"
+            android:paddingHorizontal="10dp"
             tools:itemCount="5"
             tools:listitem="@layout/item_movie" />
 
@@ -315,7 +323,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="14dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingHorizontal="20dp">
@@ -344,10 +352,10 @@
             android:id="@+id/recyclerSeries"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:clipToPadding="false"
             android:overScrollMode="never"
-            android:paddingHorizontal="14dp"
+            android:paddingHorizontal="10dp"
             tools:itemCount="5"
             tools:listitem="@layout/item_series" />
 

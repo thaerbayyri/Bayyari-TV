@@ -25,6 +25,12 @@ interface MovieDao {
     @Query("SELECT * FROM movies WHERE serverId = :serverId ORDER BY added DESC LIMIT :limit")
     suspend fun latest(serverId: Int, limit: Int): List<MovieEntity>
 
+    @Query("SELECT COUNT(*) FROM movies WHERE serverId = :serverId")
+    suspend fun countForServer(serverId: Int): Int
+
+    @Query("SELECT COUNT(*) FROM movies WHERE serverId = :serverId")
+    fun observeCount(serverId: Int): Flow<Int>
+
     @Query("SELECT * FROM movies WHERE serverId = :serverId AND streamId = :streamId LIMIT 1")
     suspend fun findById(serverId: Int, streamId: Int): MovieEntity?
 

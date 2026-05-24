@@ -6,10 +6,8 @@ import androidx.leanback.app.VerticalGridSupportFragment
 import androidx.leanback.widget.ArrayObjectAdapter
 import androidx.leanback.widget.VerticalGridPresenter
 import com.bayyari.tv.ui.home.MediaCardPresenter
+import com.bayyari.tv.util.collectStarted
 import dagger.hilt.android.AndroidEntryPoint
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class TvLiveFragment : VerticalGridSupportFragment() {
@@ -24,10 +22,8 @@ class TvLiveFragment : VerticalGridSupportFragment() {
         val adapter = ArrayObjectAdapter(MediaCardPresenter())
         this.adapter = adapter
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.channels.collectLatest { items ->
-                adapter.setItems(items, null)
-            }
+        viewLifecycleOwner.collectStarted(viewModel.channels) { items ->
+            adapter.setItems(items, null)
         }
 
         viewModel.refresh()

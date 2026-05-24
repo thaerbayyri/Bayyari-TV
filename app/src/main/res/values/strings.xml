@@ -15,6 +15,8 @@
     <string name="login_error_server_url">Please enter a valid server URL.</string>
     <string name="login_subscription_expires">Subscription expires: %1$s</string>
     <string name="login_max_connections">Max connections: %1$s</string>
+    <string name="sync_playlist_title">Loading playlist</string>
+    <string name="sync_playlist_message">Preparing live channels, movies, and series for this server.</string>
 
     <!-- Bottom nav -->
     <string name="nav_home">Home</string>
@@ -25,6 +27,8 @@
     <string name="nav_favorites">Favorites</string>
     <string name="nav_settings">Settings</string>
     <string name="nav_catchup">Catch-Up</string>
+    <string name="favorites_empty_title">No favorites yet</string>
+    <string name="favorites_empty_hint">Tap the heart button on a channel or add a movie from My List.</string>
 
     <!-- Home -->
     <string name="home_continue_watching">Continue Watching</string>
@@ -46,6 +50,10 @@
     <string name="live_pip">Picture-in-picture</string>
     <string name="live_audio_track">Audio track</string>
     <string name="live_subtitle_track">Subtitle</string>
+    <string name="player_translation_list">Translation list</string>
+    <string name="player_translation_summary">Choose the subtitle language embedded in this stream.</string>
+    <string name="player_translation_off">Subtitles off</string>
+    <string name="player_translation_none">No embedded translation or subtitle tracks were found for this movie.</string>
     <string name="live_aspect_ratio">Aspect ratio</string>
     <string name="live_aspect_fit">Fit</string>
     <string name="live_aspect_fill">Fill</string>
@@ -56,6 +64,12 @@
     <string name="live_remove_favorite">Remove from favorites</string>
     <string name="live_catchup">Catch-Up</string>
     <string name="live_info">Channel info</string>
+    <string name="live_sort">Sort channels</string>
+    <string name="live_hide_category">Hide category</string>
+    <string name="live_hide_category_confirm">Hide %1$s from Live TV?</string>
+    <string name="live_hidden_category_done">Category hidden. Restore it from Settings.</string>
+    <string name="content_sort">Sort</string>
+    <string name="content_hide_category_confirm">Hide %1$s from this section?</string>
 
     <!-- Catch-up -->
     <string name="catchup_select_date">Select date</string>
@@ -85,6 +99,7 @@
 
     <!-- Settings -->
     <string name="settings_servers">Manage servers</string>
+    <string name="settings_servers_summary">View saved playlists and switch between them</string>
     <string name="settings_default_player">Default player</string>
     <string name="settings_player_internal">Built-in</string>
     <string name="settings_player_vlc">VLC</string>
@@ -93,10 +108,18 @@
     <string name="settings_stream_hls">M3U / HLS (.m3u8)</string>
     <string name="settings_stream_ts">MPEG-TS (.ts)</string>
     <string name="settings_buffer">Buffer size</string>
+    <string name="settings_buffer_max">Max buffer</string>
+    <string name="settings_buffer_medium">Balanced</string>
+    <string name="settings_buffer_low">Low latency</string>
     <string name="settings_auto_play_next">Auto-play next episode</string>
     <string name="settings_clear_cache">Clear cache</string>
+    <string name="settings_delete_playlist">Delete saved playlist</string>
+    <string name="settings_delete_playlist_summary">Remove this playlist and its downloaded channels, movies, and series</string>
+    <string name="settings_delete_playlist_confirm">Delete %1$s from the app?</string>
     <string name="settings_app_info">About</string>
     <string name="settings_parental_pin">Parental control PIN</string>
+    <string name="settings_restore_hidden_categories">Restore hidden categories</string>
+    <string name="settings_restore_hidden_categories_summary">Show categories hidden from Live TV, Movies, and Series</string>
     <string name="settings_app_version">Version %1$s</string>
     <string name="settings_change_playlist">Change playlist / Sign out</string>
     <string name="settings_change_playlist_summary">Switch to a different IPTV provider or M3U playlist</string>
@@ -126,6 +149,18 @@
         <item>ts</item>
     </string-array>
 
+    <string-array name="buffer_entries">
+        <item>@string/settings_buffer_low</item>
+        <item>@string/settings_buffer_medium</item>
+        <item>@string/settings_buffer_max</item>
+    </string-array>
+
+    <string-array name="buffer_values">
+        <item>5000</item>
+        <item>15000</item>
+        <item>30000</item>
+    </string-array>
+
     <string-array name="movie_sort_entries">
         <item>Name</item>
         <item>Rating</item>
@@ -133,11 +168,27 @@
         <item>Added</item>
     </string-array>
 
+    <string-array name="live_sort_entries">
+        <item>Name A-Z</item>
+        <item>Name Z-A</item>
+        <item>Newest first</item>
+        <item>Catch-Up first</item>
+    </string-array>
+
+    <string-array name="series_sort_entries">
+        <item>Recently updated</item>
+        <item>Name A-Z</item>
+        <item>Name Z-A</item>
+        <item>Rating</item>
+    </string-array>
+
     <!-- Generic -->
     <string name="action_retry">Retry</string>
     <string name="action_cancel">Cancel</string>
+    <string name="action_back">Back</string>
     <string name="action_ok">OK</string>
     <string name="action_save">Save</string>
+    <string name="action_remove">Remove</string>
     <string name="state_loading">Loading…</string>
     <string name="state_empty">Nothing here yet</string>
     <string name="state_no_internet">No internet connection</string>

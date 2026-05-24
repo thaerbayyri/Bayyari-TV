@@ -7,11 +7,13 @@ import androidx.leanback.widget.ArrayObjectAdapter
 import androidx.leanback.widget.HeaderItem
 import androidx.leanback.widget.ListRow
 import androidx.leanback.widget.ListRowPresenter
+import androidx.leanback.widget.OnItemViewClickedListener
+import com.bayyari.tv.domain.model.Channel
+import com.bayyari.tv.domain.model.Movie
+import com.bayyari.tv.domain.model.Series
 import com.bayyari.tv.R
+import com.bayyari.tv.util.collectStarted
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class TvHomeFragment : BrowseSupportFragment() {
@@ -36,20 +38,28 @@ class TvHomeFragment : BrowseSupportFragment() {
         rowsAdapter.add(ListRow(HeaderItem(1, getString(R.string.home_latest_movies)), movieAdapter))
         rowsAdapter.add(ListRow(HeaderItem(2, getString(R.string.home_latest_series)), seriesAdapter))
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.live.collectLatest { items ->
-                liveAdapter.setItems(items, null)
+        onItemViewClickedListener = OnItemViewClickedListener { _, item, _, _ ->
+            when (item) {
+                is Channel -> (activity as? com.bayyari.tv.ui.TvMainActivity)?.showTvSection(
+                    com.bayyari.tv.ui.live.TvLiveFragment()
+                )
+                is Movie -> (activity as? com.bayyari.tv.ui.TvMainActivity)?.showTvSection(
+                    com.bayyari.tv.ui.movies.TvMovieFragment()
+                )
+                is Series -> (activity as? com.bayyari.tv.ui.TvMainActivity)?.showTvSection(
+                    com.bayyari.tv.ui.series.TvSeriesFragment()
+                )
             }
         }
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.movies.collectLatest { items ->
-                movieAdapter.setItems(items, null)
-            }
+
+        viewLifecycleOwner.collectStarted(viewModel.live) { items ->
+            liveAdapter.setItems(items, null)
         }
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.series.collectLatest { items ->
-                seriesAdapter.setItems(items, null)
-            }
+        viewLifecycleOwner.collectStarted(viewModel.movies) { items ->
+            movieAdapter.setItems(items, null)
+        }
+        viewLifecycleOwner.collectStarted(viewModel.series) { items ->
+            seriesAdapter.setItems(items, null)
         }
 
         viewModel.load()

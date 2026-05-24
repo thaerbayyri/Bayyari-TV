@@ -1,6 +1,7 @@
 package com.bayyari.tv.ui.common.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -9,8 +10,17 @@ import com.bayyari.tv.databinding.ItemCategoryBinding
 import com.bayyari.tv.domain.model.Category
 
 class CategoryAdapter(
-    private val onClick: (Category) -> Unit
+    private val onClick: (Category) -> Unit = {},
+    private val onLongClick: (Category) -> Unit = {}
 ) : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(Diff) {
+
+    private var selectedId: String? = ""
+
+    fun setSelected(id: String?) {
+        if (selectedId == id) return
+        selectedId = id
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -27,7 +37,24 @@ class CategoryAdapter(
 
         fun bind(item: Category) {
             binding.textCategory.text = item.name
+            val isSelected = item.id == (selectedId ?: "")
+            binding.accentBar.visibility = if (isSelected) View.VISIBLE else View.INVISIBLE
+            val ctx = binding.root.context
+            binding.textCategory.setTextColor(
+                if (isSelected) ctx.getColor(com.bayyari.tv.R.color.colorPrimary)
+                else ctx.getColor(com.bayyari.tv.R.color.colorTextSecondary)
+            )
+            if (item.count > 0) {
+                binding.textCount.text = item.count.toString()
+                binding.textCount.visibility = View.VISIBLE
+            } else {
+                binding.textCount.visibility = View.GONE
+            }
             binding.root.setOnClickListener { onClick(item) }
+            binding.root.setOnLongClickListener {
+                onLongClick(item)
+                true
+            }
         }
     }
 

@@ -54,14 +54,23 @@ android {
         buildConfig = true
     }
 
+    testOptions {
+        unitTests {
+            isReturnDefaultValues = true
+        }
+    }
+
     packaging {
         resources {
             excludes += setOf(
                 "/META-INF/{AL2.0,LGPL2.1}",
                 "/META-INF/DEPENDENCIES",
                 "/META-INF/LICENSE",
+                "/META-INF/LICENSE.md",
+                "/META-INF/LICENSE-notice.md",
                 "/META-INF/LICENSE.txt",
                 "/META-INF/NOTICE",
+                "/META-INF/NOTICE.md",
                 "/META-INF/NOTICE.txt"
             )
         }
@@ -140,6 +149,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
+    testImplementation("androidx.test:core:1.5.0")
+    testImplementation("androidx.test:core-ktx:1.5.0")
     testImplementation("org.mockito:mockito-core:5.7.0")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
     testImplementation("androidx.arch.core:core-testing:2.2.0")
@@ -148,15 +159,33 @@ dependencies {
     testImplementation("org.robolectric:robolectric:4.11.1")
     testImplementation("app.cash.turbine:turbine:1.0.0")
     testImplementation("com.google.truth:truth:1.2.0")
+    testImplementation("androidx.media3:media3-test-utils:1.3.1")
+    testImplementation("androidx.media3:media3-test-utils-robolectric:1.3.1")
 
     // Instrumentation tests
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test:rules:1.5.0")
     androidTestImplementation("io.mockk:mockk-android:1.13.9")
     androidTestImplementation("androidx.media3:media3-test-utils:1.3.1")
-    androidTestImplementation("androidx.media3:media3-test-utils-robolectric:1.3.1")
+
+    // Hilt testing (Robolectric + instrumentation)
+    testImplementation("com.google.dagger:hilt-android-testing:2.59.2")
+    kaptTest("com.google.dagger:hilt-compiler:2.59.2")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.59.2")
+    kaptAndroidTest("com.google.dagger:hilt-compiler:2.59.2")
 }
 
 kapt {
     correctErrorTypes = true
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas")
+    }
+}
+
+tasks.register("connectedTest") {
+    group = "verification"
+    description = "Alias for connectedDebugAndroidTest."
+    dependsOn("connectedDebugAndroidTest")
 }

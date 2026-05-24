@@ -25,6 +25,12 @@ interface SeriesDao {
     @Query("SELECT * FROM series WHERE serverId = :serverId ORDER BY lastModified DESC LIMIT :limit")
     suspend fun latest(serverId: Int, limit: Int): List<SeriesEntity>
 
+    @Query("SELECT COUNT(*) FROM series WHERE serverId = :serverId")
+    suspend fun countForServer(serverId: Int): Int
+
+    @Query("SELECT COUNT(*) FROM series WHERE serverId = :serverId")
+    fun observeCount(serverId: Int): Flow<Int>
+
     @Query("SELECT * FROM series WHERE serverId = :serverId AND seriesId = :seriesId LIMIT 1")
     suspend fun findById(serverId: Int, seriesId: Int): SeriesEntity?
 
