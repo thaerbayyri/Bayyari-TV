@@ -73,6 +73,8 @@ class FavoritesViewModelTest {
             assertEquals("ESPN", items[0].title)
             assertEquals("Live", items[0].type)
             assertEquals(1, items[0].id)
+            assertEquals(42, items[0].contentId)
+            assertEquals("live", items[0].contentType)
             cancelAndIgnoreRemainingEvents()
         }
     }
@@ -90,6 +92,8 @@ class FavoritesViewModelTest {
             assertEquals(1, items.size)
             assertEquals("Inception", items[0].title)
             assertEquals("Movie", items[0].type)
+            assertEquals(99, items[0].contentId)
+            assertEquals("movie", items[0].contentType)
             cancelAndIgnoreRemainingEvents()
         }
     }
@@ -107,6 +111,8 @@ class FavoritesViewModelTest {
             assertEquals(1, items.size)
             assertEquals("Breaking Bad", items[0].title)
             assertEquals("Series", items[0].type)
+            assertEquals(77, items[0].contentId)
+            assertEquals("series", items[0].contentType)
             cancelAndIgnoreRemainingEvents()
         }
     }
@@ -151,7 +157,9 @@ class FavoritesViewModelTest {
     @Test
     fun `removeFavorite delegates to favoriteDao deleteById`() = runTest {
         val vm = createViewModel()
-        vm.removeFavorite(FavoriteItem(id = 7, type = "Live", title = "CNN"))
+        vm.removeFavorite(
+            FavoriteItem(id = 7, contentId = 42, contentType = "live", type = "Live", title = "CNN")
+        )
 
         coVerify { favoriteDao.deleteById(7) }
     }

@@ -88,7 +88,7 @@ class SyncActivity : BaseActivity() {
                 " loaded."
 
             lifecycleScope.launch {
-                delay(1_500)
+                delay(400)
                 openMainActivity()
             }
         }
@@ -122,6 +122,10 @@ class SyncActivity : BaseActivity() {
     private fun openMainActivity() {
         startActivity(
             Intent(this, MainActivity::class.java)
+                .putExtra(
+                    MainActivity.EXTRA_SHOW_WELCOME_POPUP,
+                    intent.getBooleanExtra(MainActivity.EXTRA_SHOW_WELCOME_POPUP, false)
+                )
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         )
         finish()

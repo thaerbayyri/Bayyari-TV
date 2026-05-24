@@ -6,7 +6,6 @@ import com.bayyari.tv.data.local.dao.SeriesDao
 import com.bayyari.tv.data.local.entities.SeriesEntity
 import com.bayyari.tv.domain.model.Series
 import com.bayyari.tv.domain.model.Server
-import com.bayyari.tv.util.Constants
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -32,7 +31,6 @@ class SeriesRepository @Inject constructor(
     }
 
     suspend fun refresh(server: Server): Int = withContext(Dispatchers.IO) {
-        if (server.isM3uOnly) return@withContext 0
         val series = runCatching { api.getSeries(server.username, server.password) }
             .getOrElse {
                 android.util.Log.w("SeriesRepository", "getSeries failed", it)
@@ -54,8 +52,7 @@ class SeriesRepository @Inject constructor(
                 serverId = server.id
             )
         }
-        seriesDao.clearForServer(server.id)
-        entities.chunked(Constants.DB_UPSERT_CHUNK_SIZE).forEach { seriesDao.upsertAll(it) }
+        seriesDao.replaceAllForServer(server.id, entities)
         entities.size
     }
 

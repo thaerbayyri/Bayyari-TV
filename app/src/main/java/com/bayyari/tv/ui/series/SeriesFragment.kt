@@ -41,10 +41,7 @@ class SeriesFragment : Fragment(R.layout.fragment_series) {
         val seriesAdapter = SeriesAdapter { series ->
             findNavController().navigate(
                 R.id.action_series_to_detail,
-                bundleOf(
-                    "seriesId" to series.seriesId,
-                    "autoOpenSeason" to true
-                )
+                bundleOf("seriesId" to series.seriesId)
             )
         }
         b.recyclerSeries.layoutManager = GridLayoutManager(requireContext(), posterSpanCount())

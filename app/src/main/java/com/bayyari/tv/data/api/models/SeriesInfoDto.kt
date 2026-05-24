@@ -2,6 +2,7 @@ package com.bayyari.tv.data.api.models
 
 import com.google.gson.annotations.JsonAdapter
 import com.google.gson.annotations.SerializedName
+import com.google.gson.JsonElement
 
 /**
  * Response shape for `action=get_series_info`. The `episodes` field is unusual: the upstream
@@ -51,7 +52,10 @@ data class EpisodeDto(
     @SerializedName("season") val season: Int?,
     @SerializedName("custom_sid") val customSid: String?,
     @SerializedName("added") val added: String?,
-    @SerializedName("direct_source") val directSource: String?
+    @SerializedName("direct_source") val directSource: String?,
+    @SerializedName("subtitles") val subtitles: JsonElement?,
+    @SerializedName("subtitle") val subtitle: JsonElement?,
+    @SerializedName("subtitle_url") val subtitleUrl: JsonElement?
 )
 
 data class EpisodeInfo(
@@ -62,5 +66,8 @@ data class EpisodeInfo(
     @SerializedName("rating") val rating: String?,
     @SerializedName("releasedate") val releaseDate: String?,
     @SerializedName("season") val season: Int?,
-    @SerializedName("tmdb_id") val tmdbId: String?
+    @SerializedName("tmdb_id") val tmdbId: String?,
+    @SerializedName("subtitles") val subtitles: JsonElement?,
+    @SerializedName("subtitle") val subtitle: JsonElement?,
+    @SerializedName("subtitle_url") val subtitleUrl: JsonElement?
 )

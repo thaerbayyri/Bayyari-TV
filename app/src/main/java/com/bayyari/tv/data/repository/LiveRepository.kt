@@ -5,8 +5,6 @@ import com.bayyari.tv.data.local.dao.ChannelDao
 import com.bayyari.tv.data.local.entities.ChannelEntity
 import com.bayyari.tv.domain.model.Channel
 import com.bayyari.tv.domain.model.Server
-import com.bayyari.tv.util.Constants
-import com.bayyari.tv.util.M3uParser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -17,9 +15,13 @@ import javax.inject.Singleton
 @Singleton
 class LiveRepository @Inject constructor(
     private val api: XtreamApiService,
-    private val channelDao: ChannelDao,
-    private val m3uParser: M3uParser
+    private val channelDao: ChannelDao
 ) {
+    // Tracks when we last successfully refreshed — avoids hammering the server on every app open.
+    @Volatile private var lastRefreshMs = 0L
+
+    fun isStale(thresholdMs: Long = 30 * 60 * 1000L): Boolean =
+        System.currentTimeMillis() - lastRefreshMs > thresholdMs
 
     fun observeChannelCount(serverId: Int): Flow<Int> = channelDao.observeCount(serverId)
 
@@ -33,40 +35,6 @@ class LiveRepository @Inject constructor(
     }
 
     suspend fun refresh(server: Server): Int = withContext(Dispatchers.IO) {
-        if (server.isM3uOnly) {
-            return@withContext runCatching {
-                val response = api.fetchRaw(server.url)
-                if (!response.isSuccessful) {
-                    safeLogWarning("fetchRaw failed with HTTP ${response.code()}", null)
-                    return@runCatching 0
-                }
-
-                val content = response.body()?.string().orEmpty()
-                val channels = m3uParser.parse(content, server.id)
-                val entities = channels.map { channel ->
-                    ChannelEntity(
-                        streamId = channel.streamId,
-                        name = channel.name,
-                        streamIcon = channel.streamIcon,
-                        categoryId = channel.categoryId,
-                        categoryName = channel.categoryName,
-                        tvArchive = channel.tvArchive,
-                        tvArchiveDuration = channel.tvArchiveDuration,
-                        epgChannelId = channel.epgChannelId,
-                        added = channel.addedEpochSeconds,
-                        serverId = channel.serverId,
-                        directStreamUrl = channel.directStreamUrl
-                    )
-                }
-                channelDao.clearForServer(server.id)
-                entities.chunked(Constants.DB_UPSERT_CHUNK_SIZE).forEach { channelDao.upsertAll(it) }
-                entities.size
-            }.getOrElse { t ->
-                safeLogWarning("M3U refresh failed", t)
-                0
-            }
-        }
-
         val categories = runCatching { api.getLiveCategories(server.username, server.password) }
             .getOrElse {
                 safeLogWarning("getLiveCategories failed", it)
@@ -93,8 +61,8 @@ class LiveRepository @Inject constructor(
                 directStreamUrl = dto.directSource
             )
         }
-        channelDao.clearForServer(server.id)
-        entities.chunked(Constants.DB_UPSERT_CHUNK_SIZE).forEach { channelDao.upsertAll(it) }
+        channelDao.replaceAllForServer(server.id, entities)
+        lastRefreshMs = System.currentTimeMillis()
         entities.size
     }
 

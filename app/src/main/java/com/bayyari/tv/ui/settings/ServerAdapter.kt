@@ -25,11 +25,7 @@ class ServerAdapter(
     inner class ViewHolder(private val binding: ItemServerBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Server) {
             binding.textTitle.text = item.label
-            binding.textSubtitle.text = if (item.isM3uOnly) {
-                "M3U playlist"
-            } else {
-                "Xtream account"
-            }
+            binding.textSubtitle.text = "Xtream account"
             binding.root.setOnClickListener { onClick(item) }
             binding.buttonDelete.setOnClickListener { onDelete(item) }
         }

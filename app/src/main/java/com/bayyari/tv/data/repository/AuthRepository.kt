@@ -89,19 +89,6 @@ class AuthRepository @Inject constructor(
         return withScheme.toHttpUrlOrNull()?.toString()?.trimEnd('/') ?: withScheme
     }
 
-    suspend fun addM3uServer(label: String, url: String): Server = withContext(Dispatchers.IO) {
-        val server = Server(
-            label = label.ifBlank { url },
-            url = url,
-            username = "",
-            password = "",
-            isM3uOnly = true
-        )
-        val saved = prefs.upsertServer(server)
-        prefs.setActiveServerId(saved.id)
-        saved
-    }
-
     fun getServers(): List<Server> = prefs.getServers()
 
     fun getActiveServer(): Server? = prefs.getActiveServer()

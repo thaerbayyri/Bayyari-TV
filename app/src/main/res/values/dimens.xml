@@ -9,4 +9,5 @@
     <dimen name="input_gap">14dp</dimen>
     <dimen name="field_gap">12dp</dimen>
     <dimen name="content_max_width">520dp</dimen>
+    <dimen name="home_featured_height">340dp</dimen>
 </resources>

@@ -1,6 +1,7 @@
 package com.bayyari.tv.player
 
 import android.content.Context
+import android.net.Uri
 import androidx.annotation.OptIn
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.MediaItem
@@ -15,7 +16,9 @@ import androidx.media3.exoplayer.LoadControl
 import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
+import com.bayyari.tv.domain.model.SubtitleTrack
 import com.bayyari.tv.util.Constants
+import com.bayyari.tv.util.SubtitleTrackExtractor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -45,10 +48,26 @@ class IptvPlayer @Inject constructor(
 
     fun getPlayer(): ExoPlayer = ensurePlayer()
 
-    fun prepare(url: String, playWhenReady: Boolean = true) {
+    fun prepare(
+        url: String,
+        playWhenReady: Boolean = true,
+        subtitles: List<SubtitleTrack> = emptyList()
+    ) {
         val activePlayer = ensurePlayer()
+        val mimeType = detectMimeType(url)
         lastMediaItem = MediaItem.Builder()
             .setUri(url)
+            .apply { if (mimeType != null) setMimeType(mimeType) }
+            .setSubtitleConfigurations(
+                subtitles.map { subtitle ->
+                    MediaItem.SubtitleConfiguration.Builder(Uri.parse(subtitle.url))
+                        .setMimeType(SubtitleTrackExtractor.mimeTypeFor(subtitle.url))
+                        .setLabel(subtitle.label)
+                        .setLanguage(subtitle.language.ifBlank { null })
+                        .setSelectionFlags(0)
+                        .build()
+                }
+            )
             .setLiveConfiguration(
                 LiveConfiguration.Builder()
                     .setTargetOffsetMs(5_000L) // stay 5 s behind live edge
@@ -164,6 +183,20 @@ class IptvPlayer @Inject constructor(
             .apply {
                 setAudioAttributes(AudioAttributes.DEFAULT, true)
             }
+    }
+
+    private fun detectMimeType(url: String): String? {
+        val path = url.substringBefore('?').lowercase()
+        return when {
+            // .m3u8 is unambiguously HLS — hint ExoPlayer so it skips sniffing.
+            // .ts is NOT hinted: many Xtream Codes servers redirect .ts URLs to HLS internally,
+            // so forcing VIDEO_MP2T breaks them. ExoPlayer auto-detects raw TS (0x47 sync byte)
+            // and follows HTTP redirects to HLS just fine without a hint.
+            path.endsWith(".m3u8") -> androidx.media3.common.MimeTypes.APPLICATION_M3U8
+            path.endsWith(".mp4")  -> androidx.media3.common.MimeTypes.VIDEO_MP4
+            path.endsWith(".mkv")  -> androidx.media3.common.MimeTypes.VIDEO_MATROSKA
+            else -> null
+        }
     }
 
     private fun buildMediaSourceFactory(): DefaultMediaSourceFactory {

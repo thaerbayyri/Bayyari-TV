@@ -32,7 +32,6 @@ class MovieRepository @Inject constructor(
     }
 
     suspend fun refresh(server: Server): Int = withContext(Dispatchers.IO) {
-        if (server.isM3uOnly) return@withContext 0
         // Some Xtream servers return a JSON object (error envelope) instead of an array when the
         // endpoint has no data or is throttled. Swallow that as "no movies" rather than crash.
         val movies = runCatching { api.getVodStreams(server.username, server.password) }
@@ -53,8 +52,7 @@ class MovieRepository @Inject constructor(
                 serverId = server.id
             )
         }
-        movieDao.clearForServer(server.id)
-        entities.chunked(Constants.DB_UPSERT_CHUNK_SIZE).forEach { movieDao.upsertAll(it) }
+        movieDao.replaceAllForServer(server.id, entities)
         entities.size
     }
 

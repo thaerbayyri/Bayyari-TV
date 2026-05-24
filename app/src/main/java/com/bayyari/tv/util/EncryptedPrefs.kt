@@ -59,6 +59,15 @@ class EncryptedPrefs @Inject constructor(
 
     private val listType = object : TypeToken<List<Server>>() {}.type
 
+    // Cached so DynamicHostInterceptor doesn't JSON-parse the server list on every API call.
+    @Volatile private var serverCache: Server? = null
+    @Volatile private var serverCacheId: Int = Int.MIN_VALUE
+
+    private fun invalidateServerCache() {
+        serverCacheId = Int.MIN_VALUE
+        serverCache = null
+    }
+
     @Synchronized
     fun getServers(): List<Server> {
         val raw = prefs.getString(Constants.PREF_SERVERS_JSON, null) ?: return emptyList()
@@ -80,6 +89,7 @@ class EncryptedPrefs @Inject constructor(
         } else server
         if (idx >= 0) current[idx] = withId else current.add(withId)
         saveServers(current)
+        invalidateServerCache()
         if (getActiveServerId() == 0) setActiveServerId(withId.id)
         return withId
     }
@@ -88,6 +98,7 @@ class EncryptedPrefs @Inject constructor(
     fun removeServer(id: Int) {
         val remaining = getServers().filterNot { it.id == id }
         saveServers(remaining)
+        invalidateServerCache()
         if (getActiveServerId() == id) {
             setActiveServerId(remaining.firstOrNull()?.id ?: 0)
         }
@@ -96,6 +107,7 @@ class EncryptedPrefs @Inject constructor(
     fun getActiveServerId(): Int = prefs.getInt(Constants.PREF_ACTIVE_SERVER, 0)
     fun setActiveServerId(id: Int) {
         prefs.edit().putInt(Constants.PREF_ACTIVE_SERVER, id).apply()
+        invalidateServerCache()
         // commit() is intentional: MainActivity.hasActiveServer() reads this synchronously
         // on the main thread immediately after login — apply() risks a race condition.
         context.getSharedPreferences(Constants.APP_PREFS, Context.MODE_PRIVATE)
@@ -105,9 +117,13 @@ class EncryptedPrefs @Inject constructor(
     }
 
     fun getActiveServer(): Server? {
-        val activeId = getActiveServerId()
-        if (activeId == 0) return null
-        return getServers().firstOrNull { it.id == activeId }
+        val id = getActiveServerId()
+        if (id == 0) return null
+        if (id == serverCacheId) return serverCache
+        val server = getServers().firstOrNull { it.id == id }
+        serverCacheId = id
+        serverCache = server
+        return server
     }
 
     fun setRememberLogin(remember: Boolean) =

@@ -114,8 +114,4 @@ interface XtreamApiService {
         @Query("stream_id") streamId: Int,
         @Query("action") action: String = "get_simple_data_table"
     ): EpgResponse
-
-    /** Raw fetch for an arbitrary URL (used for M3U downloads). */
-    @GET
-    suspend fun fetchRaw(@Url url: String): retrofit2.Response<okhttp3.ResponseBody>
 }

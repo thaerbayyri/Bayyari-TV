@@ -21,6 +21,10 @@ class DynamicHostInterceptor @Inject constructor(
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val original = chain.request()
+        // Only rewrite Retrofit placeholder URLs. Direct-URL requests must reach the host as-is.
+        if (original.url.host != "placeholder.local") {
+            return chain.proceed(original)
+        }
         val active = prefs.getActiveServer() ?: return chain.proceed(original)
 
         val baseUrl = try {

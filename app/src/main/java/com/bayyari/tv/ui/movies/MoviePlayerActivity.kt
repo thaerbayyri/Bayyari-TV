@@ -32,6 +32,7 @@ import com.bayyari.tv.player.PlayerService
 import com.bayyari.tv.util.Constants
 import com.bayyari.tv.util.NetworkUtils
 import com.bayyari.tv.util.StreamUrlBuilder
+import com.bayyari.tv.util.SubtitleTrackExtractor
 import com.bayyari.tv.util.collectStarted
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
@@ -69,6 +70,7 @@ class MoviePlayerActivity : BaseActivity() {
     private var selectedSubtitle: TrackSelector.TrackInfo? = null
     private var streamCandidates: List<String> = emptyList()
     private var streamCandidateIndex = 0
+    private var externalSubtitles: List<com.bayyari.tv.domain.model.SubtitleTrack> = emptyList()
     private var playerListener: Player.Listener? = null
     private val controlsHandler = Handler(Looper.getMainLooper())
 
@@ -108,6 +110,14 @@ class MoviePlayerActivity : BaseActivity() {
                     cachedExtension = movie?.containerExtension.orEmpty(),
                     detailExtension = detail?.movieData?.containerExtension.orEmpty(),
                     directSource = detail?.movieData?.directSource.orEmpty()
+                )
+                externalSubtitles = SubtitleTrackExtractor.fromElements(
+                    detail?.info?.subtitles,
+                    detail?.info?.subtitle,
+                    detail?.info?.subtitleUrl,
+                    detail?.movieData?.subtitles,
+                    detail?.movieData?.subtitle,
+                    detail?.movieData?.subtitleUrl
                 )
                 streamCandidateIndex = 0
                 prepareCurrentCandidate()
@@ -209,7 +219,7 @@ class MoviePlayerActivity : BaseActivity() {
 
     private fun prepareCurrentCandidate() {
         streamCandidates.getOrNull(streamCandidateIndex)?.let { url ->
-            iptvPlayer.prepare(url)
+            iptvPlayer.prepare(url, subtitles = externalSubtitles)
         }
     }
 

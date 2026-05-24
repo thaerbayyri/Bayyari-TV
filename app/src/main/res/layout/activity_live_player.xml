@@ -13,7 +13,7 @@
         <com.bayyari.tv.ui.common.PlayerControlsView
             android:id="@+id/player_controls"
             android:layout_width="match_parent"
-            android:layout_height="134dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom" />
     </androidx.media3.ui.PlayerView>
 

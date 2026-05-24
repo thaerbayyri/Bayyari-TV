@@ -59,9 +59,6 @@ class SyncViewModel @Inject constructor(
                 return@launch
             }
 
-            val isM3u = server.isM3uOnly
-
-            // Channels — always fetched (M3U or Xtream)
             launch {
                 val count = runCatching { liveRepository.refresh(server) }
                     .onFailure { android.util.Log.e("SyncViewModel", "channels refresh failed", it) }
@@ -69,28 +66,18 @@ class SyncViewModel @Inject constructor(
                 _state.update { it.copy(channels = ItemState.Done(count)) }
             }
 
-            // Movies — Xtream only
             launch {
-                if (isM3u) {
-                    _state.update { it.copy(movies = ItemState.Skipped()) }
-                } else {
-                    val count = runCatching { movieRepository.refresh(server) }
-                        .onFailure { android.util.Log.e("SyncViewModel", "movies refresh failed", it) }
-                        .getOrElse { 0 }
-                    _state.update { it.copy(movies = ItemState.Done(count)) }
-                }
+                val count = runCatching { movieRepository.refresh(server) }
+                    .onFailure { android.util.Log.e("SyncViewModel", "movies refresh failed", it) }
+                    .getOrElse { 0 }
+                _state.update { it.copy(movies = ItemState.Done(count)) }
             }
 
-            // Series — Xtream only
             launch {
-                if (isM3u) {
-                    _state.update { it.copy(series = ItemState.Skipped()) }
-                } else {
-                    val count = runCatching { seriesRepository.refresh(server) }
-                        .onFailure { android.util.Log.e("SyncViewModel", "series refresh failed", it) }
-                        .getOrElse { 0 }
-                    _state.update { it.copy(series = ItemState.Done(count)) }
-                }
+                val count = runCatching { seriesRepository.refresh(server) }
+                    .onFailure { android.util.Log.e("SyncViewModel", "series refresh failed", it) }
+                    .getOrElse { 0 }
+                _state.update { it.copy(series = ItemState.Done(count)) }
             }
         }
     }

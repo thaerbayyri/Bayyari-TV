@@ -123,7 +123,10 @@ class MainActivity : BaseActivity() {
 
     private fun updateOrientation(destination: NavDestination) {
         requestedOrientation = when (destination.id) {
-            R.id.homeFragment -> ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+            R.id.homeFragment,
+            R.id.settingsFragment,
+            R.id.serverManagerFragment,
+            R.id.searchFragment -> ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
             R.id.liveFragment,
             R.id.movieFragment,
             R.id.movieDetailFragment,
@@ -143,5 +146,6 @@ class MainActivity : BaseActivity() {
     companion object {
         private const val TAG = "MainActivity"
         const val EXTRA_SYNC_ON_START = "extra_sync_on_start"
+        const val EXTRA_SHOW_WELCOME_POPUP = "extra_show_welcome_popup"
     }
 }

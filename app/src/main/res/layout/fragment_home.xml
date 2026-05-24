@@ -17,23 +17,24 @@
         <FrameLayout
             android:id="@+id/hero"
             android:layout_width="match_parent"
-            android:layout_height="340dp"
+            android:layout_height="@dimen/home_featured_height"
             android:background="@drawable/bg_hero_gradient">
 
             <ImageView
                 android:id="@+id/heroBackdrop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:alpha="0.35"
+                android:alpha="0.78"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/home_featured" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg_hero_gradient" />
+                android:background="@drawable/bg_hero_image_overlay" />
 
             <LinearLayout
+                android:id="@+id/heroContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|start"
@@ -193,6 +194,7 @@
 
         <!-- ─── Continue Watching ─── -->
         <LinearLayout
+            android:id="@+id/sectionContinueHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -358,6 +360,47 @@
             android:paddingHorizontal="10dp"
             tools:itemCount="5"
             tools:listitem="@layout/item_series" />
+
+        <!-- ─── My Favorites ─── -->
+        <LinearLayout
+            android:id="@+id/sectionFavoritesHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/nav_favorites"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/seeAllFavorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:text="See all →"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerHomeFavorites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingHorizontal="10dp"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_favorite_home" />
 
         <Space
             android:layout_width="match_parent"

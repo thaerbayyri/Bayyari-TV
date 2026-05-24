@@ -7,11 +7,22 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bayyari.tv.databinding.ItemFavoriteBinding
 
-data class FavoriteItem(val id: Int, val type: String, val title: String)
+data class FavoriteItem(
+    val id: Int,
+    val contentId: Int,
+    val contentType: String,
+    val type: String,
+    val title: String
+)
 
 class FavoriteAdapter : ListAdapter<FavoriteItem, FavoriteAdapter.ViewHolder>(Diff) {
 
+    private var onClick: ((FavoriteItem) -> Unit)? = null
     private var onLongClick: ((FavoriteItem) -> Unit)? = null
+
+    fun setOnClickListener(listener: (FavoriteItem) -> Unit) {
+        onClick = listener
+    }
 
     fun setOnLongClickListener(listener: (FavoriteItem) -> Unit) {
         onLongClick = listener
@@ -23,12 +34,19 @@ class FavoriteAdapter : ListAdapter<FavoriteItem, FavoriteAdapter.ViewHolder>(Di
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(getItem(position), onLongClick)
+        holder.bind(getItem(position), onClick, onLongClick)
     }
 
     class ViewHolder(private val binding: ItemFavoriteBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: FavoriteItem, onLongClick: ((FavoriteItem) -> Unit)?) {
+        fun bind(
+            item: FavoriteItem,
+            onClick: ((FavoriteItem) -> Unit)?,
+            onLongClick: ((FavoriteItem) -> Unit)?
+        ) {
             binding.textTitle.text = "[${item.type}] ${item.title}"
+            binding.root.setOnClickListener {
+                onClick?.invoke(item)
+            }
             binding.root.setOnLongClickListener {
                 onLongClick?.invoke(item)
                 true

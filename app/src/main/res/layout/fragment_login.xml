@@ -176,21 +176,8 @@
                 android:indeterminateTint="@color/colorPrimary"
                 style="?android:attr/progressBarStyle" />
 
-            <TextView
-                android:id="@+id/buttonAddM3u"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="?android:attr/selectableItemBackground"
-                android:paddingHorizontal="14dp"
-                android:paddingVertical="8dp"
-                android:text="@string/login_add_m3u"
-                android:textColor="@color/colorPrimary"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="12dp" />
 
-            <TextView
+<TextView
                 android:id="@+id/textServerInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

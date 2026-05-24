@@ -56,6 +56,18 @@ class SeasonFragment : Fragment(R.layout.fragment_season) {
             startActivity(Intent(requireContext(), EpisodePlayerActivity::class.java).apply {
                 putExtra(EpisodePlayerActivity.EXTRA_EPISODE_ID, episode.id)
                 putExtra(EpisodePlayerActivity.EXTRA_CONTAINER_EXT, episode.containerExtension)
+                putStringArrayListExtra(
+                    EpisodePlayerActivity.EXTRA_SUBTITLE_URLS,
+                    ArrayList(episode.subtitleTracks.map { it.url })
+                )
+                putStringArrayListExtra(
+                    EpisodePlayerActivity.EXTRA_SUBTITLE_LABELS,
+                    ArrayList(episode.subtitleTracks.map { it.label })
+                )
+                putStringArrayListExtra(
+                    EpisodePlayerActivity.EXTRA_SUBTITLE_LANGS,
+                    ArrayList(episode.subtitleTracks.map { it.language })
+                )
             })
         }
         episodeAdapter = adapter
@@ -114,10 +126,6 @@ class SeasonFragment : Fragment(R.layout.fragment_season) {
 
     private fun closeSeasonPage() {
         val navController = runCatching { findNavController() }.getOrNull()
-        // SeriesFragment always opens seasons via autoOpenSeason=true, so the detail page was
-        // never an explicit user step. Pop all the way back to the series list in one gesture.
-        if (navController?.popBackStack(R.id.seriesFragment, false) == true) return
-        // Fallback for paths where seriesFragment is not in the back stack (e.g. TV nav)
         if (navController?.popBackStack() == true) return
         if (parentFragmentManager.backStackEntryCount > 0) {
             parentFragmentManager.popBackStack()

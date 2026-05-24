@@ -12,6 +12,9 @@ import com.bayyari.tv.data.repository.MovieRepository
 import com.bayyari.tv.data.repository.SeriesRepository
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
 
 @HiltWorker
 class RefreshWorker @AssistedInject constructor(
@@ -26,9 +29,13 @@ class RefreshWorker @AssistedInject constructor(
     override suspend fun doWork(): Result {
         val server = authRepository.getActiveServer() ?: return Result.success()
         return runCatching {
-            liveRepository.refresh(server)
-            movieRepository.refresh(server)
-            seriesRepository.refresh(server)
+            coroutineScope {
+                awaitAll(
+                    async { liveRepository.refresh(server) },
+                    async { movieRepository.refresh(server) },
+                    async { seriesRepository.refresh(server) }
+                )
+            }
         }.fold(
             onSuccess = { Result.success() },
             onFailure = { Result.retry() }

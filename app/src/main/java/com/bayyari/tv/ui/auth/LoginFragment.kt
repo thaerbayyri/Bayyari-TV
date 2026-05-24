@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bayyari.tv.R
 import com.bayyari.tv.databinding.FragmentLoginBinding
+import com.bayyari.tv.ui.MainActivity
 import com.bayyari.tv.ui.sync.SyncActivity
 import com.bayyari.tv.util.UiState
 import com.bayyari.tv.util.collectStarted
@@ -42,25 +43,16 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             true
         }
 
-        b.buttonAddM3u.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.login_container, AddServerFragment())
-                .addToBackStack(null)
-                .commit()
-        }
-
         viewLifecycleOwner.collectStarted(viewModel.state) { state ->
             when (state) {
                 is UiState.Loading -> {
                     b.buttonLogin.isEnabled = false
-                    b.buttonAddM3u.isEnabled = false
                     b.progressLogin.visibility = View.VISIBLE
                     b.textServerInfo.text = ""
                     b.textServerInfo.setTextColor(requireContext().getColor(R.color.colorTextSecondary))
                 }
                 is UiState.Success -> {
                     b.buttonLogin.isEnabled = true
-                    b.buttonAddM3u.isEnabled = true
                     b.progressLogin.visibility = View.GONE
                     val server = state.data
                     val expires = if (server.expiresAtEpochSeconds > 0) {
@@ -72,19 +64,18 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         "\n" + getString(R.string.login_max_connections, server.maxConnections)
                     b.textServerInfo.setTextColor(requireContext().getColor(R.color.colorTextSecondary))
                     startActivity(Intent(requireContext(), SyncActivity::class.java)
+                        .putExtra(MainActivity.EXTRA_SHOW_WELCOME_POPUP, true)
                         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
                     requireActivity().finish()
                 }
                 is UiState.Error -> {
                     b.buttonLogin.isEnabled = true
-                    b.buttonAddM3u.isEnabled = true
                     b.progressLogin.visibility = View.GONE
                     b.textServerInfo.text = state.message
                     b.textServerInfo.setTextColor(requireContext().getColor(android.R.color.holo_red_light))
                 }
                 UiState.Empty -> {
                     b.buttonLogin.isEnabled = true
-                    b.buttonAddM3u.isEnabled = true
                     b.progressLogin.visibility = View.GONE
                     b.textServerInfo.text = ""
                 }

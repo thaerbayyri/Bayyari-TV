@@ -2,6 +2,7 @@ package com.bayyari.tv.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.room.RoomDatabase
 import com.bayyari.tv.data.local.AppDatabase
 import com.bayyari.tv.data.local.dao.CategoryDao
 import com.bayyari.tv.data.local.dao.ChannelDao
@@ -26,6 +27,7 @@ object DatabaseModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase =
         Room.databaseBuilder(context, AppDatabase::class.java, Constants.DB_NAME)
+            .setJournalMode(RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)
             .build()
 
     @Provides

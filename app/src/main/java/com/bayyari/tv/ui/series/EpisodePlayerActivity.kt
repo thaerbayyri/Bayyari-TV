@@ -1,11 +1,15 @@
 package com.bayyari.tv.ui.series
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
@@ -15,16 +19,20 @@ import androidx.media3.ui.AspectRatioFrameLayout
 import com.bayyari.tv.R
 import androidx.lifecycle.lifecycleScope
 import com.bayyari.tv.databinding.ActivityEpisodePlayerBinding
+import com.bayyari.tv.databinding.DialogTranslationTracksBinding
 import com.bayyari.tv.data.repository.AuthRepository
 import com.bayyari.tv.data.repository.WatchHistoryRepository
 import com.bayyari.tv.domain.model.WatchEntry
+import com.bayyari.tv.domain.model.SubtitleTrack
 import com.bayyari.tv.player.IptvPlayer
 import com.bayyari.tv.player.PlayerService
+import com.bayyari.tv.player.TrackSelector
 import com.bayyari.tv.ui.BaseActivity
 import com.bayyari.tv.util.Constants
 import com.bayyari.tv.util.StreamUrlBuilder
 import com.bayyari.tv.util.NetworkUtils
 import com.bayyari.tv.util.collectStarted
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -35,6 +43,9 @@ class EpisodePlayerActivity : BaseActivity() {
     companion object {
         const val EXTRA_EPISODE_ID = "extra_episode_id"
         const val EXTRA_CONTAINER_EXT = "extra_container_ext"
+        const val EXTRA_SUBTITLE_URLS = "extra_subtitle_urls"
+        const val EXTRA_SUBTITLE_LABELS = "extra_subtitle_labels"
+        const val EXTRA_SUBTITLE_LANGS = "extra_subtitle_langs"
     }
 
     @Inject
@@ -55,6 +66,8 @@ class EpisodePlayerActivity : BaseActivity() {
     private lateinit var binding: ActivityEpisodePlayerBinding
     private var wasPlaying = true
     private var aspectIndex = 0
+    private var selectedSubtitle: TrackSelector.TrackInfo? = null
+    private var externalSubtitles: List<SubtitleTrack> = emptyList()
     private var playerListener: Player.Listener? = null
     private val controlsHandler = Handler(Looper.getMainLooper())
 
@@ -85,10 +98,11 @@ class EpisodePlayerActivity : BaseActivity() {
 
         val episodeId = intent.getIntExtra(EXTRA_EPISODE_ID, 0)
         val ext = intent.getStringExtra(EXTRA_CONTAINER_EXT).orEmpty()
+        externalSubtitles = subtitleTracksFromIntent()
         val server = authRepository.getActiveServer()
         if (episodeId != 0 && server != null) {
             val url = streamUrlBuilder.episode(server.normalizedUrl, server.username, server.password, episodeId, ext)
-            iptvPlayer.prepare(url)
+            iptvPlayer.prepare(url, subtitles = externalSubtitles)
             lifecycleScope.launch {
                 val history = watchHistoryRepository.find(episodeId, "episode", server.id)
                 if (history != null && history.positionMs > 0) {
@@ -177,20 +191,85 @@ class EpisodePlayerActivity : BaseActivity() {
     private fun showSubtitleTracks() {
         val tracks = iptvPlayer.subtitleTracks()
         if (tracks.isEmpty()) {
-            AlertDialog.Builder(this)
-                .setTitle(getString(R.string.live_subtitle_track))
-                .setMessage("No embedded captions or subtitles were found for this episode.")
-                .setPositiveButton(R.string.action_ok, null)
-                .show()
+            showTranslationSheet(emptyList())
             return
         }
-        AlertDialog.Builder(this)
-            .setTitle(getString(R.string.live_subtitle_track))
-            .setItems(tracks.map { it.label }.toTypedArray()) { _, which ->
-                val selected = tracks[which]
-                iptvPlayer.setSubtitleTrack(selected.groupIndex, selected.trackIndex)
+        showTranslationSheet(tracks)
+    }
+
+    private fun showTranslationSheet(tracks: List<TrackSelector.TrackInfo>) {
+        val dialog = BottomSheetDialog(this)
+        val sheet = DialogTranslationTracksBinding.inflate(LayoutInflater.from(this))
+        dialog.setContentView(sheet.root)
+        dialog.window?.navigationBarColor = Color.TRANSPARENT
+        sheet.trackList.removeAllViews()
+
+        if (tracks.isEmpty()) {
+            sheet.textTrackSubtitle.text =
+                "No embedded translation or subtitle tracks were found for this episode."
+        } else {
+            sheet.trackList.addView(
+                buildTrackOption(
+                    label = getString(R.string.player_translation_off),
+                    isActive = selectedSubtitle == null
+                ) {
+                    selectedSubtitle = null
+                    iptvPlayer.clearSubtitleTrack()
+                    dialog.dismiss()
+                }
+            )
+            tracks.forEach { track ->
+                sheet.trackList.addView(
+                    buildTrackOption(
+                        label = track.label.ifBlank { getString(R.string.live_subtitle_track) },
+                        isActive = selectedSubtitle == track
+                    ) {
+                        selectedSubtitle = track
+                        iptvPlayer.setSubtitleTrack(track.groupIndex, track.trackIndex)
+                        dialog.dismiss()
+                    }
+                )
             }
-            .show()
+        }
+        dialog.show()
+    }
+
+    private fun buildTrackOption(
+        label: String,
+        isActive: Boolean,
+        onClick: () -> Unit
+    ): TextView {
+        val density = resources.displayMetrics.density
+        return TextView(this).apply {
+            text = label
+            isActivated = isActive
+            setTextColor(getColor(if (isActive) R.color.colorPrimary else R.color.colorTextPrimary))
+            textSize = 15f
+            typeface = android.graphics.Typeface.DEFAULT_BOLD
+            setBackgroundResource(R.drawable.bg_track_option)
+            setPadding((14 * density).toInt(), (12 * density).toInt(), (14 * density).toInt(), (12 * density).toInt())
+            layoutParams = ViewGroup.MarginLayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            ).apply {
+                bottomMargin = (8 * density).toInt()
+            }
+            setOnClickListener { onClick() }
+        }
+    }
+
+    private fun subtitleTracksFromIntent(): List<SubtitleTrack> {
+        val urls = intent.getStringArrayListExtra(EXTRA_SUBTITLE_URLS).orEmpty()
+        val labels = intent.getStringArrayListExtra(EXTRA_SUBTITLE_LABELS).orEmpty()
+        val languages = intent.getStringArrayListExtra(EXTRA_SUBTITLE_LANGS).orEmpty()
+        return urls.mapIndexedNotNull { index, url ->
+            if (url.isBlank()) return@mapIndexedNotNull null
+            SubtitleTrack(
+                label = labels.getOrNull(index).orEmpty().ifBlank { "Subtitle ${index + 1}" },
+                url = url,
+                language = languages.getOrNull(index).orEmpty()
+            )
+        }
     }
 
     override fun onDestroy() {

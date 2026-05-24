@@ -47,13 +47,13 @@ class FavoritesViewModel @Inject constructor(
             favs.mapNotNull { fav ->
                 when (fav.contentType) {
                     "live" -> channelById[fav.contentId]?.let {
-                        FavoriteItem(fav.id, "Live", it.name)
+                        FavoriteItem(fav.id, fav.contentId, fav.contentType, "Live", it.name)
                     }
                     "movie" -> movieById[fav.contentId]?.let {
-                        FavoriteItem(fav.id, "Movie", it.name)
+                        FavoriteItem(fav.id, fav.contentId, fav.contentType, "Movie", it.name)
                     }
                     "series" -> seriesById[fav.contentId]?.let {
-                        FavoriteItem(fav.id, "Series", it.name)
+                        FavoriteItem(fav.id, fav.contentId, fav.contentType, "Series", it.name)
                     }
                     else -> null
                 }

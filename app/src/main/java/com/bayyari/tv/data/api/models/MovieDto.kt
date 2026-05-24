@@ -1,6 +1,7 @@
 package com.bayyari.tv.data.api.models
 
 import com.google.gson.annotations.SerializedName
+import com.google.gson.JsonElement
 
 data class MovieDto(
     @SerializedName("num") val num: Int?,
@@ -35,7 +36,10 @@ data class MovieInfo(
     @SerializedName("releasedate") val releaseDate: String?,
     @SerializedName("duration_secs") val durationSecs: Int?,
     @SerializedName("duration") val duration: String?,
-    @SerializedName("country") val country: String?
+    @SerializedName("country") val country: String?,
+    @SerializedName("subtitles") val subtitles: JsonElement?,
+    @SerializedName("subtitle") val subtitle: JsonElement?,
+    @SerializedName("subtitle_url") val subtitleUrl: JsonElement?
 )
 
 data class MovieDataDto(
@@ -45,5 +49,8 @@ data class MovieDataDto(
     @SerializedName("category_id") val categoryId: String?,
     @SerializedName("container_extension") val containerExtension: String?,
     @SerializedName("custom_sid") val customSid: String?,
-    @SerializedName("direct_source") val directSource: String?
+    @SerializedName("direct_source") val directSource: String?,
+    @SerializedName("subtitles") val subtitles: JsonElement?,
+    @SerializedName("subtitle") val subtitle: JsonElement?,
+    @SerializedName("subtitle_url") val subtitleUrl: JsonElement?
 )

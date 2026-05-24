@@ -3,6 +3,8 @@ package com.bayyari.tv.ui.settings
 import android.os.Bundle
 import android.view.View
 import android.content.Intent
+import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -14,9 +16,11 @@ import com.bayyari.tv.data.local.dao.MovieDao
 import com.bayyari.tv.data.local.dao.SeriesDao
 import com.bayyari.tv.data.repository.AuthRepository
 import com.bayyari.tv.data.repository.WatchHistoryRepository
+import com.bayyari.tv.databinding.DialogAddPlaylistBinding
 import com.bayyari.tv.databinding.FragmentServerManagerBinding
 import com.bayyari.tv.domain.model.Server
 import com.bayyari.tv.ui.auth.LoginActivity
+import com.bayyari.tv.ui.sync.SyncActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -50,7 +54,85 @@ class ServerManagerFragment : Fragment(R.layout.fragment_server_manager) {
         binding?.recyclerServers?.layoutManager = LinearLayoutManager(requireContext())
         binding?.recyclerServers?.adapter = adapter
 
+        binding?.fabAddPlaylist?.setOnClickListener { showAddPlaylistDialog() }
+
         refreshServers()
+    }
+
+    private fun showAddPlaylistDialog() {
+        val dialogView = LayoutInflater.from(requireContext())
+            .inflate(R.layout.dialog_add_playlist, null)
+        val dialogBinding = DialogAddPlaylistBinding.bind(dialogView)
+
+        val dialog = AlertDialog.Builder(requireContext())
+            .setTitle("Add Server / Playlist")
+            .setView(dialogView)
+            .setNegativeButton(R.string.action_cancel, null)
+            .setPositiveButton("Add", null)
+            .create()
+
+        dialog.setOnShowListener {
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                val url      = dialogBinding.editPlaylistUrl.text?.toString().orEmpty().trim()
+                val username = dialogBinding.editPlaylistUsername.text?.toString().orEmpty().trim()
+                val password = dialogBinding.editPlaylistPassword.text?.toString().orEmpty()
+                val label    = dialogBinding.editPlaylistLabel.text?.toString().orEmpty().trim()
+
+                when {
+                    url.isBlank() -> {
+                        dialogBinding.editPlaylistUrl.error = "Server URL is required"
+                        return@setOnClickListener
+                    }
+                    !url.startsWith("http://", ignoreCase = true) &&
+                    !url.startsWith("https://", ignoreCase = true) -> {
+                        dialogBinding.editPlaylistUrl.error = "URL must start with http:// or https://"
+                        return@setOnClickListener
+                    }
+                    username.isBlank() -> {
+                        dialogBinding.editPlaylistUsername.error = "Username is required"
+                        return@setOnClickListener
+                    }
+                    password.isBlank() -> {
+                        dialogBinding.editPlaylistPassword.error = "Password is required"
+                        return@setOnClickListener
+                    }
+                }
+
+                dialog.dismiss()
+                addServer(label, url, username, password)
+            }
+        }
+        dialog.show()
+    }
+
+    private fun addServer(label: String, url: String, username: String, password: String) {
+        binding?.loadingOverlay?.visibility = View.VISIBLE
+        binding?.fabAddPlaylist?.isEnabled = false
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            val result = authRepository.login(url, username, password, label.ifBlank { url }, remember = true)
+                .fold(
+                    onSuccess = { runCatching { it } },
+                    onFailure = { runCatching<com.bayyari.tv.domain.model.Server> { throw it } }
+                )
+
+            result.onSuccess {
+                startActivity(
+                    Intent(requireContext(), SyncActivity::class.java)
+                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                )
+                requireActivity().finishAffinity()
+            }.onFailure { t ->
+                binding?.loadingOverlay?.visibility = View.GONE
+                binding?.fabAddPlaylist?.isEnabled = true
+                Toast.makeText(
+                    requireContext(),
+                    t.message?.takeIf { it.isNotBlank() }
+                        ?: "Failed to connect — check the URL and credentials",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
     }
 
     private fun confirmDelete(server: Server) {

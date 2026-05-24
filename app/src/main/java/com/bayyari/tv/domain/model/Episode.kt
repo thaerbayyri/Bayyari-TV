@@ -10,5 +10,6 @@ data class Episode(
     val rating: String,
     val releaseDate: String,
     val containerExtension: String,
-    val poster: String
+    val poster: String,
+    val subtitleTracks: List<SubtitleTrack> = emptyList()
 )

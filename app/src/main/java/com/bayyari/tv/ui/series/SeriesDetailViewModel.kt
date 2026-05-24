@@ -8,6 +8,7 @@ import com.bayyari.tv.data.repository.SeriesRepository
 import com.bayyari.tv.domain.model.Episode
 import com.bayyari.tv.domain.model.Season
 import com.bayyari.tv.domain.model.Series
+import com.bayyari.tv.util.SubtitleTrackExtractor
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -47,6 +48,9 @@ class SeriesDetailViewModel @Inject constructor(
         loadedSeriesId = seriesId
         _loading.value = true
         _error.value = null
+        _series.value = null
+        _seasons.value = emptyList()
+        _episodesBySeason.value = emptyMap()
         viewModelScope.launch {
             val server = authRepository.getActiveServer()
             if (server == null) {
@@ -74,7 +78,15 @@ class SeriesDetailViewModel @Inject constructor(
                                 rating = ep.info?.rating.orEmpty(),
                                 releaseDate = ep.info?.releaseDate.orEmpty(),
                                 containerExtension = ep.containerExtension.orEmpty(),
-                                poster = ep.info?.movieImage.orEmpty()
+                                poster = ep.info?.movieImage.orEmpty(),
+                                subtitleTracks = SubtitleTrackExtractor.fromElements(
+                                    ep.subtitles,
+                                    ep.subtitle,
+                                    ep.subtitleUrl,
+                                    ep.info?.subtitles,
+                                    ep.info?.subtitle,
+                                    ep.info?.subtitleUrl
+                                )
                             )
                         }.sortedBy { it.episodeNumber }
                     }
