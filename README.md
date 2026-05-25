@@ -1,76 +1,75 @@
-**BAYYARI Player — Test & Analysis Summary**
-
-This repository contains the BAYYARI Player Android app and artifacts produced during a security assessment (static and dynamic testing).
-
-Summary of actions performed
-- Booted Pixel_8_API_34 emulator and installed the debug APK.
-- Completed Module-1: static APK analysis; report saved to `artifacts/module1/module1_report.md`.
-- Attempted Module-2: dynamic testing using mitmproxy to capture HTTP(S) traffic. Initial TLS interception failed because the emulator did not trust the proxy CA.
-- Deployed Frida to the emulator and injected a bypass script to neutralize certificate pinning. Frida injection succeeded.
-
-Key artifacts
-- Module-1 report: `artifacts/module1/module1_report.md`
-- MITM logs & captures: `artifacts/module2/mitmdump_console.log`, `artifacts/module2/flows.mitm` (if present)
-- CA install attempts and trust dumps: `artifacts/module2/dumpsys_trust*.txt`, `artifacts/module2/download_list_after.txt`
-- Frida files: `artifacts/module2/frida_bypass.js`, `artifacts/module2/frida_launch.txt`
-- Screenshots / UI dumps: `artifacts/module2/screen_p12_after.png`, `artifacts/module2/window_dump_after.xml`
-
-How to reproduce HTTPS capture (using existing setup)
-1. Start mitmdump on the host (example):
-
-   "C:\\Users\\...\\mitmdump.exe" --confdir "E:/mitmconf" -p 8080 -w "E:/mitmflows/flows.mitm"
-
-2. Ensure emulator proxy points to host (example): `settings get global http_proxy` -> `10.0.2.2:8080`.
-3. Start the app under Frida (the assessment already pushed `frida-server` and created `artifacts/module2/frida_bypass.js`). Run the Frida spawn command to inject the bypass script if not running.
-4. Trigger app network actions (login, fetch channels, EPG, etc.). mitmdump should record decrypted HTTPS flows while Frida is active.
-
-Notes & next steps
-- If mitmproxy TLS failures persist, either install the mitmproxy CA as a system CA on a rooted/unlocked emulator or keep using Frida to bypass pinning.
-- If you want, I can run the capture now and save flows to `artifacts/module2/flows.mitm`.
-
-Contact / evidence
-- All automated commands, logs and screenshots created during the assessment are stored under `artifacts/module2/` and `artifacts/module1/`.
 # BAYYARI-TV IPTV Player
 
-BAYYARI-TV is a Kotlin-based IPTV player for Android phones/tablets and Android TV devices. It supports Xtream Codes and M3U playlists, a dark-first UI, and a Leanback-optimized TV experience.
+BAYYARI-TV is a Kotlin-based IPTV player for Android phones/tablets and Android TV. It supports Xtream Codes and M3U playlists, provides a leanback-optimized TV experience, and uses Media3 for playback.
 
 ## Requirements
 - Android Studio Giraffe or newer
 - JDK 17
 - Android SDK 34
 
-## First-time build setup
-
-This repo ships the Gradle wrapper scripts (`gradlew`, `gradlew.bat`) and `gradle/wrapper/gradle-wrapper.properties` (Gradle 8.4), but **not** the binary `gradle/wrapper/gradle-wrapper.jar` — it must be present before the wrapper scripts will run. Pick one of:
-
-1. **Recommended:** open the project in Android Studio. On first Gradle sync the IDE downloads and installs `gradle-wrapper.jar` for you, using the URL in `gradle-wrapper.properties`.
-2. **If you have a system Gradle install:** run once from the project root —
-   ```
-   gradle wrapper --gradle-version 8.4 --distribution-type bin
-   ```
-3. **Manual fallback:** download `gradle-wrapper.jar` from
-   `https://raw.githubusercontent.com/gradle/gradle/v8.4.0/gradle/wrapper/gradle-wrapper.jar`
-   and place it at `gradle/wrapper/gradle-wrapper.jar`.
-
-After the wrapper jar is in place:
-
-- **Windows:** `gradlew.bat assembleDebug`
-- **macOS / Linux:** `chmod +x gradlew && ./gradlew assembleDebug`
-
 ## Build & Run
-1. Open the project in Android Studio.
-2. Let Gradle sync.
-3. Run `app` on a device or emulator (phone or TV).
+- Debug APK: `./gradlew :app:assembleDebug`
+- Unit tests: `./gradlew test`
 
-## Launcher icon
+## Project Structure (Overview)
 
-The launcher icons in `res/mipmap-*` and the TV banner at `res/drawable-xhdpi/banner_tv.png` were generated from `bayyari logo.ico`. The largest frame in that ICO is only **32×32 px**, so the icons at higher densities (`xxhdpi`, `xxxhdpi`) are slightly soft. Before publishing to the Play Store / Amazon Appstore, regenerate the assets from a higher-resolution source (PNG ≥ 512×512) using Android Studio's *Image Asset* wizard. The generation PowerShell script lives in your shell history (search for `Add-Type -AssemblyName System.Drawing`) if you want to rerun it against a new master.
+### Root
+- [build.gradle.kts](build.gradle.kts): Top-level Gradle configuration.
+- [settings.gradle.kts](settings.gradle.kts): Gradle project/module registration.
+- [gradle.properties](gradle.properties): Gradle and Android build settings.
+- [_assets_generated/](./_assets_generated/): Generated assets used by the app and build tools.
+- [app/](app/): Main Android application module.
+
+### App module
+- [app/build.gradle.kts](app/build.gradle.kts): App module build configuration, dependencies, and Android settings.
+- [app/proguard-rules.pro](app/proguard-rules.pro): Proguard/R8 rules for release builds.
+- [app/src/main/AndroidManifest.xml](app/src/main/AndroidManifest.xml): App manifest, activities, and permissions.
+
+### Kotlin source structure
+- [app/src/main/java/com/bayyari/tv/](app/src/main/java/com/bayyari/tv/): App entry point and top-level packages.
+- [app/src/main/java/com/bayyari/tv/BayyariTvApp.kt](app/src/main/java/com/bayyari/tv/BayyariTvApp.kt): Application class and app-wide initialization.
+
+#### Data layer
+- [app/src/main/java/com/bayyari/tv/data/api/](app/src/main/java/com/bayyari/tv/data/api/): Retrofit API and network interceptors.
+- [app/src/main/java/com/bayyari/tv/data/api/DynamicHostInterceptor.kt](app/src/main/java/com/bayyari/tv/data/api/DynamicHostInterceptor.kt): Dynamically updates API base host based on user settings.
+- [app/src/main/java/com/bayyari/tv/data/api/XtreamApiService.kt](app/src/main/java/com/bayyari/tv/data/api/XtreamApiService.kt): Xtream Codes API interface.
+- [app/src/main/java/com/bayyari/tv/data/api/models/](app/src/main/java/com/bayyari/tv/data/api/models/): Network DTOs for live, movie, series, and EPG data.
+- [app/src/main/java/com/bayyari/tv/data/local/dao/](app/src/main/java/com/bayyari/tv/data/local/dao/): Room DAOs for cached content.
+- [app/src/main/java/com/bayyari/tv/data/local/entities/](app/src/main/java/com/bayyari/tv/data/local/entities/): Room entities for channels, movies, series, watch history, and favorites.
+
+#### Domain layer
+- [app/src/main/java/com/bayyari/tv/domain/model/](app/src/main/java/com/bayyari/tv/domain/model/): Domain models such as channel and server.
+
+#### Dependency injection
+- [app/src/main/java/com/bayyari/tv/di/NetworkModule.kt](app/src/main/java/com/bayyari/tv/di/NetworkModule.kt): Hilt module wiring for API clients and networking.
+
+#### Utilities
+- [app/src/main/java/com/bayyari/tv/util/Constants.kt](app/src/main/java/com/bayyari/tv/util/Constants.kt): Shared constants (API, update URLs, cache keys).
+- [app/src/main/java/com/bayyari/tv/util/EncryptedPrefs.kt](app/src/main/java/com/bayyari/tv/util/EncryptedPrefs.kt): Secure preferences storage.
+- [app/src/main/java/com/bayyari/tv/util/Extensions.kt](app/src/main/java/com/bayyari/tv/util/Extensions.kt): App-wide Kotlin extensions.
+- [app/src/main/java/com/bayyari/tv/util/M3uParser.kt](app/src/main/java/com/bayyari/tv/util/M3uParser.kt): M3U playlist parsing.
+- [app/src/main/java/com/bayyari/tv/util/NetworkUtils.kt](app/src/main/java/com/bayyari/tv/util/NetworkUtils.kt): Network and connectivity helpers.
+- [app/src/main/java/com/bayyari/tv/util/StreamUrlBuilder.kt](app/src/main/java/com/bayyari/tv/util/StreamUrlBuilder.kt): Builds stream URLs for live, VOD, and series.
+
+#### Update system
+- [app/src/main/java/com/bayyari/tv/update/UpdateManager.kt](app/src/main/java/com/bayyari/tv/update/UpdateManager.kt): Checks update.json, downloads APKs, verifies signatures, and launches the installer.
+- [app/src/main/java/com/bayyari/tv/ui/settings/SettingsFragment.kt](app/src/main/java/com/bayyari/tv/ui/settings/SettingsFragment.kt): Settings UI and update flow status messaging.
+
+### Resources
+- [app/src/main/res/](app/src/main/res/): All app resources (layouts, drawables, strings, and configuration).
+- [app/src/main/res/values/strings.xml](app/src/main/res/values/strings.xml): App strings, including update status messaging.
+- [app/src/main/res/values/themes.xml](app/src/main/res/values/themes.xml): Theme definitions for phone and TV.
+- [app/src/main/res/xml/preferences_settings.xml](app/src/main/res/xml/preferences_settings.xml): Settings preference screen definitions.
+- [app/src/main/res/xml/network_security_config.xml](app/src/main/res/xml/network_security_config.xml): Network security configuration.
+
+### Build outputs
+- [build/reports/problems/problems-report.html](build/reports/problems/problems-report.html): Gradle problems report (generated by builds).
 
 ## Architecture
-- **MVVM + Clean Architecture**
-- **Repository pattern** for data access
-- **Room** for local cache
-- **Media3** for playback
+- MVVM + Clean Architecture
+- Repository pattern for data access
+- Room for local cache
+- Media3 for playback
 
 ```mermaid
 flowchart LR
@@ -93,12 +92,5 @@ flowchart LR
 - Leanback TV UI
 
 ## Notes
-- Offline download for movies is a stretch goal and not included in v1.
+- Offline download for movies is not included in v1.
 - For best results, ensure your IPTV server supports HLS.
-
-## Tests
-Run unit tests with:
-
-```bash
-./gradlew test
-```
