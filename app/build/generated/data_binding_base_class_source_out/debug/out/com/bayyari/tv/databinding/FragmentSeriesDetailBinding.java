@@ -4,6 +4,7 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bayyari.tv.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,10 +24,22 @@ public final class FragmentSeriesDetailBinding implements ViewBinding {
   private final NestedScrollView rootView;
 
   @NonNull
+  public final ImageButton buttonBack;
+
+  @NonNull
+  public final MaterialButton buttonFavorite;
+
+  @NonNull
+  public final MaterialButton buttonOpenSeasons;
+
+  @NonNull
   public final ImageView imageCover;
 
   @NonNull
   public final RecyclerView recyclerSeasons;
+
+  @NonNull
+  public final TextView textMeta;
 
   @NonNull
   public final TextView textPlot;
@@ -34,11 +48,17 @@ public final class FragmentSeriesDetailBinding implements ViewBinding {
   public final TextView textTitle;
 
   private FragmentSeriesDetailBinding(@NonNull NestedScrollView rootView,
-      @NonNull ImageView imageCover, @NonNull RecyclerView recyclerSeasons,
-      @NonNull TextView textPlot, @NonNull TextView textTitle) {
+      @NonNull ImageButton buttonBack, @NonNull MaterialButton buttonFavorite,
+      @NonNull MaterialButton buttonOpenSeasons, @NonNull ImageView imageCover,
+      @NonNull RecyclerView recyclerSeasons, @NonNull TextView textMeta, @NonNull TextView textPlot,
+      @NonNull TextView textTitle) {
     this.rootView = rootView;
+    this.buttonBack = buttonBack;
+    this.buttonFavorite = buttonFavorite;
+    this.buttonOpenSeasons = buttonOpenSeasons;
     this.imageCover = imageCover;
     this.recyclerSeasons = recyclerSeasons;
+    this.textMeta = textMeta;
     this.textPlot = textPlot;
     this.textTitle = textTitle;
   }
@@ -70,6 +90,24 @@ public final class FragmentSeriesDetailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonBack;
+      ImageButton buttonBack = ViewBindings.findChildViewById(rootView, id);
+      if (buttonBack == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonFavorite;
+      MaterialButton buttonFavorite = ViewBindings.findChildViewById(rootView, id);
+      if (buttonFavorite == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonOpenSeasons;
+      MaterialButton buttonOpenSeasons = ViewBindings.findChildViewById(rootView, id);
+      if (buttonOpenSeasons == null) {
+        break missingId;
+      }
+
       id = R.id.imageCover;
       ImageView imageCover = ViewBindings.findChildViewById(rootView, id);
       if (imageCover == null) {
@@ -79,6 +117,12 @@ public final class FragmentSeriesDetailBinding implements ViewBinding {
       id = R.id.recyclerSeasons;
       RecyclerView recyclerSeasons = ViewBindings.findChildViewById(rootView, id);
       if (recyclerSeasons == null) {
+        break missingId;
+      }
+
+      id = R.id.textMeta;
+      TextView textMeta = ViewBindings.findChildViewById(rootView, id);
+      if (textMeta == null) {
         break missingId;
       }
 
@@ -94,8 +138,9 @@ public final class FragmentSeriesDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSeriesDetailBinding((NestedScrollView) rootView, imageCover,
-          recyclerSeasons, textPlot, textTitle);
+      return new FragmentSeriesDetailBinding((NestedScrollView) rootView, buttonBack,
+          buttonFavorite, buttonOpenSeasons, imageCover, recyclerSeasons, textMeta, textPlot,
+          textTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,6 +1,7 @@
 package com.bayyari.tv.ui.movies;
 
 import com.bayyari.tv.data.repository.AuthRepository;
+import com.bayyari.tv.data.repository.MovieRepository;
 import com.bayyari.tv.data.repository.WatchHistoryRepository;
 import com.bayyari.tv.player.IptvPlayer;
 import com.bayyari.tv.util.NetworkUtils;
@@ -34,6 +35,8 @@ public final class MoviePlayerActivity_MembersInjector implements MembersInjecto
 
   private final Provider<StreamUrlBuilder> streamUrlBuilderProvider;
 
+  private final Provider<MovieRepository> movieRepositoryProvider;
+
   private final Provider<WatchHistoryRepository> watchHistoryRepositoryProvider;
 
   private final Provider<NetworkUtils> networkUtilsProvider;
@@ -41,11 +44,13 @@ public final class MoviePlayerActivity_MembersInjector implements MembersInjecto
   private MoviePlayerActivity_MembersInjector(Provider<IptvPlayer> iptvPlayerProvider,
       Provider<AuthRepository> authRepositoryProvider,
       Provider<StreamUrlBuilder> streamUrlBuilderProvider,
+      Provider<MovieRepository> movieRepositoryProvider,
       Provider<WatchHistoryRepository> watchHistoryRepositoryProvider,
       Provider<NetworkUtils> networkUtilsProvider) {
     this.iptvPlayerProvider = iptvPlayerProvider;
     this.authRepositoryProvider = authRepositoryProvider;
     this.streamUrlBuilderProvider = streamUrlBuilderProvider;
+    this.movieRepositoryProvider = movieRepositoryProvider;
     this.watchHistoryRepositoryProvider = watchHistoryRepositoryProvider;
     this.networkUtilsProvider = networkUtilsProvider;
   }
@@ -55,6 +60,7 @@ public final class MoviePlayerActivity_MembersInjector implements MembersInjecto
     injectIptvPlayer(instance, iptvPlayerProvider.get());
     injectAuthRepository(instance, authRepositoryProvider.get());
     injectStreamUrlBuilder(instance, streamUrlBuilderProvider.get());
+    injectMovieRepository(instance, movieRepositoryProvider.get());
     injectWatchHistoryRepository(instance, watchHistoryRepositoryProvider.get());
     injectNetworkUtils(instance, networkUtilsProvider.get());
   }
@@ -62,9 +68,10 @@ public final class MoviePlayerActivity_MembersInjector implements MembersInjecto
   public static MembersInjector<MoviePlayerActivity> create(Provider<IptvPlayer> iptvPlayerProvider,
       Provider<AuthRepository> authRepositoryProvider,
       Provider<StreamUrlBuilder> streamUrlBuilderProvider,
+      Provider<MovieRepository> movieRepositoryProvider,
       Provider<WatchHistoryRepository> watchHistoryRepositoryProvider,
       Provider<NetworkUtils> networkUtilsProvider) {
-    return new MoviePlayerActivity_MembersInjector(iptvPlayerProvider, authRepositoryProvider, streamUrlBuilderProvider, watchHistoryRepositoryProvider, networkUtilsProvider);
+    return new MoviePlayerActivity_MembersInjector(iptvPlayerProvider, authRepositoryProvider, streamUrlBuilderProvider, movieRepositoryProvider, watchHistoryRepositoryProvider, networkUtilsProvider);
   }
 
   @InjectedFieldSignature("com.bayyari.tv.ui.movies.MoviePlayerActivity.iptvPlayer")
@@ -82,6 +89,12 @@ public final class MoviePlayerActivity_MembersInjector implements MembersInjecto
   public static void injectStreamUrlBuilder(MoviePlayerActivity instance,
       StreamUrlBuilder streamUrlBuilder) {
     instance.streamUrlBuilder = streamUrlBuilder;
+  }
+
+  @InjectedFieldSignature("com.bayyari.tv.ui.movies.MoviePlayerActivity.movieRepository")
+  public static void injectMovieRepository(MoviePlayerActivity instance,
+      MovieRepository movieRepository) {
+    instance.movieRepository = movieRepository;
   }
 
   @InjectedFieldSignature("com.bayyari.tv.ui.movies.MoviePlayerActivity.watchHistoryRepository")

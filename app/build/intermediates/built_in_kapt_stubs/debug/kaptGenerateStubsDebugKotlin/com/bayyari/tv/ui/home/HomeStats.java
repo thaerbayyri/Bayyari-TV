@@ -1,14 +1,19 @@
 package com.bayyari.tv.ui.home;
 
 import androidx.lifecycle.ViewModel;
-import com.bayyari.tv.data.local.dao.WatchHistoryDao;
+import android.util.Log;
+import com.bayyari.tv.data.local.dao.FavoriteDao;
+import com.bayyari.tv.data.local.entities.FavoriteEntity;
 import com.bayyari.tv.data.repository.AuthRepository;
 import com.bayyari.tv.data.repository.LiveRepository;
 import com.bayyari.tv.data.repository.MovieRepository;
 import com.bayyari.tv.data.repository.SeriesRepository;
+import com.bayyari.tv.data.repository.WatchHistoryRepository;
 import com.bayyari.tv.domain.model.Channel;
 import com.bayyari.tv.domain.model.Movie;
 import com.bayyari.tv.domain.model.Series;
+import com.bayyari.tv.domain.model.WatchEntry;
+import com.bayyari.tv.ui.favorites.FavoriteItem;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.SharingStarted;

@@ -4,6 +4,7 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,12 +30,17 @@ public final class FragmentAddServerBinding implements ViewBinding {
   @NonNull
   public final TextInputEditText editM3u;
 
+  @NonNull
+  public final ProgressBar progressSave;
+
   private FragmentAddServerBinding(@NonNull ScrollView rootView, @NonNull MaterialButton buttonSave,
-      @NonNull TextInputEditText editLabel, @NonNull TextInputEditText editM3u) {
+      @NonNull TextInputEditText editLabel, @NonNull TextInputEditText editM3u,
+      @NonNull ProgressBar progressSave) {
     this.rootView = rootView;
     this.buttonSave = buttonSave;
     this.editLabel = editLabel;
     this.editM3u = editM3u;
+    this.progressSave = progressSave;
   }
 
   @Override
@@ -82,7 +88,14 @@ public final class FragmentAddServerBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAddServerBinding((ScrollView) rootView, buttonSave, editLabel, editM3u);
+      id = R.id.progressSave;
+      ProgressBar progressSave = ViewBindings.findChildViewById(rootView, id);
+      if (progressSave == null) {
+        break missingId;
+      }
+
+      return new FragmentAddServerBinding((ScrollView) rootView, buttonSave, editLabel, editM3u,
+          progressSave);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

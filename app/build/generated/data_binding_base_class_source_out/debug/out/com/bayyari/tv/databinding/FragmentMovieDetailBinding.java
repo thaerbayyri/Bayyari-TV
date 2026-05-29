@@ -4,7 +4,7 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -13,6 +13,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bayyari.tv.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,10 +23,31 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
   private final NestedScrollView rootView;
 
   @NonNull
-  public final Button buttonPlay;
+  public final ImageButton buttonBack;
+
+  @NonNull
+  public final MaterialButton buttonFavorite;
+
+  @NonNull
+  public final MaterialButton buttonPlay;
+
+  @NonNull
+  public final MaterialButton buttonTrailer;
+
+  @NonNull
+  public final ImageView imageBackdrop;
 
   @NonNull
   public final ImageView imagePoster;
+
+  @NonNull
+  public final TextView textDetailsLabel;
+
+  @NonNull
+  public final TextView textDetailsValue;
+
+  @NonNull
+  public final TextView textMeta;
 
   @NonNull
   public final TextView textPlot;
@@ -33,11 +55,22 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
   @NonNull
   public final TextView textTitle;
 
-  private FragmentMovieDetailBinding(@NonNull NestedScrollView rootView, @NonNull Button buttonPlay,
-      @NonNull ImageView imagePoster, @NonNull TextView textPlot, @NonNull TextView textTitle) {
+  private FragmentMovieDetailBinding(@NonNull NestedScrollView rootView,
+      @NonNull ImageButton buttonBack, @NonNull MaterialButton buttonFavorite,
+      @NonNull MaterialButton buttonPlay, @NonNull MaterialButton buttonTrailer,
+      @NonNull ImageView imageBackdrop, @NonNull ImageView imagePoster,
+      @NonNull TextView textDetailsLabel, @NonNull TextView textDetailsValue,
+      @NonNull TextView textMeta, @NonNull TextView textPlot, @NonNull TextView textTitle) {
     this.rootView = rootView;
+    this.buttonBack = buttonBack;
+    this.buttonFavorite = buttonFavorite;
     this.buttonPlay = buttonPlay;
+    this.buttonTrailer = buttonTrailer;
+    this.imageBackdrop = imageBackdrop;
     this.imagePoster = imagePoster;
+    this.textDetailsLabel = textDetailsLabel;
+    this.textDetailsValue = textDetailsValue;
+    this.textMeta = textMeta;
     this.textPlot = textPlot;
     this.textTitle = textTitle;
   }
@@ -69,15 +102,57 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonBack;
+      ImageButton buttonBack = ViewBindings.findChildViewById(rootView, id);
+      if (buttonBack == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonFavorite;
+      MaterialButton buttonFavorite = ViewBindings.findChildViewById(rootView, id);
+      if (buttonFavorite == null) {
+        break missingId;
+      }
+
       id = R.id.buttonPlay;
-      Button buttonPlay = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton buttonPlay = ViewBindings.findChildViewById(rootView, id);
       if (buttonPlay == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonTrailer;
+      MaterialButton buttonTrailer = ViewBindings.findChildViewById(rootView, id);
+      if (buttonTrailer == null) {
+        break missingId;
+      }
+
+      id = R.id.imageBackdrop;
+      ImageView imageBackdrop = ViewBindings.findChildViewById(rootView, id);
+      if (imageBackdrop == null) {
         break missingId;
       }
 
       id = R.id.imagePoster;
       ImageView imagePoster = ViewBindings.findChildViewById(rootView, id);
       if (imagePoster == null) {
+        break missingId;
+      }
+
+      id = R.id.textDetailsLabel;
+      TextView textDetailsLabel = ViewBindings.findChildViewById(rootView, id);
+      if (textDetailsLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.textDetailsValue;
+      TextView textDetailsValue = ViewBindings.findChildViewById(rootView, id);
+      if (textDetailsValue == null) {
+        break missingId;
+      }
+
+      id = R.id.textMeta;
+      TextView textMeta = ViewBindings.findChildViewById(rootView, id);
+      if (textMeta == null) {
         break missingId;
       }
 
@@ -93,8 +168,9 @@ public final class FragmentMovieDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMovieDetailBinding((NestedScrollView) rootView, buttonPlay, imagePoster,
-          textPlot, textTitle);
+      return new FragmentMovieDetailBinding((NestedScrollView) rootView, buttonBack, buttonFavorite,
+          buttonPlay, buttonTrailer, imageBackdrop, imagePoster, textDetailsLabel, textDetailsValue,
+          textMeta, textPlot, textTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

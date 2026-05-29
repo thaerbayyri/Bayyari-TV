@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew testDebugUnitTest)",
+      "Bash(./gradlew testDebugUnitTest --tests \"*.PerformanceBudgetTest\")",
+      "Bash(./gradlew testDebugUnitTest --tests \"*.AuthRepositoryTest\")",
+      "Bash(./gradlew testDebugUnitTest --tests \"*.AuthRepositoryTest\" --stacktrace)",
+      "Bash(./gradlew testDebugUnitTest --tests \"com.bayyari.tv.*\")",
+      "Bash(./gradlew assembleDebug testDebugUnitTest)",
+      "Bash(./gradlew testDebugUnitTest --tests \"com.bayyari.tv.ui.favorites.FavoritesViewModelTest\" --info)",
+      "PowerShell(Get-Item \"e:\\\\nashamaiptv page\\\\apps\\\\BAYYARI player\\\\app\\\\build\\\\outputs\\\\apk\\\\debug\\\\app-debug.apk\" | Select-Object Name, @{N='Size \\(MB\\)';E={[math]::Round\\($_.Length/1MB,1\\)}}, LastWriteTime)",
+      "Bash(./gradlew assembleDebug --quiet)",
+      "Bash(./gradlew assembleDebug --rerun-tasks)",
+      "Bash(powershell -command \"\\(Get-Content -Path 'app/src/main/java/com/bayyari/tv/util/M3uParser.kt' -Raw\\) -match '\\\\\\\\\\\\\\\\uFEFF|removePrefix'\")",
+      "Bash(python3 -c ' *)",
+      "Bash(Remove-Item \"e:/nashamaiptv page/apps/BAYYARI player/app/src/main/java/com/bayyari/tv/ui/auth/AddServerFragment.kt\")"
+    ]
+  }
+}

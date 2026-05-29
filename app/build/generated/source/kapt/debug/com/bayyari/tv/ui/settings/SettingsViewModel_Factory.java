@@ -4,8 +4,8 @@ import com.bayyari.tv.data.local.dao.ChannelDao;
 import com.bayyari.tv.data.local.dao.EpgDao;
 import com.bayyari.tv.data.local.dao.MovieDao;
 import com.bayyari.tv.data.local.dao.SeriesDao;
-import com.bayyari.tv.data.local.dao.WatchHistoryDao;
 import com.bayyari.tv.data.repository.AuthRepository;
+import com.bayyari.tv.data.repository.WatchHistoryRepository;
 import com.bayyari.tv.util.EncryptedPrefs;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
@@ -43,36 +43,38 @@ public final class SettingsViewModel_Factory implements Factory<SettingsViewMode
 
   private final Provider<EpgDao> epgDaoProvider;
 
-  private final Provider<WatchHistoryDao> watchHistoryDaoProvider;
+  private final Provider<WatchHistoryRepository> watchHistoryRepositoryProvider;
 
   private SettingsViewModel_Factory(Provider<AuthRepository> authRepositoryProvider,
       Provider<EncryptedPrefs> prefsProvider, Provider<ChannelDao> channelDaoProvider,
       Provider<MovieDao> movieDaoProvider, Provider<SeriesDao> seriesDaoProvider,
-      Provider<EpgDao> epgDaoProvider, Provider<WatchHistoryDao> watchHistoryDaoProvider) {
+      Provider<EpgDao> epgDaoProvider,
+      Provider<WatchHistoryRepository> watchHistoryRepositoryProvider) {
     this.authRepositoryProvider = authRepositoryProvider;
     this.prefsProvider = prefsProvider;
     this.channelDaoProvider = channelDaoProvider;
     this.movieDaoProvider = movieDaoProvider;
     this.seriesDaoProvider = seriesDaoProvider;
     this.epgDaoProvider = epgDaoProvider;
-    this.watchHistoryDaoProvider = watchHistoryDaoProvider;
+    this.watchHistoryRepositoryProvider = watchHistoryRepositoryProvider;
   }
 
   @Override
   public SettingsViewModel get() {
-    return newInstance(authRepositoryProvider.get(), prefsProvider.get(), channelDaoProvider.get(), movieDaoProvider.get(), seriesDaoProvider.get(), epgDaoProvider.get(), watchHistoryDaoProvider.get());
+    return newInstance(authRepositoryProvider.get(), prefsProvider.get(), channelDaoProvider.get(), movieDaoProvider.get(), seriesDaoProvider.get(), epgDaoProvider.get(), watchHistoryRepositoryProvider.get());
   }
 
   public static SettingsViewModel_Factory create(Provider<AuthRepository> authRepositoryProvider,
       Provider<EncryptedPrefs> prefsProvider, Provider<ChannelDao> channelDaoProvider,
       Provider<MovieDao> movieDaoProvider, Provider<SeriesDao> seriesDaoProvider,
-      Provider<EpgDao> epgDaoProvider, Provider<WatchHistoryDao> watchHistoryDaoProvider) {
-    return new SettingsViewModel_Factory(authRepositoryProvider, prefsProvider, channelDaoProvider, movieDaoProvider, seriesDaoProvider, epgDaoProvider, watchHistoryDaoProvider);
+      Provider<EpgDao> epgDaoProvider,
+      Provider<WatchHistoryRepository> watchHistoryRepositoryProvider) {
+    return new SettingsViewModel_Factory(authRepositoryProvider, prefsProvider, channelDaoProvider, movieDaoProvider, seriesDaoProvider, epgDaoProvider, watchHistoryRepositoryProvider);
   }
 
   public static SettingsViewModel newInstance(AuthRepository authRepository, EncryptedPrefs prefs,
       ChannelDao channelDao, MovieDao movieDao, SeriesDao seriesDao, EpgDao epgDao,
-      WatchHistoryDao watchHistoryDao) {
-    return new SettingsViewModel(authRepository, prefs, channelDao, movieDao, seriesDao, epgDao, watchHistoryDao);
+      WatchHistoryRepository watchHistoryRepository) {
+    return new SettingsViewModel(authRepository, prefs, channelDao, movieDao, seriesDao, epgDao, watchHistoryRepository);
   }
 }

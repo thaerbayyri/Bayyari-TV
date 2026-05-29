@@ -4,7 +4,9 @@ import android.os.Bundle;
 import androidx.leanback.app.VerticalGridSupportFragment;
 import androidx.leanback.widget.ArrayObjectAdapter;
 import androidx.leanback.widget.VerticalGridPresenter;
+import androidx.leanback.widget.OnItemViewClickedListener;
 import com.bayyari.tv.ui.home.MediaCardPresenter;
+import com.bayyari.tv.domain.model.Series;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @dagger.hilt.android.AndroidEntryPoint()

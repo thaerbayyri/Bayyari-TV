@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -31,6 +31,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView chipCatchup;
 
   @NonNull
+  public final TextView chipFavorites;
+
+  @NonNull
   public final TextView chipHome;
 
   @NonNull
@@ -46,10 +49,10 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView chipSettings;
 
   @NonNull
-  public final ImageView iconBell;
+  public final ImageButton iconBell;
 
   @NonNull
-  public final ImageView iconSearch;
+  public final ImageButton iconSearch;
 
   @NonNull
   public final LinearLayout logoGroup;
@@ -64,24 +67,30 @@ public final class ActivityMainBinding implements ViewBinding {
   public final HorizontalScrollView navScroll;
 
   @NonNull
+  public final LinearLayout playlistLoadingOverlay;
+
+  @NonNull
   public final LinearLayout rightCluster;
 
   @NonNull
-  public final ConstraintLayout topBar;
+  public final LinearLayout topBar;
 
   @NonNull
   public final AppBarLayout topBarHolder;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView avatar,
-      @NonNull TextView chipCatchup, @NonNull TextView chipHome, @NonNull TextView chipLive,
-      @NonNull TextView chipMovies, @NonNull TextView chipSeries, @NonNull TextView chipSettings,
-      @NonNull ImageView iconBell, @NonNull ImageView iconSearch, @NonNull LinearLayout logoGroup,
+      @NonNull TextView chipCatchup, @NonNull TextView chipFavorites, @NonNull TextView chipHome,
+      @NonNull TextView chipLive, @NonNull TextView chipMovies, @NonNull TextView chipSeries,
+      @NonNull TextView chipSettings, @NonNull ImageButton iconBell,
+      @NonNull ImageButton iconSearch, @NonNull LinearLayout logoGroup,
       @NonNull LinearLayout navChipsRow, @NonNull FrameLayout navHostFragment,
-      @NonNull HorizontalScrollView navScroll, @NonNull LinearLayout rightCluster,
-      @NonNull ConstraintLayout topBar, @NonNull AppBarLayout topBarHolder) {
+      @NonNull HorizontalScrollView navScroll, @NonNull LinearLayout playlistLoadingOverlay,
+      @NonNull LinearLayout rightCluster, @NonNull LinearLayout topBar,
+      @NonNull AppBarLayout topBarHolder) {
     this.rootView = rootView;
     this.avatar = avatar;
     this.chipCatchup = chipCatchup;
+    this.chipFavorites = chipFavorites;
     this.chipHome = chipHome;
     this.chipLive = chipLive;
     this.chipMovies = chipMovies;
@@ -93,6 +102,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.navChipsRow = navChipsRow;
     this.navHostFragment = navHostFragment;
     this.navScroll = navScroll;
+    this.playlistLoadingOverlay = playlistLoadingOverlay;
     this.rightCluster = rightCluster;
     this.topBar = topBar;
     this.topBarHolder = topBarHolder;
@@ -137,6 +147,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.chipFavorites;
+      TextView chipFavorites = ViewBindings.findChildViewById(rootView, id);
+      if (chipFavorites == null) {
+        break missingId;
+      }
+
       id = R.id.chipHome;
       TextView chipHome = ViewBindings.findChildViewById(rootView, id);
       if (chipHome == null) {
@@ -168,13 +184,13 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       id = R.id.iconBell;
-      ImageView iconBell = ViewBindings.findChildViewById(rootView, id);
+      ImageButton iconBell = ViewBindings.findChildViewById(rootView, id);
       if (iconBell == null) {
         break missingId;
       }
 
       id = R.id.iconSearch;
-      ImageView iconSearch = ViewBindings.findChildViewById(rootView, id);
+      ImageButton iconSearch = ViewBindings.findChildViewById(rootView, id);
       if (iconSearch == null) {
         break missingId;
       }
@@ -203,6 +219,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.playlistLoadingOverlay;
+      LinearLayout playlistLoadingOverlay = ViewBindings.findChildViewById(rootView, id);
+      if (playlistLoadingOverlay == null) {
+        break missingId;
+      }
+
       id = R.id.rightCluster;
       LinearLayout rightCluster = ViewBindings.findChildViewById(rootView, id);
       if (rightCluster == null) {
@@ -210,7 +232,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       id = R.id.topBar;
-      ConstraintLayout topBar = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout topBar = ViewBindings.findChildViewById(rootView, id);
       if (topBar == null) {
         break missingId;
       }
@@ -221,9 +243,10 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, avatar, chipCatchup, chipHome,
-          chipLive, chipMovies, chipSeries, chipSettings, iconBell, iconSearch, logoGroup,
-          navChipsRow, navHostFragment, navScroll, rightCluster, topBar, topBarHolder);
+      return new ActivityMainBinding((ConstraintLayout) rootView, avatar, chipCatchup,
+          chipFavorites, chipHome, chipLive, chipMovies, chipSeries, chipSettings, iconBell,
+          iconSearch, logoGroup, navChipsRow, navHostFragment, navScroll, playlistLoadingOverlay,
+          rightCluster, topBar, topBarHolder);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

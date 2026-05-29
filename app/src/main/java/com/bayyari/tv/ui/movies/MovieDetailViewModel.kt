@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bayyari.tv.data.api.models.MovieDetailResponse
+import com.bayyari.tv.data.local.dao.FavoriteDao
+import com.bayyari.tv.data.local.entities.FavoriteEntity
 import com.bayyari.tv.data.repository.AuthRepository
 import com.bayyari.tv.data.repository.MovieRepository
 import com.bayyari.tv.domain.model.Movie
@@ -16,7 +18,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieDetailViewModel @Inject constructor(
     private val authRepository: AuthRepository,
-    private val movieRepository: MovieRepository
+    private val movieRepository: MovieRepository,
+    private val favoriteDao: FavoriteDao
 ) : ViewModel() {
 
     private val _movie = MutableStateFlow<Movie?>(null)
@@ -57,6 +60,25 @@ class MovieDetailViewModel @Inject constructor(
                 _error.value = "Failed to load movie details: ${e.message}"
             }
             _loading.value = false
+        }
+    }
+
+    fun addFavorite(streamId: Int) {
+        if (streamId == 0) return
+        viewModelScope.launch {
+            val server = authRepository.getActiveServer() ?: return@launch
+            runCatching {
+                favoriteDao.upsert(
+                    FavoriteEntity(
+                        contentId = streamId,
+                        contentType = "movie",
+                        serverId = server.id,
+                        addedAt = System.currentTimeMillis()
+                    )
+                )
+            }.onFailure { error ->
+                Log.e("MovieDetailVM", "addFavorite failed for streamId=$streamId", error)
+            }
         }
     }
 }

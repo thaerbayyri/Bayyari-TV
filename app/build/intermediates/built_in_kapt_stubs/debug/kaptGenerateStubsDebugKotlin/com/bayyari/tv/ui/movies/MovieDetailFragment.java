@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.fragment.app.Fragment;
 import com.bayyari.tv.R;
 import com.bayyari.tv.databinding.FragmentMovieDetailBinding;
+import com.bumptech.glide.Glide;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @dagger.hilt.android.AndroidEntryPoint()

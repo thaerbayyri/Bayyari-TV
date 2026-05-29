@@ -11,6 +11,8 @@
 <meta name="apple-mobile-web-app-title" content="Bayyari TV">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='7' fill='%23E8A020'/><path d='M7 9h14M7 14h9M7 19h11' stroke='%230A0A0A' stroke-width='2.2' stroke-linecap='round'/></svg>">
 <title>Bayyari TV – Premium IPTV</title>
+<!-- Platform detection — MUST be first script; loads TV assets on TV only, never on Android -->
+<script src="platform-detect.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -44,6 +46,8 @@ button,select,input{font-family:'Sora',sans-serif;cursor:pointer}.hero h1,.login
 .toolbar-select{background:var(--bg2);color:var(--text);border:1px solid rgba(255,255,255,.08);padding:8px 14px;border-radius:9px;font-size:13px;outline:none}.toolbar-select:focus{border-color:var(--gold-mid)}.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:20px}.movie-card{cursor:pointer}.movie-poster{width:100%;aspect-ratio:2/3;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:44px;position:relative;overflow:hidden;transition:transform var(--t-base),box-shadow var(--t-base)}.movie-card:hover .movie-poster{transform:translateY(-4px) scale(1.03);box-shadow:0 12px 32px rgba(0,0,0,.5),0 0 0 1px rgba(232,160,32,.15)}.movie-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);padding:14px 10px 10px}.movie-rating{font-size:11px;color:var(--star);font-weight:700}.movie-name{font-size:13px;font-weight:600;margin-top:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.movie-year{font-size:11px;color:var(--text2);margin-top:2px}
 .day-btn{padding:9px 18px;border-radius:var(--r-md);border:1px solid rgba(255,255,255,.08);background:var(--bg2);color:var(--text2);font-size:13px;font-weight:600;cursor:pointer;transition:var(--t-base);font-family:'Sora',sans-serif}.day-btn.active{background:var(--gold-bg);color:var(--gold-mid);border-color:var(--gold-border)}.day-btn:hover:not(.active){background:var(--bg3);color:var(--text)}.catchup-card{background:var(--card);border-radius:12px;padding:18px;cursor:pointer;border:1px solid rgba(255,255,255,.04);transition:var(--t-base);display:flex;gap:14px;align-items:center}.catchup-card:hover{background:var(--bg3);border-color:rgba(232,160,32,.2)}
 .toast{position:fixed;bottom:28px;right:28px;background:var(--bg2);border:1px solid var(--gold-border);border-radius:var(--r-lg);padding:14px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px rgba(232,160,32,.08);z-index:var(--z-toast);transform:translateY(80px);opacity:0;transition:all .32s cubic-bezier(.34,1.56,.64,1)}.toast.show{transform:translateY(0);opacity:1}.toast-title{font-size:14px;font-weight:600;color:var(--text)}.toast-sub{font-size:12px;color:var(--text2);margin-top:2px}.toast-ico{font-size:20px}.sep{height:1px;background:rgba(255,255,255,.05);margin:0 44px}
+/* Safe no-op: .tv-focused on non-TV is invisible — bayyari-tv-tv.css overrides on TV */
+.tv-focused{}
 @media(max-width:760px){.navbar{padding:0 16px}.nav-links{gap:0;overflow-x:auto}.nav-link{padding:8px 10px}.hero{height:560px;padding:0 20px 44px}.hero h1{font-size:42px}.stats{margin:0 20px;display:grid;grid-template-columns:1fr 1fr}.section,.tabs{padding-left:20px;padding-right:20px}.main[style],#s-movies .main,#s-series .main,#s-catchup .main{padding-left:20px!important;padding-right:20px!important}.login-box{padding:40px 26px}.logo-wordmark{font-size:18px}.hero-art{font-size:130px;right:-18px}}
 </style>
 </head>
@@ -76,15 +80,15 @@ button,select,input{font-family:'Sora',sans-serif;cursor:pointer}.hero h1,.login
       <div class="login-sub">Enter your Bayyari TV credentials to continue</div>
 
       <label class="field-label">Server URL</label>
-      <input class="field-input" type="text" placeholder="https://bayyari.tv" value="https://bayyari.tv">
+      <input class="field-input" type="text" placeholder="https://bayyari.tv" value="https://bayyari.tv" data-focusable>
 
       <label class="field-label">Username</label>
-      <input class="field-input" type="text" placeholder="Your username" value="your_username">
+      <input class="field-input" type="text" placeholder="Your username" value="your_username" data-focusable>
 
       <label class="field-label">Password</label>
-      <input class="field-input" type="password" placeholder="Your password" value="••••••••">
+      <input class="field-input" type="password" placeholder="Your password" value="••••••••" data-focusable>
 
-      <button class="login-btn" id="loginBtn">Sign In &rarr;</button>
+      <button class="login-btn" id="loginBtn" data-focusable>Sign In &rarr;</button>
       <div class="login-footer"><span>Bayyari TV</span> · Subscription Active</div>
     </div>
   </div>
@@ -104,16 +108,16 @@ button,select,input{font-family:'Sora',sans-serif;cursor:pointer}.hero h1,.login
   <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
 </a>
     <div class="nav-links">
-      <button class="nav-link active" onclick="go('home')">Home</button>
-      <button class="nav-link" onclick="go('live')">Live TV</button>
-      <button class="nav-link" onclick="go('movies')">Movies</button>
-      <button class="nav-link" onclick="go('series')">Series</button>
-      <button class="nav-link" onclick="go('catchup')">Catch‑Up</button>
+      <button class="nav-link active" onclick="go('home')" data-focusable>Home</button>
+      <button class="nav-link" onclick="go('live')" data-focusable>Live TV</button>
+      <button class="nav-link" onclick="go('movies')" data-focusable>Movies</button>
+      <button class="nav-link" onclick="go('series')" data-focusable>Series</button>
+      <button class="nav-link" onclick="go('catchup')" data-focusable>Catch‑Up</button>
     </div>
     <div class="nav-right">
-      <button class="icon-btn">🔍</button>
-      <button class="icon-btn">🔔</button>
-      <div class="avatar">BY</div>
+      <button class="icon-btn" data-focusable>🔍</button>
+      <button class="icon-btn" data-focusable>🔔</button>
+      <div class="avatar" data-focusable>BY</div>
     </div>
   </nav>
   <div class="main">
@@ -135,8 +139,8 @@ button,select,input{font-family:'Sora',sans-serif;cursor:pointer}.hero h1,.login
         </div>
         <p class="hero-desc">A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival as Earth faces catastrophic climate change.</p>
         <div class="hero-btns">
-          <button class="btn-play" onclick="toast('Interstellar')">&#9654;&nbsp; Play Now</button>
-          <button class="btn-add">＋&nbsp; My List</button>
+          <button class="btn-play" onclick="toast('Interstellar')" data-focusable>&#9654;&nbsp; Play Now</button>
+          <button class="btn-add" data-focusable>＋&nbsp; My List</button>
         </div>
       </div>
     </div>
@@ -198,23 +202,23 @@ button,select,input{font-family:'Sora',sans-serif;cursor:pointer}.hero h1,.login
   <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
 </a>
     <div class="nav-links">
-      <button class="nav-link" onclick="go('home')">Home</button>
-      <button class="nav-link active">Live TV</button>
-      <button class="nav-link" onclick="go('movies')">Movies</button>
+      <button class="nav-link" onclick="go('home')" data-focusable>Home</button>
+      <button class="nav-link active" data-focusable>Live TV</button>
+      <button class="nav-link" onclick="go('movies')" data-focusable>Movies</button>
     </div>
     <div class="nav-right">
-      <button class="icon-btn">🔍</button>
-      <div class="avatar">BY</div>
+      <button class="icon-btn" data-focusable>🔍</button>
+      <div class="avatar" data-focusable>BY</div>
     </div>
   </nav>
   <div class="main">
     <div class="tabs">
-      <button class="tab active">All Channels</button>
-      <button class="tab">⚽ Sports</button>
-      <button class="tab">📰 News</button>
-      <button class="tab">🎭 Entertainment</button>
-      <button class="tab">🎬 Movies</button>
-      <button class="tab">👶 Kids</button>
+      <button class="tab active" data-focusable>All Channels</button>
+      <button class="tab" data-focusable>⚽ Sports</button>
+      <button class="tab" data-focusable>📰 News</button>
+      <button class="tab" data-focusable>🎭 Entertainment</button>
+      <button class="tab" data-focusable>🎬 Movies</button>
+      <button class="tab" data-focusable>👶 Kids</button>
     </div>
 
     <div style="padding:0 44px 20px;display:flex;align-items:center;justify-content:space-between">
@@ -240,13 +244,13 @@ button,select,input{font-family:'Sora',sans-serif;cursor:pointer}.hero h1,.login
   <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
 </a>
     <div class="nav-links">
-      <button class="nav-link" onclick="go('home')">Home</button>
-      <button class="nav-link" onclick="go('live')">Live TV</button>
-      <button class="nav-link active">Movies</button>
+      <button class="nav-link" onclick="go('home')" data-focusable>Home</button>
+      <button class="nav-link" onclick="go('live')" data-focusable>Live TV</button>
+      <button class="nav-link active" data-focusable>Movies</button>
     </div>
     <div class="nav-right">
-      <button class="icon-btn">🔍</button>
-      <div class="avatar">BY</div>
+      <button class="icon-btn" data-focusable>🔍</button>
+      <div class="avatar" data-focusable>BY</div>
     </div>
   </nav>
   <div class="main" style="padding:24px 44px">
@@ -280,12 +284,12 @@ button,select,input{font-family:'Sora',sans-serif;cursor:pointer}.hero h1,.login
   <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
 </a>
     <div class="nav-links">
-      <button class="nav-link" onclick="go('home')">Home</button>
-      <button class="nav-link" onclick="go('live')">Live TV</button>
-      <button class="nav-link" onclick="go('movies')">Movies</button>
-      <button class="nav-link active">Series</button>
+      <button class="nav-link" onclick="go('home')" data-focusable>Home</button>
+      <button class="nav-link" onclick="go('live')" data-focusable>Live TV</button>
+      <button class="nav-link" onclick="go('movies')" data-focusable>Movies</button>
+      <button class="nav-link active" data-focusable>Series</button>
     </div>
-    <div class="nav-right"><button class="icon-btn">🔍</button><div class="avatar">BY</div></div>
+    <div class="nav-right"><button class="icon-btn" data-focusable>🔍</button><div class="avatar" data-focusable>BY</div></div>
   </nav>
   <div class="main" style="padding:28px 44px">
     <div style="font-size:24px;font-weight:900;margin-bottom:28px">📺 TV Series</div>
@@ -308,10 +312,10 @@ button,select,input{font-family:'Sora',sans-serif;cursor:pointer}.hero h1,.login
   <span class="logo-wordmark"><span class="logo-bayyari">Bayyari</span><span class="logo-tv">TV</span></span>
 </a>
     <div class="nav-links">
-      <button class="nav-link" onclick="go('home')">Home</button>
-      <button class="nav-link active">Catch‑Up</button>
+      <button class="nav-link" onclick="go('home')" data-focusable>Home</button>
+      <button class="nav-link active" data-focusable>Catch‑Up</button>
     </div>
-    <div class="nav-right"><div class="avatar">BY</div></div>
+    <div class="nav-right"><div class="avatar" data-focusable>BY</div></div>
   </nav>
   <div class="main" style="padding:28px 44px">
     <div style="font-size:24px;font-weight:900;margin-bottom:6px">⏪ Catch‑Up TV</div>
@@ -402,7 +406,7 @@ const epgData=[
 // ── Render helpers ───────────────────────────────────────────────
 function wideCard(d){
   const w = d.t.replace(/'/g,"&#39;");
-  return `<div onclick="toast('${w}')">
+  return `<div onclick="toast('${w}')" data-focusable>
     <div class="card card-wide" style="background:${d.c};width:238px;height:136px">
       <div class="card-face">${d.e}</div>
       <div class="prog-bar"><div class="prog-fill" style="width:${d.p}%"></div></div>
@@ -417,7 +421,7 @@ function wideCard(d){
 function posterCard(d){
   const tagClass = d.tag==='NEW'?'new':d.tag==='HD'?'hd':'';
   const w = d.t.replace(/'/g,"&#39;");
-  return `<div onclick="toast('${w}')">
+  return `<div onclick="toast('${w}')" data-focusable>
     <div class="card card-poster" style="background:${d.c};width:148px;height:208px">
       <div class="card-face">${d.e}</div>
       ${d.tag?`<div class="card-tag ${tagClass}">${d.tag}</div>`:''}
@@ -432,7 +436,7 @@ function posterCard(d){
 function movieCard(d){
   const tagClass = d.tag==='NEW'?'new':d.tag==='4K'?'':'';
   const w = d.t.replace(/'/g,"&#39;");
-  return `<div class="movie-card" onclick="toast('${w}')">
+  return `<div class="movie-card" onclick="toast('${w}')" data-focusable>
     <div class="movie-poster" style="background:${d.c}">
       ${d.e ? `<span style="font-size:44px">${d.e}</span>` : ''}
       ${d.tag?`<div class="card-tag" style="top:8px;right:8px;position:absolute;${d.tag==='NEW'?'background:rgba(232,160,32,.9);color:#100A04':''}">${d.tag}</div>`:''}
@@ -455,7 +459,7 @@ function renderEPG(){
       </div>
       <div class="epg-progs">
         ${ch.ps.map(p=>`
-          <div class="epg-prog ${p.now?'now':''}" style="width:${p.w}px;min-width:${p.w}px" onclick="toast('${p.t.replace(/'/g,"&#39;")}')">
+          <div class="epg-prog ${p.now?'now':''}" style="width:${p.w}px;min-width:${p.w}px" onclick="toast('${p.t.replace(/'/g,"&#39;")}')" data-focusable>
             <div class="epg-prog-t">${p.t}</div>
             <div class="epg-prog-s">${p.s}</div>
           </div>
@@ -467,7 +471,7 @@ function renderEPG(){
 
 function renderDayPicker(){
   const days=['Today','Yesterday','Mon 19','Sun 18','Sat 17','Fri 16','Thu 15'];
-  return days.map((d,i)=>`<button class="day-btn${i===0?' active':''}" onclick="selectDay(this)">${d}</button>`).join('');
+  return days.map((d,i)=>`<button class="day-btn${i===0?' active':''}" onclick="selectDay(this)" data-focusable>${d}</button>`).join('');
 }
 
 function renderCatchupGrid(){
@@ -480,7 +484,7 @@ function renderCatchupGrid(){
     {e:'🌍',ch:'BBC News',t:'Breaking News Special',time:'21:30',dur:'45 min'},
   ];
   return programs.map(p=>`
-    <div class="catchup-card" onclick="toast('${p.t}')">
+    <div class="catchup-card" onclick="toast('${p.t}')" data-focusable>
       <div style="font-size:36px;flex-shrink:0">${p.e}</div>
       <div style="flex:1;min-width:0">
         <div style="font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.t}</div>
@@ -502,6 +506,8 @@ function go(name){
   next.style.animation='';
   window.scrollTo({top:0,behavior:'instant'});
   updateNavActive(name);
+  // TV: refresh D-pad focus after screen change — gated, no-op on Android
+  if(window.BayyariDpad?.isEnabled) setTimeout(()=>window.BayyariDpad.refresh(),120);
 }
 function updateNavActive(name){
   document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
@@ -522,6 +528,25 @@ function toast(title){
 function selectDay(btn){
   document.querySelectorAll('.day-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+}
+
+// ── TV exit dialog (called by BayyariDpad on BACK key — TV only) ─
+// Guards inside each function ensure Android never executes this code.
+function showExitDialog(){
+  if(!window.Platform?.isTV()) return;  // Android guard — never runs on mobile
+  const d=document.getElementById('tv-exit-dialog');
+  if(d){ d.style.display='flex'; if(window.BayyariDpad?.isEnabled) window.BayyariDpad.focusById('btn-exit-no'); }
+}
+function closeExitDialog(){
+  if(!window.Platform?.isTV()) return;
+  const d=document.getElementById('tv-exit-dialog');
+  if(d) d.style.display='none';
+}
+function exitApp(){
+  if(!window.Platform?.isTV()) return;
+  window.close();
+  // Fallback for browsers that block window.close()
+  document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-size:1.4rem;color:#9A8F85">Goodbye. You can close this window.</div>';
 }
 
 // ── Init ─────────────────────────────────────────────────────────

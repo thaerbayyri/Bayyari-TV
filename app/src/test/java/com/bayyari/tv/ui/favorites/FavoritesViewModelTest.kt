@@ -34,7 +34,7 @@ class FavoritesViewModelTest {
 
     private val server = Server(
         id = 1, label = "Test", url = "http://test.example.com/",
-        username = "user", password = "pass", isM3uOnly = false
+        username = "user", password = "pass"
     )
 
     private val authRepository = mockk<AuthRepository>(relaxed = true)

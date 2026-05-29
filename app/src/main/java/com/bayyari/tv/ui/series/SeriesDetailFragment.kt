@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bayyari.tv.R
 import com.bayyari.tv.databinding.FragmentSeriesDetailBinding
 import com.bayyari.tv.util.collectStarted
+import com.bayyari.tv.util.toast
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,6 +43,11 @@ class SeriesDetailFragment : Fragment(R.layout.fragment_series_detail) {
         binding?.buttonOpenSeasons?.setOnClickListener {
             val seasonNumber = viewModel.seasons.value.firstOrNull()?.seasonNumber ?: 1
             openSeason(seriesId, seasonNumber)
+        }
+
+        binding?.buttonFavorite?.setOnClickListener {
+            viewModel.addFavorite(seriesId)
+            toast(getString(R.string.favorite_added))
         }
 
         viewLifecycleOwner.collectStarted(viewModel.series) { series ->

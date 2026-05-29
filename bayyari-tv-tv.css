@@ -1,0 +1,339 @@
+/*
+ * Bayyari TV — Smart TV stylesheet
+ * EVERY rule is scoped to html[data-platform="tv"].
+ * This file is only injected by platform-detect.js on TV platforms.
+ * It NEVER loads on Android mobile, iOS, or desktop web.
+ *
+ * Verify isolation: grep -n "^[^h/\*: \t@]" bayyari-tv-tv.css
+ * Expected output: zero lines.
+ */
+
+/* ── TV CSS variables ─────────────────────────────────────────── */
+html[data-platform="tv"] {
+  --tv-text-xs   : 1.4rem;
+  --tv-text-sm   : 1.8rem;
+  --tv-text-base : 2.2rem;
+  --tv-text-lg   : 2.8rem;
+  --tv-text-xl   : 3.6rem;
+  --tv-focus-ring: 0 0 0 4px #f59e0b, 0 0 24px rgba(245,158,11,.45);
+  --tv-card-w    : 200px;
+  --tv-card-h    : 280px;
+  --tv-wide-w    : 320px;
+  --tv-wide-h    : 180px;
+  cursor: none;
+}
+
+/* ── Base typography ──────────────────────────────────────────── */
+html[data-platform="tv"] body {
+  font-size: 20px;
+}
+
+/* ── Focus ring — D-pad adds .tv-focused to the active element ── */
+html[data-platform="tv"] .tv-focused {
+  box-shadow : var(--tv-focus-ring) !important;
+  transform  : scale(1.06) !important;
+  outline    : none !important;
+  transition : box-shadow 120ms ease, transform 120ms ease !important;
+  z-index    : 10;
+  position   : relative;
+}
+
+html[data-platform="tv"] *:focus-visible {
+  box-shadow    : var(--tv-focus-ring);
+  border-radius : inherit;
+  outline       : none;
+}
+
+/* ── Navbar ───────────────────────────────────────────────────── */
+html[data-platform="tv"] .navbar {
+  height  : 80px;
+  padding : 0 60px;
+}
+html[data-platform="tv"] .nav-link {
+  font-size  : 1.1rem;
+  padding    : 12px 24px;
+}
+html[data-platform="tv"] .logo {
+  font-size : 1.3rem;
+  gap       : 14px;
+}
+html[data-platform="tv"] .icon-btn {
+  width     : 48px;
+  height    : 48px;
+  font-size : 1.2rem;
+}
+html[data-platform="tv"] .avatar {
+  width     : 48px;
+  height    : 48px;
+  font-size : 0.9rem;
+}
+
+/* ── Login ────────────────────────────────────────────────────── */
+html[data-platform="tv"] .login-box {
+  width      : min(640px, calc(100vw - 48px));
+  padding    : 64px 56px;
+}
+html[data-platform="tv"] .login-title {
+  font-size : var(--tv-text-lg);
+}
+html[data-platform="tv"] .login-sub {
+  font-size : var(--tv-text-xs);
+}
+html[data-platform="tv"] .field-input {
+  padding   : 18px 20px;
+  font-size : 1.1rem;
+}
+html[data-platform="tv"] .field-label {
+  font-size : 0.85rem;
+}
+html[data-platform="tv"] .login-btn {
+  padding   : 20px;
+  font-size : 1.1rem;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+html[data-platform="tv"] .hero {
+  height  : 640px;
+  padding : 0 60px 64px;
+}
+html[data-platform="tv"] .hero h1 {
+  font-size   : 4.5rem;
+  line-height : 1;
+}
+html[data-platform="tv"] .hero-desc {
+  font-size : 1.1rem;
+}
+html[data-platform="tv"] .hero-meta {
+  font-size : 1rem;
+  gap       : 16px;
+}
+html[data-platform="tv"] .btn-play {
+  padding   : 18px 40px;
+  font-size : 1.1rem;
+}
+html[data-platform="tv"] .btn-add {
+  padding   : 18px 32px;
+  font-size : 1.1rem;
+}
+
+/* ── Stats bar ────────────────────────────────────────────────── */
+html[data-platform="tv"] .stats {
+  margin : 0 60px 4px;
+}
+html[data-platform="tv"] .stat {
+  padding : 24px 28px;
+  gap     : 18px;
+}
+html[data-platform="tv"] .stat-ico {
+  font-size : 2rem;
+}
+html[data-platform="tv"] .stat-lbl {
+  font-size : 0.75rem;
+}
+html[data-platform="tv"] .stat-val {
+  font-size : 1.3rem;
+}
+
+/* ── Sections & rows ──────────────────────────────────────────── */
+html[data-platform="tv"] .section {
+  padding : 36px 60px;
+}
+html[data-platform="tv"] .sec-title {
+  font-size : 1.2rem;
+}
+html[data-platform="tv"] .row {
+  gap            : 20px;
+  padding-bottom : 12px;
+  scrollbar-width: none;
+}
+html[data-platform="tv"] .row::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Cards ────────────────────────────────────────────────────── */
+html[data-platform="tv"] .card-poster {
+  width  : var(--tv-card-w);
+  height : var(--tv-card-h);
+}
+html[data-platform="tv"] .card-wide {
+  width  : var(--tv-wide-w);
+  height : var(--tv-wide-h);
+}
+html[data-platform="tv"] .card-face {
+  font-size : 72px;
+}
+html[data-platform="tv"] .card-name {
+  font-size : 1rem;
+}
+html[data-platform="tv"] .card-sub {
+  font-size : 0.8rem;
+}
+
+/* ── Channel grid ─────────────────────────────────────────────── */
+html[data-platform="tv"] .ch-grid {
+  grid-template-columns : repeat(auto-fill, minmax(200px, 1fr));
+  gap                   : 20px;
+}
+html[data-platform="tv"] .ch-card {
+  padding : 32px 16px 26px;
+  gap     : 14px;
+}
+html[data-platform="tv"] .ch-ico {
+  font-size : 48px;
+}
+html[data-platform="tv"] .ch-name {
+  font-size : 0.95rem;
+}
+html[data-platform="tv"] .ch-now {
+  font-size : 0.75rem;
+}
+
+/* ── EPG ──────────────────────────────────────────────────────── */
+html[data-platform="tv"] .epg-ch {
+  width : 200px;
+}
+html[data-platform="tv"] .epg-ch-ico {
+  font-size : 1.8rem;
+}
+html[data-platform="tv"] .epg-ch-name {
+  font-size : 1rem;
+}
+html[data-platform="tv"] .epg-prog-t {
+  font-size : 1rem;
+}
+html[data-platform="tv"] .epg-prog-s {
+  font-size : 0.8rem;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────── */
+html[data-platform="tv"] .tabs {
+  padding : 28px 60px 0;
+}
+html[data-platform="tv"] .tab {
+  font-size : 1rem;
+  padding   : 12px 28px;
+}
+
+/* ── Movies grid ──────────────────────────────────────────────── */
+html[data-platform="tv"] .movie-grid {
+  grid-template-columns : repeat(auto-fill, minmax(190px, 1fr));
+  gap                   : 28px;
+}
+html[data-platform="tv"] .movie-name {
+  font-size : 1rem;
+}
+html[data-platform="tv"] .movie-year {
+  font-size : 0.8rem;
+}
+
+/* ── Catch-up ─────────────────────────────────────────────────── */
+html[data-platform="tv"] .catchup-card {
+  padding : 24px 22px;
+  gap     : 20px;
+}
+html[data-platform="tv"] .day-btn {
+  padding   : 14px 26px;
+  font-size : 1rem;
+}
+
+/* ── Toast ────────────────────────────────────────────────────── */
+html[data-platform="tv"] .toast {
+  bottom    : 48px;
+  right     : 48px;
+  padding   : 20px 28px;
+}
+html[data-platform="tv"] .toast-title {
+  font-size : 1.1rem;
+}
+html[data-platform="tv"] .toast-sub {
+  font-size : 0.9rem;
+}
+
+/* ── TV exit dialog ───────────────────────────────────────────── */
+html[data-platform="tv"] .tv-exit-dialog {
+  position        : fixed;
+  inset           : 0;
+  background      : rgba(0, 0, 0, .75);
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  z-index         : 9999;
+}
+html[data-platform="tv"] .tv-exit-box {
+  background    : #1C1A18;
+  border        : 1px solid rgba(232, 160, 32, .3);
+  border-radius : 16px;
+  padding       : 48px 56px;
+  text-align    : center;
+  min-width     : 400px;
+  box-shadow    : 0 32px 80px rgba(0, 0, 0, .7);
+}
+html[data-platform="tv"] .tv-exit-title {
+  font-size     : 2rem;
+  font-weight   : 700;
+  color         : #F2EDE8;
+  margin-bottom : 10px;
+}
+html[data-platform="tv"] .tv-exit-sub {
+  font-size     : 1rem;
+  color         : #9A8F85;
+  margin-bottom : 36px;
+}
+html[data-platform="tv"] .tv-exit-buttons {
+  display         : flex;
+  gap             : 20px;
+  justify-content : center;
+}
+html[data-platform="tv"] .tv-exit-buttons button {
+  padding       : 16px 40px;
+  border-radius : 10px;
+  font-size     : 1rem;
+  font-weight   : 700;
+  cursor        : pointer;
+  border        : 1px solid rgba(255, 255, 255, .12);
+  background    : rgba(255, 255, 255, .08);
+  color         : #F2EDE8;
+  transition    : background 150ms ease;
+  font-family   : 'Sora', sans-serif;
+}
+html[data-platform="tv"] #btn-exit-yes {
+  background : #E8A020;
+  color      : #050300;
+  border     : none;
+}
+
+/* ── TV channel number overlay ────────────────────────────────── */
+html[data-platform="tv"] .tv-channel-num {
+  position      : fixed;
+  top           : 90px;
+  right         : 48px;
+  background    : rgba(0, 0, 0, .82);
+  border        : 1px solid rgba(232, 160, 32, .35);
+  border-radius : 12px;
+  padding       : 14px 24px;
+  font-size     : 2.4rem;
+  font-weight   : 800;
+  color         : #F5C842;
+  z-index       : 8000;
+  display       : none;
+  min-width     : 80px;
+  text-align    : center;
+}
+html[data-platform="tv"] .tv-channel-num.visible {
+  display : block;
+}
+
+/* ── Scrollbar hidden on TV (D-pad scrolls) ───────────────────── */
+html[data-platform="tv"] ::-webkit-scrollbar {
+  display : none;
+}
+html[data-platform="tv"] * {
+  scrollbar-width : none;
+}
+
+/* ── Responsive override: TV is always wide ───────────────────── */
+@media (max-width: 760px) {
+  html[data-platform="tv"] .navbar { padding: 0 60px !important; }
+  html[data-platform="tv"] .hero   { padding: 0 60px 64px !important; }
+  html[data-platform="tv"] .stats  { display: flex !important; margin: 0 60px !important; }
+}

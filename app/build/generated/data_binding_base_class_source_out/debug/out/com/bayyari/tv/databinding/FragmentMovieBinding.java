@@ -4,6 +4,7 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -15,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bayyari.tv.R;
-import com.google.android.material.chip.ChipGroup;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -25,10 +25,16 @@ public final class FragmentMovieBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ChipGroup chipCategories;
+  public final ImageButton buttonMovieSearch;
+
+  @NonNull
+  public final View divider1;
 
   @NonNull
   public final LinearLayout headerRow;
+
+  @NonNull
+  public final RecyclerView recyclerCategories;
 
   @NonNull
   public final RecyclerView recyclerMovies;
@@ -43,12 +49,15 @@ public final class FragmentMovieBinding implements ViewBinding {
   public final TextView textMovieCount;
 
   private FragmentMovieBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ChipGroup chipCategories, @NonNull LinearLayout headerRow,
+      @NonNull ImageButton buttonMovieSearch, @NonNull View divider1,
+      @NonNull LinearLayout headerRow, @NonNull RecyclerView recyclerCategories,
       @NonNull RecyclerView recyclerMovies, @NonNull SearchView searchMovies,
       @NonNull Spinner spinnerSort, @NonNull TextView textMovieCount) {
     this.rootView = rootView;
-    this.chipCategories = chipCategories;
+    this.buttonMovieSearch = buttonMovieSearch;
+    this.divider1 = divider1;
     this.headerRow = headerRow;
+    this.recyclerCategories = recyclerCategories;
     this.recyclerMovies = recyclerMovies;
     this.searchMovies = searchMovies;
     this.spinnerSort = spinnerSort;
@@ -82,15 +91,27 @@ public final class FragmentMovieBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.chipCategories;
-      ChipGroup chipCategories = ViewBindings.findChildViewById(rootView, id);
-      if (chipCategories == null) {
+      id = R.id.buttonMovieSearch;
+      ImageButton buttonMovieSearch = ViewBindings.findChildViewById(rootView, id);
+      if (buttonMovieSearch == null) {
+        break missingId;
+      }
+
+      id = R.id.divider1;
+      View divider1 = ViewBindings.findChildViewById(rootView, id);
+      if (divider1 == null) {
         break missingId;
       }
 
       id = R.id.headerRow;
       LinearLayout headerRow = ViewBindings.findChildViewById(rootView, id);
       if (headerRow == null) {
+        break missingId;
+      }
+
+      id = R.id.recyclerCategories;
+      RecyclerView recyclerCategories = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerCategories == null) {
         break missingId;
       }
 
@@ -118,8 +139,8 @@ public final class FragmentMovieBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentMovieBinding((ConstraintLayout) rootView, chipCategories, headerRow,
-          recyclerMovies, searchMovies, spinnerSort, textMovieCount);
+      return new FragmentMovieBinding((ConstraintLayout) rootView, buttonMovieSearch, divider1,
+          headerRow, recyclerCategories, recyclerMovies, searchMovies, spinnerSort, textMovieCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

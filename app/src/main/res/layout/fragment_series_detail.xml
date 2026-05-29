@@ -91,6 +91,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/series_seasons" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonFavorite"
+                        style="@style/Widget.Bayyari.Button.Ghost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/favorite_action_short" />
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>

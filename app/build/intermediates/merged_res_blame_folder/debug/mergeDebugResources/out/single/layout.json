@@ -4,6 +4,10 @@
         "source": "com.bayyari.tv.app-main-67:/layout/item_channel.xml"
     },
     {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/dialog_welcome_popup.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/dialog_welcome_popup.xml"
+    },
+    {
         "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/view_epg_overlay.xml",
         "source": "com.bayyari.tv.app-main-67:/layout/view_epg_overlay.xml"
     },
@@ -12,12 +16,20 @@
         "source": "com.bayyari.tv.app-main-67:/layout/fragment_series_detail.xml"
     },
     {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_channel_row.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_channel_row.xml"
+    },
+    {
         "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_movie_player.xml",
         "source": "com.bayyari.tv.app-main-67:/layout/activity_movie_player.xml"
     },
     {
         "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_favorites.xml",
         "source": "com.bayyari.tv.app-main-67:/layout/fragment_favorites.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/activity_sync.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/activity_sync.xml"
     },
     {
         "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_movie.xml",
@@ -148,6 +160,10 @@
         "source": "com.bayyari.tv.app-main-67:/layout/activity_live_player.xml"
     },
     {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/dialog_add_playlist.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/dialog_add_playlist.xml"
+    },
+    {
         "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_server_manager.xml",
         "source": "com.bayyari.tv.app-main-67:/layout/fragment_server_manager.xml"
     },
@@ -158,6 +174,14 @@
     {
         "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_category.xml",
         "source": "com.bayyari.tv.app-main-67:/layout/item_category.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/dialog_translation_tracks.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/dialog_translation_tracks.xml"
+    },
+    {
+        "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/item_favorite_home.xml",
+        "source": "com.bayyari.tv.app-main-67:/layout/item_favorite_home.xml"
     },
     {
         "merged": "com.bayyari.tv.app-mergeDebugResources-64:/layout/fragment_search_results.xml",

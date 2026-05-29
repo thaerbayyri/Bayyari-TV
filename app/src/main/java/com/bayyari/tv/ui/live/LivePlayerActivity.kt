@@ -83,7 +83,7 @@ class LivePlayerActivity : BaseActivity() {
             }
 
             override fun onPlayerError(error: PlaybackException) {
-                Log.e(TAG, "Player error code=${error.errorCode} message=${error.message}", error)
+                Log.e(TAG, "Player error code=${error.errorCode}")
                 if (streamCandidateIndex < streamCandidates.lastIndex) {
                     streamCandidateIndex += 1
                     Log.w(TAG, "Retrying live stream with fallback candidate $streamCandidateIndex")
@@ -103,7 +103,7 @@ class LivePlayerActivity : BaseActivity() {
         if (directUrl.isNotBlank()) {
             binding.playerControls.setTitle(directName.ifBlank { "Live stream" })
             binding.playerControls.setSubtitle(getString(R.string.live_now_playing, ""))
-            Log.d(TAG, "Preparing direct stream url=$directUrl")
+            Log.d(TAG, "Preparing direct stream")
             streamCandidates = buildLiveCandidates(directUrl, streamId)
             streamCandidateIndex = 0
             prepareCurrentCandidate()

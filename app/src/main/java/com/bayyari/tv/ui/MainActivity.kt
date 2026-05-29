@@ -4,15 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
-import android.content.pm.ActivityInfo
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import com.bayyari.tv.R
 import com.bayyari.tv.databinding.ActivityMainBinding
+import com.bayyari.tv.update.StartupUpdateController
+import com.bayyari.tv.update.UpdateManager
 import com.bayyari.tv.util.Constants
 import com.bayyari.tv.util.CrashReporter
+import com.bayyari.tv.util.isTelevisionDevice
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -28,6 +31,12 @@ class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private lateinit var updateController: StartupUpdateController
+    private val updateManager: UpdateManager by lazy { UpdateManager(applicationContext) }
+
+    private val installPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { updateController.onInstallPermissionResult() }
 
     private val chipDestinations: List<Pair<Int, Int>> by lazy {
         listOf(
@@ -44,11 +53,24 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if (isTelevisionDevice()) {
+            startActivity(Intent(this, TvMainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+            finish()
+            return
+        }
+
         if (!hasActiveServer()) {
             startActivity(Intent(this, com.bayyari.tv.ui.auth.LoginActivity::class.java))
             finish()
             return
         }
+
+        updateController = StartupUpdateController(
+            activity = this,
+            updateManager = updateManager,
+            installPermissionLauncher = installPermissionLauncher,
+            tag = TAG
+        )
 
         try {
             binding = ActivityMainBinding.inflate(layoutInflater)
@@ -77,7 +99,6 @@ class MainActivity : BaseActivity() {
 
             navController.addOnDestinationChangedListener { _, destination, _ ->
                 highlightChip(destination)
-                updateOrientation(destination)
             }
 
             // Icon buttons (top right)
@@ -99,6 +120,10 @@ class MainActivity : BaseActivity() {
 
             // Initial highlight
             navController.currentDestination?.let { highlightChip(it) }
+
+            if (savedInstanceState == null) {
+                updateController.checkOnOpen()
+            }
         } catch (t: Throwable) {
             Log.e(TAG, "MainActivity setup failed", t)
             runCatching { crashReporter.recordException(t) }
@@ -121,27 +146,17 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun updateOrientation(destination: NavDestination) {
-        requestedOrientation = when (destination.id) {
-            R.id.homeFragment,
-            R.id.settingsFragment,
-            R.id.serverManagerFragment,
-            R.id.searchFragment -> ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
-            R.id.liveFragment,
-            R.id.movieFragment,
-            R.id.movieDetailFragment,
-            R.id.seriesFragment,
-            R.id.seriesDetailFragment,
-            R.id.seasonFragment,
-            R.id.catchUpFragment,
-            R.id.favoritesFragment -> ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
-            else -> ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        }
-    }
-
     private fun hasActiveServer(): Boolean =
         getSharedPreferences(Constants.APP_PREFS, MODE_PRIVATE)
             .getBoolean(Constants.PREF_HAS_ACTIVE_SERVER, false)
+
+    /**
+     * Manual hook for testing the self-updater from this host activity without changing startup.
+     * Wire this to a debug-only button or call it from temporary test code when needed.
+     */
+    fun checkForUpdatesForTesting() {
+        updateController.checkManually()
+    }
 
     companion object {
         private const val TAG = "MainActivity"

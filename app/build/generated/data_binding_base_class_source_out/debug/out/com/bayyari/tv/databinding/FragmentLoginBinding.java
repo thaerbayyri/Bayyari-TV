@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -24,9 +25,6 @@ public final class FragmentLoginBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final TextView buttonAddM3u;
-
-  @NonNull
   public final MaterialButton buttonLogin;
 
   @NonNull
@@ -42,23 +40,26 @@ public final class FragmentLoginBinding implements ViewBinding {
   public final LinearLayout loginCard;
 
   @NonNull
+  public final ProgressBar progressLogin;
+
+  @NonNull
   public final SwitchMaterial switchRemember;
 
   @NonNull
   public final TextView textServerInfo;
 
-  private FragmentLoginBinding(@NonNull ScrollView rootView, @NonNull TextView buttonAddM3u,
-      @NonNull MaterialButton buttonLogin, @NonNull TextInputEditText editPassword,
-      @NonNull TextInputEditText editServer, @NonNull TextInputEditText editUsername,
-      @NonNull LinearLayout loginCard, @NonNull SwitchMaterial switchRemember,
+  private FragmentLoginBinding(@NonNull ScrollView rootView, @NonNull MaterialButton buttonLogin,
+      @NonNull TextInputEditText editPassword, @NonNull TextInputEditText editServer,
+      @NonNull TextInputEditText editUsername, @NonNull LinearLayout loginCard,
+      @NonNull ProgressBar progressLogin, @NonNull SwitchMaterial switchRemember,
       @NonNull TextView textServerInfo) {
     this.rootView = rootView;
-    this.buttonAddM3u = buttonAddM3u;
     this.buttonLogin = buttonLogin;
     this.editPassword = editPassword;
     this.editServer = editServer;
     this.editUsername = editUsername;
     this.loginCard = loginCard;
+    this.progressLogin = progressLogin;
     this.switchRemember = switchRemember;
     this.textServerInfo = textServerInfo;
   }
@@ -90,12 +91,6 @@ public final class FragmentLoginBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.buttonAddM3u;
-      TextView buttonAddM3u = ViewBindings.findChildViewById(rootView, id);
-      if (buttonAddM3u == null) {
-        break missingId;
-      }
-
       id = R.id.buttonLogin;
       MaterialButton buttonLogin = ViewBindings.findChildViewById(rootView, id);
       if (buttonLogin == null) {
@@ -126,6 +121,12 @@ public final class FragmentLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressLogin;
+      ProgressBar progressLogin = ViewBindings.findChildViewById(rootView, id);
+      if (progressLogin == null) {
+        break missingId;
+      }
+
       id = R.id.switchRemember;
       SwitchMaterial switchRemember = ViewBindings.findChildViewById(rootView, id);
       if (switchRemember == null) {
@@ -138,8 +139,8 @@ public final class FragmentLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentLoginBinding((ScrollView) rootView, buttonAddM3u, buttonLogin,
-          editPassword, editServer, editUsername, loginCard, switchRemember, textServerInfo);
+      return new FragmentLoginBinding((ScrollView) rootView, buttonLogin, editPassword, editServer,
+          editUsername, loginCard, progressLogin, switchRemember, textServerInfo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

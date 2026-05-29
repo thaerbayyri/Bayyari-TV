@@ -4,6 +4,9 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -20,12 +23,34 @@ public final class FragmentSeasonBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageButton buttonBack;
+
+  @NonNull
   public final RecyclerView recyclerEpisodes;
 
-  private FragmentSeasonBinding(@NonNull ConstraintLayout rootView,
-      @NonNull RecyclerView recyclerEpisodes) {
+  @NonNull
+  public final RecyclerView recyclerSeasons;
+
+  @NonNull
+  public final LinearLayout seasonRail;
+
+  @NonNull
+  public final TextView textEpisodesMeta;
+
+  @NonNull
+  public final TextView textEpisodesTitle;
+
+  private FragmentSeasonBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton buttonBack,
+      @NonNull RecyclerView recyclerEpisodes, @NonNull RecyclerView recyclerSeasons,
+      @NonNull LinearLayout seasonRail, @NonNull TextView textEpisodesMeta,
+      @NonNull TextView textEpisodesTitle) {
     this.rootView = rootView;
+    this.buttonBack = buttonBack;
     this.recyclerEpisodes = recyclerEpisodes;
+    this.recyclerSeasons = recyclerSeasons;
+    this.seasonRail = seasonRail;
+    this.textEpisodesMeta = textEpisodesMeta;
+    this.textEpisodesTitle = textEpisodesTitle;
   }
 
   @Override
@@ -55,13 +80,44 @@ public final class FragmentSeasonBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonBack;
+      ImageButton buttonBack = ViewBindings.findChildViewById(rootView, id);
+      if (buttonBack == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerEpisodes;
       RecyclerView recyclerEpisodes = ViewBindings.findChildViewById(rootView, id);
       if (recyclerEpisodes == null) {
         break missingId;
       }
 
-      return new FragmentSeasonBinding((ConstraintLayout) rootView, recyclerEpisodes);
+      id = R.id.recyclerSeasons;
+      RecyclerView recyclerSeasons = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerSeasons == null) {
+        break missingId;
+      }
+
+      id = R.id.seasonRail;
+      LinearLayout seasonRail = ViewBindings.findChildViewById(rootView, id);
+      if (seasonRail == null) {
+        break missingId;
+      }
+
+      id = R.id.textEpisodesMeta;
+      TextView textEpisodesMeta = ViewBindings.findChildViewById(rootView, id);
+      if (textEpisodesMeta == null) {
+        break missingId;
+      }
+
+      id = R.id.textEpisodesTitle;
+      TextView textEpisodesTitle = ViewBindings.findChildViewById(rootView, id);
+      if (textEpisodesTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentSeasonBinding((ConstraintLayout) rootView, buttonBack, recyclerEpisodes,
+          recyclerSeasons, seasonRail, textEpisodesMeta, textEpisodesTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -27,10 +27,23 @@ object Constants {
     const val REFRESH_WORK_NAME = "bayyari_refresh"
     const val REFRESH_INTERVAL_HOURS = 6L
 
+    // Self updater for testing builds outside Google Play.
+    // update.json provides version metadata; UPDATE_APK_URL is the APK that gets downloaded.
+    const val UPDATE_JSON_URL = "https://thaerbayyari.com/bayyari-update/update.json"
+    const val UPDATE_APK_URL = "https://thaerbayyari.com/bayyari-update/bayyari-tv.apk"
+    const val APK_ASSET_NAME = "bayyari-tv.apk"
+
     // External players
     const val PKG_VLC = "org.videolan.vlc"
     const val PKG_MX_PRO = "com.mxtech.videoplayer.pro"
     const val PKG_MX_FREE = "com.mxtech.videoplayer.ad"
+
+    // Category names that are hidden by default in the live channel list.
+    // Matched case-insensitively as a prefix so "AR | BEIN MAX L" also hides
+    // "AR | BEIN MAX L HD", "AR | BEIN MAX L 1", etc.
+    val DEFAULT_HIDDEN_LIVE_CATEGORY_NAMES: List<String> = listOf(
+        "AR | BEIN MAX L"
+    )
 
     // Pref keys
     const val PREF_ACTIVE_SERVER = "active_server_id"
@@ -48,4 +61,5 @@ object Constants {
     const val PREF_HIDDEN_SERIES_CATEGORIES = "hidden_series_categories"
     const val PREF_LIVE_SORT_MODE = "live_sort_mode"
     const val PREF_SERIES_SORT_MODE = "series_sort_mode"
+    const val PREF_FORCE_PHONE_UI = "force_phone_ui"
 }

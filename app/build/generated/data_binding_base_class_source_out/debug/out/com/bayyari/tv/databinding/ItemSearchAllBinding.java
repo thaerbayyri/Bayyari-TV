@@ -4,29 +4,46 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.bayyari.tv.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ItemSearchAllBinding implements ViewBinding {
   @NonNull
-  private final TextView rootView;
+  private final LinearLayout rootView;
+
+  @NonNull
+  public final ImageView imageThumbnail;
+
+  @NonNull
+  public final TextView textBadge;
 
   @NonNull
   public final TextView textTitle;
 
-  private ItemSearchAllBinding(@NonNull TextView rootView, @NonNull TextView textTitle) {
+  @NonNull
+  public final TextView textType;
+
+  private ItemSearchAllBinding(@NonNull LinearLayout rootView, @NonNull ImageView imageThumbnail,
+      @NonNull TextView textBadge, @NonNull TextView textTitle, @NonNull TextView textType) {
     this.rootView = rootView;
+    this.imageThumbnail = imageThumbnail;
+    this.textBadge = textBadge;
     this.textTitle = textTitle;
+    this.textType = textType;
   }
 
   @Override
   @NonNull
-  public TextView getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -47,12 +64,38 @@ public final class ItemSearchAllBinding implements ViewBinding {
 
   @NonNull
   public static ItemSearchAllBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.imageThumbnail;
+      ImageView imageThumbnail = ViewBindings.findChildViewById(rootView, id);
+      if (imageThumbnail == null) {
+        break missingId;
+      }
+
+      id = R.id.textBadge;
+      TextView textBadge = ViewBindings.findChildViewById(rootView, id);
+      if (textBadge == null) {
+        break missingId;
+      }
+
+      id = R.id.textTitle;
+      TextView textTitle = ViewBindings.findChildViewById(rootView, id);
+      if (textTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.textType;
+      TextView textType = ViewBindings.findChildViewById(rootView, id);
+      if (textType == null) {
+        break missingId;
+      }
+
+      return new ItemSearchAllBinding((LinearLayout) rootView, imageThumbnail, textBadge, textTitle,
+          textType);
     }
-
-    TextView textTitle = (TextView) rootView;
-
-    return new ItemSearchAllBinding((TextView) rootView, textTitle);
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

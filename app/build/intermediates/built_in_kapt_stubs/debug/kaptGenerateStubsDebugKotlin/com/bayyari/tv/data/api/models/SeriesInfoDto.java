@@ -2,6 +2,7 @@ package com.bayyari.tv.data.api.models;
 
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.JsonElement;
 
 /**
  * Response shape for `action=get_series_info`. The `episodes` field is unusual: the upstream

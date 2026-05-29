@@ -9,6 +9,7 @@ import androidx.room.util.SQLiteStatementUtil;
 import androidx.sqlite.SQLiteStatement;
 import com.bayyari.tv.data.local.entities.SeriesEntity;
 import java.lang.Class;
+import java.lang.Integer;
 import java.lang.NullPointerException;
 import java.lang.Object;
 import java.lang.Override;
@@ -24,7 +25,7 @@ import kotlinx.coroutines.flow.Flow;
 
 @Generated("androidx.room.RoomProcessor")
 @SuppressWarnings({"unchecked", "deprecation", "removal"})
-public final class SeriesDao_Impl implements SeriesDao {
+public final class SeriesDao_Impl extends SeriesDao {
   private final RoomDatabase __db;
 
   private final EntityInsertAdapter<SeriesEntity> __insertAdapterOfSeriesEntity;
@@ -100,6 +101,14 @@ public final class SeriesDao_Impl implements SeriesDao {
     return DBUtil.performSuspending(__db, false, true, (_connection) -> {
       __insertAdapterOfSeriesEntity.insert(_connection, items);
       return Unit.INSTANCE;
+    }, $completion);
+  }
+
+  @Override
+  public Object replaceAllForServer(final int serverId, final List<SeriesEntity> entities,
+      final Continuation<? super Unit> $completion) {
+    return DBUtil.performInTransactionSuspending(__db, (_cont) -> {
+      return SeriesDao_Impl.super.replaceAllForServer(serverId, entities, _cont);
     }, $completion);
   }
 
@@ -389,6 +398,61 @@ public final class SeriesDao_Impl implements SeriesDao {
         _stmt.close();
       }
     }, $completion);
+  }
+
+  @Override
+  public Object countForServer(final int serverId,
+      final Continuation<? super Integer> $completion) {
+    final String _sql = "SELECT COUNT(*) FROM series WHERE serverId = ?";
+    return DBUtil.performSuspending(__db, true, false, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, serverId);
+        final Integer _result;
+        if (_stmt.step()) {
+          final Integer _tmp;
+          if (_stmt.isNull(0)) {
+            _tmp = null;
+          } else {
+            _tmp = (int) (_stmt.getLong(0));
+          }
+          _result = _tmp;
+        } else {
+          _result = null;
+        }
+        return _result;
+      } finally {
+        _stmt.close();
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Flow<Integer> observeCount(final int serverId) {
+    final String _sql = "SELECT COUNT(*) FROM series WHERE serverId = ?";
+    return FlowUtil.createFlow(__db, false, new String[] {"series"}, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, serverId);
+        final Integer _result;
+        if (_stmt.step()) {
+          final Integer _tmp;
+          if (_stmt.isNull(0)) {
+            _tmp = null;
+          } else {
+            _tmp = (int) (_stmt.getLong(0));
+          }
+          _result = _tmp;
+        } else {
+          _result = null;
+        }
+        return _result;
+      } finally {
+        _stmt.close();
+      }
+    });
   }
 
   @Override

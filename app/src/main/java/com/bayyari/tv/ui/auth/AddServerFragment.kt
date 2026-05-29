@@ -11,6 +11,7 @@ import com.bayyari.tv.data.repository.AuthRepository
 import com.bayyari.tv.databinding.FragmentAddServerBinding
 import com.bayyari.tv.ui.MainActivity
 import com.bayyari.tv.ui.sync.SyncActivity
+import com.bayyari.tv.util.isTelevisionDevice
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -61,6 +62,7 @@ class AddServerFragment : Fragment(R.layout.fragment_add_server) {
                     startActivity(
                         Intent(requireContext(), SyncActivity::class.java)
                             .putExtra(MainActivity.EXTRA_SHOW_WELCOME_POPUP, true)
+                            .putExtra(SyncActivity.EXTRA_TV_ENTRY, shouldReturnToTv())
                             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     )
                     requireActivity().finish()
@@ -81,4 +83,8 @@ class AddServerFragment : Fragment(R.layout.fragment_add_server) {
         binding = null
         super.onDestroyView()
     }
+
+    private fun shouldReturnToTv(): Boolean =
+        requireActivity().intent.getBooleanExtra(LoginActivity.EXTRA_TV_ENTRY, false) ||
+            requireContext().isTelevisionDevice()
 }

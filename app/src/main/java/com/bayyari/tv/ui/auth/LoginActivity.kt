@@ -17,4 +17,8 @@ class LoginActivity : com.bayyari.tv.ui.BaseActivity() {
                 .commit()
         }
     }
+
+    companion object {
+        const val EXTRA_TV_ENTRY = "extra_tv_entry"
+    }
 }

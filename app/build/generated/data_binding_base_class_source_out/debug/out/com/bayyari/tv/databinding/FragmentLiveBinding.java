@@ -4,16 +4,20 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.media3.ui.PlayerView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bayyari.tv.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,7 +27,40 @@ public final class FragmentLiveBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final MaterialButton buttonAddFav;
+
+  @NonNull
+  public final MaterialButton buttonCatchUp;
+
+  @NonNull
+  public final MaterialButton buttonEpg;
+
+  @NonNull
+  public final ImageButton buttonFavorite;
+
+  @NonNull
+  public final ImageButton buttonLiveSearch;
+
+  @NonNull
+  public final ImageButton buttonLiveSort;
+
+  @NonNull
+  public final LinearLayout channelPanel;
+
+  @NonNull
+  public final View divider1;
+
+  @NonNull
+  public final View divider2;
+
+  @NonNull
   public final LinearLayout liveHeader;
+
+  @NonNull
+  public final CardView previewCard;
+
+  @NonNull
+  public final PlayerView previewPlayerView;
 
   @NonNull
   public final RecyclerView recyclerCategories;
@@ -37,15 +74,41 @@ public final class FragmentLiveBinding implements ViewBinding {
   @NonNull
   public final TextView textLiveCount;
 
-  private FragmentLiveBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout liveHeader,
-      @NonNull RecyclerView recyclerCategories, @NonNull RecyclerView recyclerChannels,
-      @NonNull SearchView searchLive, @NonNull TextView textLiveCount) {
+  @NonNull
+  public final TextView textPreviewMeta;
+
+  @NonNull
+  public final TextView textPreviewTitle;
+
+  private FragmentLiveBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton buttonAddFav, @NonNull MaterialButton buttonCatchUp,
+      @NonNull MaterialButton buttonEpg, @NonNull ImageButton buttonFavorite,
+      @NonNull ImageButton buttonLiveSearch, @NonNull ImageButton buttonLiveSort,
+      @NonNull LinearLayout channelPanel, @NonNull View divider1, @NonNull View divider2,
+      @NonNull LinearLayout liveHeader, @NonNull CardView previewCard,
+      @NonNull PlayerView previewPlayerView, @NonNull RecyclerView recyclerCategories,
+      @NonNull RecyclerView recyclerChannels, @NonNull SearchView searchLive,
+      @NonNull TextView textLiveCount, @NonNull TextView textPreviewMeta,
+      @NonNull TextView textPreviewTitle) {
     this.rootView = rootView;
+    this.buttonAddFav = buttonAddFav;
+    this.buttonCatchUp = buttonCatchUp;
+    this.buttonEpg = buttonEpg;
+    this.buttonFavorite = buttonFavorite;
+    this.buttonLiveSearch = buttonLiveSearch;
+    this.buttonLiveSort = buttonLiveSort;
+    this.channelPanel = channelPanel;
+    this.divider1 = divider1;
+    this.divider2 = divider2;
     this.liveHeader = liveHeader;
+    this.previewCard = previewCard;
+    this.previewPlayerView = previewPlayerView;
     this.recyclerCategories = recyclerCategories;
     this.recyclerChannels = recyclerChannels;
     this.searchLive = searchLive;
     this.textLiveCount = textLiveCount;
+    this.textPreviewMeta = textPreviewMeta;
+    this.textPreviewTitle = textPreviewTitle;
   }
 
   @Override
@@ -75,9 +138,75 @@ public final class FragmentLiveBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonAddFav;
+      MaterialButton buttonAddFav = ViewBindings.findChildViewById(rootView, id);
+      if (buttonAddFav == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonCatchUp;
+      MaterialButton buttonCatchUp = ViewBindings.findChildViewById(rootView, id);
+      if (buttonCatchUp == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonEpg;
+      MaterialButton buttonEpg = ViewBindings.findChildViewById(rootView, id);
+      if (buttonEpg == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonFavorite;
+      ImageButton buttonFavorite = ViewBindings.findChildViewById(rootView, id);
+      if (buttonFavorite == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonLiveSearch;
+      ImageButton buttonLiveSearch = ViewBindings.findChildViewById(rootView, id);
+      if (buttonLiveSearch == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonLiveSort;
+      ImageButton buttonLiveSort = ViewBindings.findChildViewById(rootView, id);
+      if (buttonLiveSort == null) {
+        break missingId;
+      }
+
+      id = R.id.channelPanel;
+      LinearLayout channelPanel = ViewBindings.findChildViewById(rootView, id);
+      if (channelPanel == null) {
+        break missingId;
+      }
+
+      id = R.id.divider1;
+      View divider1 = ViewBindings.findChildViewById(rootView, id);
+      if (divider1 == null) {
+        break missingId;
+      }
+
+      id = R.id.divider2;
+      View divider2 = ViewBindings.findChildViewById(rootView, id);
+      if (divider2 == null) {
+        break missingId;
+      }
+
       id = R.id.liveHeader;
       LinearLayout liveHeader = ViewBindings.findChildViewById(rootView, id);
       if (liveHeader == null) {
+        break missingId;
+      }
+
+      id = R.id.previewCard;
+      CardView previewCard = ViewBindings.findChildViewById(rootView, id);
+      if (previewCard == null) {
+        break missingId;
+      }
+
+      id = R.id.previewPlayerView;
+      PlayerView previewPlayerView = ViewBindings.findChildViewById(rootView, id);
+      if (previewPlayerView == null) {
         break missingId;
       }
 
@@ -105,8 +234,22 @@ public final class FragmentLiveBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentLiveBinding((ConstraintLayout) rootView, liveHeader, recyclerCategories,
-          recyclerChannels, searchLive, textLiveCount);
+      id = R.id.textPreviewMeta;
+      TextView textPreviewMeta = ViewBindings.findChildViewById(rootView, id);
+      if (textPreviewMeta == null) {
+        break missingId;
+      }
+
+      id = R.id.textPreviewTitle;
+      TextView textPreviewTitle = ViewBindings.findChildViewById(rootView, id);
+      if (textPreviewTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentLiveBinding((ConstraintLayout) rootView, buttonAddFav, buttonCatchUp,
+          buttonEpg, buttonFavorite, buttonLiveSearch, buttonLiveSort, channelPanel, divider1,
+          divider2, liveHeader, previewCard, previewPlayerView, recyclerCategories,
+          recyclerChannels, searchLive, textLiveCount, textPreviewMeta, textPreviewTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

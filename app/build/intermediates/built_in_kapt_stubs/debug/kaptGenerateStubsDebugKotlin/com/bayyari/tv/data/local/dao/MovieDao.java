@@ -4,12 +4,17 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import com.bayyari.tv.data.local.entities.MovieEntity;
 import kotlinx.coroutines.flow.Flow;
 
-@kotlin.Metadata(mv = {2, 2, 0}, k = 1, xi = 48, d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\t\bg\u0018\u00002\u00020\u0001J\u001c\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005H\u00a7@\u00a2\u0006\u0002\u0010\u0007J\u0016\u0010\b\u001a\u00020\u00032\u0006\u0010\t\u001a\u00020\nH\u00a7@\u00a2\u0006\u0002\u0010\u000bJ\u001c\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00050\r2\u0006\u0010\t\u001a\u00020\nH\'J$\u0010\u000e\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u00050\r2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000f\u001a\u00020\u0010H\'J$\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u0012\u001a\u00020\nH\u00a7@\u00a2\u0006\u0002\u0010\u0013J \u0010\u0014\u001a\u0004\u0018\u00010\u00062\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u0015\u001a\u00020\nH\u00a7@\u00a2\u0006\u0002\u0010\u0013J$\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u0017\u001a\u00020\u0010H\u00a7@\u00a2\u0006\u0002\u0010\u0018\u00a8\u0006\u0019\u00c0\u0006\u0003"}, d2 = {"Lcom/bayyari/tv/data/local/dao/MovieDao;", "", "upsertAll", "", "movies", "", "Lcom/bayyari/tv/data/local/entities/MovieEntity;", "(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "clearForServer", "serverId", "", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "observeAll", "Lkotlinx/coroutines/flow/Flow;", "observeByCategory", "categoryId", "", "latest", "limit", "(IILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "findById", "streamId", "search", "query", "(ILjava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "app"})
+@kotlin.Metadata(mv = {2, 2, 0}, k = 1, xi = 48, d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u000b\b\'\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\b\u0002\u0010\u0003J\u001c\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007H\u00a7@\u00a2\u0006\u0002\u0010\tJ\u0016\u0010\n\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\fH\u00a7@\u00a2\u0006\u0002\u0010\rJ$\u0010\u000e\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\f2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\b0\u0007H\u0097@\u00a2\u0006\u0002\u0010\u0010J\u001c\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u00122\u0006\u0010\u000b\u001a\u00020\fH\'J$\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u00122\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0014\u001a\u00020\u0015H\'J$\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\b0\u00072\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\fH\u00a7@\u00a2\u0006\u0002\u0010\u0018J\u0016\u0010\u0019\u001a\u00020\f2\u0006\u0010\u000b\u001a\u00020\fH\u00a7@\u00a2\u0006\u0002\u0010\rJ\u0016\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\f0\u00122\u0006\u0010\u000b\u001a\u00020\fH\'J \u0010\u001b\u001a\u0004\u0018\u00010\b2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u001c\u001a\u00020\fH\u00a7@\u00a2\u0006\u0002\u0010\u0018J$\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\b0\u00072\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u001e\u001a\u00020\u0015H\u00a7@\u00a2\u0006\u0002\u0010\u001f\u00a8\u0006 "}, d2 = {"Lcom/bayyari/tv/data/local/dao/MovieDao;", "", "<init>", "()V", "upsertAll", "", "movies", "", "Lcom/bayyari/tv/data/local/entities/MovieEntity;", "(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "clearForServer", "serverId", "", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "replaceAllForServer", "entities", "(ILjava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "observeAll", "Lkotlinx/coroutines/flow/Flow;", "observeByCategory", "categoryId", "", "latest", "limit", "(IILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "countForServer", "observeCount", "findById", "streamId", "search", "query", "(ILjava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "app"})
 @androidx.room.Dao()
-public abstract interface MovieDao {
+public abstract class MovieDao {
+    
+    public MovieDao() {
+        super();
+    }
     
     @androidx.room.Insert(onConflict = 1)
     @org.jetbrains.annotations.Nullable()
@@ -21,6 +26,17 @@ public abstract interface MovieDao {
     @org.jetbrains.annotations.Nullable()
     public abstract java.lang.Object clearForServer(int serverId, @org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super kotlin.Unit> $completion);
+    
+    /**
+     * Atomically replaces all movies for a server — UI never sees an empty state.
+     */
+    @androidx.room.Transaction()
+    @org.jetbrains.annotations.Nullable()
+    public java.lang.Object replaceAllForServer(int serverId, @org.jetbrains.annotations.NotNull()
+    java.util.List<com.bayyari.tv.data.local.entities.MovieEntity> entities, @org.jetbrains.annotations.NotNull()
+    kotlin.coroutines.Continuation<? super kotlin.Unit> $completion) {
+        return null;
+    }
     
     @androidx.room.Query(value = "SELECT * FROM movies WHERE serverId = :serverId ORDER BY added DESC")
     @org.jetbrains.annotations.NotNull()
@@ -35,6 +51,15 @@ public abstract interface MovieDao {
     @org.jetbrains.annotations.Nullable()
     public abstract java.lang.Object latest(int serverId, int limit, @org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super java.util.List<com.bayyari.tv.data.local.entities.MovieEntity>> $completion);
+    
+    @androidx.room.Query(value = "SELECT COUNT(*) FROM movies WHERE serverId = :serverId")
+    @org.jetbrains.annotations.Nullable()
+    public abstract java.lang.Object countForServer(int serverId, @org.jetbrains.annotations.NotNull()
+    kotlin.coroutines.Continuation<? super java.lang.Integer> $completion);
+    
+    @androidx.room.Query(value = "SELECT COUNT(*) FROM movies WHERE serverId = :serverId")
+    @org.jetbrains.annotations.NotNull()
+    public abstract kotlinx.coroutines.flow.Flow<java.lang.Integer> observeCount(int serverId);
     
     @androidx.room.Query(value = "SELECT * FROM movies WHERE serverId = :serverId AND streamId = :streamId LIMIT 1")
     @org.jetbrains.annotations.Nullable()

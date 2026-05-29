@@ -1,5 +1,6 @@
 package com.bayyari.tv.ui.movies;
 
+import com.bayyari.tv.data.local.dao.FavoriteDao;
 import com.bayyari.tv.data.repository.AuthRepository;
 import com.bayyari.tv.data.repository.MovieRepository;
 import dagger.internal.DaggerGenerated;
@@ -30,24 +31,29 @@ public final class MovieDetailViewModel_Factory implements Factory<MovieDetailVi
 
   private final Provider<MovieRepository> movieRepositoryProvider;
 
+  private final Provider<FavoriteDao> favoriteDaoProvider;
+
   private MovieDetailViewModel_Factory(Provider<AuthRepository> authRepositoryProvider,
-      Provider<MovieRepository> movieRepositoryProvider) {
+      Provider<MovieRepository> movieRepositoryProvider,
+      Provider<FavoriteDao> favoriteDaoProvider) {
     this.authRepositoryProvider = authRepositoryProvider;
     this.movieRepositoryProvider = movieRepositoryProvider;
+    this.favoriteDaoProvider = favoriteDaoProvider;
   }
 
   @Override
   public MovieDetailViewModel get() {
-    return newInstance(authRepositoryProvider.get(), movieRepositoryProvider.get());
+    return newInstance(authRepositoryProvider.get(), movieRepositoryProvider.get(), favoriteDaoProvider.get());
   }
 
   public static MovieDetailViewModel_Factory create(Provider<AuthRepository> authRepositoryProvider,
-      Provider<MovieRepository> movieRepositoryProvider) {
-    return new MovieDetailViewModel_Factory(authRepositoryProvider, movieRepositoryProvider);
+      Provider<MovieRepository> movieRepositoryProvider,
+      Provider<FavoriteDao> favoriteDaoProvider) {
+    return new MovieDetailViewModel_Factory(authRepositoryProvider, movieRepositoryProvider, favoriteDaoProvider);
   }
 
   public static MovieDetailViewModel newInstance(AuthRepository authRepository,
-      MovieRepository movieRepository) {
-    return new MovieDetailViewModel(authRepository, movieRepository);
+      MovieRepository movieRepository, FavoriteDao favoriteDao) {
+    return new MovieDetailViewModel(authRepository, movieRepository, favoriteDao);
   }
 }

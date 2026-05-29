@@ -31,6 +31,7 @@ class TvMoviePlayerActivity : BaseActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         binding.playerView.player = iptvPlayer.getPlayer()
+        binding.playerView.useController = true
 
         val movieId = intent.getIntExtra(MoviePlayerActivity.EXTRA_MOVIE_ID, 0)
         val server = authRepository.getActiveServer()

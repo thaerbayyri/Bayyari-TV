@@ -42,11 +42,12 @@ class FileCrashReporter @Inject constructor(
         get() = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US).format(Date())
 
     override fun log(message: String) {
+        val safeMessage = redactSensitiveLogText(message)
         runCatching {
             rotateIfTooBig()
-            logFile.appendText("[$timestamp] $message\n")
+            logFile.appendText("[$timestamp] $safeMessage\n")
         }
-        Log.i(TAG, message)
+        Log.i(TAG, safeMessage)
     }
 
     override fun recordException(throwable: Throwable) {
@@ -54,9 +55,11 @@ class FileCrashReporter @Inject constructor(
             rotateIfTooBig()
             val sw = StringWriter()
             throwable.printStackTrace(PrintWriter(sw))
-            logFile.appendText("[$timestamp] EXCEPTION: ${throwable.javaClass.simpleName}: ${throwable.message}\n$sw\n")
+            val safeMessage = redactSensitiveLogText(throwable.message.orEmpty())
+            val safeTrace = redactSensitiveLogText(sw.toString())
+            logFile.appendText("[$timestamp] EXCEPTION: ${throwable.javaClass.simpleName}: $safeMessage\n$safeTrace\n")
         }
-        Log.e(TAG, "Recorded exception", throwable)
+        Log.e(TAG, "Recorded exception: ${throwable.javaClass.simpleName}")
     }
 
     override fun setUserId(userId: String) {
@@ -89,3 +92,36 @@ class FileCrashReporter @Inject constructor(
         private const val MAX_BYTES = 256L * 1024L
     }
 }
+
+internal fun redactSensitiveLogText(input: String?): String {
+    if (input.isNullOrBlank()) return input.orEmpty()
+    return URL_REGEX.replace(input) { match ->
+        redactUrl(match.value)
+    }
+}
+
+private fun redactUrl(rawUrl: String): String {
+    return runCatching {
+        val schemeSeparator = rawUrl.indexOf("://")
+        if (schemeSeparator <= 0) return rawUrl
+        val scheme = rawUrl.substring(0, schemeSeparator)
+        val afterScheme = rawUrl.substring(schemeSeparator + 3)
+        val firstSlash = afterScheme.indexOf('/')
+        if (firstSlash < 0) return rawUrl
+        val authority = afterScheme.substring(0, firstSlash)
+        val path = afterScheme.substring(firstSlash + 1)
+        val segments = path.split('/').filter { it.isNotEmpty() }
+        if (segments.size < 3 || segments.first() !in XTREAM_CREDENTIAL_PATHS) return rawUrl
+
+        val redactedSegments = segments.toMutableList().apply {
+            this[1] = REDACTED_SEGMENT
+            this[2] = REDACTED_SEGMENT
+        }
+        "$scheme://$authority/${redactedSegments.joinToString("/")}"
+    }.getOrDefault(REDACTED_URL)
+}
+
+private val URL_REGEX = Regex("""https?://\S+""", RegexOption.IGNORE_CASE)
+private val XTREAM_CREDENTIAL_PATHS = setOf("live", "movie", "series", "timeshift")
+private const val REDACTED_SEGMENT = "[redacted]"
+private const val REDACTED_URL = "[redacted-url]"

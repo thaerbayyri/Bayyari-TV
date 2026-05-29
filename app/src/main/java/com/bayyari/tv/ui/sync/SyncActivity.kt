@@ -11,6 +11,8 @@ import com.bayyari.tv.R
 import com.bayyari.tv.databinding.ActivitySyncBinding
 import com.bayyari.tv.ui.BaseActivity
 import com.bayyari.tv.ui.MainActivity
+import com.bayyari.tv.ui.TvMainActivity
+import com.bayyari.tv.util.isTelevisionDevice
 import com.bayyari.tv.util.collectStarted
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -120,8 +122,9 @@ class SyncActivity : BaseActivity() {
     }
 
     private fun openMainActivity() {
+        val target = if (shouldOpenTvMain()) TvMainActivity::class.java else MainActivity::class.java
         startActivity(
-            Intent(this, MainActivity::class.java)
+            Intent(this, target)
                 .putExtra(
                     MainActivity.EXTRA_SHOW_WELCOME_POPUP,
                     intent.getBooleanExtra(MainActivity.EXTRA_SHOW_WELCOME_POPUP, false)
@@ -129,5 +132,12 @@ class SyncActivity : BaseActivity() {
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         )
         finish()
+    }
+
+    private fun shouldOpenTvMain(): Boolean =
+        intent.getBooleanExtra(EXTRA_TV_ENTRY, false) || isTelevisionDevice()
+
+    companion object {
+        const val EXTRA_TV_ENTRY = "extra_tv_entry"
     }
 }

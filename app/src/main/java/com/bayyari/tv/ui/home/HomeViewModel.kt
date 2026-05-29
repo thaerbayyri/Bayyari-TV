@@ -138,7 +138,7 @@ class HomeViewModel @Inject constructor(
                 async {
                     // Skip live refresh if we synced within the last 30 minutes — avoids a
                     // redundant full-catalog download on every app open.
-                    runCatching { if (liveRepository.isStale()) liveRepository.refresh(server) }
+                    runCatching { liveRepository.refreshIfStale(server) }
                 },
                 async {
                     runCatching {

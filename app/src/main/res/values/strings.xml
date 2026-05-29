@@ -123,7 +123,7 @@
     <string name="settings_app_info">About</string>
     <string name="settings_app_version_title">App version</string>
     <string name="settings_check_update">Check for Update</string>
-    <string name="settings_check_update_summary">Download the latest test APK from thaerbayyari.com</string>
+    <string name="settings_check_update_summary">Check for the latest app version</string>
     <string name="settings_parental_pin">Parental control PIN</string>
     <string name="settings_restore_hidden_categories">Restore hidden categories</string>
     <string name="settings_restore_hidden_categories_summary">Show categories hidden from Live TV, Movies, and Series</string>
@@ -133,12 +133,14 @@
     <string name="settings_change_playlist_confirm">Sign out and choose a different server?</string>
     <string name="update_checking">Checking for update…</string>
     <string name="update_none">No update available</string>
+    <string name="update_check_failed">Could not check for update</string>
     <string name="update_available">Update available</string>
     <string name="update_available_message">Version %1$s is available.%2$s</string>
     <string name="update_later">Later</string>
-    <string name="update_install_now">Download</string>
+    <string name="update_install_now">Install</string>
     <string name="update_downloading">Downloading update…</string>
-    <string name="update_download_complete">Download complete. Tap to install.</string>
+    <string name="update_download_failed">Could not download update</string>
+    <string name="update_download_complete">Update downloaded. Opening installer…</string>
     <string name="update_install_started">Installer opened</string>
     <string name="update_install_permission">Please allow install permission</string>
     <string name="update_install_failed">Install failed / cancelled</string>

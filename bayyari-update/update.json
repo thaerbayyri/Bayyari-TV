@@ -1,0 +1,7 @@
+{
+  "versionCode": 5,
+  "versionName": "1.0.4",
+  "apkUrl": "https://thaerbayyari.com/bayyari-update/app-release.apk",
+  "apkSha256": "C2C7B494418EE1BD07F712F3F6AA993F3F891EB72634F34178F12C38396CCC7F",
+  "releaseNotes": "Shows the installed app version in Settings and keeps the test updater ready for website updates."
+}

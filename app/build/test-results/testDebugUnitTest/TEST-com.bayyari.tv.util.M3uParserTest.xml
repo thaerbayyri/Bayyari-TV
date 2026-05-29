@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bayyari.tv.util.M3uParserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-05-21T21:00:25.519Z" hostname="B-101" time="0.035">
+<testsuite name="com.bayyari.tv.util.M3uParserTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-05-29T00:00:23.604Z" hostname="B-101" time="0.005">
   <properties/>
-  <testcase name="parses_basic_m3u" classname="com.bayyari.tv.util.M3uParserTest" time="0.031"/>
+  <testcase name="parse_empty_returnsEmpty" classname="com.bayyari.tv.util.M3uParserTest" time="0.001"/>
+  <testcase name="parse_headerOnly_returnsEmptyAndNoEpg" classname="com.bayyari.tv.util.M3uParserTest" time="0.002"/>
+  <testcase name="parse_missingHeader_stillParsesChannels" classname="com.bayyari.tv.util.M3uParserTest" time="0.001"/>
+  <testcase name="parse_withUrlTvg_parsesEpgUrl" classname="com.bayyari.tv.util.M3uParserTest" time="0.0"/>
+  <testcase name="parse_noNumericId_assignsNegativeFallback" classname="com.bayyari.tv.util.M3uParserTest" time="0.0"/>
+  <testcase name="parse_malformedExtInf_skipsChannelGracefully" classname="com.bayyari.tv.util.M3uParserTest" time="0.001"/>
+  <testcase name="parse_missingGroupTitle_usesEmptyCategoryId" classname="com.bayyari.tv.util.M3uParserTest" time="0.0"/>
+  <testcase name="parse_simpleM3u_parsesChannels" classname="com.bayyari.tv.util.M3uParserTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

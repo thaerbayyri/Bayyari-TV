@@ -35,7 +35,7 @@ class TvHomeViewModel @Inject constructor(
     fun load() {
         viewModelScope.launch {
             val server = authRepository.getActiveServer() ?: return@launch
-            liveRepository.refresh(server)
+            liveRepository.refreshIfStale(server)
             movieRepository.refresh(server)
             seriesRepository.refresh(server)
 

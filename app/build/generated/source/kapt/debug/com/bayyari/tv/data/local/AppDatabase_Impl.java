@@ -9,6 +9,8 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
 import androidx.sqlite.SQLite;
 import androidx.sqlite.SQLiteConnection;
+import com.bayyari.tv.data.local.dao.CategoryDao;
+import com.bayyari.tv.data.local.dao.CategoryDao_Impl;
 import com.bayyari.tv.data.local.dao.ChannelDao;
 import com.bayyari.tv.data.local.dao.ChannelDao_Impl;
 import com.bayyari.tv.data.local.dao.EpgDao;
@@ -48,6 +50,8 @@ public final class AppDatabase_Impl extends AppDatabase {
   private volatile EpgDao _epgDao;
 
   private volatile WatchHistoryDao _watchHistoryDao;
+
+  private volatile CategoryDao _categoryDao;
 
   @Override
   @NonNull
@@ -286,6 +290,7 @@ public final class AppDatabase_Impl extends AppDatabase {
     _typeConvertersMap.put(FavoriteDao.class, FavoriteDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(EpgDao.class, EpgDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(WatchHistoryDao.class, WatchHistoryDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(CategoryDao.class, CategoryDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -384,6 +389,20 @@ public final class AppDatabase_Impl extends AppDatabase {
           _watchHistoryDao = new WatchHistoryDao_Impl(this);
         }
         return _watchHistoryDao;
+      }
+    }
+  }
+
+  @Override
+  public CategoryDao categoryDao() {
+    if (_categoryDao != null) {
+      return _categoryDao;
+    } else {
+      synchronized(this) {
+        if(_categoryDao == null) {
+          _categoryDao = new CategoryDao_Impl(this);
+        }
+        return _categoryDao;
       }
     }
   }

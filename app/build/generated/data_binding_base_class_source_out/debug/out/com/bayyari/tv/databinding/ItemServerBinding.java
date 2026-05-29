@@ -4,10 +4,11 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.bayyari.tv.R;
@@ -17,7 +18,13 @@ import java.lang.String;
 
 public final class ItemServerBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final CardView rootView;
+
+  @NonNull
+  public final ImageButton buttonDelete;
+
+  @NonNull
+  public final View iconDot;
 
   @NonNull
   public final TextView textSubtitle;
@@ -25,16 +32,18 @@ public final class ItemServerBinding implements ViewBinding {
   @NonNull
   public final TextView textTitle;
 
-  private ItemServerBinding(@NonNull ConstraintLayout rootView, @NonNull TextView textSubtitle,
-      @NonNull TextView textTitle) {
+  private ItemServerBinding(@NonNull CardView rootView, @NonNull ImageButton buttonDelete,
+      @NonNull View iconDot, @NonNull TextView textSubtitle, @NonNull TextView textTitle) {
     this.rootView = rootView;
+    this.buttonDelete = buttonDelete;
+    this.iconDot = iconDot;
     this.textSubtitle = textSubtitle;
     this.textTitle = textTitle;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -59,6 +68,18 @@ public final class ItemServerBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonDelete;
+      ImageButton buttonDelete = ViewBindings.findChildViewById(rootView, id);
+      if (buttonDelete == null) {
+        break missingId;
+      }
+
+      id = R.id.iconDot;
+      View iconDot = ViewBindings.findChildViewById(rootView, id);
+      if (iconDot == null) {
+        break missingId;
+      }
+
       id = R.id.textSubtitle;
       TextView textSubtitle = ViewBindings.findChildViewById(rootView, id);
       if (textSubtitle == null) {
@@ -71,7 +92,8 @@ public final class ItemServerBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemServerBinding((ConstraintLayout) rootView, textSubtitle, textTitle);
+      return new ItemServerBinding((CardView) rootView, buttonDelete, iconDot, textSubtitle,
+          textTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

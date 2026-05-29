@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.bayyari.tv.R
 import com.bayyari.tv.databinding.FragmentMovieDetailBinding
 import com.bayyari.tv.util.collectStarted
+import com.bayyari.tv.util.toast
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,6 +39,11 @@ class MovieDetailFragment : Fragment(R.layout.fragment_movie_detail) {
             if (trailer.isNotBlank()) {
                 startActivity(Intent(Intent.ACTION_VIEW, android.net.Uri.parse(trailer)))
             }
+        }
+
+        binding?.buttonFavorite?.setOnClickListener {
+            viewModel.addFavorite(streamId)
+            toast(getString(R.string.favorite_added))
         }
 
         viewLifecycleOwner.collectStarted(viewModel.movie) { movie ->

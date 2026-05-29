@@ -11,6 +11,7 @@ import com.bayyari.tv.R
 import com.bayyari.tv.databinding.FragmentLoginBinding
 import com.bayyari.tv.ui.MainActivity
 import com.bayyari.tv.ui.sync.SyncActivity
+import com.bayyari.tv.util.isTelevisionDevice
 import com.bayyari.tv.util.UiState
 import com.bayyari.tv.util.collectStarted
 import dagger.hilt.android.AndroidEntryPoint
@@ -63,9 +64,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         getString(R.string.login_subscription_expires, expires) +
                         "\n" + getString(R.string.login_max_connections, server.maxConnections)
                     b.textServerInfo.setTextColor(requireContext().getColor(R.color.colorTextSecondary))
-                    startActivity(Intent(requireContext(), SyncActivity::class.java)
-                        .putExtra(MainActivity.EXTRA_SHOW_WELCOME_POPUP, true)
-                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
+                    startActivity(
+                        Intent(requireContext(), SyncActivity::class.java)
+                            .putExtra(MainActivity.EXTRA_SHOW_WELCOME_POPUP, true)
+                            .putExtra(SyncActivity.EXTRA_TV_ENTRY, shouldReturnToTv())
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    )
                     requireActivity().finish()
                 }
                 is UiState.Error -> {
@@ -87,6 +91,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view?.windowToken, 0)
     }
+
+    private fun shouldReturnToTv(): Boolean =
+        requireActivity().intent.getBooleanExtra(LoginActivity.EXTRA_TV_ENTRY, false) ||
+            requireContext().isTelevisionDevice()
 
     override fun onDestroyView() {
         binding = null

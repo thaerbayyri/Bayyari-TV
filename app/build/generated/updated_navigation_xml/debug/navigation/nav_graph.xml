@@ -6,7 +6,16 @@ app:startDestination="@id/homeFragment" >
 <fragment
     android:id="@+id/homeFragment"
     android:name="com.bayyari.tv.ui.home.HomeFragment"
-    android:label="@string/nav_home" />
+    android:label="@string/nav_home" >
+
+    <action
+        android:id="@+id/action_home_to_movie_detail"
+        app:destination="@id/movieDetailFragment" />
+    <action
+        android:id="@+id/action_home_to_series_detail"
+        app:destination="@id/seriesDetailFragment" />
+
+</fragment>
 <fragment
     android:id="@+id/liveFragment"
     android:name="com.bayyari.tv.ui.live.LiveFragment"
@@ -42,6 +51,9 @@ app:startDestination="@id/homeFragment" >
     <action
         android:id="@+id/action_series_to_detail"
         app:destination="@id/seriesDetailFragment" />
+    <action
+        android:id="@+id/action_series_to_season"
+        app:destination="@id/seasonFragment" />
 
 </fragment>
 <fragment
@@ -61,7 +73,16 @@ app:startDestination="@id/homeFragment" >
 <fragment
     android:id="@+id/searchFragment"
     android:name="com.bayyari.tv.ui.search.SearchFragment"
-    android:label="@string/nav_search" />
+    android:label="@string/nav_search" >
+
+    <action
+        android:id="@+id/action_search_to_movie_detail"
+        app:destination="@id/movieDetailFragment" />
+    <action
+        android:id="@+id/action_search_to_series_detail"
+        app:destination="@id/seriesDetailFragment" />
+
+</fragment>
 <fragment
     android:id="@+id/favoritesFragment"
     android:name="com.bayyari.tv.ui.favorites.FavoritesFragment"
@@ -83,7 +104,14 @@ app:startDestination="@id/homeFragment" >
 <fragment
     android:id="@+id/epgFragment"
     android:name="com.bayyari.tv.ui.live.EpgFragment"
-    android:label="@string/live_epg" />
+    android:label="@string/live_epg" >
+
+    <argument
+        android:name="streamId"
+        android:defaultValue="0"
+        app:argType="integer" />
+
+</fragment>
 <fragment
     android:id="@+id/catchUpFragment"
     android:name="com.bayyari.tv.ui.catchup.CatchUpFragment"

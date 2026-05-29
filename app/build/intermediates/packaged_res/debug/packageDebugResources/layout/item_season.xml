@@ -4,6 +4,9 @@
     android:id="@+id/textSeasonName"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_card_rounded"
+    android:padding="14dp"
+    android:textStyle="bold"
     android:textColor="@color/colorTextPrimary"
     android:textSize="14sp" />

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bayyari.tv.debug"
-    android:versionCode="1"
-    android:versionName="1.0.0" >
+    android:versionCode="10"
+    android:versionName="1.1.0" >
 
     <uses-sdk
         android:minSdkVersion="23"
@@ -16,8 +16,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
-    <!-- TV (Fire Stick / Shield) -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- TV (Fire Stick / Shield) -->
     <uses-feature
         android:name="android.software.leanback"
         android:required="false" />
@@ -54,7 +53,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BayyariTv"
         android:usesCleartextTraffic="true" >
-
+        <activity
+            android:name="com.bayyari.tv.ui.live.LivePlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensorLandscape"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/Theme.BayyariTv.Fullscreen" />
         <!-- Phone / tablet launcher -->
         <activity
             android:name="com.bayyari.tv.ui.MainActivity"
@@ -68,15 +75,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Android TV launcher -->
+        </activity> <!-- Android TV launcher -->
         <activity
             android:name="com.bayyari.tv.ui.TvMainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout"
             android:exported="true"
             android:launchMode="singleTop"
-            android:screenOrientation="sensorLandscape"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.BayyariTv.Leanback" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -86,25 +91,23 @@
         </activity>
         <activity
             android:name="com.bayyari.tv.ui.auth.LoginActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.BayyariTv.NoActionBar" />
-        <activity
-            android:name="com.bayyari.tv.ui.live.LivePlayerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
             android:exported="false"
-            android:launchMode="singleTask"
-            android:resizeableActivity="true"
             android:screenOrientation="sensorLandscape"
-            android:supportsPictureInPicture="true"
-            android:theme="@style/Theme.BayyariTv.Fullscreen" />
+            android:theme="@style/Theme.BayyariTv.NoActionBar" />
+        <activity
+            android:name="com.bayyari.tv.ui.sync.SyncActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|smallestScreenSize"
+            android:exported="false"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.BayyariTv.NoActionBar" />
         <activity
             android:name="com.bayyari.tv.ui.live.TvLivePlayerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout"
             android:exported="false"
             android:launchMode="singleTask"
             android:resizeableActivity="true"
-            android:screenOrientation="sensorLandscape"
+            android:screenOrientation="landscape"
             android:supportsPictureInPicture="true"
             android:theme="@style/Theme.BayyariTv.Fullscreen" />
         <activity
@@ -120,7 +123,7 @@
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout"
             android:exported="false"
             android:resizeableActivity="true"
-            android:screenOrientation="sensorLandscape"
+            android:screenOrientation="landscape"
             android:supportsPictureInPicture="true"
             android:theme="@style/Theme.BayyariTv.Fullscreen" />
         <activity
@@ -138,9 +141,7 @@
             android:resizeableActivity="true"
             android:screenOrientation="sensorLandscape"
             android:supportsPictureInPicture="true"
-            android:theme="@style/Theme.BayyariTv.Fullscreen" />
-
-        <!-- Background media playback service (MediaSession) -->
+            android:theme="@style/Theme.BayyariTv.Fullscreen" /> <!-- Background media playback service (MediaSession) -->
         <service
             android:name="com.bayyari.tv.player.PlayerService"
             android:exported="false"
@@ -148,9 +149,7 @@
             <intent-filter>
                 <action android:name="androidx.media3.session.MediaSessionService" />
             </intent-filter>
-        </service>
-
-        <!-- WorkManager initializer (Hilt-managed) -->
+        </service> <!-- WorkManager initializer (Hilt-managed) -->
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.bayyari.tv.debug.androidx-startup"
@@ -164,6 +163,15 @@
             <meta-data
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
+        </provider>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.bayyari.tv.debug.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
         </provider>
 
         <service

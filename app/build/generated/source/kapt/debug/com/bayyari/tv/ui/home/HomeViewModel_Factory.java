@@ -1,10 +1,11 @@
 package com.bayyari.tv.ui.home;
 
-import com.bayyari.tv.data.local.dao.WatchHistoryDao;
+import com.bayyari.tv.data.local.dao.FavoriteDao;
 import com.bayyari.tv.data.repository.AuthRepository;
 import com.bayyari.tv.data.repository.LiveRepository;
 import com.bayyari.tv.data.repository.MovieRepository;
 import com.bayyari.tv.data.repository.SeriesRepository;
+import com.bayyari.tv.data.repository.WatchHistoryRepository;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Provider;
@@ -37,36 +38,42 @@ public final class HomeViewModel_Factory implements Factory<HomeViewModel> {
 
   private final Provider<SeriesRepository> seriesRepositoryProvider;
 
-  private final Provider<WatchHistoryDao> watchHistoryDaoProvider;
+  private final Provider<WatchHistoryRepository> watchHistoryRepositoryProvider;
+
+  private final Provider<FavoriteDao> favoriteDaoProvider;
 
   private HomeViewModel_Factory(Provider<AuthRepository> authRepositoryProvider,
       Provider<LiveRepository> liveRepositoryProvider,
       Provider<MovieRepository> movieRepositoryProvider,
       Provider<SeriesRepository> seriesRepositoryProvider,
-      Provider<WatchHistoryDao> watchHistoryDaoProvider) {
+      Provider<WatchHistoryRepository> watchHistoryRepositoryProvider,
+      Provider<FavoriteDao> favoriteDaoProvider) {
     this.authRepositoryProvider = authRepositoryProvider;
     this.liveRepositoryProvider = liveRepositoryProvider;
     this.movieRepositoryProvider = movieRepositoryProvider;
     this.seriesRepositoryProvider = seriesRepositoryProvider;
-    this.watchHistoryDaoProvider = watchHistoryDaoProvider;
+    this.watchHistoryRepositoryProvider = watchHistoryRepositoryProvider;
+    this.favoriteDaoProvider = favoriteDaoProvider;
   }
 
   @Override
   public HomeViewModel get() {
-    return newInstance(authRepositoryProvider.get(), liveRepositoryProvider.get(), movieRepositoryProvider.get(), seriesRepositoryProvider.get(), watchHistoryDaoProvider.get());
+    return newInstance(authRepositoryProvider.get(), liveRepositoryProvider.get(), movieRepositoryProvider.get(), seriesRepositoryProvider.get(), watchHistoryRepositoryProvider.get(), favoriteDaoProvider.get());
   }
 
   public static HomeViewModel_Factory create(Provider<AuthRepository> authRepositoryProvider,
       Provider<LiveRepository> liveRepositoryProvider,
       Provider<MovieRepository> movieRepositoryProvider,
       Provider<SeriesRepository> seriesRepositoryProvider,
-      Provider<WatchHistoryDao> watchHistoryDaoProvider) {
-    return new HomeViewModel_Factory(authRepositoryProvider, liveRepositoryProvider, movieRepositoryProvider, seriesRepositoryProvider, watchHistoryDaoProvider);
+      Provider<WatchHistoryRepository> watchHistoryRepositoryProvider,
+      Provider<FavoriteDao> favoriteDaoProvider) {
+    return new HomeViewModel_Factory(authRepositoryProvider, liveRepositoryProvider, movieRepositoryProvider, seriesRepositoryProvider, watchHistoryRepositoryProvider, favoriteDaoProvider);
   }
 
   public static HomeViewModel newInstance(AuthRepository authRepository,
       LiveRepository liveRepository, MovieRepository movieRepository,
-      SeriesRepository seriesRepository, WatchHistoryDao watchHistoryDao) {
-    return new HomeViewModel(authRepository, liveRepository, movieRepository, seriesRepository, watchHistoryDao);
+      SeriesRepository seriesRepository, WatchHistoryRepository watchHistoryRepository,
+      FavoriteDao favoriteDao) {
+    return new HomeViewModel(authRepository, liveRepository, movieRepository, seriesRepository, watchHistoryRepository, favoriteDao);
   }
 }

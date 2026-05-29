@@ -4,30 +4,44 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.bayyari.tv.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentServerManagerBinding implements ViewBinding {
   @NonNull
-  private final RecyclerView rootView;
+  private final CoordinatorLayout rootView;
+
+  @NonNull
+  public final FloatingActionButton fabAddPlaylist;
+
+  @NonNull
+  public final FrameLayout loadingOverlay;
 
   @NonNull
   public final RecyclerView recyclerServers;
 
-  private FragmentServerManagerBinding(@NonNull RecyclerView rootView,
+  private FragmentServerManagerBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull FloatingActionButton fabAddPlaylist, @NonNull FrameLayout loadingOverlay,
       @NonNull RecyclerView recyclerServers) {
     this.rootView = rootView;
+    this.fabAddPlaylist = fabAddPlaylist;
+    this.loadingOverlay = loadingOverlay;
     this.recyclerServers = recyclerServers;
   }
 
   @Override
   @NonNull
-  public RecyclerView getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -48,12 +62,32 @@ public final class FragmentServerManagerBinding implements ViewBinding {
 
   @NonNull
   public static FragmentServerManagerBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.fabAddPlaylist;
+      FloatingActionButton fabAddPlaylist = ViewBindings.findChildViewById(rootView, id);
+      if (fabAddPlaylist == null) {
+        break missingId;
+      }
+
+      id = R.id.loadingOverlay;
+      FrameLayout loadingOverlay = ViewBindings.findChildViewById(rootView, id);
+      if (loadingOverlay == null) {
+        break missingId;
+      }
+
+      id = R.id.recyclerServers;
+      RecyclerView recyclerServers = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerServers == null) {
+        break missingId;
+      }
+
+      return new FragmentServerManagerBinding((CoordinatorLayout) rootView, fabAddPlaylist,
+          loadingOverlay, recyclerServers);
     }
-
-    RecyclerView recyclerServers = (RecyclerView) rootView;
-
-    return new FragmentServerManagerBinding((RecyclerView) rootView, recyclerServers);
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

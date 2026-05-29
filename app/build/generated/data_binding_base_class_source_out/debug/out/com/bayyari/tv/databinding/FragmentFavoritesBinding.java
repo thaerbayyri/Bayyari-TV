@@ -4,30 +4,52 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.bayyari.tv.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentFavoritesBinding implements ViewBinding {
   @NonNull
-  private final RecyclerView rootView;
+  private final ConstraintLayout rootView;
+
+  @NonNull
+  public final View dividerHeader;
+
+  @NonNull
+  public final LinearLayout emptyState;
+
+  @NonNull
+  public final LinearLayout headerRow;
 
   @NonNull
   public final RecyclerView recyclerFavorites;
 
-  private FragmentFavoritesBinding(@NonNull RecyclerView rootView,
-      @NonNull RecyclerView recyclerFavorites) {
+  @NonNull
+  public final TextView textFavoritesCount;
+
+  private FragmentFavoritesBinding(@NonNull ConstraintLayout rootView, @NonNull View dividerHeader,
+      @NonNull LinearLayout emptyState, @NonNull LinearLayout headerRow,
+      @NonNull RecyclerView recyclerFavorites, @NonNull TextView textFavoritesCount) {
     this.rootView = rootView;
+    this.dividerHeader = dividerHeader;
+    this.emptyState = emptyState;
+    this.headerRow = headerRow;
     this.recyclerFavorites = recyclerFavorites;
+    this.textFavoritesCount = textFavoritesCount;
   }
 
   @Override
   @NonNull
-  public RecyclerView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -48,12 +70,44 @@ public final class FragmentFavoritesBinding implements ViewBinding {
 
   @NonNull
   public static FragmentFavoritesBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.dividerHeader;
+      View dividerHeader = ViewBindings.findChildViewById(rootView, id);
+      if (dividerHeader == null) {
+        break missingId;
+      }
+
+      id = R.id.emptyState;
+      LinearLayout emptyState = ViewBindings.findChildViewById(rootView, id);
+      if (emptyState == null) {
+        break missingId;
+      }
+
+      id = R.id.headerRow;
+      LinearLayout headerRow = ViewBindings.findChildViewById(rootView, id);
+      if (headerRow == null) {
+        break missingId;
+      }
+
+      id = R.id.recyclerFavorites;
+      RecyclerView recyclerFavorites = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerFavorites == null) {
+        break missingId;
+      }
+
+      id = R.id.textFavoritesCount;
+      TextView textFavoritesCount = ViewBindings.findChildViewById(rootView, id);
+      if (textFavoritesCount == null) {
+        break missingId;
+      }
+
+      return new FragmentFavoritesBinding((ConstraintLayout) rootView, dividerHeader, emptyState,
+          headerRow, recyclerFavorites, textFavoritesCount);
     }
-
-    RecyclerView recyclerFavorites = (RecyclerView) rootView;
-
-    return new FragmentFavoritesBinding((RecyclerView) rootView, recyclerFavorites);
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

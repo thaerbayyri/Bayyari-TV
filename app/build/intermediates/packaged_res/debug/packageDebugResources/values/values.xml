@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="buffer_entries">
+        <item>@string/settings_buffer_low</item>
+        <item>@string/settings_buffer_medium</item>
+        <item>@string/settings_buffer_max</item>
+    </string-array>
+    <string-array name="buffer_values">
+        <item>5000</item>
+        <item>15000</item>
+        <item>30000</item>
+    </string-array>
+    <string-array name="live_sort_entries">
+        <item>Name A-Z</item>
+        <item>Name Z-A</item>
+        <item>Newest first</item>
+        <item>Catch-Up first</item>
+    </string-array>
     <string-array name="movie_sort_entries">
         <item>Name</item>
         <item>Rating</item>
@@ -15,6 +31,12 @@
         <item>internal</item>
         <item>vlc</item>
         <item>mx</item>
+    </string-array>
+    <string-array name="series_sort_entries">
+        <item>Recently updated</item>
+        <item>Name A-Z</item>
+        <item>Name Z-A</item>
+        <item>Rating</item>
     </string-array>
     <string-array name="stream_entries">
         <item>@string/settings_stream_hls</item>
@@ -43,18 +65,39 @@
     <color name="ic_launcher_background">#0F0F1C</color>
     <color name="overlay_dim_50">#80000000</color>
     <color name="overlay_dim_70">#B3000000</color>
+    <dimen name="card_radius">12dp</dimen>
+    <dimen name="card_radius_small">10dp</dimen>
+    <dimen name="content_max_width">520dp</dimen>
+    <dimen name="control_min_height">40dp</dimen>
+    <dimen name="field_gap">12dp</dimen>
+    <dimen name="home_featured_height">340dp</dimen>
+    <dimen name="input_gap">14dp</dimen>
+    <dimen name="page_edge">20dp</dimen>
+    <dimen name="page_edge_compact">14dp</dimen>
+    <dimen name="section_gap">24dp</dimen>
+    <integer name="live_channel_span_count">3</integer>
+    <string name="action_back">Back</string>
     <string name="action_cancel">Cancel</string>
+    <string name="action_exit">Exit</string>
     <string name="action_ok">OK</string>
+    <string name="action_remove">Remove</string>
     <string name="action_retry">Retry</string>
     <string name="action_save">Save</string>
     <string name="app_name">BAYYARI-TV</string>
     <string name="catchup_not_supported">Catch-up not supported for this channel</string>
     <string name="catchup_select_date">Select date</string>
+    <string name="content_hide_category_confirm">Hide %1$s from this section?</string>
+    <string name="content_sort">Sort</string>
+    <string name="favorite_action_short">Favorite</string>
+    <string name="favorite_added">Added to favorites</string>
+    <string name="favorites_empty_hint">Tap the heart button on a channel or add a movie from My List.</string>
+    <string name="favorites_empty_title">No favorites yet</string>
     <string name="home_continue_watching">Continue Watching</string>
     <string name="home_featured">Featured</string>
     <string name="home_latest_movies">Latest Movies</string>
     <string name="home_latest_series">Latest Series</string>
     <string name="home_live_now">Live now</string>
+    <string name="home_welcome_image">Welcome to Bayyari TV</string>
     <string name="live_add_favorite">Add to favorites</string>
     <string name="live_aspect_fill">Fill</string>
     <string name="live_aspect_fit">Fit</string>
@@ -65,6 +108,9 @@
     <string name="live_catchup">Catch-Up</string>
     <string name="live_categories">Categories</string>
     <string name="live_epg">EPG Guide</string>
+    <string name="live_hidden_category_done">Category hidden. Restore it from Settings.</string>
+    <string name="live_hide_category">Hide category</string>
+    <string name="live_hide_category_confirm">Hide %1$s from Live TV?</string>
     <string name="live_info">Channel info</string>
     <string name="live_lock_screen">Lock screen</string>
     <string name="live_next">Next: %1$s</string>
@@ -75,6 +121,7 @@
     <string name="live_open_vlc">Open in VLC</string>
     <string name="live_pip">Picture-in-picture</string>
     <string name="live_remove_favorite">Remove from favorites</string>
+    <string name="live_sort">Sort channels</string>
     <string name="live_subtitle_track">Subtitle</string>
     <string name="live_unlock_hint">Long-press to unlock</string>
     <string name="login_add_m3u">Use M3U playlist instead</string>
@@ -109,6 +156,10 @@
     <string name="nav_search">Search</string>
     <string name="nav_series">Series</string>
     <string name="nav_settings">Settings</string>
+    <string name="player_translation_list">Translation list</string>
+    <string name="player_translation_none">No embedded translation or subtitle tracks were found for this movie.</string>
+    <string name="player_translation_off">Subtitles off</string>
+    <string name="player_translation_summary">Choose the subtitle language embedded in this stream.</string>
     <string name="search_clear_recent">Clear</string>
     <string name="search_hint">Search live, movies, series…</string>
     <string name="search_recent">Recent searches</string>
@@ -118,19 +169,31 @@
     <string name="series_seasons">Seasons</string>
     <string name="server_label">Server label</string>
     <string name="settings_app_info">About</string>
-    <string name="settings_app_version">Version %1$s</string>
+    <string name="settings_app_version">Version %1$s (%2$d)</string>
+    <string name="settings_app_version_title">App version</string>
     <string name="settings_auto_play_next">Auto-play next episode</string>
     <string name="settings_buffer">Buffer size</string>
+    <string name="settings_buffer_low">Low latency</string>
+    <string name="settings_buffer_max">Max buffer</string>
+    <string name="settings_buffer_medium">Balanced</string>
     <string name="settings_change_playlist">Change playlist / Sign out</string>
     <string name="settings_change_playlist_confirm">Sign out and choose a different server?</string>
     <string name="settings_change_playlist_summary">Switch to a different IPTV provider or M3U playlist</string>
+    <string name="settings_check_update">Check for Update</string>
+    <string name="settings_check_update_summary">Check for the latest app version</string>
     <string name="settings_clear_cache">Clear cache</string>
     <string name="settings_default_player">Default player</string>
+    <string name="settings_delete_playlist">Delete saved playlist</string>
+    <string name="settings_delete_playlist_confirm">Delete %1$s from the app?</string>
+    <string name="settings_delete_playlist_summary">Remove this playlist and its downloaded channels, movies, and series</string>
     <string name="settings_parental_pin">Parental control PIN</string>
     <string name="settings_player_internal">Built-in</string>
     <string name="settings_player_mx">MX Player</string>
     <string name="settings_player_vlc">VLC</string>
+    <string name="settings_restore_hidden_categories">Restore hidden categories</string>
+    <string name="settings_restore_hidden_categories_summary">Show categories hidden from Live TV, Movies, and Series</string>
     <string name="settings_servers">Manage servers</string>
+    <string name="settings_servers_summary">View saved playlists and switch between them</string>
     <string name="settings_stream_format">Stream format</string>
     <string name="settings_stream_hls">M3U / HLS (.m3u8)</string>
     <string name="settings_stream_ts">MPEG-TS (.ts)</string>
@@ -140,6 +203,21 @@
     <string name="state_loading">Loading…</string>
     <string name="state_no_internet">No internet connection</string>
     <string name="state_stream_error">Stream could not be played</string>
+    <string name="sync_playlist_message">Preparing live channels, movies, and series for this server.</string>
+    <string name="sync_playlist_title">Loading playlist</string>
+    <string name="update_available">Update available</string>
+    <string name="update_available_message">Version %1$s is available.%2$s</string>
+    <string name="update_check_failed">Could not check for update</string>
+    <string name="update_checking">Checking for update…</string>
+    <string name="update_download_complete">Update downloaded. Opening installer…</string>
+    <string name="update_download_failed">Could not download update</string>
+    <string name="update_downloading">Downloading update…</string>
+    <string name="update_install_failed">Install failed / cancelled</string>
+    <string name="update_install_now">Install</string>
+    <string name="update_install_permission">Please allow install permission</string>
+    <string name="update_install_started">Installer opened</string>
+    <string name="update_later">Later</string>
+    <string name="update_none">No update available</string>
     <style name="TextAppearance.Bayyari.CardSub" parent="TextAppearance.Material3.BodySmall">
         <item name="android:textSize">11sp</item>
         <item name="android:textColor">@color/colorTextSecondary</item>

@@ -1,7 +1,8 @@
 package com.bayyari.tv.ui.live;
 
-import com.bayyari.tv.data.local.dao.FavoriteDao;
-import com.bayyari.tv.data.repository.AuthRepository;
+import androidx.media3.exoplayer.LoadControl;
+import com.bayyari.tv.util.EncryptedPrefs;
+import com.bayyari.tv.util.StreamUrlBuilder;
 import dagger.MembersInjector;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.InjectedFieldSignature;
@@ -25,34 +26,45 @@ import javax.annotation.processing.Generated;
     "nullness:initialization.field.uninitialized"
 })
 public final class LiveFragment_MembersInjector implements MembersInjector<LiveFragment> {
-  private final Provider<FavoriteDao> favoriteDaoProvider;
+  private final Provider<StreamUrlBuilder> streamUrlBuilderProvider;
 
-  private final Provider<AuthRepository> authRepositoryProvider;
+  private final Provider<EncryptedPrefs> prefsProvider;
 
-  private LiveFragment_MembersInjector(Provider<FavoriteDao> favoriteDaoProvider,
-      Provider<AuthRepository> authRepositoryProvider) {
-    this.favoriteDaoProvider = favoriteDaoProvider;
-    this.authRepositoryProvider = authRepositoryProvider;
+  private final Provider<LoadControl> loadControlProvider;
+
+  private LiveFragment_MembersInjector(Provider<StreamUrlBuilder> streamUrlBuilderProvider,
+      Provider<EncryptedPrefs> prefsProvider, Provider<LoadControl> loadControlProvider) {
+    this.streamUrlBuilderProvider = streamUrlBuilderProvider;
+    this.prefsProvider = prefsProvider;
+    this.loadControlProvider = loadControlProvider;
   }
 
   @Override
   public void injectMembers(LiveFragment instance) {
-    injectFavoriteDao(instance, favoriteDaoProvider.get());
-    injectAuthRepository(instance, authRepositoryProvider.get());
+    injectStreamUrlBuilder(instance, streamUrlBuilderProvider.get());
+    injectPrefs(instance, prefsProvider.get());
+    injectLoadControl(instance, loadControlProvider.get());
   }
 
-  public static MembersInjector<LiveFragment> create(Provider<FavoriteDao> favoriteDaoProvider,
-      Provider<AuthRepository> authRepositoryProvider) {
-    return new LiveFragment_MembersInjector(favoriteDaoProvider, authRepositoryProvider);
+  public static MembersInjector<LiveFragment> create(
+      Provider<StreamUrlBuilder> streamUrlBuilderProvider, Provider<EncryptedPrefs> prefsProvider,
+      Provider<LoadControl> loadControlProvider) {
+    return new LiveFragment_MembersInjector(streamUrlBuilderProvider, prefsProvider, loadControlProvider);
   }
 
-  @InjectedFieldSignature("com.bayyari.tv.ui.live.LiveFragment.favoriteDao")
-  public static void injectFavoriteDao(LiveFragment instance, FavoriteDao favoriteDao) {
-    instance.favoriteDao = favoriteDao;
+  @InjectedFieldSignature("com.bayyari.tv.ui.live.LiveFragment.streamUrlBuilder")
+  public static void injectStreamUrlBuilder(LiveFragment instance,
+      StreamUrlBuilder streamUrlBuilder) {
+    instance.streamUrlBuilder = streamUrlBuilder;
   }
 
-  @InjectedFieldSignature("com.bayyari.tv.ui.live.LiveFragment.authRepository")
-  public static void injectAuthRepository(LiveFragment instance, AuthRepository authRepository) {
-    instance.authRepository = authRepository;
+  @InjectedFieldSignature("com.bayyari.tv.ui.live.LiveFragment.prefs")
+  public static void injectPrefs(LiveFragment instance, EncryptedPrefs prefs) {
+    instance.prefs = prefs;
+  }
+
+  @InjectedFieldSignature("com.bayyari.tv.ui.live.LiveFragment.loadControl")
+  public static void injectLoadControl(LiveFragment instance, LoadControl loadControl) {
+    instance.loadControl = loadControl;
   }
 }

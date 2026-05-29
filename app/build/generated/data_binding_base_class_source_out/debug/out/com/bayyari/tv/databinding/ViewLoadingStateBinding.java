@@ -4,6 +4,7 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,14 +22,19 @@ public final class ViewLoadingStateBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final LinearLayout loadingCard;
+
+  @NonNull
   public final ProgressBar progress;
 
   @NonNull
   public final TextView textMessage;
 
-  private ViewLoadingStateBinding(@NonNull ConstraintLayout rootView, @NonNull ProgressBar progress,
+  private ViewLoadingStateBinding(@NonNull ConstraintLayout rootView,
+      @NonNull LinearLayout loadingCard, @NonNull ProgressBar progress,
       @NonNull TextView textMessage) {
     this.rootView = rootView;
+    this.loadingCard = loadingCard;
     this.progress = progress;
     this.textMessage = textMessage;
   }
@@ -60,6 +66,12 @@ public final class ViewLoadingStateBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.loadingCard;
+      LinearLayout loadingCard = ViewBindings.findChildViewById(rootView, id);
+      if (loadingCard == null) {
+        break missingId;
+      }
+
       id = R.id.progress;
       ProgressBar progress = ViewBindings.findChildViewById(rootView, id);
       if (progress == null) {
@@ -72,7 +84,8 @@ public final class ViewLoadingStateBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ViewLoadingStateBinding((ConstraintLayout) rootView, progress, textMessage);
+      return new ViewLoadingStateBinding((ConstraintLayout) rootView, loadingCard, progress,
+          textMessage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

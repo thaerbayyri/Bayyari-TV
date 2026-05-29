@@ -6,6 +6,10 @@ import androidx.leanback.widget.ArrayObjectAdapter;
 import androidx.leanback.widget.HeaderItem;
 import androidx.leanback.widget.ListRow;
 import androidx.leanback.widget.ListRowPresenter;
+import androidx.leanback.widget.OnItemViewClickedListener;
+import com.bayyari.tv.domain.model.Channel;
+import com.bayyari.tv.domain.model.Movie;
+import com.bayyari.tv.domain.model.Series;
 import com.bayyari.tv.R;
 import dagger.hilt.android.AndroidEntryPoint;
 

@@ -3,6 +3,8 @@ package com.bayyari.tv.ui.series
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bayyari.tv.data.local.dao.FavoriteDao
+import com.bayyari.tv.data.local.entities.FavoriteEntity
 import com.bayyari.tv.data.repository.AuthRepository
 import com.bayyari.tv.data.repository.SeriesRepository
 import com.bayyari.tv.domain.model.Episode
@@ -18,7 +20,8 @@ import javax.inject.Inject
 @HiltViewModel
 class SeriesDetailViewModel @Inject constructor(
     private val authRepository: AuthRepository,
-    private val seriesRepository: SeriesRepository
+    private val seriesRepository: SeriesRepository,
+    private val favoriteDao: FavoriteDao
 ) : ViewModel() {
 
     private val _series = MutableStateFlow<Series?>(null)
@@ -120,6 +123,25 @@ class SeriesDetailViewModel @Inject constructor(
                 _error.value = "Failed to load series info: ${e.message}"
             }
             _loading.value = false
+        }
+    }
+
+    fun addFavorite(seriesId: Int) {
+        if (seriesId == 0) return
+        viewModelScope.launch {
+            val server = authRepository.getActiveServer() ?: return@launch
+            runCatching {
+                favoriteDao.upsert(
+                    FavoriteEntity(
+                        contentId = seriesId,
+                        contentType = "series",
+                        serverId = server.id,
+                        addedAt = System.currentTimeMillis()
+                    )
+                )
+            }.onFailure { error ->
+                Log.e("SeriesDetailVM", "addFavorite failed for seriesId=$seriesId", error)
+            }
         }
     }
 }

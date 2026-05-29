@@ -42,12 +42,12 @@ class ServerConnectionTest {
             .build()
             .create(XtreamApiService::class.java)
 
-        // Enqueue a response that delays sending the body past the client's read timeout
-        server.enqueue(MockResponse().setBodyDelay(2, java.util.concurrent.TimeUnit.SECONDS).setBody("ok"))
+        // Enqueue a response that never responds within the client's read timeout
+        server.enqueue(MockResponse().setSocketPolicy(SocketPolicy.NO_RESPONSE))
 
         val url = server.url("/hang").toString()
         try {
-            runBlocking { service.fetchRaw(url) }
+            runBlocking { service.getLiveStreams("u", "p") }
             // If we got here, the request didn't time out — fail
             assertTrue("Expected timeout but request succeeded", false)
         } catch (e: IOException) {

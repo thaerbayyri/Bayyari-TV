@@ -149,7 +149,8 @@ jobs:
             -Dserver.password=${{ secrets.TEST_SERVER_PASS }} \
             -Dtest.stream.live_id=${{ secrets.TEST_LIVE_STREAM_ID }} \
             -Dtest.stream.movie_id=${{ secrets.TEST_MOVIE_ID }} \
-            -Dtest.stream.series_episode_id=${{ secrets.TEST_EPISODE_ID }}
+            -Dtest.stream.series_episode_id=${{ secrets.TEST_EPISODE_ID }} \
+            -Dstream.health.enabled=true
 
       - name: Notify on failure
         if: failure() && env.SLACK_WEBHOOK_URL != ''
@@ -157,7 +158,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "Stream server health check FAILED on MyIPTV. Check: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              "text": "Stream server health check FAILED. Check: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

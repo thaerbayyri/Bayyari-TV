@@ -57,16 +57,4 @@ class XtreamApiTest {
         assertEquals(1, list.size)
         assertEquals(100, list.first().streamId)
     }
-
-    @Test
-    fun fetchRaw_returnsBody() {
-        val manifest = "#EXTM3U\n#EXTINF:-1,Test\nhttp://example/1.m3u8"
-        server.enqueue(MockResponse().setResponseCode(200).setBody(manifest).setHeader("Content-Type", "application/vnd.apple.mpegurl"))
-
-        val url = server.url("/manifest.m3u8").toString()
-        val resp = runBlocking { service.fetchRaw(url) }
-        val body = resp.body()?.string()
-        assertNotNull(body)
-        assertEquals(true, body!!.contains("#EXTM3U"))
-    }
 }

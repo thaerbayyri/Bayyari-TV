@@ -1,10 +1,13 @@
 package com.bayyari.tv.ui.movies;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.leanback.app.VerticalGridSupportFragment;
 import androidx.leanback.widget.ArrayObjectAdapter;
 import androidx.leanback.widget.VerticalGridPresenter;
+import androidx.leanback.widget.OnItemViewClickedListener;
 import com.bayyari.tv.ui.home.MediaCardPresenter;
+import com.bayyari.tv.domain.model.Movie;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @dagger.hilt.android.AndroidEntryPoint()

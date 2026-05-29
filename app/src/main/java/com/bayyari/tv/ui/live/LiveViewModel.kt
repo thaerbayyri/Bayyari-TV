@@ -43,7 +43,9 @@ class LiveViewModel @Inject constructor(
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
     val categories = allChannels.combine(hiddenCategoryIds) { list, hidden ->
-        val visible = list.filter { it.categoryId !in hidden }
+        val visible = list
+            .filter { it.categoryId !in hidden }
+            .filter { !LiveChannelFilters.isDefaultHidden(it.categoryName) }
         val grouped = visible.groupBy { it.categoryId to it.categoryName }
             .entries
             .sortedBy { it.key.second.ifBlank { it.key.first } }
@@ -67,7 +69,7 @@ class LiveViewModel @Inject constructor(
     fun refresh() {
         viewModelScope.launch {
             val server = authRepository.getActiveServer() ?: return@launch
-            liveRepository.refresh(server)
+            liveRepository.refreshIfStale(server)
         }
     }
 

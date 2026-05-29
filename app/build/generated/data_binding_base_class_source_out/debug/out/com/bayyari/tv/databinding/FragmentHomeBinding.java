@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +37,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ImageView heroBackdrop;
 
   @NonNull
+  public final LinearLayout heroContent;
+
+  @NonNull
   public final TextView heroMeta;
 
   @NonNull
@@ -48,6 +52,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final RecyclerView recyclerContinue;
 
   @NonNull
+  public final RecyclerView recyclerHomeFavorites;
+
+  @NonNull
   public final RecyclerView recyclerLive;
 
   @NonNull
@@ -57,7 +64,16 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final RecyclerView recyclerSeries;
 
   @NonNull
+  public final LinearLayout sectionContinueHeader;
+
+  @NonNull
+  public final LinearLayout sectionFavoritesHeader;
+
+  @NonNull
   public final TextView seeAllContinue;
+
+  @NonNull
+  public final TextView seeAllFavorites;
 
   @NonNull
   public final TextView seeAllLive;
@@ -82,11 +98,13 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   private FragmentHomeBinding(@NonNull NestedScrollView rootView,
       @NonNull MaterialButton buttonHeroAdd, @NonNull MaterialButton buttonHeroPlay,
-      @NonNull FrameLayout hero, @NonNull ImageView heroBackdrop, @NonNull TextView heroMeta,
-      @NonNull TextView heroRating, @NonNull TextView heroTitle,
-      @NonNull RecyclerView recyclerContinue, @NonNull RecyclerView recyclerLive,
-      @NonNull RecyclerView recyclerMovies, @NonNull RecyclerView recyclerSeries,
-      @NonNull TextView seeAllContinue, @NonNull TextView seeAllLive,
+      @NonNull FrameLayout hero, @NonNull ImageView heroBackdrop, @NonNull LinearLayout heroContent,
+      @NonNull TextView heroMeta, @NonNull TextView heroRating, @NonNull TextView heroTitle,
+      @NonNull RecyclerView recyclerContinue, @NonNull RecyclerView recyclerHomeFavorites,
+      @NonNull RecyclerView recyclerLive, @NonNull RecyclerView recyclerMovies,
+      @NonNull RecyclerView recyclerSeries, @NonNull LinearLayout sectionContinueHeader,
+      @NonNull LinearLayout sectionFavoritesHeader, @NonNull TextView seeAllContinue,
+      @NonNull TextView seeAllFavorites, @NonNull TextView seeAllLive,
       @NonNull TextView seeAllMovies, @NonNull TextView seeAllSeries,
       @NonNull IncludeStatCellBinding statChannels, @NonNull IncludeStatCellBinding statMovies,
       @NonNull IncludeStatCellBinding statQuality, @NonNull IncludeStatCellBinding statSeries) {
@@ -95,14 +113,19 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.buttonHeroPlay = buttonHeroPlay;
     this.hero = hero;
     this.heroBackdrop = heroBackdrop;
+    this.heroContent = heroContent;
     this.heroMeta = heroMeta;
     this.heroRating = heroRating;
     this.heroTitle = heroTitle;
     this.recyclerContinue = recyclerContinue;
+    this.recyclerHomeFavorites = recyclerHomeFavorites;
     this.recyclerLive = recyclerLive;
     this.recyclerMovies = recyclerMovies;
     this.recyclerSeries = recyclerSeries;
+    this.sectionContinueHeader = sectionContinueHeader;
+    this.sectionFavoritesHeader = sectionFavoritesHeader;
     this.seeAllContinue = seeAllContinue;
+    this.seeAllFavorites = seeAllFavorites;
     this.seeAllLive = seeAllLive;
     this.seeAllMovies = seeAllMovies;
     this.seeAllSeries = seeAllSeries;
@@ -163,6 +186,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.heroContent;
+      LinearLayout heroContent = ViewBindings.findChildViewById(rootView, id);
+      if (heroContent == null) {
+        break missingId;
+      }
+
       id = R.id.heroMeta;
       TextView heroMeta = ViewBindings.findChildViewById(rootView, id);
       if (heroMeta == null) {
@@ -187,6 +216,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.recyclerHomeFavorites;
+      RecyclerView recyclerHomeFavorites = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerHomeFavorites == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerLive;
       RecyclerView recyclerLive = ViewBindings.findChildViewById(rootView, id);
       if (recyclerLive == null) {
@@ -205,9 +240,27 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.sectionContinueHeader;
+      LinearLayout sectionContinueHeader = ViewBindings.findChildViewById(rootView, id);
+      if (sectionContinueHeader == null) {
+        break missingId;
+      }
+
+      id = R.id.sectionFavoritesHeader;
+      LinearLayout sectionFavoritesHeader = ViewBindings.findChildViewById(rootView, id);
+      if (sectionFavoritesHeader == null) {
+        break missingId;
+      }
+
       id = R.id.seeAllContinue;
       TextView seeAllContinue = ViewBindings.findChildViewById(rootView, id);
       if (seeAllContinue == null) {
+        break missingId;
+      }
+
+      id = R.id.seeAllFavorites;
+      TextView seeAllFavorites = ViewBindings.findChildViewById(rootView, id);
+      if (seeAllFavorites == null) {
         break missingId;
       }
 
@@ -258,9 +311,11 @@ public final class FragmentHomeBinding implements ViewBinding {
       IncludeStatCellBinding binding_statSeries = IncludeStatCellBinding.bind(statSeries);
 
       return new FragmentHomeBinding((NestedScrollView) rootView, buttonHeroAdd, buttonHeroPlay,
-          hero, heroBackdrop, heroMeta, heroRating, heroTitle, recyclerContinue, recyclerLive,
-          recyclerMovies, recyclerSeries, seeAllContinue, seeAllLive, seeAllMovies, seeAllSeries,
-          binding_statChannels, binding_statMovies, binding_statQuality, binding_statSeries);
+          hero, heroBackdrop, heroContent, heroMeta, heroRating, heroTitle, recyclerContinue,
+          recyclerHomeFavorites, recyclerLive, recyclerMovies, recyclerSeries,
+          sectionContinueHeader, sectionFavoritesHeader, seeAllContinue, seeAllFavorites,
+          seeAllLive, seeAllMovies, seeAllSeries, binding_statChannels, binding_statMovies,
+          binding_statQuality, binding_statSeries);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

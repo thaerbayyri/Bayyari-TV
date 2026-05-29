@@ -4,6 +4,7 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,15 +21,28 @@ public final class ItemEpisodeBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageView imageEpisode;
+
+  @NonNull
+  public final TextView textEpisodeMeta;
+
+  @NonNull
   public final TextView textEpisodeNumber;
+
+  @NonNull
+  public final TextView textEpisodePlot;
 
   @NonNull
   public final TextView textEpisodeTitle;
 
-  private ItemEpisodeBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView textEpisodeNumber, @NonNull TextView textEpisodeTitle) {
+  private ItemEpisodeBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageEpisode,
+      @NonNull TextView textEpisodeMeta, @NonNull TextView textEpisodeNumber,
+      @NonNull TextView textEpisodePlot, @NonNull TextView textEpisodeTitle) {
     this.rootView = rootView;
+    this.imageEpisode = imageEpisode;
+    this.textEpisodeMeta = textEpisodeMeta;
     this.textEpisodeNumber = textEpisodeNumber;
+    this.textEpisodePlot = textEpisodePlot;
     this.textEpisodeTitle = textEpisodeTitle;
   }
 
@@ -59,9 +73,27 @@ public final class ItemEpisodeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.imageEpisode;
+      ImageView imageEpisode = ViewBindings.findChildViewById(rootView, id);
+      if (imageEpisode == null) {
+        break missingId;
+      }
+
+      id = R.id.textEpisodeMeta;
+      TextView textEpisodeMeta = ViewBindings.findChildViewById(rootView, id);
+      if (textEpisodeMeta == null) {
+        break missingId;
+      }
+
       id = R.id.textEpisodeNumber;
       TextView textEpisodeNumber = ViewBindings.findChildViewById(rootView, id);
       if (textEpisodeNumber == null) {
+        break missingId;
+      }
+
+      id = R.id.textEpisodePlot;
+      TextView textEpisodePlot = ViewBindings.findChildViewById(rootView, id);
+      if (textEpisodePlot == null) {
         break missingId;
       }
 
@@ -71,8 +103,8 @@ public final class ItemEpisodeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemEpisodeBinding((ConstraintLayout) rootView, textEpisodeNumber,
-          textEpisodeTitle);
+      return new ItemEpisodeBinding((ConstraintLayout) rootView, imageEpisode, textEpisodeMeta,
+          textEpisodeNumber, textEpisodePlot, textEpisodeTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

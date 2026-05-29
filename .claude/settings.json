@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew compileDebugKotlin)",
+      "Bash(Get-ChildItem -Path \"e:\\\\nashamaiptv page\\\\apps\\\\BAYYARI player\" -Recurse -Directory -Depth 3)",
+      "Bash(Select-Object FullName)",
+      "PowerShell(head -100)",
+      "PowerShell(head -50)",
+      "Bash(./gradlew compileDebugKotlin --quiet)",
+      "Bash(./gradlew generateDebugRFile --quiet)",
+      "Bash(./gradlew assembleDebug --stacktrace)",
+      "Bash(Get-Item \"e:\\\\nashamaiptv page\\\\apps\\\\BAYYARI player\\\\app\\\\build\\\\outputs\\\\apk\\\\debug\\\\app-debug.apk\")",
+      "Bash(Select-Object Name, Length, LastWriteTime)"
+    ]
+  }
+}

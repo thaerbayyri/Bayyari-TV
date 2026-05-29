@@ -45,6 +45,15 @@
         android:key="pref_app_info"
         android:title="@string/settings_app_info" />
 
+    <Preference
+        android:key="pref_app_version"
+        android:title="@string/settings_app_version_title" />
+
+    <Preference
+        android:key="pref_check_update"
+        android:title="@string/settings_check_update"
+        android:summary="@string/settings_check_update_summary" />
+
     <EditTextPreference
         android:key="pref_parental_pin"
         android:title="@string/settings_parental_pin" />

@@ -43,7 +43,7 @@ public final class MyIptvApp_MembersInjector implements MembersInjector<MyIptvAp
   @Override
   public void injectMembers(MyIptvApp instance) {
     injectWorkerFactory(instance, workerFactoryProvider.get());
-    injectRefreshScheduler(instance, refreshSchedulerProvider.get());
+    injectRefreshScheduler(instance, refreshSchedulerProvider);
     injectCrashReporter(instance, crashReporterProvider.get());
   }
 
@@ -59,7 +59,8 @@ public final class MyIptvApp_MembersInjector implements MembersInjector<MyIptvAp
   }
 
   @InjectedFieldSignature("com.bayyari.tv.MyIptvApp.refreshScheduler")
-  public static void injectRefreshScheduler(MyIptvApp instance, RefreshScheduler refreshScheduler) {
+  public static void injectRefreshScheduler(MyIptvApp instance,
+      javax.inject.Provider<RefreshScheduler> refreshScheduler) {
     instance.refreshScheduler = refreshScheduler;
   }
 

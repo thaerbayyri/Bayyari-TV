@@ -49,6 +49,8 @@ import com.bayyari.tv.ui.series.TvSeriesFragment_GeneratedInjector;
 import com.bayyari.tv.ui.settings.ServerManagerFragment_GeneratedInjector;
 import com.bayyari.tv.ui.settings.SettingsFragment_GeneratedInjector;
 import com.bayyari.tv.ui.settings.SettingsViewModel_HiltModules;
+import com.bayyari.tv.ui.sync.SyncActivity_GeneratedInjector;
+import com.bayyari.tv.ui.sync.SyncViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -223,6 +225,7 @@ public final class MyIptvApp_HiltComponents {
           SeriesDetailViewModel_HiltModules.KeyModule.class,
           SeriesViewModel_HiltModules.KeyModule.class,
           SettingsViewModel_HiltModules.KeyModule.class,
+          SyncViewModel_HiltModules.KeyModule.class,
           TvHomeViewModel_HiltModules.KeyModule.class
       }
   )
@@ -254,6 +257,7 @@ public final class MyIptvApp_HiltComponents {
       MoviePlayerActivity_GeneratedInjector,
       TvMoviePlayerActivity_GeneratedInjector,
       EpisodePlayerActivity_GeneratedInjector,
+      SyncActivity_GeneratedInjector,
       ActivityComponent,
       DefaultViewModelFactories.ActivityEntryPoint,
       HiltWrapper_HiltViewModelFactory_ActivityCreatorEntryPoint,
@@ -280,6 +284,7 @@ public final class MyIptvApp_HiltComponents {
           SeriesDetailViewModel_HiltModules.BindsModule.class,
           SeriesViewModel_HiltModules.BindsModule.class,
           SettingsViewModel_HiltModules.BindsModule.class,
+          SyncViewModel_HiltModules.BindsModule.class,
           TvHomeViewModel_HiltModules.BindsModule.class
       }
   )

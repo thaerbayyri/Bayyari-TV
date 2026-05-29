@@ -8,7 +8,10 @@ import com.bayyari.tv.domain.model.Server
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -18,10 +21,11 @@ class LiveRepository @Inject constructor(
     private val channelDao: ChannelDao
 ) {
     // Tracks when we last successfully refreshed — avoids hammering the server on every app open.
-    @Volatile private var lastRefreshMs = 0L
+    private val lastRefreshMsByServer = ConcurrentHashMap<Int, Long>()
+    private val refreshMutex = Mutex()
 
-    fun isStale(thresholdMs: Long = 30 * 60 * 1000L): Boolean =
-        System.currentTimeMillis() - lastRefreshMs > thresholdMs
+    fun isStale(serverId: Int, thresholdMs: Long = 30 * 60 * 1000L): Boolean =
+        System.currentTimeMillis() - (lastRefreshMsByServer[serverId] ?: 0L) > thresholdMs
 
     fun observeChannelCount(serverId: Int): Flow<Int> = channelDao.observeCount(serverId)
 
@@ -34,7 +38,18 @@ class LiveRepository @Inject constructor(
         return flow.map { items -> items.map { it.toDomain() } }
     }
 
-    suspend fun refresh(server: Server): Int = withContext(Dispatchers.IO) {
+    suspend fun refreshIfStale(server: Server, thresholdMs: Long = 30 * 60 * 1000L): Int =
+        refreshMutex.withLock {
+            if (!isStale(server.id, thresholdMs)) {
+                return@withLock withContext(Dispatchers.IO) { channelDao.count(server.id) }
+            }
+            refreshLocked(server)
+        }
+
+    suspend fun refresh(server: Server): Int =
+        refreshMutex.withLock { refreshLocked(server) }
+
+    private suspend fun refreshLocked(server: Server): Int = withContext(Dispatchers.IO) {
         val categories = runCatching { api.getLiveCategories(server.username, server.password) }
             .getOrElse {
                 safeLogWarning("getLiveCategories failed", it)
@@ -62,7 +77,7 @@ class LiveRepository @Inject constructor(
             )
         }
         channelDao.replaceAllForServer(server.id, entities)
-        lastRefreshMs = System.currentTimeMillis()
+        lastRefreshMsByServer[server.id] = System.currentTimeMillis()
         entities.size
     }
 

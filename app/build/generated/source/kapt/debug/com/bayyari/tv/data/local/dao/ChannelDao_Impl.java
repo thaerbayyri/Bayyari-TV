@@ -25,7 +25,7 @@ import kotlinx.coroutines.flow.Flow;
 
 @Generated("androidx.room.RoomProcessor")
 @SuppressWarnings({"unchecked", "deprecation", "removal"})
-public final class ChannelDao_Impl implements ChannelDao {
+public final class ChannelDao_Impl extends ChannelDao {
   private final RoomDatabase __db;
 
   private final EntityInsertAdapter<ChannelEntity> __insertAdapterOfChannelEntity;
@@ -88,6 +88,14 @@ public final class ChannelDao_Impl implements ChannelDao {
     return DBUtil.performSuspending(__db, false, true, (_connection) -> {
       __insertAdapterOfChannelEntity.insert(_connection, channels);
       return Unit.INSTANCE;
+    }, $completion);
+  }
+
+  @Override
+  public Object replaceAllForServer(final int serverId, final List<ChannelEntity> entities,
+      final Continuation<? super Unit> $completion) {
+    return DBUtil.performInTransactionSuspending(__db, (_cont) -> {
+      return ChannelDao_Impl.super.replaceAllForServer(serverId, entities, _cont);
     }, $completion);
   }
 
@@ -444,6 +452,33 @@ public final class ChannelDao_Impl implements ChannelDao {
         _stmt.close();
       }
     }, $completion);
+  }
+
+  @Override
+  public Flow<Integer> observeCount(final int serverId) {
+    final String _sql = "SELECT COUNT(*) FROM channels WHERE serverId = ?";
+    return FlowUtil.createFlow(__db, false, new String[] {"channels"}, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, serverId);
+        final Integer _result;
+        if (_stmt.step()) {
+          final Integer _tmp;
+          if (_stmt.isNull(0)) {
+            _tmp = null;
+          } else {
+            _tmp = (int) (_stmt.getLong(0));
+          }
+          _result = _tmp;
+        } else {
+          _result = null;
+        }
+        return _result;
+      } finally {
+        _stmt.close();
+      }
+    });
   }
 
   @Override

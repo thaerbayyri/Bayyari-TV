@@ -7,85 +7,105 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
+    <!-- Left: categories panel (22% width) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCategories"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.22" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/colorOutline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/recyclerCategories"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Right content header row -->
     <LinearLayout
         android:id="@+id/headerRow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="12dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider1"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/textMovieCount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="sans-serif-black"
-            android:text="Movies"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/colorTextPrimary"
-            android:textSize="22sp" />
+            android:textSize="14sp"
+            tools:text="All (21,035)" />
 
-        <TextView
-            android:id="@+id/textMovieCount"
+        <Spinner
+            android:id="@+id/spinnerSort"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorTextSecondary"
-            android:textSize="12sp"
-            tools:text="18,500+ titles" />
+            android:layout_height="34dp"
+            android:background="@drawable/bg_input_field"
+            android:entries="@array/movie_sort_entries"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:popupBackground="@color/colorSurface" />
+
+        <ImageButton
+            android:id="@+id/buttonMovieSearch"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_iconbtn_circle"
+            android:contentDescription="@string/nav_search"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="9dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_search" />
     </LinearLayout>
 
+    <!-- Collapsible search bar -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchMovies"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="14dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="2dp"
         android:background="@drawable/bg_input_field"
         android:queryHint="@string/search_hint"
+        android:visibility="gone"
+        app:closeIcon="@android:drawable/ic_menu_close_clear_cancel"
         app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider1"
         app:layout_constraintTop_toBottomOf="@id/headerRow" />
-
-    <Spinner
-        android:id="@+id/spinnerSort"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_input_field"
-        android:entries="@array/movie_sort_entries"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp"
-        android:popupBackground="@color/colorSurface"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchMovies" />
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipCategories"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="14dp"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerSort" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerMovies"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:paddingHorizontal="10dp"
+        android:paddingHorizontal="4dp"
         android:paddingBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerSort" />
+        app:layout_constraintStart_toEndOf="@id/divider1"
+        app:layout_constraintTop_toBottomOf="@id/searchMovies" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

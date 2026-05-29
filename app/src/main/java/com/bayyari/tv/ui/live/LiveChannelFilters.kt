@@ -1,6 +1,7 @@
 package com.bayyari.tv.ui.live
 
 import com.bayyari.tv.domain.model.Channel
+import com.bayyari.tv.util.Constants
 
 enum class LiveSortMode(val prefValue: String) {
     NameAsc("name_asc"),
@@ -25,6 +26,7 @@ object LiveChannelFilters {
         val filtered = channels
             .asSequence()
             .filter { it.categoryId !in hiddenCategoryIds }
+            .filter { !isDefaultHidden(it.categoryName) }
             .filter { categoryId.isNullOrBlank() || it.categoryId == categoryId }
             .filter { query.isBlank() || it.name.contains(query, ignoreCase = true) }
 
@@ -37,4 +39,9 @@ object LiveChannelFilters {
             )
         }.toList()
     }
+
+    fun isDefaultHidden(categoryName: String): Boolean =
+        Constants.DEFAULT_HIDDEN_LIVE_CATEGORY_NAMES.any { prefix ->
+            categoryName.startsWith(prefix, ignoreCase = true)
+        }
 }

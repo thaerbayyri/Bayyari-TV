@@ -1,5 +1,6 @@
 package com.bayyari.tv.ui.series;
 
+import com.bayyari.tv.data.local.dao.FavoriteDao;
 import com.bayyari.tv.data.repository.AuthRepository;
 import com.bayyari.tv.data.repository.SeriesRepository;
 import dagger.internal.DaggerGenerated;
@@ -30,25 +31,30 @@ public final class SeriesDetailViewModel_Factory implements Factory<SeriesDetail
 
   private final Provider<SeriesRepository> seriesRepositoryProvider;
 
+  private final Provider<FavoriteDao> favoriteDaoProvider;
+
   private SeriesDetailViewModel_Factory(Provider<AuthRepository> authRepositoryProvider,
-      Provider<SeriesRepository> seriesRepositoryProvider) {
+      Provider<SeriesRepository> seriesRepositoryProvider,
+      Provider<FavoriteDao> favoriteDaoProvider) {
     this.authRepositoryProvider = authRepositoryProvider;
     this.seriesRepositoryProvider = seriesRepositoryProvider;
+    this.favoriteDaoProvider = favoriteDaoProvider;
   }
 
   @Override
   public SeriesDetailViewModel get() {
-    return newInstance(authRepositoryProvider.get(), seriesRepositoryProvider.get());
+    return newInstance(authRepositoryProvider.get(), seriesRepositoryProvider.get(), favoriteDaoProvider.get());
   }
 
   public static SeriesDetailViewModel_Factory create(
       Provider<AuthRepository> authRepositoryProvider,
-      Provider<SeriesRepository> seriesRepositoryProvider) {
-    return new SeriesDetailViewModel_Factory(authRepositoryProvider, seriesRepositoryProvider);
+      Provider<SeriesRepository> seriesRepositoryProvider,
+      Provider<FavoriteDao> favoriteDaoProvider) {
+    return new SeriesDetailViewModel_Factory(authRepositoryProvider, seriesRepositoryProvider, favoriteDaoProvider);
   }
 
   public static SeriesDetailViewModel newInstance(AuthRepository authRepository,
-      SeriesRepository seriesRepository) {
-    return new SeriesDetailViewModel(authRepository, seriesRepository);
+      SeriesRepository seriesRepository, FavoriteDao favoriteDao) {
+    return new SeriesDetailViewModel(authRepository, seriesRepository, favoriteDao);
   }
 }

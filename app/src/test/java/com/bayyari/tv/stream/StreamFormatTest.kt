@@ -6,7 +6,7 @@ import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import kotlinx.coroutines.runBlocking
 import org.junit.After
-import org.junit.Assert.assertTrue
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import retrofit2.Retrofit
@@ -34,13 +34,12 @@ class StreamFormatTest {
     }
 
     @Test
-    fun hlsManifestIsFetchedAndIdentified() {
-        val manifest = "#EXTM3U\n#EXT-X-VERSION:3\nhttp://example/seg0.ts"
-        server.enqueue(MockResponse().setResponseCode(200).setBody(manifest).setHeader("Content-Type", "application/vnd.apple.mpegurl"))
+    fun liveStreams_parsesResponseList() {
+        val body = "[ { \"num\":1, \"name\":\"Channel A\", \"stream_type\":\"live\", \"stream_id\":101 } ]"
+        server.enqueue(MockResponse().setResponseCode(200).setBody(body))
 
-        val url = server.url("/playlist.m3u8").toString()
-        val resp = runBlocking { service.fetchRaw(url) }
-        val body = resp.body()?.string().orEmpty()
-        assertTrue(body.contains("#EXTM3U"))
+        val list = runBlocking { service.getLiveStreams("u", "p") }
+        assertEquals(1, list.size)
+        assertEquals(101, list.first().streamId)
     }
 }

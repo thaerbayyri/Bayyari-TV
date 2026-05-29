@@ -119,6 +119,7 @@ import com.bayyari.tv.ui.movies.TvMoviePlayerActivity;
 import com.bayyari.tv.ui.movies.TvMoviePlayerActivity_MembersInjector;
 import com.bayyari.tv.ui.search.SearchFragment;
 import com.bayyari.tv.ui.search.SearchResultsFragment;
+import com.bayyari.tv.ui.search.SearchResultsFragment_MembersInjector;
 import com.bayyari.tv.ui.search.SearchViewModel;
 import com.bayyari.tv.ui.search.SearchViewModel_HiltModules;
 import com.bayyari.tv.ui.search.SearchViewModel_HiltModules_BindsModule_Binds_LazyMapKey;
@@ -144,10 +145,14 @@ import com.bayyari.tv.ui.settings.SettingsViewModel;
 import com.bayyari.tv.ui.settings.SettingsViewModel_HiltModules;
 import com.bayyari.tv.ui.settings.SettingsViewModel_HiltModules_BindsModule_Binds_LazyMapKey;
 import com.bayyari.tv.ui.settings.SettingsViewModel_HiltModules_KeyModule_Provide_LazyMapKey;
+import com.bayyari.tv.ui.sync.SyncActivity;
+import com.bayyari.tv.ui.sync.SyncViewModel;
+import com.bayyari.tv.ui.sync.SyncViewModel_HiltModules;
+import com.bayyari.tv.ui.sync.SyncViewModel_HiltModules_BindsModule_Binds_LazyMapKey;
+import com.bayyari.tv.ui.sync.SyncViewModel_HiltModules_KeyModule_Provide_LazyMapKey;
 import com.bayyari.tv.util.CrashReporter;
 import com.bayyari.tv.util.EncryptedPrefs;
 import com.bayyari.tv.util.FileCrashReporter;
-import com.bayyari.tv.util.M3uParser;
 import com.bayyari.tv.util.NetworkUtils;
 import com.bayyari.tv.util.StreamUrlBuilder;
 import com.google.common.collect.ImmutableMap;
@@ -516,6 +521,7 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
 
     @Override
     public void injectSearchResultsFragment(SearchResultsFragment searchResultsFragment) {
+      injectSearchResultsFragment2(searchResultsFragment);
     }
 
     @Override
@@ -568,15 +574,29 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
 
     @CanIgnoreReturnValue
     private LiveFragment injectLiveFragment2(LiveFragment instance3) {
-      LiveFragment_MembersInjector.injectFavoriteDao(instance3, singletonCImpl.favoriteDao());
-      LiveFragment_MembersInjector.injectAuthRepository(instance3, singletonCImpl.authRepositoryProvider.get());
+      LiveFragment_MembersInjector.injectStreamUrlBuilder(instance3, singletonCImpl.streamUrlBuilderProvider.get());
+      LiveFragment_MembersInjector.injectPrefs(instance3, singletonCImpl.encryptedPrefsProvider.get());
+      LiveFragment_MembersInjector.injectLoadControl(instance3, singletonCImpl.provideLoadControlProvider.get());
       return instance3;
     }
 
     @CanIgnoreReturnValue
-    private ServerManagerFragment injectServerManagerFragment2(ServerManagerFragment instance4) {
-      ServerManagerFragment_MembersInjector.injectAuthRepository(instance4, singletonCImpl.authRepositoryProvider.get());
+    private SearchResultsFragment injectSearchResultsFragment2(SearchResultsFragment instance4) {
+      SearchResultsFragment_MembersInjector.injectAuthRepository(instance4, singletonCImpl.authRepositoryProvider.get());
+      SearchResultsFragment_MembersInjector.injectPrefs(instance4, singletonCImpl.encryptedPrefsProvider.get());
+      SearchResultsFragment_MembersInjector.injectStreamUrlBuilder(instance4, singletonCImpl.streamUrlBuilderProvider.get());
       return instance4;
+    }
+
+    @CanIgnoreReturnValue
+    private ServerManagerFragment injectServerManagerFragment2(ServerManagerFragment instance5) {
+      ServerManagerFragment_MembersInjector.injectAuthRepository(instance5, singletonCImpl.authRepositoryProvider.get());
+      ServerManagerFragment_MembersInjector.injectChannelDao(instance5, singletonCImpl.channelDao());
+      ServerManagerFragment_MembersInjector.injectMovieDao(instance5, singletonCImpl.movieDao());
+      ServerManagerFragment_MembersInjector.injectSeriesDao(instance5, singletonCImpl.seriesDao());
+      ServerManagerFragment_MembersInjector.injectEpgDao(instance5, singletonCImpl.epgDao());
+      ServerManagerFragment_MembersInjector.injectWatchHistoryRepository(instance5, singletonCImpl.watchHistoryRepositoryProvider.get());
+      return instance5;
     }
   }
 
@@ -615,7 +635,7 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
     }
 
     ImmutableMap keySetMapOfClassOfAndBooleanBuilder() {
-      ImmutableMap.Builder mapBuilder = ImmutableMap.<String, Boolean>builderWithExpectedSize(13);
+      ImmutableMap.Builder mapBuilder = ImmutableMap.<String, Boolean>builderWithExpectedSize(14);
       mapBuilder.put(CatchUpViewModel_HiltModules_KeyModule_Provide_LazyMapKey.lazyClassKeyName, CatchUpViewModel_HiltModules.KeyModule.provide());
       mapBuilder.put(FavoritesViewModel_HiltModules_KeyModule_Provide_LazyMapKey.lazyClassKeyName, FavoritesViewModel_HiltModules.KeyModule.provide());
       mapBuilder.put(HomeViewModel_HiltModules_KeyModule_Provide_LazyMapKey.lazyClassKeyName, HomeViewModel_HiltModules.KeyModule.provide());
@@ -628,6 +648,7 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
       mapBuilder.put(SeriesDetailViewModel_HiltModules_KeyModule_Provide_LazyMapKey.lazyClassKeyName, SeriesDetailViewModel_HiltModules.KeyModule.provide());
       mapBuilder.put(SeriesViewModel_HiltModules_KeyModule_Provide_LazyMapKey.lazyClassKeyName, SeriesViewModel_HiltModules.KeyModule.provide());
       mapBuilder.put(SettingsViewModel_HiltModules_KeyModule_Provide_LazyMapKey.lazyClassKeyName, SettingsViewModel_HiltModules.KeyModule.provide());
+      mapBuilder.put(SyncViewModel_HiltModules_KeyModule_Provide_LazyMapKey.lazyClassKeyName, SyncViewModel_HiltModules.KeyModule.provide());
       mapBuilder.put(TvHomeViewModel_HiltModules_KeyModule_Provide_LazyMapKey.lazyClassKeyName, TvHomeViewModel_HiltModules.KeyModule.provide());
       return mapBuilder.build();
     }
@@ -677,6 +698,10 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
     }
 
     @Override
+    public void injectSyncActivity(SyncActivity syncActivity) {
+    }
+
+    @Override
     public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
       return DefaultViewModelFactories_InternalFactoryFactory_Factory.newInstance(getViewModelKeys(), new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl));
     }
@@ -703,7 +728,6 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
 
     @CanIgnoreReturnValue
     private MainActivity injectMainActivity2(MainActivity instance) {
-      MainActivity_MembersInjector.injectAuthRepository(instance, singletonCImpl.authRepositoryProvider.get());
       MainActivity_MembersInjector.injectCrashReporter(instance, singletonCImpl.provideCrashReporterProvider.get());
       return instance;
     }
@@ -727,6 +751,8 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
     private LivePlayerActivity injectLivePlayerActivity2(LivePlayerActivity instance4) {
       LivePlayerActivity_MembersInjector.injectIptvPlayer(instance4, singletonCImpl.iptvPlayerProvider.get());
       LivePlayerActivity_MembersInjector.injectPrefs(instance4, singletonCImpl.encryptedPrefsProvider.get());
+      LivePlayerActivity_MembersInjector.injectAuthRepository(instance4, singletonCImpl.authRepositoryProvider.get());
+      LivePlayerActivity_MembersInjector.injectStreamUrlBuilder(instance4, singletonCImpl.streamUrlBuilderProvider.get());
       LivePlayerActivity_MembersInjector.injectNetworkUtils(instance4, singletonCImpl.networkUtilsProvider.get());
       return instance4;
     }
@@ -742,6 +768,7 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
       MoviePlayerActivity_MembersInjector.injectIptvPlayer(instance6, singletonCImpl.iptvPlayerProvider.get());
       MoviePlayerActivity_MembersInjector.injectAuthRepository(instance6, singletonCImpl.authRepositoryProvider.get());
       MoviePlayerActivity_MembersInjector.injectStreamUrlBuilder(instance6, singletonCImpl.streamUrlBuilderProvider.get());
+      MoviePlayerActivity_MembersInjector.injectMovieRepository(instance6, singletonCImpl.movieRepositoryProvider.get());
       MoviePlayerActivity_MembersInjector.injectWatchHistoryRepository(instance6, singletonCImpl.watchHistoryRepositoryProvider.get());
       MoviePlayerActivity_MembersInjector.injectNetworkUtils(instance6, singletonCImpl.networkUtilsProvider.get());
       return instance6;
@@ -797,6 +824,8 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
 
     Provider<SettingsViewModel> settingsViewModelProvider;
 
+    Provider<SyncViewModel> syncViewModelProvider;
+
     Provider<TvHomeViewModel> tvHomeViewModelProvider;
 
     ViewModelCImpl(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
@@ -821,7 +850,7 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
     }
 
     ImmutableMap hiltViewModelMapMapOfClassOfAndProviderOfViewModelBuilder() {
-      ImmutableMap.Builder mapBuilder = ImmutableMap.<String, javax.inject.Provider<ViewModel>>builderWithExpectedSize(13);
+      ImmutableMap.Builder mapBuilder = ImmutableMap.<String, javax.inject.Provider<ViewModel>>builderWithExpectedSize(14);
       mapBuilder.put(CatchUpViewModel_HiltModules_BindsModule_Binds_LazyMapKey.lazyClassKeyName, ((Provider) (catchUpViewModelProvider)));
       mapBuilder.put(FavoritesViewModel_HiltModules_BindsModule_Binds_LazyMapKey.lazyClassKeyName, ((Provider) (favoritesViewModelProvider)));
       mapBuilder.put(HomeViewModel_HiltModules_BindsModule_Binds_LazyMapKey.lazyClassKeyName, ((Provider) (homeViewModelProvider)));
@@ -834,6 +863,7 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
       mapBuilder.put(SeriesDetailViewModel_HiltModules_BindsModule_Binds_LazyMapKey.lazyClassKeyName, ((Provider) (seriesDetailViewModelProvider)));
       mapBuilder.put(SeriesViewModel_HiltModules_BindsModule_Binds_LazyMapKey.lazyClassKeyName, ((Provider) (seriesViewModelProvider)));
       mapBuilder.put(SettingsViewModel_HiltModules_BindsModule_Binds_LazyMapKey.lazyClassKeyName, ((Provider) (settingsViewModelProvider)));
+      mapBuilder.put(SyncViewModel_HiltModules_BindsModule_Binds_LazyMapKey.lazyClassKeyName, ((Provider) (syncViewModelProvider)));
       mapBuilder.put(TvHomeViewModel_HiltModules_BindsModule_Binds_LazyMapKey.lazyClassKeyName, ((Provider) (tvHomeViewModelProvider)));
       return mapBuilder.build();
     }
@@ -853,7 +883,8 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
       this.seriesDetailViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 9);
       this.seriesViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 10);
       this.settingsViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 11);
-      this.tvHomeViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 12);
+      this.syncViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 12);
+      this.tvHomeViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 13);
     }
 
     @Override
@@ -894,36 +925,39 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
           return (T) new FavoritesViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.favoriteDao(), singletonCImpl.liveRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get());
 
           case 2: // com.bayyari.tv.ui.home.HomeViewModel
-          return (T) new HomeViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.liveRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get(), singletonCImpl.watchHistoryDao());
+          return (T) new HomeViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.liveRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get(), singletonCImpl.watchHistoryRepositoryProvider.get(), singletonCImpl.favoriteDao());
 
           case 3: // com.bayyari.tv.ui.live.LivePlayerViewModel
           return (T) new LivePlayerViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.liveRepositoryProvider.get(), singletonCImpl.epgRepositoryProvider.get(), singletonCImpl.streamUrlBuilderProvider.get(), singletonCImpl.encryptedPrefsProvider.get());
 
           case 4: // com.bayyari.tv.ui.live.LiveViewModel
-          return (T) new LiveViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.liveRepositoryProvider.get());
+          return (T) new LiveViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.liveRepositoryProvider.get(), singletonCImpl.favoriteDao(), singletonCImpl.encryptedPrefsProvider.get(), singletonCImpl.streamUrlBuilderProvider.get());
 
           case 5: // com.bayyari.tv.ui.auth.LoginViewModel
           return (T) new LoginViewModel(viewModelCImpl.loginUseCase());
 
           case 6: // com.bayyari.tv.ui.movies.MovieDetailViewModel
-          return (T) new MovieDetailViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get());
+          return (T) new MovieDetailViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get(), singletonCImpl.favoriteDao());
 
           case 7: // com.bayyari.tv.ui.movies.MovieViewModel
-          return (T) new MovieViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get());
+          return (T) new MovieViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get(), singletonCImpl.encryptedPrefsProvider.get());
 
           case 8: // com.bayyari.tv.ui.search.SearchViewModel
           return (T) new SearchViewModel(singletonCImpl.authRepositoryProvider.get(), viewModelCImpl.searchUseCase());
 
           case 9: // com.bayyari.tv.ui.series.SeriesDetailViewModel
-          return (T) new SeriesDetailViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get());
+          return (T) new SeriesDetailViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get(), singletonCImpl.favoriteDao());
 
           case 10: // com.bayyari.tv.ui.series.SeriesViewModel
-          return (T) new SeriesViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get());
+          return (T) new SeriesViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get(), singletonCImpl.encryptedPrefsProvider.get());
 
           case 11: // com.bayyari.tv.ui.settings.SettingsViewModel
-          return (T) new SettingsViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.encryptedPrefsProvider.get(), singletonCImpl.channelDao(), singletonCImpl.movieDao(), singletonCImpl.seriesDao(), singletonCImpl.epgDao(), singletonCImpl.watchHistoryDao());
+          return (T) new SettingsViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.encryptedPrefsProvider.get(), singletonCImpl.channelDao(), singletonCImpl.movieDao(), singletonCImpl.seriesDao(), singletonCImpl.epgDao(), singletonCImpl.watchHistoryRepositoryProvider.get());
 
-          case 12: // com.bayyari.tv.ui.home.TvHomeViewModel
+          case 12: // com.bayyari.tv.ui.sync.SyncViewModel
+          return (T) new SyncViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.liveRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get());
+
+          case 13: // com.bayyari.tv.ui.home.TvHomeViewModel
           return (T) new TvHomeViewModel(singletonCImpl.authRepositoryProvider.get(), singletonCImpl.liveRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get());
 
           default: throw new AssertionError(id);
@@ -1035,9 +1069,11 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
 
     Provider<AppDatabase> provideDatabaseProvider;
 
-    Provider<M3uParser> m3uParserProvider;
-
     Provider<LiveRepository> liveRepositoryProvider;
+
+    Provider<MovieRepository> movieRepositoryProvider;
+
+    Provider<SeriesRepository> seriesRepositoryProvider;
 
     Provider<RefreshWorker_AssistedFactory> refreshWorker_AssistedFactoryProvider;
 
@@ -1059,10 +1095,6 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
 
     Provider<EpgRepository> epgRepositoryProvider;
 
-    Provider<MovieRepository> movieRepositoryProvider;
-
-    Provider<SeriesRepository> seriesRepositoryProvider;
-
     SingletonCImpl(ApplicationContextModule applicationContextModuleParam) {
       this.applicationContextModule = applicationContextModuleParam;
       initialize(applicationContextModuleParam);
@@ -1071,6 +1103,14 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
 
     ChannelDao channelDao() {
       return DatabaseModule_ProvideChannelDaoFactory.provideChannelDao(provideDatabaseProvider.get());
+    }
+
+    MovieDao movieDao() {
+      return DatabaseModule_ProvideMovieDaoFactory.provideMovieDao(provideDatabaseProvider.get());
+    }
+
+    SeriesDao seriesDao() {
+      return DatabaseModule_ProvideSeriesDaoFactory.provideSeriesDao(provideDatabaseProvider.get());
     }
 
     Map<String, javax.inject.Provider<WorkerAssistedFactory<? extends ListenableWorker>>> mapOfStringAndProviderOfWorkerAssistedFactoryOf(
@@ -1094,14 +1134,6 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
       return DatabaseModule_ProvideFavoriteDaoFactory.provideFavoriteDao(provideDatabaseProvider.get());
     }
 
-    MovieDao movieDao() {
-      return DatabaseModule_ProvideMovieDaoFactory.provideMovieDao(provideDatabaseProvider.get());
-    }
-
-    SeriesDao seriesDao() {
-      return DatabaseModule_ProvideSeriesDaoFactory.provideSeriesDao(provideDatabaseProvider.get());
-    }
-
     @SuppressWarnings("unchecked")
     private void initialize(final ApplicationContextModule applicationContextModuleParam) {
       this.provideGsonProvider = DoubleCheck.provider(new SwitchingProvider<Gson>(singletonCImpl, 7));
@@ -1113,20 +1145,19 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
       this.provideXtreamApiProvider = DoubleCheck.provider(new SwitchingProvider<XtreamApiService>(singletonCImpl, 2));
       this.authRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<AuthRepository>(singletonCImpl, 1));
       this.provideDatabaseProvider = DoubleCheck.provider(new SwitchingProvider<AppDatabase>(singletonCImpl, 10));
-      this.m3uParserProvider = DoubleCheck.provider(new SwitchingProvider<M3uParser>(singletonCImpl, 11));
       this.liveRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<LiveRepository>(singletonCImpl, 9));
+      this.movieRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<MovieRepository>(singletonCImpl, 11));
+      this.seriesRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<SeriesRepository>(singletonCImpl, 12));
       this.refreshWorker_AssistedFactoryProvider = SingleCheck.provider(new SwitchingProvider<RefreshWorker_AssistedFactory>(singletonCImpl, 0));
-      this.refreshSchedulerProvider = DoubleCheck.provider(new SwitchingProvider<RefreshScheduler>(singletonCImpl, 12));
-      this.fileCrashReporterProvider = DoubleCheck.provider(new SwitchingProvider<FileCrashReporter>(singletonCImpl, 14));
-      this.provideCrashReporterProvider = DoubleCheck.provider(new SwitchingProvider<CrashReporter>(singletonCImpl, 13));
-      this.provideLoadControlProvider = DoubleCheck.provider(new SwitchingProvider<LoadControl>(singletonCImpl, 16));
-      this.iptvPlayerProvider = DoubleCheck.provider(new SwitchingProvider<IptvPlayer>(singletonCImpl, 15));
-      this.streamUrlBuilderProvider = DoubleCheck.provider(new SwitchingProvider<StreamUrlBuilder>(singletonCImpl, 17));
-      this.networkUtilsProvider = DoubleCheck.provider(new SwitchingProvider<NetworkUtils>(singletonCImpl, 18));
-      this.watchHistoryRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<WatchHistoryRepository>(singletonCImpl, 19));
-      this.epgRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<EpgRepository>(singletonCImpl, 20));
-      this.movieRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<MovieRepository>(singletonCImpl, 21));
-      this.seriesRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<SeriesRepository>(singletonCImpl, 22));
+      this.refreshSchedulerProvider = DoubleCheck.provider(new SwitchingProvider<RefreshScheduler>(singletonCImpl, 13));
+      this.fileCrashReporterProvider = DoubleCheck.provider(new SwitchingProvider<FileCrashReporter>(singletonCImpl, 15));
+      this.provideCrashReporterProvider = DoubleCheck.provider(new SwitchingProvider<CrashReporter>(singletonCImpl, 14));
+      this.provideLoadControlProvider = DoubleCheck.provider(new SwitchingProvider<LoadControl>(singletonCImpl, 17));
+      this.iptvPlayerProvider = DoubleCheck.provider(new SwitchingProvider<IptvPlayer>(singletonCImpl, 16));
+      this.streamUrlBuilderProvider = DoubleCheck.provider(new SwitchingProvider<StreamUrlBuilder>(singletonCImpl, 18));
+      this.networkUtilsProvider = DoubleCheck.provider(new SwitchingProvider<NetworkUtils>(singletonCImpl, 19));
+      this.watchHistoryRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<WatchHistoryRepository>(singletonCImpl, 20));
+      this.epgRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<EpgRepository>(singletonCImpl, 21));
     }
 
     @Override
@@ -1152,7 +1183,7 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
     @CanIgnoreReturnValue
     private MyIptvApp injectMyIptvApp2(MyIptvApp instance) {
       MyIptvApp_MembersInjector.injectWorkerFactory(instance, hiltWorkerFactory());
-      MyIptvApp_MembersInjector.injectRefreshScheduler(instance, refreshSchedulerProvider.get());
+      MyIptvApp_MembersInjector.injectRefreshScheduler(instance, refreshSchedulerProvider);
       MyIptvApp_MembersInjector.injectCrashReporter(instance, provideCrashReporterProvider.get());
       return instance;
     }
@@ -1175,7 +1206,7 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
           return (T) new RefreshWorker_AssistedFactory() {
             @Override
             public RefreshWorker create(Context context, WorkerParameters params) {
-              return new RefreshWorker(context, params, singletonCImpl.authRepositoryProvider.get(), singletonCImpl.liveRepositoryProvider.get());
+              return new RefreshWorker(context, params, singletonCImpl.authRepositoryProvider.get(), singletonCImpl.liveRepositoryProvider.get(), singletonCImpl.movieRepositoryProvider.get(), singletonCImpl.seriesRepositoryProvider.get());
             }
           };
 
@@ -1204,46 +1235,43 @@ public final class DaggerMyIptvApp_HiltComponents_SingletonC {
           return (T) NetworkModule_ProvideHttpLoggingFactory.provideHttpLogging();
 
           case 9: // com.bayyari.tv.data.repository.LiveRepository
-          return (T) new LiveRepository(singletonCImpl.provideXtreamApiProvider.get(), singletonCImpl.channelDao(), singletonCImpl.m3uParserProvider.get());
+          return (T) new LiveRepository(singletonCImpl.provideXtreamApiProvider.get(), singletonCImpl.channelDao());
 
           case 10: // com.bayyari.tv.data.local.AppDatabase
           return (T) DatabaseModule_ProvideDatabaseFactory.provideDatabase(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
 
-          case 11: // com.bayyari.tv.util.M3uParser
-          return (T) new M3uParser();
-
-          case 12: // com.bayyari.tv.data.work.RefreshScheduler
-          return (T) new RefreshScheduler(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
-
-          case 13: // com.bayyari.tv.util.CrashReporter
-          return (T) CrashReporterModule_ProvideCrashReporterFactory.provideCrashReporter(singletonCImpl.fileCrashReporterProvider.get());
-
-          case 14: // com.bayyari.tv.util.FileCrashReporter
-          return (T) new FileCrashReporter(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
-
-          case 15: // com.bayyari.tv.player.IptvPlayer
-          return (T) new IptvPlayer(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule), singletonCImpl.provideLoadControlProvider.get());
-
-          case 16: // androidx.media3.exoplayer.LoadControl
-          return (T) PlayerModule_ProvideLoadControlFactory.provideLoadControl(singletonCImpl.encryptedPrefsProvider.get());
-
-          case 17: // com.bayyari.tv.util.StreamUrlBuilder
-          return (T) new StreamUrlBuilder();
-
-          case 18: // com.bayyari.tv.util.NetworkUtils
-          return (T) new NetworkUtils(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
-
-          case 19: // com.bayyari.tv.data.repository.WatchHistoryRepository
-          return (T) new WatchHistoryRepository(singletonCImpl.watchHistoryDao());
-
-          case 20: // com.bayyari.tv.data.repository.EpgRepository
-          return (T) new EpgRepository(singletonCImpl.provideXtreamApiProvider.get(), singletonCImpl.epgDao());
-
-          case 21: // com.bayyari.tv.data.repository.MovieRepository
+          case 11: // com.bayyari.tv.data.repository.MovieRepository
           return (T) new MovieRepository(singletonCImpl.provideXtreamApiProvider.get(), singletonCImpl.movieDao());
 
-          case 22: // com.bayyari.tv.data.repository.SeriesRepository
+          case 12: // com.bayyari.tv.data.repository.SeriesRepository
           return (T) new SeriesRepository(singletonCImpl.provideXtreamApiProvider.get(), singletonCImpl.seriesDao());
+
+          case 13: // com.bayyari.tv.data.work.RefreshScheduler
+          return (T) new RefreshScheduler(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
+
+          case 14: // com.bayyari.tv.util.CrashReporter
+          return (T) CrashReporterModule_ProvideCrashReporterFactory.provideCrashReporter(singletonCImpl.fileCrashReporterProvider.get());
+
+          case 15: // com.bayyari.tv.util.FileCrashReporter
+          return (T) new FileCrashReporter(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
+
+          case 16: // com.bayyari.tv.player.IptvPlayer
+          return (T) new IptvPlayer(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule), singletonCImpl.provideLoadControlProvider.get());
+
+          case 17: // androidx.media3.exoplayer.LoadControl
+          return (T) PlayerModule_ProvideLoadControlFactory.provideLoadControl(singletonCImpl.encryptedPrefsProvider.get());
+
+          case 18: // com.bayyari.tv.util.StreamUrlBuilder
+          return (T) new StreamUrlBuilder();
+
+          case 19: // com.bayyari.tv.util.NetworkUtils
+          return (T) new NetworkUtils(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
+
+          case 20: // com.bayyari.tv.data.repository.WatchHistoryRepository
+          return (T) new WatchHistoryRepository(singletonCImpl.watchHistoryDao());
+
+          case 21: // com.bayyari.tv.data.repository.EpgRepository
+          return (T) new EpgRepository(singletonCImpl.provideXtreamApiProvider.get(), singletonCImpl.epgDao());
 
           default: throw new AssertionError(id);
         }

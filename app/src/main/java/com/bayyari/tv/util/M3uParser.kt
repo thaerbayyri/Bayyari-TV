@@ -32,17 +32,19 @@ class M3uParser @Inject constructor() {
         if (!lines.hasNext()) return ParseResult(emptyList(), null)
 
         val firstLine = lines.next()
-        if (!firstLine.startsWith("#EXTM3U")) return ParseResult(emptyList(), null)
-
-        val epgUrl = parseAttributes(firstLine.substringAfter("#EXTM3U").trim())["url-tvg"]
-            ?.takeIf { it.isNotBlank() }
+        val hasHeader = firstLine.startsWith("#EXTM3U")
+        val epgUrl = if (hasHeader) {
+            parseAttributes(firstLine.substringAfter("#EXTM3U").trim())["url-tvg"]
+                ?.takeIf { it.isNotBlank() }
+        } else {
+            null
+        }
 
         val out = mutableListOf<Channel>()
         var current: ExtInf? = null
         var fallbackId = -1
 
-        while (lines.hasNext()) {
-            val line = lines.next()
+        val parseLine: (String) -> Unit = { line ->
             when {
                 line.startsWith("#EXTINF") -> current = parseExtInf(line)
                 line.startsWith("#") -> Unit
@@ -54,7 +56,7 @@ class M3uParser @Inject constructor() {
                             streamId = streamId,
                             name = info.name,
                             streamIcon = info.logo,
-                            categoryId = info.groupTitle.ifBlank { "uncategorized" },
+                            categoryId = info.groupTitle,
                             categoryName = info.groupTitle.ifBlank { "Uncategorized" },
                             epgChannelId = info.tvgId,
                             tvArchive = 0,
@@ -68,17 +70,23 @@ class M3uParser @Inject constructor() {
                 }
             }
         }
+        if (!hasHeader) parseLine(firstLine)
+        while (lines.hasNext()) {
+            parseLine(lines.next())
+        }
         return ParseResult(out, epgUrl)
     }
 
-    private fun parseExtInf(line: String): ExtInf {
-        val afterColon = line.substringAfter(":", "").ifBlank { return ExtInf() }
+    private fun parseExtInf(line: String): ExtInf? {
+        val afterColon = line.substringAfter(":", "").ifBlank { return null }
         val commaIdx = findUnquotedComma(afterColon)
+        if (commaIdx < 0) return null
         val attrsPart = if (commaIdx >= 0) afterColon.substring(0, commaIdx) else afterColon
         val title = if (commaIdx >= 0) afterColon.substring(commaIdx + 1).trim() else ""
 
         val attrs = parseAttributes(attrsPart)
         val name = attrs["tvg-name"]?.takeIf { it.isNotBlank() } ?: title
+        if (name.isBlank()) return null
         return ExtInf(
             name = name,
             tvgId = attrs["tvg-id"].orEmpty(),

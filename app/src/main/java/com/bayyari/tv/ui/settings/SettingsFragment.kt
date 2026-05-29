@@ -14,7 +14,6 @@ import androidx.preference.SwitchPreferenceCompat
 import androidx.navigation.fragment.findNavController
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
-import com.bayyari.tv.BuildConfig
 import com.bayyari.tv.R
 import com.bayyari.tv.update.CheckResult
 import com.bayyari.tv.update.DownloadResult
@@ -93,10 +92,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
 
         findPreference<Preference>("pref_app_info")?.summary = viewModel.getServerInfo()
-        findPreference<Preference>("pref_app_version")?.summary =
-            getString(R.string.settings_app_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE)
+        refreshInstalledVersionSummary()
 
         updatePreference = findPreference("pref_check_update")
+        updatePreference?.summary = installedVersionLabel()
         updatePreference?.setOnPreferenceClickListener {
             val cachedApk = updateManager.cachedUpdateApk()
             if (cachedApk != null) {
@@ -122,6 +121,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
         refreshUpdateSummary()
     }
 
+    override fun onResume() {
+        super.onResume()
+        refreshInstalledVersionSummary()
+        refreshUpdateSummary()
+    }
+
     private fun checkForUpdate() {
         viewLifecycleOwner.lifecycleScope.launch {
             showUpdateStatus(getString(R.string.update_checking), loading = true)
@@ -132,7 +137,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 }
                 is CheckResult.Error -> {
                     Log.e(TAG, "Update check failed: ${result.message}")
-                    showUpdateStatus(result.message, loading = false)
+                    showUpdateStatus("Error: ${result.message}", loading = false)
                 }
                 is CheckResult.UpdateAvailable -> {
                     Log.i(TAG, "Update available: ${result.update.displayVersion}")
@@ -148,11 +153,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
         when (val result = updateManager.downloadApk(update)) {
             is DownloadResult.Error -> {
                 Log.e(TAG, "Update download failed: ${result.message}")
-                showUpdateStatus(result.message, loading = false)
+                showUpdateStatus(getString(R.string.update_download_failed), loading = false)
             }
             is DownloadResult.Success -> {
                 Log.i(TAG, "Update download complete")
                 showUpdateStatus(getString(R.string.update_download_complete), loading = false)
+                startInstaller(result.apkFile)
             }
         }
     }
@@ -168,7 +174,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             }
             is InstallStartResult.Error -> {
                 Log.e(TAG, "Install failed: ${result.message}")
-                showUpdateStatus(result.message.ifBlank { getString(R.string.update_install_failed) }, loading = false)
+                showUpdateStatus(getString(R.string.update_install_failed), loading = false)
             }
         }
     }
@@ -180,9 +186,22 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun refreshUpdateSummary() {
-        if (updateManager.cachedUpdateApk() != null) {
-            updatePreference?.summary = getString(R.string.update_download_complete)
+        updatePreference?.summary = if (updateManager.cachedUpdateApk() != null) {
+            getString(R.string.update_download_complete)
+        } else {
+            installedVersionLabel()
         }
+    }
+
+    private fun refreshInstalledVersionSummary() {
+        val installed = updateManager.installedVersion()
+        findPreference<Preference>("pref_app_version")?.summary =
+            getString(R.string.settings_app_version, installed.name, installed.code)
+    }
+
+    private fun installedVersionLabel(): String {
+        val installed = updateManager.installedVersion()
+        return "Installed: v${installed.name} (${installed.code})"
     }
 
     companion object {

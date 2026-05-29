@@ -4,7 +4,9 @@ package com.bayyari.tv.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +25,16 @@ public final class FragmentSeriesBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageButton buttonSeriesSearch;
+
+  @NonNull
+  public final View divider1;
+
+  @NonNull
   public final LinearLayout headerRow;
+
+  @NonNull
+  public final RecyclerView recyclerCategories;
 
   @NonNull
   public final RecyclerView recyclerSeries;
@@ -32,15 +43,24 @@ public final class FragmentSeriesBinding implements ViewBinding {
   public final SearchView searchSeries;
 
   @NonNull
+  public final Spinner spinnerSeriesSort;
+
+  @NonNull
   public final TextView textSeriesCount;
 
-  private FragmentSeriesBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout headerRow,
+  private FragmentSeriesBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ImageButton buttonSeriesSearch, @NonNull View divider1,
+      @NonNull LinearLayout headerRow, @NonNull RecyclerView recyclerCategories,
       @NonNull RecyclerView recyclerSeries, @NonNull SearchView searchSeries,
-      @NonNull TextView textSeriesCount) {
+      @NonNull Spinner spinnerSeriesSort, @NonNull TextView textSeriesCount) {
     this.rootView = rootView;
+    this.buttonSeriesSearch = buttonSeriesSearch;
+    this.divider1 = divider1;
     this.headerRow = headerRow;
+    this.recyclerCategories = recyclerCategories;
     this.recyclerSeries = recyclerSeries;
     this.searchSeries = searchSeries;
+    this.spinnerSeriesSort = spinnerSeriesSort;
     this.textSeriesCount = textSeriesCount;
   }
 
@@ -71,9 +91,27 @@ public final class FragmentSeriesBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.buttonSeriesSearch;
+      ImageButton buttonSeriesSearch = ViewBindings.findChildViewById(rootView, id);
+      if (buttonSeriesSearch == null) {
+        break missingId;
+      }
+
+      id = R.id.divider1;
+      View divider1 = ViewBindings.findChildViewById(rootView, id);
+      if (divider1 == null) {
+        break missingId;
+      }
+
       id = R.id.headerRow;
       LinearLayout headerRow = ViewBindings.findChildViewById(rootView, id);
       if (headerRow == null) {
+        break missingId;
+      }
+
+      id = R.id.recyclerCategories;
+      RecyclerView recyclerCategories = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerCategories == null) {
         break missingId;
       }
 
@@ -89,14 +127,21 @@ public final class FragmentSeriesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.spinnerSeriesSort;
+      Spinner spinnerSeriesSort = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerSeriesSort == null) {
+        break missingId;
+      }
+
       id = R.id.textSeriesCount;
       TextView textSeriesCount = ViewBindings.findChildViewById(rootView, id);
       if (textSeriesCount == null) {
         break missingId;
       }
 
-      return new FragmentSeriesBinding((ConstraintLayout) rootView, headerRow, recyclerSeries,
-          searchSeries, textSeriesCount);
+      return new FragmentSeriesBinding((ConstraintLayout) rootView, buttonSeriesSearch, divider1,
+          headerRow, recyclerCategories, recyclerSeries, searchSeries, spinnerSeriesSort,
+          textSeriesCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
